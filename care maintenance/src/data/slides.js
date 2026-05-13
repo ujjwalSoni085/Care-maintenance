@@ -1,7 +1,7 @@
 export const slides = [
   {
     id: 1,
-    image: '/images/home_services_bg.png',
+    image: '/images/home_services_bg.webp',
     title: 'Expert Home Services at Your Doorstep',
     description: 'From plumbing to pest control — trusted professionals for every home need.',
     cta: 'Book a Service',
@@ -9,7 +9,7 @@ export const slides = [
   },
   {
     id: 2,
-    image: '/images/commercial_maintenance_bg.png',
+    image: '/images/commercial_maintenance_bg.webp',
     title: 'Reliable Commercial Maintenance',
     description: 'Keep your business running smoothly with our comprehensive facility management.',
     cta: 'Get a Quote',
@@ -17,7 +17,7 @@ export const slides = [
   },
   {
     id: 3,
-    image: '/images/quality_trust_bg.png',
+    image: '/images/quality_trust_bg.webp',
     title: 'Quality You Can Trust',
     description: '8,000+ happy customers. Licensed, insured, and always on time.',
     cta: 'See Our Work',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade, Parallax } from 'swiper/modules';
 import { motion } from 'framer-motion';
@@ -9,8 +9,20 @@ import Button from '../common/Button';
 import { slides } from '../../data/slides';
 
 const HeroCarousel = () => {
+  const [loadedImages, setLoadedImages] = useState({});
+
+  useEffect(() => {
+    slides.forEach(slide => {
+      const img = new Image();
+      img.src = slide.image;
+      img.onload = () => {
+        setLoadedImages(prev => ({ ...prev, [slide.id]: true }));
+      };
+    });
+  }, []);
+
   return (
-    <section className="relative w-full h-[70vh] md:h-[calc(100vh-72px)] hero-swiper overflow-hidden">
+    <section className="relative w-full h-[70vh] md:h-[calc(100vh-72px)] hero-swiper overflow-hidden bg-gray-900">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade, Parallax]}
         effect="fade"
@@ -38,9 +50,14 @@ const HeroCarousel = () => {
           <SwiperSlide key={slide.id} className="relative w-full h-full overflow-hidden">
             {({ isActive }) => (
               <>
+                {/* Loading Skeleton */}
+                {!loadedImages[slide.id] && (
+                  <div className="absolute inset-0 bg-gray-800 animate-pulse z-0" />
+                )}
+
                 {/* Background Image with slight scale animation using motion or swiper parallax */}
                 <motion.div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${loadedImages[slide.id] ? 'opacity-100' : 'opacity-0'}`}
                   style={{ backgroundImage: `url(${slide.image})` }}
                   initial={{ scale: 1 }}
                   animate={{ scale: isActive ? 1.05 : 1 }}

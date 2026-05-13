@@ -106,12 +106,12 @@ const Header = () => {
                 </div>
               </div>
 
-              <Link to="/happy-customers" className={`font-medium hover:text-blue-600 transition-colors ${isScrolled ? 'text-gray-700' : 'text-gray-800 md:text-white/90'}`}>Happy Customers</Link>
-              <Link to="/about" className={`font-medium hover:text-blue-600 transition-colors ${isScrolled ? 'text-gray-700' : 'text-gray-800 md:text-white/90'}`}>About</Link>
-              <Link to="/reliable-management" className="font-medium text-blue-600 hover:text-blue-700 flex items-center gap-1 group">
+              <a href="/#reviews" className={`font-medium hover:text-blue-600 transition-colors ${isScrolled ? 'text-gray-700' : 'text-gray-800 md:text-white/90'}`}>Happy Customers</a>
+              <a href="/#about" className={`font-medium hover:text-blue-600 transition-colors ${isScrolled ? 'text-gray-700' : 'text-gray-800 md:text-white/90'}`}>About</a>
+              <a href="/#how-it-works" className="font-medium text-blue-600 hover:text-blue-700 flex items-center gap-1 group">
                 Reliable Management
                 <span className="block w-1.5 h-1.5 rounded-full bg-blue-600 group-hover:scale-150 transition-transform"></span>
-              </Link>
+              </a>
             </nav>
 
             {/* Actions */}
@@ -122,6 +122,7 @@ const Header = () => {
               
               <button 
                 onClick={() => setIsMobileMenuOpen(true)}
+                aria-label="Open mobile menu"
                 className={`lg:hidden p-2 rounded-lg ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-900 md:text-white hover:bg-white/10'}`}
               >
                 <FiMenu className="w-6 h-6" />

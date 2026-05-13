@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { Check, ChevronDown, Sparkles, ShieldCheck } from 'lucide-react';
 
 const comboPackages = [
@@ -111,21 +112,24 @@ const PlanDropdown = ({ options, value, onChange }) => {
 
 const ServicePriceBox = () => {
   const [selectedPackageId, setSelectedPackageId] = useState('');
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  // Default to standard package details if nothing is selected yet, but show placeholder in dropdown
   const activePackageData = comboPackages.find(p => p.id === selectedPackageId) || comboPackages[1];
-  // Price is 0 if nothing selected, but we default to Standard visually for cards?
-  // Let's make the cards visible and clickable too, but dropdown controls it
   const activePrice = selectedPackageId ? activePackageData.price : 0;
 
   return (
-    <section className="py-16 sm:py-24 bg-surface relative overflow-hidden">
+    <section className="py-16 sm:py-24 bg-surface relative overflow-hidden" ref={ref}>
       {/* Background Decorative Gradients */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-white/70 backdrop-blur-2xl rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-white overflow-hidden ring-1 ring-gray-100/50 p-6 sm:p-10 md:p-16">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.7 }}
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+      >
+        <div className="bg-white/70 backdrop-blur-2xl rounded-[2.5rem] shadow-lg md:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-white overflow-hidden ring-1 ring-gray-100/50 p-6 sm:p-10 md:p-16 transition-all duration-300">
           
           {/* Header */}
           <div className="text-center mb-10 sm:mb-14">
@@ -150,7 +154,7 @@ const ServicePriceBox = () => {
           <div className="space-y-12">
             {/* Package Selection Cards */}
             <div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative">
                 {comboPackages.map((pkg) => (
                   <motion.div
                     key={pkg.id}
@@ -225,7 +229,7 @@ const ServicePriceBox = () => {
                   <motion.button 
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
-                    className="w-full md:w-auto px-8 sm:px-12 py-6 bg-primary hover:bg-primary-light text-white rounded-2xl font-bold text-xl sm:text-2xl transition-all shadow-[0_15px_30px_rgb(26,54,93,0.25)] hover:shadow-[0_20px_40px_rgb(26,54,93,0.35)] flex items-center justify-center gap-4 relative overflow-hidden group border border-white/10"
+                    className="w-full md:w-auto px-8 sm:px-12 py-6 bg-primary hover:bg-primary-light text-white rounded-2xl font-bold text-xl sm:text-2xl transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 flex items-center justify-center gap-4 relative overflow-hidden group border border-white/10"
                   >
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
                     <span>Get Complete Home Protection</span>
@@ -237,7 +241,7 @@ const ServicePriceBox = () => {
           </div>
           
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
