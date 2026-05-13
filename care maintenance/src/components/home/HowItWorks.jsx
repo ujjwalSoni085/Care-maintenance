@@ -61,7 +61,7 @@ const HowItWorks = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-gray-50 relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-gray-50 relative overflow-hidden">
       <Container>
         <div className="flex flex-col items-center">
           <SectionHeading 

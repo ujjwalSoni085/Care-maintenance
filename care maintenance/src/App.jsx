@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage';
 import './App.css';
 
 const LocationPage = React.lazy(() => import('./pages/LocationPage'));
+const ContactPage = React.lazy(() => import('./pages/ContactPage'));
+const AboutPage = React.lazy(() => import('./pages/AboutPage'));
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/location" element={<LocationPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/about" element={<AboutPage />} />
             </Routes>
           </Suspense>
         </main>

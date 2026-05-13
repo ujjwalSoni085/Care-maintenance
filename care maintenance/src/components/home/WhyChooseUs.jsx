@@ -56,7 +56,7 @@ const itemVariants = {
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-16 md:py-24 bg-background overflow-hidden">
+    <section className="py-12 md:py-16 bg-background overflow-hidden">
       <Container>
         <SectionHeading 
           title="Why Choose Us" 

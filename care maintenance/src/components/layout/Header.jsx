@@ -37,28 +37,30 @@ const Header = () => {
     <>
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 flex flex-col justify-center ${
-          isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md h-[60px]' : 'bg-transparent h-[72px]'
+          isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 h-[72px]' : 'bg-transparent h-[88px]'
         }`}
       >
         <Container>
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                C
-              </div>
-              <span className={`font-bold text-xl tracking-tight ${isScrolled ? 'text-gray-900' : 'text-gray-900 md:text-white'}`}>
-                Care<span className="text-blue-600">Maintenance</span>
-              </span>
-            </Link>
+            <div className="flex-1 flex justify-start min-w-max pr-4">
+              <Link to="/" className="flex items-center gap-2.5 -ml-1 shrink-0">
+                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-sm">
+                  C
+                </div>
+                <span className={`font-bold text-xl tracking-tight whitespace-nowrap ${isScrolled ? 'text-gray-900' : 'text-gray-900 md:text-white'}`}>
+                  Care<span className="text-blue-600">Maintenance</span>
+                </span>
+              </Link>
+            </div>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-8">
-              <Link to="/" className={`font-medium hover:text-blue-600 transition-colors ${isScrolled ? 'text-gray-700' : 'text-gray-800 md:text-white/90'}`}>Home</Link>
+            <nav className="hidden lg:flex items-center justify-center gap-8 xl:gap-10">
+              <Link to="/" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white/90'}`}>Home</Link>
               
               {/* Residential Dropdown */}
-              <div className="relative group">
-                <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-colors py-2 ${isScrolled ? 'text-gray-700' : 'text-gray-800 md:text-white/90'}`}>
+              <div className="relative group flex items-center">
+                <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-all duration-300 py-2 ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white/90'}`}>
                   Residential <FiChevronDown className="transition-transform group-hover:rotate-180" />
                 </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-2 flex flex-col overflow-hidden">
@@ -82,8 +84,8 @@ const Header = () => {
               </div>
 
               {/* Commercial Dropdown */}
-              <div className="relative group">
-                <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-colors py-2 ${isScrolled ? 'text-gray-700' : 'text-gray-800 md:text-white/90'}`}>
+              <div className="relative group flex items-center">
+                <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-all duration-300 py-2 ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white/90'}`}>
                   Commercial <FiChevronDown className="transition-transform group-hover:rotate-180" />
                 </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-2 flex flex-col overflow-hidden">
@@ -106,18 +108,14 @@ const Header = () => {
                 </div>
               </div>
 
-              <a href="/#reviews" className={`font-medium hover:text-blue-600 transition-colors ${isScrolled ? 'text-gray-700' : 'text-gray-800 md:text-white/90'}`}>Happy Customers</a>
-              <a href="/#about" className={`font-medium hover:text-blue-600 transition-colors ${isScrolled ? 'text-gray-700' : 'text-gray-800 md:text-white/90'}`}>About</a>
-              <a href="/#how-it-works" className="font-medium text-blue-600 hover:text-blue-700 flex items-center gap-1 group">
-                Reliable Management
-                <span className="block w-1.5 h-1.5 rounded-full bg-blue-600 group-hover:scale-150 transition-transform"></span>
-              </a>
+              <a href="/#reviews" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white/90'}`}>Happy Customers</a>
+              <Link to="/about" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white/90'}`}>About</Link>
             </nav>
 
             {/* Actions */}
-            <div className="flex items-center gap-4">
-              <Link to="/quote" className="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-full shadow-md shadow-blue-600/20 transition-all hover:-translate-y-0.5">
-                Get a Quote
+            <div className="flex-1 flex justify-end items-center gap-4 ml-8 xl:ml-12">
+              <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-7 py-2.5 text-sm font-medium text-white bg-slate-900 hover:bg-blue-600 rounded-full shadow-md shadow-slate-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+                Contact Us
               </Link>
               
               <button 

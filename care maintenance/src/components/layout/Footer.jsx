@@ -16,7 +16,7 @@ const Footer = () => {
                 <Wrench className="text-white w-6 h-6" />
               </div>
               <span className="text-2xl font-bold text-white font-outfit">
-                CarePro
+                CareMaintenance
               </span>
             </div>
             <p className="text-slate-400 leading-relaxed mb-8">
@@ -93,7 +93,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-slate-800 text-center">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} CarePro Maintenance. All rights reserved.
+            &copy; {new Date().getFullYear()} CareMaintenance. All rights reserved.
           </p>
         </div>
       </div>

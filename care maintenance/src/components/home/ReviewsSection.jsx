@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 
 const ReviewsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-gray-50 overflow-hidden">
+    <section className="py-12 md:py-16 bg-gray-50 overflow-hidden">
       <Container>
         <SectionHeading 
           title="What Our Customers Say" 

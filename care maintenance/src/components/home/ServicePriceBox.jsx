@@ -118,7 +118,7 @@ const ServicePriceBox = () => {
   const activePrice = selectedPackageId ? activePackageData.price : 0;
 
   return (
-    <section className="py-16 sm:py-24 bg-surface relative overflow-hidden" ref={ref}>
+    <section className="py-12 sm:py-16 bg-surface relative overflow-hidden" ref={ref}>
       {/* Background Decorative Gradients */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />

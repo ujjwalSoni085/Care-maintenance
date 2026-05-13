@@ -13,7 +13,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50">
+    <section className="py-12 md:py-16 bg-slate-50">
       <motion.div 
         ref={ref}
         initial={{ opacity: 0, y: 30 }}
