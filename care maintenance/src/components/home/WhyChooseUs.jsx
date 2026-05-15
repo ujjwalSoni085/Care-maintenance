@@ -74,13 +74,17 @@ const WhyChooseUs = () => {
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants} className="h-full">
-              <Card hoverable={true} className="p-8 h-full border border-gray-100 flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-sm">
-                  {feature.icon}
+              <div className="group relative bg-white/70 backdrop-blur-xl p-8 h-full rounded-3xl border border-outline-variant/50 hover:border-blue-300 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-blue-500/10 overflow-hidden flex flex-col items-center text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] via-transparent to-cyan-400/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="relative z-10 flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 text-blue-600 flex items-center justify-center text-4xl mb-6 shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-500 ease-out group-hover:from-blue-500 group-hover:to-cyan-400 group-hover:text-white group-hover:border-blue-400">
+                    <span className="group-hover:rotate-3 transition-transform duration-500">{feature.icon}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-surface-dark mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-500">{feature.title}</h3>
+                  <p className="text-text-muted leading-relaxed font-medium">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-3 font-heading">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </Card>
+              </div>
             </motion.div>
           ))}
         </motion.div>

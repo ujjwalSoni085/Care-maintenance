@@ -1,15 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1a365d;
+  --color-primary: #000000;
   --color-primary-light: #2a4a7f;
-  --color-accent: #f97316;
-  --color-accent-hover: #ea580c;
-  --color-surface: #f8fafc;
-  --color-card: #ffffff;
-  --color-dark: #0f172a;
-  --font-heading: 'Outfit', sans-serif;
+  --color-primary-container: #0d1c32;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #76849f;
+  --color-secondary: #00658e;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #5ec2fd;
+  --color-tertiary: #000000;
+  --color-surface: #f7f9fb;
+  --color-surface-dark: #112240;
+  --color-surface-dim: #d8dadc;
+  --color-surface-bright: #f7f9fb;
+  --color-background: #f7f9fb;
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #44474d;
+  --color-outline: #75777e;
+  --color-outline-variant: #c5c6cd;
+  --color-error: #ba1a1a;
+  --color-success-mint: #D9F2E6;
+  --color-text-muted: #64748B;
+
+  --font-body-lg: 'Inter', sans-serif;
+  --font-body-md: 'Inter', sans-serif;
+  --font-headline-md: 'Manrope', sans-serif;
+  --font-display-lg: 'Manrope', sans-serif;
+  --font-display-lg-mobile: 'Manrope', sans-serif;
+  --font-body-sm: 'Inter', sans-serif;
+  --font-label-bold: 'Inter', sans-serif;
+  --font-headline-sm: 'Manrope', sans-serif;
+
+  --font-heading: 'Manrope', sans-serif;
   --font-body: 'Inter', sans-serif;
+  
   --animate-shimmer: shimmer 1.5s infinite;
   @keyframes shimmer {
     0% { transform: translateX(100%); }
@@ -22,4 +47,15 @@ html {
 
 body {
   font-family: var(--font-body);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
 }

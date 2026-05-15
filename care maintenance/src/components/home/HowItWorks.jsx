@@ -88,28 +88,31 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <motion.div 
                 key={step.id} 
-                className="flex flex-col items-center text-center group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+                className="flex flex-col items-center text-center group bg-white/70 backdrop-blur-xl rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 border border-outline-variant/50 hover:border-blue-300 relative overflow-hidden"
                 variants={itemVariants}
               >
+                {/* Subtle gradient glow background on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] via-transparent to-cyan-400/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                
                 {/* Number Badge & Icon Container */}
-                <div className="relative mb-6">
-                  <div className="w-20 h-20 rounded-full bg-gray-50 shadow-inner flex items-center justify-center relative z-10 border border-gray-100">
-                    <div className="w-[60px] h-[60px] rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="relative mb-6 z-10">
+                  <div className="w-20 h-20 rounded-full bg-blue-50/50 shadow-inner flex items-center justify-center relative z-10 border border-blue-100 group-hover:border-blue-300 transition-colors duration-500">
+                    <div className="w-[60px] h-[60px] rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500">
                       {step.icon}
                     </div>
                   </div>
                   
                   {/* Step Number */}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-accent text-white font-bold flex items-center justify-center shadow-md border-2 border-white z-20">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold flex items-center justify-center shadow-md border-2 border-white z-20">
                     {step.id}
                   </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-primary mb-3 font-heading">
+                <h3 className="text-xl font-bold text-surface-dark mb-3 font-heading group-hover:text-blue-600 transition-colors duration-500 tracking-tight">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                <p className="text-text-muted text-sm md:text-base leading-relaxed font-medium z-10">
                   {step.description}
                 </p>
               </motion.div>

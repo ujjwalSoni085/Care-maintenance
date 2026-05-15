@@ -86,7 +86,7 @@ const HeroCarousel = () => {
                       <Button variant="primary" size="lg" href={slide.path} className="w-full sm:w-auto text-center justify-center">
                         {slide.cta}
                       </Button>
-                      <Button variant="outline" size="lg" href="/services" className="w-full sm:w-auto text-center justify-center border-white text-white hover:bg-white hover:text-dark">
+                      <Button variant="outline" size="lg" href="/services" className="w-full sm:w-auto text-center justify-center">
                         Our Services
                       </Button>
                     </div>
