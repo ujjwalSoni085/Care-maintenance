@@ -43,7 +43,7 @@ const HowItWorks = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -61,7 +61,7 @@ const HowItWorks = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 bg-gray-50 relative overflow-hidden">
+    <section className="py-14 md:py-16 bg-white relative overflow-hidden">
       <Container>
         <div className="flex flex-col items-center">
           <SectionHeading 
@@ -73,11 +73,11 @@ const HowItWorks = () => {
 
         <div 
           ref={ref}
-          className="relative mt-16 max-w-6xl mx-auto"
+          className="relative mt-10 max-w-6xl mx-auto"
         >
           {/* Connecting dashed line (Desktop only) */}
           {/* Adjusted top value to align with the center of the icons inside the cards */}
-          <div className="hidden lg:block absolute top-[80px] left-[12%] right-[12%] h-[2px] border-t-2 border-dashed border-gray-300 z-0 opacity-60"></div>
+          <div className="hidden lg:block absolute top-[80px] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent z-0" />
 
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative z-10"
@@ -88,7 +88,7 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <motion.div 
                 key={step.id} 
-                className="flex flex-col items-center text-center group bg-white/70 backdrop-blur-xl rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 border border-outline-variant/50 hover:border-blue-300 relative overflow-hidden"
+                className="flex flex-col items-center text-center group bg-white/70 backdrop-blur-xl rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 hover:ring-1 hover:ring-blue-200/50 transition-all duration-500 hover:-translate-y-2 border border-outline-variant/50 hover:border-blue-300 relative overflow-hidden"
                 variants={itemVariants}
               >
                 {/* Subtle gradient glow background on hover */}
@@ -96,25 +96,29 @@ const HowItWorks = () => {
                 
                 {/* Number Badge & Icon Container */}
                 <div className="relative mb-6 z-10">
-                  <div className="w-20 h-20 rounded-full bg-blue-50/50 shadow-inner flex items-center justify-center relative z-10 border border-blue-100 group-hover:border-blue-300 transition-colors duration-500">
-                    <div className="w-[60px] h-[60px] rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500">
-                      {step.icon}
-                    </div>
-                  </div>
+                  <motion.div 
+                    className="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center shadow-md relative z-10"
+                    whileHover={{ y: -4, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    {step.icon}
+                  </motion.div>
                   
                   {/* Step Number */}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold flex items-center justify-center shadow-md border-2 border-white z-20">
+                  <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-black text-xs flex items-center justify-center shadow-md border-2 border-white z-20">
                     {step.id}
                   </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-surface-dark mb-3 font-heading group-hover:text-blue-600 transition-colors duration-500 tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="text-text-muted text-sm md:text-base leading-relaxed font-medium z-10">
-                  {step.description}
-                </p>
+                <div className="flex flex-col gap-y-1 items-center">
+                  <h3 className="text-xl font-bold text-surface-dark font-heading group-hover:text-blue-600 transition-colors duration-500 tracking-tight">
+                    {step.title}
+                  </h3>
+                  <p className="text-text-muted text-sm md:text-base leading-relaxed font-medium z-10">
+                    {step.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </motion.div>

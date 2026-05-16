@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const SectionHeading = ({
   title,
@@ -22,13 +23,19 @@ const SectionHeading = ({
   };
 
   return (
-    <div className={`flex flex-col mb-12 ${alignmentClass} ${className}`}>
-      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 font-heading">
+    <div className={`flex flex-col mb-10 sm:mb-14 ${alignmentClass} ${className}`}>
+      <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-heading tracking-tight leading-tight">
         {renderTitle()}
       </h2>
       
       {/* Accent colored underline bar */}
-      <div className="w-20 h-1.5 bg-accent rounded-full mb-6"></div>
+      <motion.div 
+        initial={{ width: 0 }} 
+        whileInView={{ width: '3rem' }} 
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="h-1 bg-accent rounded-full mb-6"
+      />
       
       {subtitle && (
         <p className="text-gray-600 max-w-2xl text-lg md:text-xl">

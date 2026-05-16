@@ -41,6 +41,22 @@
   }
 }
 
+@utility text-display {
+  @apply text-5xl md:text-6xl lg:text-7xl;
+}
+@utility text-heading {
+  @apply text-3xl md:text-4xl lg:text-5xl;
+}
+@utility text-subhead {
+  @apply text-xl md:text-2xl;
+}
+@utility text-body-text {
+  @apply text-base md:text-lg;
+}
+@utility text-caption {
+  @apply text-sm;
+}
+
 html {
   scroll-behavior: smooth;
 }

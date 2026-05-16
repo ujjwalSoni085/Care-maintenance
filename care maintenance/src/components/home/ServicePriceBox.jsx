@@ -7,7 +7,7 @@ const comboPackages = [
   {
     id: 'basic',
     name: 'Basic Combo Plan',
-    price: 24999,
+    price: 25550,
     features: ['Quarterly maintenance visits', 'Standard support', 'Essential services included']
   },
   {
@@ -118,7 +118,7 @@ const ServicePriceBox = () => {
   const activePrice = selectedPackageId ? activePackageData.price : 0;
 
   return (
-    <section className="py-12 sm:py-16 bg-surface relative overflow-hidden" ref={ref}>
+    <section className="py-14 md:py-16 bg-surface relative overflow-hidden" ref={ref}>
       {/* Background Decorative Gradients */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/15 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-400/15 rounded-full blur-[100px] pointer-events-none" />
@@ -133,7 +133,7 @@ const ServicePriceBox = () => {
           
           {/* Header */}
           <div className="text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-bold tracking-wider uppercase mb-6 border border-accent/20">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-accent/10 to-orange-500/10 text-accent px-5 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6 border border-accent/20 shadow-sm">
               <Sparkles className="w-4 h-4" /> Comprehensive Care
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary font-heading mb-6 tracking-tight leading-tight">
@@ -158,18 +158,18 @@ const ServicePriceBox = () => {
                 {comboPackages.map((pkg) => (
                   <motion.div
                     key={pkg.id}
-                    whileHover={{ y: -8 }}
+                    whileHover={{ y: -5 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setSelectedPackageId(pkg.id)}
                     layout
-                    className={`relative cursor-pointer rounded-3xl p-6 sm:p-8 border-2 transition-all duration-500 flex flex-col h-full bg-white/90 backdrop-blur-sm z-10 ${
+                    className={`group relative cursor-pointer rounded-3xl p-6 sm:p-8 border-2 transition-all duration-500 flex flex-col h-full bg-white/90 backdrop-blur-sm z-10 ${
                       selectedPackageId === pkg.id
-                        ? 'border-accent shadow-[0_25px_50px_-12px_rgba(249,115,22,0.25)] ring-4 ring-accent/10 scale-[1.02] md:scale-105 z-20'
+                        ? 'border-accent shadow-[0_25px_50px_-12px_rgba(249,115,22,0.25)] ring-2 ring-accent/20 scale-[1.02] md:scale-105 z-20'
                         : 'border-gray-100 shadow-sm hover:border-gray-300 hover:shadow-xl opacity-70 hover:opacity-100'
                     }`}
                   >
                     {pkg.isPopular && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg whitespace-nowrap z-20">
+                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-4 py-1 rounded-full text-[10px] font-semibold uppercase tracking-[0.2em] shadow-[0_0_12px_rgba(249,115,22,0.4)] whitespace-nowrap z-20 group-hover:-translate-y-1 group-hover:shadow-[0_0_16px_rgba(249,115,22,0.6)] transition-all duration-300">
                         Most Popular
                       </div>
                     )}
@@ -191,7 +191,13 @@ const ServicePriceBox = () => {
                         {pkg.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start gap-3">
                             <div className={`mt-0.5 rounded-full p-1 transition-colors duration-300 ${selectedPackageId === pkg.id ? 'bg-accent/10' : 'bg-gray-50'}`}>
-                              <Check className={`w-4 h-4 shrink-0 ${selectedPackageId === pkg.id ? 'text-accent' : 'text-gray-400'}`} />
+                              <motion.div
+                                initial={{ scale: 0.8 }}
+                                animate={{ scale: 1 }}
+                                transition={{ type: 'spring', stiffness: 400 }}
+                              >
+                                <Check className={`w-4 h-4 shrink-0 ${selectedPackageId === pkg.id ? 'text-accent' : 'text-gray-400'}`} />
+                              </motion.div>
                             </div>
                             <span className={`font-medium text-sm sm:text-base leading-snug transition-colors duration-300 ${selectedPackageId === pkg.id ? 'text-gray-800' : 'text-gray-500'}`}>
                               {feature}
@@ -211,6 +217,7 @@ const ServicePriceBox = () => {
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
                   className="mt-16 pt-12 border-t border-gray-100/80 flex flex-col md:flex-row items-center justify-between gap-10"
                 >
                   <div className="text-center md:text-left flex-1">
@@ -229,7 +236,7 @@ const ServicePriceBox = () => {
                   <motion.button 
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
-                    className="w-full md:w-auto px-8 sm:px-12 py-6 bg-primary hover:bg-primary-light text-white rounded-2xl font-bold text-xl sm:text-2xl transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 flex items-center justify-center gap-4 relative overflow-hidden group border border-white/10"
+                    className="w-full md:w-auto px-8 sm:px-12 py-6 bg-primary hover:bg-primary-light text-white rounded-xl font-bold tracking-[-0.01em] text-xl sm:text-2xl transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 flex items-center justify-center gap-4 relative overflow-hidden group border border-white/10"
                   >
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
                     <span>Get Complete Home Protection</span>

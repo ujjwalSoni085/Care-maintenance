@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 
 const ReviewsSection = () => {
   return (
-    <section className="py-12 md:py-16 bg-gray-50 overflow-hidden">
+    <section className="py-14 md:py-16 bg-white overflow-hidden">
       <Container>
         <SectionHeading 
           title="What Our Customers Say" 
@@ -27,7 +27,7 @@ const ReviewsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mt-12"
+          className="mt-10"
         >
           <Swiper
             modules={[Pagination, Autoplay]}
