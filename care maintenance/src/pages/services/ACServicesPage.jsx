@@ -82,105 +82,80 @@ const ACServicesPage = () => {
           </div>
         </section>
 
-        {/* === AC SPECIFIC PRICING (CLEAN MINIMALIST SECTION) === */}
-        <section className="space-y-16 py-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-surface-dark tracking-tight">Simple, Transparent Pricing</h2>
-            <p className="text-text-muted font-medium max-w-2xl mx-auto text-lg leading-relaxed">
-              No hidden fees. Select the plan that fits your cooling needs perfectly.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
-            {/* Plan 1 */}
-            <div className="bg-white rounded-3xl p-10 border border-outline-variant/30 flex flex-col hover:border-secondary/40 transition-all duration-300 shadow-sm hover:shadow-md">
-              <div className="mb-10">
-                <h3 className="text-gray-500 font-bold uppercase tracking-widest text-xs mb-3">Basic Maintenance</h3>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-bold text-surface-dark">₹7900</span>
-                  <span className="text-text-muted font-medium">/unit</span>
-                </div>
+        {/* === ABOUT OUR AC & COOLING SERVICES === */}
+        <section className="py-12 relative overflow-hidden">
+          {/* Subtle Ambient Background */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-[80px] pointer-events-none -z-10" />
+          
+          <div className="max-w-6xl mx-auto text-center space-y-8 px-4 sm:px-6">
+            <div className="flex flex-col items-center gap-4">
+              {/* AC Themed Icon */}
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-200/50 text-blue-600 flex items-center justify-center shadow-sm relative z-10">
+                <span className="material-symbols-outlined text-3xl font-black animate-pulse" style={{ fontVariationSettings: "'FILL' 1" }}>ac_unit</span>
               </div>
-              <ul className="space-y-5 mb-10 flex-1">
-                <li className="flex items-center gap-3 text-surface-dark/80 font-medium">
-                  <span className="material-symbols-outlined text-secondary text-xl">check</span>
-                  Filter Cleaning
-                </li>
-                <li className="flex items-center gap-3 text-surface-dark/80 font-medium">
-                  <span className="material-symbols-outlined text-secondary text-xl">check</span>
-                  Exterior cleaning
-                </li>
-                <li className="flex items-center gap-3 text-surface-dark/80 font-medium">
-                  <span className="material-symbols-outlined text-secondary text-xl">check</span>
-                  Performance Check
-                </li>
-              </ul>
-              <button className="w-full py-4 rounded-2xl bg-surface-container-highest text-surface-dark font-bold hover:bg-secondary hover:text-white transition-all duration-300">
-                Select Plan
-              </button>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-surface-dark tracking-tight font-heading">
+                About Our AC & Cooling Services
+              </h2>
+              <div className="h-1 bg-blue-500 rounded-full w-12" />
             </div>
 
-            {/* Plan 2 - Featured (Deep Clean) */}
-            <div className="bg-white rounded-3xl p-10 border-2 border-secondary/80 flex flex-col relative shadow-xl hover:shadow-2xl hover:-translate-y-2 lg:scale-105 lg:hover:scale-[1.07] transition-all duration-500 z-10 group">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-white px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.2em] shadow-lg whitespace-nowrap group-hover:scale-105 transition-transform duration-300">
-                Recommended
-              </div>
-              <div className="mb-10">
-                <h3 className="text-secondary font-bold uppercase tracking-widest text-xs mb-3">Professional Deep Clean</h3>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-bold text-surface-dark">₹14999</span>
-                  <span className="text-text-muted font-medium">/unit</span>
-                </div>
-              </div>
-              <ul className="space-y-5 mb-10 flex-1">
-                <li className="flex items-center gap-3 text-surface-dark font-bold">
-                  <span className="material-symbols-outlined text-secondary text-xl font-black">check</span>
-                  Everything in Basic
-                </li>
-                <li className="flex items-center gap-3 text-surface-dark font-medium">
-                  <span className="material-symbols-outlined text-secondary text-xl">check</span>
-                  Coil Jet Wash
-                </li>
-                <li className="flex items-center gap-3 text-surface-dark font-medium">
-                  <span className="material-symbols-outlined text-secondary text-xl">check</span>
-                  Drain Pipe Flushing
-                </li>
-                <li className="flex items-center gap-3 text-surface-dark font-medium">
-                  <span className="material-symbols-outlined text-secondary text-xl">check</span>
-                  Anti-Bacterial Treatment
-                </li>
-              </ul>
-              <button className="w-full py-4 rounded-2xl bg-secondary text-white font-bold shadow-lg shadow-secondary/30 hover:bg-secondary/90 hover:shadow-xl transition-all duration-300">
-                Book This Plan
-              </button>
-            </div>
+            {/* Spacious Glassmorphic Container with two columns */}
+            <div className="group relative bg-gradient-to-br from-white/90 via-white/80 to-blue-50/[0.02] backdrop-blur-2xl p-8 md:p-14 rounded-[2.5rem] border border-outline-variant/60 shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_70px_rgba(59,130,246,0.08)] hover:border-blue-300 transition-all duration-700 overflow-hidden text-left">
+              {/* Top Accent Gradient Bar */}
+              <div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-400" />
+              
+              {/* Decorative subtle electrical waves/glow in background */}
+              <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-400/10 rounded-full blur-[100px] pointer-events-none group-hover:scale-110 transition-transform duration-1000" />
+              <div className="absolute -left-20 -top-20 w-60 h-60 bg-blue-400/5 rounded-full blur-[80px] pointer-events-none" />
 
-            {/* Plan 3 */}
-            <div className="bg-white rounded-3xl p-10 border border-outline-variant/30 flex flex-col hover:border-secondary/40 transition-all duration-300 shadow-sm hover:shadow-md">
-              <div className="mb-10">
-                <h3 className="text-gray-500 font-bold uppercase tracking-widest text-xs mb-3">Expert Repair</h3>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-bold text-surface-dark">₹19999</span>
-                  <span className="text-text-muted font-bold px-2 py-0.5 rounded-md bg-surface-variant/50 text-[10px] uppercase tracking-tighter self-center ml-2">Starting</span>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                {/* Left Side: Elegant Paragraph with Quotes */}
+                <div className="lg:col-span-7 space-y-6 text-left pr-0 lg:pr-6 relative">
+                  <span className="absolute -top-16 -left-6 text-[10rem] font-serif text-blue-500/10 select-none pointer-events-none leading-none">“</span>
+                  <p className="text-gray-700 text-lg md:text-xl leading-relaxed font-semibold relative z-10 italic pl-4">
+                    Our certified technicians deliver professional, energy-efficient, and comprehensive cooling solutions tailored for homes and businesses. From quick repairs and leak detection to full installations and advanced deep cleaning, we ensure every unit runs at peak efficiency and care. With rapid response times, skilled professionals, and a commitment to absolute comfort, we make AC services simple, refreshing, and stress-free for every customer.
+                  </p>
+                  <span className="absolute -bottom-24 right-4 text-[10rem] font-serif text-blue-500/10 select-none pointer-events-none leading-none">”</span>
+                </div>
+
+                {/* Right Side: Trust & Value Pillars */}
+                <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 w-full">
+                  {[
+                    {
+                      icon: "verified_user",
+                      title: "100% Certified Experts",
+                      desc: "All technicians are fully certified for all AC models."
+                    },
+                    {
+                      icon: "bolt",
+                      title: "Rapid Emergency Response",
+                      desc: "Fast, reliable dispatch for urgent cooling concerns."
+                    },
+                    {
+                      icon: "payments",
+                      title: "Upfront Honest Pricing",
+                      desc: "Clear itemized estimates before any hands-on work begins."
+                    }
+                  ].map((pillar, idx) => (
+                    <div 
+                      key={idx} 
+                      className="flex items-start gap-4 p-5 rounded-2xl bg-white/60 border border-outline-variant/40 hover:border-blue-200 hover:bg-blue-500/[0.01] shadow-[0_4px_20px_rgba(0,0,0,0.01)] transition-all duration-300 group/pillar"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-200/20 text-blue-600 flex items-center justify-center shadow-sm group-hover/pillar:scale-110 group-hover/pillar:bg-blue-500 group-hover/pillar:text-white transition-all duration-300 shrink-0">
+                        <span className="material-symbols-outlined text-xl font-bold">{pillar.icon}</span>
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="font-bold text-surface-dark tracking-tight text-base group-hover/pillar:text-blue-600 transition-colors duration-300">
+                          {pillar.title}
+                        </h4>
+                        <p className="text-xs text-text-muted leading-relaxed font-semibold">
+                          {pillar.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <ul className="space-y-5 mb-10 flex-1">
-                <li className="flex items-center gap-3 text-surface-dark/80 font-medium">
-                  <span className="material-symbols-outlined text-secondary text-xl">check</span>
-                  Pressure Testing
-                </li>
-                <li className="flex items-center gap-3 text-surface-dark/80 font-medium">
-                  <span className="material-symbols-outlined text-secondary text-xl">check</span>
-                  Leak Detection
-                </li>
-                <li className="flex items-center gap-3 text-surface-dark/80 font-medium">
-                  <span className="material-symbols-outlined text-secondary text-xl">check</span>
-                  R32 / R410a Top-up
-                </li>
-              </ul>
-              <button className="w-full py-4 rounded-2xl bg-surface-container-highest text-surface-dark font-bold hover:bg-secondary hover:text-white transition-all duration-300">
-                Select Plan
-              </button>
             </div>
           </div>
         </section>

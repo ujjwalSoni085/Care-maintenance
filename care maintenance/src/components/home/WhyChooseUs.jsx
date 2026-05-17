@@ -57,17 +57,20 @@ const itemVariants = {
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-14 md:py-16 bg-gray-50/80 overflow-hidden">
+    <section className="pt-6 pb-14 md:pt-8 md:pb-16 bg-gray-50/80 overflow-hidden">
       <Container>
         <SectionHeading 
           title="Why Choose Us" 
           subtitle="Trusted by thousands of homes & businesses"
           centered={true}
           accentWord="Us"
+          titleClassName="!text-5xl md:!text-6xl lg:!text-7xl"
+          subtitleClassName="!text-xl md:!text-2xl lg:!text-3xl text-gray-700 font-medium"
+          className="!mb-4 sm:!mb-6"
         />
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-2"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

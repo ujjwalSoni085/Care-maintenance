@@ -8,20 +8,41 @@ const comboPackages = [
     id: 'basic',
     name: 'Basic Combo Plan',
     price: 25550,
-    features: ['Quarterly maintenance visits', 'Standard support', 'Essential services included']
+    features: [
+      '8 AC Servicings',
+      'Unlimited Electrical Checkup',
+      'Unlimited Plumbing Checkup',
+      'Appliance Services',
+      'Unlimited Carpenter Checkup',
+      'Pest Control (2 times a year)'
+    ]
   },
   {
     id: 'standard',
     name: 'Standard Combo Plan',
     isPopular: true,
-    price: 44999,
-    features: ['Monthly maintenance visits', 'Priority booking', 'Minor repair coverage']
+    price: 39550,
+    features: [
+      '12 AC Servicings',
+      'Unlimited Electrical Checkup',
+      'Unlimited Plumbing Checkup',
+      'Appliance Services',
+      'Unlimited Carpenter Checkup',
+      'Pest Control (4 times a year)'
+    ]
   },
   {
     id: 'premium',
     name: 'Premium Combo Plan',
-    price: 69999,
-    features: ['Unlimited emergency support', 'Dedicated technician', '24/7 priority assistance', 'Full maintenance protection']
+    price: 59550,
+    features: [
+      '16 AC Servicings',
+      'Unlimited Electrical Checkup',
+      'Unlimited Plumbing Checkup',
+      'Appliance Services',
+      'Unlimited Carpenter Checkup',
+      'Pest Control (6 times a year)'
+    ]
   }
 ];
 

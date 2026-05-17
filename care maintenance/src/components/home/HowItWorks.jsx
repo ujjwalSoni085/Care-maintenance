@@ -61,19 +61,22 @@ const HowItWorks = () => {
   };
 
   return (
-    <section className="py-14 md:py-16 bg-white relative overflow-hidden">
+    <section className="pt-6 pb-14 md:pt-8 md:pb-16 bg-white relative overflow-hidden">
       <Container>
         <div className="flex flex-col items-center">
           <SectionHeading 
             title="How It Works" 
             subtitle="Book a service in 4 easy steps"
             centered={true}
+            titleClassName="!text-5xl md:!text-6xl lg:!text-7xl"
+            subtitleClassName="!text-xl md:!text-2xl lg:!text-3xl text-gray-700 font-medium"
+            className="!mb-4 sm:!mb-6"
           />
         </div>
 
         <div 
           ref={ref}
-          className="relative mt-10 max-w-6xl mx-auto"
+          className="relative mt-2 max-w-6xl mx-auto"
         >
           {/* Connecting dashed line (Desktop only) */}
           {/* Adjusted top value to align with the center of the icons inside the cards */}
