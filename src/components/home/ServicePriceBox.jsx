@@ -8,20 +8,41 @@ const comboPackages = [
     id: 'basic',
     name: 'Basic Combo Plan',
     price: 25550,
-    features: ['8 Ac-servicings', 'Electrical Checkup unlimited', 'Plumbing Checkup unlimited', 'Appliance services', 'carpainter Checkup unlimited', 'pest control 2 times a year']
+    features: [
+      '8 AC Servicings',
+      'Unlimited Electrical Checkup',
+      'Unlimited Plumbing Checkup',
+      'Appliance Services',
+      'Unlimited Carpenter Checkup',
+      'Pest Control (2 times a year)'
+    ]
   },
   {
     id: 'standard',
     name: 'Standard Combo Plan',
     isPopular: true,
     price: 39550,
-    features: ['12 Ac-servicings', 'Electrical Checkup unlimited', 'Plumbing Checkup unlimited', 'Appliance services', 'carpainter Checkup unlimited', 'pest control 4 times a year']
+    features: [
+      '12 AC Servicings',
+      'Unlimited Electrical Checkup',
+      'Unlimited Plumbing Checkup',
+      'Appliance Services',
+      'Unlimited Carpenter Checkup',
+      'Pest Control (4 times a year)'
+    ]
   },
   {
     id: 'premium',
     name: 'Premium Combo Plan',
     price: 59550,
-    features: ['16 Ac-servicings', 'Electrical Checkup unlimited', 'Plumbing Checkup unlimited', 'Appliance services', 'carpainter Checkup unlimited', 'pest control 6 times a year']
+    features: [
+      '16 AC Servicings',
+      'Unlimited Electrical Checkup',
+      'Unlimited Plumbing Checkup',
+      'Appliance Services',
+      'Unlimited Carpenter Checkup',
+      'Pest Control (6 times a year)'
+    ]
   }
 ];
 
@@ -59,7 +80,7 @@ const PlanDropdown = ({ options, value, onChange }) => {
       >
         {/* Glow effect on hover */}
         <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/5 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
+        
         <div className="flex items-center gap-4 relative z-10">
           <div className="p-2 bg-primary/5 rounded-full text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
             <ShieldCheck className="w-6 h-6" />
@@ -88,10 +109,11 @@ const PlanDropdown = ({ options, value, onChange }) => {
                     onChange(option.id);
                     setIsOpen(false);
                   }}
-                  className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl text-left transition-all duration-200 group ${value === option.id
-                    ? 'bg-accent/10 text-accent font-bold'
-                    : 'text-gray-600 hover:bg-gray-50/80 font-semibold hover:text-primary'
-                    }`}
+                  className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl text-left transition-all duration-200 group ${
+                    value === option.id 
+                      ? 'bg-accent/10 text-accent font-bold' 
+                      : 'text-gray-600 hover:bg-gray-50/80 font-semibold hover:text-primary'
+                  }`}
                 >
                   <span className="text-lg">{option.name}</span>
                   {value === option.id && (
@@ -122,14 +144,14 @@ const ServicePriceBox = () => {
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/15 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-400/15 rounded-full blur-[100px] pointer-events-none" />
 
-      <motion.div
+      <motion.div 
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.7 }}
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         <div className="bg-white/70 backdrop-blur-2xl rounded-[2.5rem] shadow-lg md:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-white overflow-hidden ring-1 ring-gray-100/50 p-6 sm:p-10 md:p-16 transition-all duration-300">
-
+          
           {/* Header */}
           <div className="text-center mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-accent/10 to-orange-500/10 text-accent px-5 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6 border border-accent/20 shadow-sm">
@@ -144,10 +166,10 @@ const ServicePriceBox = () => {
           </div>
 
           {/* Animated Dropdown */}
-          <PlanDropdown
-            options={comboPackages}
-            value={selectedPackageId}
-            onChange={setSelectedPackageId}
+          <PlanDropdown 
+            options={comboPackages} 
+            value={selectedPackageId} 
+            onChange={setSelectedPackageId} 
           />
 
           <div className="space-y-12">
@@ -161,17 +183,18 @@ const ServicePriceBox = () => {
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setSelectedPackageId(pkg.id)}
                     layout
-                    className={`group relative cursor-pointer rounded-3xl p-6 sm:p-8 border-2 transition-all duration-500 flex flex-col h-full bg-white/90 backdrop-blur-sm z-10 ${selectedPackageId === pkg.id
-                      ? 'border-accent shadow-[0_25px_50px_-12px_rgba(249,115,22,0.25)] ring-2 ring-accent/20 scale-[1.02] md:scale-105 z-20'
-                      : 'border-gray-100 shadow-sm hover:border-gray-300 hover:shadow-xl opacity-70 hover:opacity-100'
-                      }`}
+                    className={`group relative cursor-pointer rounded-3xl p-6 sm:p-8 border-2 transition-all duration-500 flex flex-col h-full bg-white/90 backdrop-blur-sm z-10 ${
+                      selectedPackageId === pkg.id
+                        ? 'border-accent shadow-[0_25px_50px_-12px_rgba(249,115,22,0.25)] ring-2 ring-accent/20 scale-[1.02] md:scale-105 z-20'
+                        : 'border-gray-100 shadow-sm hover:border-gray-300 hover:shadow-xl opacity-70 hover:opacity-100'
+                    }`}
                   >
                     {pkg.isPopular && (
                       <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-4 py-1 rounded-full text-[10px] font-semibold uppercase tracking-[0.2em] shadow-[0_0_12px_rgba(249,115,22,0.4)] whitespace-nowrap z-20 group-hover:-translate-y-1 group-hover:shadow-[0_0_16px_rgba(249,115,22,0.6)] transition-all duration-300">
                         Most Popular
                       </div>
                     )}
-
+                    
                     <div className="text-center mb-8">
                       <h3 className={`text-2xl font-bold font-heading mb-2 transition-colors duration-300 ${selectedPackageId === pkg.id ? 'text-accent' : 'text-primary'}`}>
                         {pkg.name}
@@ -212,7 +235,7 @@ const ServicePriceBox = () => {
             {/* Final Price and CTA */}
             <AnimatePresence>
               {selectedPackageId && (
-                <motion.div
+                <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
@@ -230,8 +253,8 @@ const ServicePriceBox = () => {
                       <span className="text-2xl sm:text-3xl text-gray-400 font-medium mb-2">/ year</span>
                     </div>
                   </div>
-
-                  <motion.button
+                  
+                  <motion.button 
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     className="w-full md:w-auto px-8 sm:px-12 py-6 bg-primary hover:bg-primary-light text-white rounded-xl font-bold tracking-[-0.01em] text-xl sm:text-2xl transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 flex items-center justify-center gap-4 relative overflow-hidden group border border-white/10"
@@ -244,7 +267,7 @@ const ServicePriceBox = () => {
               )}
             </AnimatePresence>
           </div>
-
+          
         </div>
       </motion.div>
     </section>
