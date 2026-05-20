@@ -13,7 +13,7 @@ const AboutPage = React.lazy(() => import('./pages/AboutPage'));
 // Service Detail Pages
 const ElectricianPage = React.lazy(() => import('./pages/services/ElectricianPage'));
 const PlumberPage = React.lazy(() => import('./pages/services/PlumberPage'));
-const CarpenterPage = React.lazy(() => import('./pages/services/CarpenterPage'));
+const CarpenterPage = React.lazy(() => import('./pages/services/Carpainter'));
 const ACServicesPage = React.lazy(() => import('./pages/services/ACServicesPage'));
 const PestControlPage = React.lazy(() => import('./pages/services/PestControlPage'));
 const ApplianceMaintenancePage = React.lazy(() => import('./pages/services/ApplianceMaintenancePage'));
