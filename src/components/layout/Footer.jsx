@@ -16,7 +16,7 @@ const Footer = () => {
                 <Wrench className="text-white w-6 h-6" />
               </div>
               <span className="text-2xl font-bold text-white font-outfit">
-                CareMaintenance
+                CareMaintenance services Pvt Ltd.
               </span>
             </div>
             <p className="text-slate-400 leading-relaxed mb-8">
