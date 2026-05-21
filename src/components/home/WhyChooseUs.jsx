@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Zap, Receipt, Trophy, BadgeCheck, Headphones } from 'lucide-react';
+import { ShieldCheck, Zap, Receipt, Trophy, BadgeCheck, Headphones, UserCheck } from 'lucide-react';
 import Container from '../common/Container';
 import SectionHeading from '../common/SectionHeading';
 import Card from '../common/Card';
@@ -9,32 +9,32 @@ const features = [
   {
     icon: ShieldCheck,
     title: 'Licensed & Insured',
-    description: 'Fully certified professionals you can trust.'
+    description: 'Fully Professional experts you can trust. We carry comprehensive insurance to protect your property and ensure peace of mind.'
   },
   {
     icon: Zap,
     title: 'Fast Response',
-    description: 'Same-day service available, 7 days a week.'
+    description: 'Same-day service available, 7 days a week. Our rapid response team is always ready to tackle your urgent maintenance needs promptly.'
   },
   {
-    icon: Receipt,
-    title: 'Transparent Pricing',
-    description: 'No hidden fees. Know the cost before we start.'
+    icon: UserCheck,
+    title: 'Trusted Professionals',
+    description: 'Skilled and verified experts for every service. Every technician undergoes rigorous background checks and continuous training.'
   },
   {
     icon: Trophy,
     title: 'Experienced Team',
-    description: '10+ years of industry expertise.'
+    description: '10+ years of industry expertise. Our seasoned professionals have handled thousands of successful projects with unmatched knowledge.'
   },
   {
     icon: BadgeCheck,
     title: 'Quality Guaranteed',
-    description: 'We stand behind every job we do.'
+    description: 'We stand behind every job we do. If you aren\'t completely satisfied, we will make it right at no additional cost to you.'
   },
   {
     icon: Headphones,
     title: '24/7 Support',
-    description: 'Round-the-clock customer assistance.'
+    description: 'Round-the-clock customer assistance. Our dedicated support team is available day and night to answer your questions and schedule appointments.'
   }
 ];
 
@@ -59,8 +59,8 @@ const WhyChooseUs = () => {
   return (
     <section className="pt-6 pb-14 md:pt-8 md:pb-16 bg-gray-50/80 overflow-hidden">
       <Container>
-        <SectionHeading 
-          title="Why Choose Us" 
+        <SectionHeading
+          title="Why Choose Us"
           subtitle="Trusted by thousands of homes & businesses"
           centered={true}
           accentWord="Us"
@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
           className="!mb-4 sm:!mb-6"
         />
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-2"
           variants={containerVariants}
           initial="hidden"

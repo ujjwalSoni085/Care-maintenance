@@ -43,6 +43,19 @@ const comboPackages = [
       'Unlimited Carpenter Checkup',
       'Pest Control (6 times a year)'
     ]
+  },
+  {
+    id: 'ultimate',
+    name: 'Ultimate Combo Plan',
+    price: 99550,
+    features: [
+      '22 AC Servicings',
+      'Unlimited Electrical Checkup',
+      'Unlimited Plumbing Checkup',
+      'Appliance Services',
+      'Unlimited Carpenter Checkup',
+      'Pest Control (8 times a year)'
+    ]
   }
 ];
 
@@ -150,17 +163,17 @@ const ServicePriceBox = () => {
         transition={{ duration: 0.7 }}
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
-        <div className="bg-white/70 backdrop-blur-2xl rounded-[2.5rem] shadow-lg md:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-white overflow-hidden ring-1 ring-gray-100/50 p-6 sm:p-10 md:p-16 transition-all duration-300">
+        <div className="bg-white/70 backdrop-blur-2xl rounded-[2.5rem] shadow-lg md:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-white overflow-hidden ring-1 ring-gray-100/50 p-5 sm:p-8 md:p-10 transition-all duration-300">
           
           {/* Header */}
-          <div className="text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-accent/10 to-orange-500/10 text-accent px-5 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6 border border-accent/20 shadow-sm">
-              <Sparkles className="w-4 h-4" /> Comprehensive Care
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-accent/10 to-orange-500/10 text-accent px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase mb-4 border border-accent/20 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5" /> Comprehensive Care
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary font-heading mb-6 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary font-heading mb-3 tracking-tight leading-tight">
               Complete Home Care <br className="hidden sm:block" /> Annual Plan
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 font-medium max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 font-medium max-w-2xl mx-auto">
               Protect your entire home with our comprehensive combo packages combining all essential services.
             </p>
           </div>
@@ -175,52 +188,52 @@ const ServicePriceBox = () => {
           <div className="space-y-12">
             {/* Package Selection Cards */}
             <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-5 relative">
                 {comboPackages.map((pkg) => (
                   <motion.div
                     key={pkg.id}
-                    whileHover={{ y: -5 }}
+                    whileHover={{ y: -4 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setSelectedPackageId(pkg.id)}
                     layout
-                    className={`group relative cursor-pointer rounded-3xl p-6 sm:p-8 border-2 transition-all duration-500 flex flex-col h-full bg-white/90 backdrop-blur-sm z-10 ${
+                    className={`group relative cursor-pointer rounded-2xl p-4 sm:p-5 border-2 transition-all duration-500 flex flex-col h-full bg-white/90 backdrop-blur-sm z-10 ${
                       selectedPackageId === pkg.id
-                        ? 'border-accent shadow-[0_25px_50px_-12px_rgba(249,115,22,0.25)] ring-2 ring-accent/20 scale-[1.02] md:scale-105 z-20'
-                        : 'border-gray-100 shadow-sm hover:border-gray-300 hover:shadow-xl opacity-70 hover:opacity-100'
+                        ? 'border-accent shadow-[0_15px_30px_-10px_rgba(249,115,22,0.25)] ring-1 ring-accent/20 scale-[1.02] z-20'
+                        : 'border-gray-100 shadow-sm hover:border-gray-300 hover:shadow-md opacity-80 hover:opacity-100'
                     }`}
                   >
                     {pkg.isPopular && (
-                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-4 py-1 rounded-full text-[10px] font-semibold uppercase tracking-[0.2em] shadow-[0_0_12px_rgba(249,115,22,0.4)] whitespace-nowrap z-20 group-hover:-translate-y-1 group-hover:shadow-[0_0_16px_rgba(249,115,22,0.6)] transition-all duration-300">
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-3 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-[0.15em] shadow-[0_0_10px_rgba(249,115,22,0.3)] whitespace-nowrap z-20 group-hover:-translate-y-0.5 transition-all duration-300">
                         Most Popular
                       </div>
                     )}
                     
-                    <div className="text-center mb-8">
-                      <h3 className={`text-2xl font-bold font-heading mb-2 transition-colors duration-300 ${selectedPackageId === pkg.id ? 'text-accent' : 'text-primary'}`}>
+                    <div className="text-center mb-5">
+                      <h3 className={`text-lg sm:text-xl font-bold font-heading mb-1.5 transition-colors duration-300 ${selectedPackageId === pkg.id ? 'text-accent' : 'text-primary'}`}>
                         {pkg.name}
                       </h3>
-                      <div className={`mt-4 pt-4 border-t transition-colors duration-300 ${selectedPackageId === pkg.id ? 'border-accent/20' : 'border-gray-100'}`}>
-                        <p className={`text-3xl font-extrabold font-heading ${selectedPackageId === pkg.id ? 'text-accent' : 'text-gray-800'}`}>
+                      <div className={`mt-3 pt-3 border-t transition-colors duration-300 ${selectedPackageId === pkg.id ? 'border-accent/20' : 'border-gray-100'}`}>
+                        <p className={`text-xl sm:text-2xl font-extrabold font-heading ${selectedPackageId === pkg.id ? 'text-accent' : 'text-gray-800'}`}>
                           ₹{pkg.price.toLocaleString('en-IN')}
                         </p>
-                        <p className="text-sm text-gray-400 font-medium mt-1">per year</p>
+                        <p className="text-xs text-gray-400 font-medium mt-0.5">per year</p>
                       </div>
                     </div>
 
                     <div className="flex-grow">
-                      <ul className="space-y-4">
+                      <ul className="space-y-2.5">
                         {pkg.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <div className={`mt-0.5 rounded-full p-1 transition-colors duration-300 ${selectedPackageId === pkg.id ? 'bg-accent/10' : 'bg-gray-50'}`}>
+                          <li key={idx} className="flex items-start gap-2.5">
+                            <div className={`mt-0.5 rounded-full p-0.5 transition-colors duration-300 ${selectedPackageId === pkg.id ? 'bg-accent/10' : 'bg-gray-50'}`}>
                               <motion.div
                                 initial={{ scale: 0.8 }}
                                 animate={{ scale: 1 }}
                                 transition={{ type: 'spring', stiffness: 400 }}
                               >
-                                <Check className={`w-4 h-4 shrink-0 ${selectedPackageId === pkg.id ? 'text-accent' : 'text-gray-400'}`} />
+                                <Check className={`w-3.5 h-3.5 shrink-0 ${selectedPackageId === pkg.id ? 'text-accent' : 'text-gray-400'}`} />
                               </motion.div>
                             </div>
-                            <span className={`font-medium text-sm sm:text-base leading-snug transition-colors duration-300 ${selectedPackageId === pkg.id ? 'text-gray-800' : 'text-gray-500'}`}>
+                            <span className={`font-medium text-xs sm:text-sm leading-snug transition-colors duration-300 ${selectedPackageId === pkg.id ? 'text-gray-800' : 'text-gray-500'}`}>
                               {feature}
                             </span>
                           </li>

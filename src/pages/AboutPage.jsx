@@ -259,6 +259,78 @@ const AboutPage = () => {
                 role: "Sales & Client Relations",
                 desc: "Building strong client relationships and business growth.",
                 image: "/images/vishal_kumar.webp"
+              },
+              {
+                name: "Sweta",
+                role: "Managing Director",
+                desc: "Driving overall business operations and strategic direction.",
+                image: "/images/sweta MD.webp"
+              },
+              {
+                name: "Sanjeev Kumar Singh",
+                role: "Deputy Finance Manager",
+                desc: "Assisting in financial planning, reporting, and asset management.",
+                image: "/images/sanjeev kumar singh deputy finace manager.webp"
+              },
+              {
+                name: "Shudhansu Shekhar",
+                role: "CMA",
+                desc: "Ensuring financial efficiency and management accounting excellence.",
+                image: "/images/shudhansu Shekhar CMA.webp"
+              },
+              {
+                name: "Amit",
+                role: "Software Partner",
+                desc: "Providing technological solutions and software partnership.",
+                image: "/images/amit Software Partner(LOOPINTechies Services (India) Pvt. Ltd.).webp"
+              },
+              {
+                name: "Shukh",
+                role: "HR Relationship Manager",
+                desc: "Fostering employee relations and talent management.",
+                image: "/images/shukh hr relstionship manger.webp"
+              },
+              {
+                name: "Pankaj",
+                role: "Sales Team Leader",
+                desc: "Leading sales initiatives and driving revenue growth.",
+                image: "/images/pankaj sales team leader.webp"
+              },
+              {
+                name: "Shyamu",
+                role: "Zonal Technician Head",
+                desc: "Overseeing technical operations and ensuring service quality.",
+                image: "/images/shyamu zonal technician head.webp"
+              },
+              {
+                name: "Guddu",
+                role: "Zonal Tech Head (NCR & Noida)",
+                desc: "Managing technical services across NCR and Noida regions.",
+                image: "/images/guddu Zonal technician head (NCF & Noida).webp"
+              },
+              {
+                name: "Firoz Khan",
+                role: "AC & Electrical Technician",
+                desc: "Providing expert AC and electrical maintenance and repair services.",
+                image: "/images/firoz-khan-ac & electrical technician.webp"
+              },
+              {
+                name: "Lokesh",
+                role: "Digital Marketing Specialist",
+                desc: "Driving digital growth, branding, and online marketing initiatives.",
+                image: "/images/Lokesh digital marketing.webp"
+              },
+              {
+                name: "Sandhya",
+                role: "Sales Department",
+                desc: "Fostering client acquisition, sales coordination, and growth.",
+                image: "/images/Sandhya sales department.webp"
+              },
+              {
+                name: "Nikita",
+                role: "Sales Representative",
+                desc: "Connecting clients with customized facility management solutions.",
+                image: "/images/nikita sales person.webp"
               }
             ].map((leader, index) => (
               <motion.div
