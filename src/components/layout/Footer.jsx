@@ -44,8 +44,9 @@ const Footer = () => {
             <ul className="space-y-4">
               <li><Link to="/" className="hover:text-primary-400 transition-colors duration-200">Home</Link></li>
               <li><Link to="/about" className="hover:text-primary-400 transition-colors duration-200">About</Link></li>
-              <li><Link to="/happy-customers" className="hover:text-primary-400 transition-colors duration-200">Happy Customers</Link></li>
-              <li><Link to="/faq" className="hover:text-primary-400 transition-colors duration-200">FAQ</Link></li>
+              <li><Link to="/easy-payment" className="hover:text-primary-400 transition-colors duration-200">Easy Payment</Link></li>
+              <li><Link to="/satisfaction-guarantee" className="hover:text-primary-400 transition-colors duration-200">Satisfaction Guarantee</Link></li>
+              <li><Link to="/technician-onboarding" className="hover:text-primary-400 transition-colors duration-200">Technician Onboarding</Link></li>
             </ul>
           </div>
 
@@ -93,7 +94,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-slate-800 text-center">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} CareMaintenance. All rights reserved.
+            &copy; {new Date().getFullYear()} CareMaintenance Services Pvt Ltd. All rights reserved.
           </p>
         </div>
       </div>

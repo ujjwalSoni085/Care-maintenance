@@ -41,7 +41,7 @@ const Header = () => {
         }`}
       >
         <Container>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center gap-12 justify-between w-full">
             {/* Logo */}
             <div className="flex-1 flex justify-start min-w-max pr-4">
               <Link to="/" className="flex items-center gap-2.5 -ml-1 shrink-0">

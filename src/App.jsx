@@ -9,6 +9,10 @@ import './App.css';
 const LocationPage = React.lazy(() => import('./pages/LocationPage'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const AboutPage = React.lazy(() => import('./pages/AboutPage'));
+const EasyPaymentPage = React.lazy(() => import('./pages/services/EasyPaymentPage'));
+const SatisfactionGuaranteePage = React.lazy(() => import('./pages/services/SatisfactionGuaranteePage'));
+const TechnicianOnboardingPage = React.lazy(() => import('./pages/services/TechnicianOnboardingPage'));
+
 
 // Service Detail Pages
 const ElectricianPage = React.lazy(() => import('./pages/services/ElectricianPage'));
@@ -31,6 +35,9 @@ function App() {
               <Route path="/location" element={<LocationPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/easy-payment" element={<EasyPaymentPage />} />
+              <Route path="/satisfaction-guarantee" element={<SatisfactionGuaranteePage />} />
+              <Route path="/technician-onboarding" element={<TechnicianOnboardingPage />} />
               
               {/* Service Pages */}
               <Route path="/services/electrician" element={<ElectricianPage />} />
