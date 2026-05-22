@@ -264,7 +264,7 @@ const AboutPage = () => {
                 name: "Sweta",
                 role: "Managing Director",
                 desc: "Driving overall business operations and strategic direction.",
-                image: "/images/sweta MD.webp"
+                image: "/images/care-maintance-mam-image.webp"
               },
               {
                 name: "Sanjeev Kumar Singh",

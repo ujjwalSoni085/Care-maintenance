@@ -43,16 +43,15 @@ const Header = () => {
         <Container>
           <div className="flex items-center gap-12 justify-between w-full">
             {/* Logo */}
-            <div className="flex-1 flex justify-start min-w-max pr-4">
-              <Link to="/" className="flex items-center gap-2.5 -ml-1 shrink-0">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-sm">
-                  C
-                </div>
-                <span className={`font-bold text-xl tracking-tight whitespace-nowrap ${isScrolled ? 'text-gray-900' : 'text-gray-900 md:text-white'}`}>
-                  Care<span className="text-blue-600">Maintenance</span>
-                </span>
-              </Link>
+            <Link to="/">
+            <div className="flex items-center flex-1 pr-4">
+                <img
+                  src="/images/care-maintenance-logo-removebg-preview.webp"
+                  alt="Care Maintenance Logo"
+                  className="h-11 md:h-15 w-auto object-contain"
+                />
             </div>
+            </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center justify-center gap-8 xl:gap-10">
@@ -114,7 +113,7 @@ const Header = () => {
 
             {/* Actions */}
             <div className="flex-1 flex justify-end items-center gap-4 ml-8 xl:ml-12">
-              <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-7 py-2.5 text-sm font-medium text-white bg-slate-900 hover:bg-blue-600 rounded-full shadow-md shadow-slate-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+              <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-7 py-2.5 text-sm font-medium text-white bg-slate-900 hover:bg-blue-600 rounded-full shadow-md shadow-slate-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap">
                 Contact Us
               </Link>
               
