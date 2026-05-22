@@ -32,7 +32,7 @@ const LocationPage = () => {
           {/* Address Card */}
           <div className="md:col-span-1 lg:col-span-5 xl:col-span-4 bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
             <div>
-              <h3 className="text-2xl font-bold text-primary mb-8 font-heading">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-red-600 mb-8 font-heading">Get in Touch</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -40,7 +40,7 @@ const LocationPage = () => {
                     <FaMapMarkerAlt size={18} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-primary">Office Address</h4>
+                    <h4 className="font-semibold text-lg text-red-600">Office Address</h4>
                     <p className="text-gray-600 mt-1 leading-relaxed">
                       {address}
                     </p>
@@ -52,7 +52,7 @@ const LocationPage = () => {
                     <FaClock size={18} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-primary">Working Hours</h4>
+                    <h4 className="font-semibold text-lg text-red-600">Working Hours</h4>
                     <p className="text-gray-600 mt-1">Mon - Sat: 9:00 AM - 7:00 PM</p>
                     <p className="text-gray-500 text-sm">Sunday: 24/7 Emergencies Only</p>
                   </div>
@@ -63,7 +63,7 @@ const LocationPage = () => {
                     <FaPhoneAlt size={18} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-primary">Contact Number</h4>
+                    <h4 className="font-semibold text-lg text-red-600">Contact Number</h4>
                     <p className="text-gray-600 mt-1">+91 98765 43210</p>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ const LocationPage = () => {
                     <FaEnvelope size={18} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-primary">Email Address</h4>
+                    <h4 className="font-semibold text-lg text-red-600">Email Address</h4>
                     <p className="text-gray-600 mt-1">contact@caremaintenance.com</p>
                   </div>
                 </div>

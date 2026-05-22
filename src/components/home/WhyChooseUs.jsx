@@ -88,7 +88,7 @@ const WhyChooseUs = () => {
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-500 ease-out group-hover:from-blue-500 group-hover:to-cyan-400 group-hover:text-white group-hover:border-blue-400">
                     <feature.icon className="w-8 h-8 group-hover:rotate-3 transition-transform duration-500" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-xl font-bold text-surface-dark mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-500">{feature.title}</h3>
+                  <h3 className="text-xl font-bold text-red-600 mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-500">{feature.title}</h3>
                   <p className="text-text-muted leading-relaxed font-medium">{feature.description}</p>
                 </div>
               </div>

@@ -26,7 +26,7 @@ const SectionHeading = ({
 
   return (
     <div className={`flex flex-col mb-10 sm:mb-14 ${alignmentClass} ${className}`}>
-      <h2 className={`text-4xl md:text-5xl font-bold text-primary mb-4 font-heading tracking-tight leading-tight ${titleClassName}`}>
+      <h2 className={`text-4xl md:text-5xl font-bold text-red-600 mb-4 font-heading tracking-tight leading-tight ${titleClassName}`}>
         {renderTitle()}
       </h2>
       

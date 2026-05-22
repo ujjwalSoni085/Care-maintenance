@@ -29,7 +29,7 @@ const ElectricianPage = () => {
             
             {/* Typography Refinements */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-surface-dark leading-[1.1] tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.1] tracking-tight">
                 {service.headline}
               </h1>
               <p className="text-lg md:text-xl text-text-muted leading-relaxed max-w-lg font-medium">
@@ -93,7 +93,7 @@ const ElectricianPage = () => {
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-200/50 text-blue-600 flex items-center justify-center shadow-sm relative z-10">
                 <span className="material-symbols-outlined text-3xl font-black animate-pulse" style={{ fontVariationSettings: "'FILL' 1" }}>offline_bolt</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-surface-dark tracking-tight font-heading">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight font-heading">
                 About Our Electrical Services
               </h2>
               <div className="h-1 bg-blue-500 rounded-full w-12" />
@@ -145,7 +145,7 @@ const ElectricianPage = () => {
                         <span className="material-symbols-outlined text-xl font-bold">{pillar.icon}</span>
                       </div>
                       <div className="space-y-1">
-                        <h4 className="font-bold text-surface-dark tracking-tight text-base group-hover/pillar:text-blue-600 transition-colors duration-300">
+                        <h4 className="font-bold text-red-600 tracking-tight text-base group-hover/pillar:text-blue-600 transition-colors duration-300">
                           {pillar.title}
                         </h4>
                         <p className="text-xs text-text-muted leading-relaxed font-semibold">
@@ -167,7 +167,7 @@ const ElectricianPage = () => {
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center mb-6 text-white shadow-lg shadow-blue-500/30 overflow-hidden flex-shrink-0">
                 <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-surface-dark mb-4 tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-red-600 mb-4 tracking-tight leading-tight">
                 Comprehensive <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Solutions</span>
               </h2>
               <p className="text-lg text-text-muted leading-relaxed font-medium">
@@ -190,7 +190,7 @@ const ElectricianPage = () => {
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-surface-dark tracking-tight">The Care Maintenance Difference</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">The Care Maintenance Difference</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {(service.benefits || []).map((benefit, index) => (
@@ -208,7 +208,7 @@ const ElectricianPage = () => {
                   </div>
                   
                   {/* Improved Typography */}
-                  <h4 className="text-xl font-bold text-surface-dark mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-500">{benefit.title}</h4>
+                  <h4 className="text-xl font-bold text-red-600 mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-500">{benefit.title}</h4>
                   <p className="text-text-muted leading-relaxed font-medium">{benefit.description}</p>
                 </div>
               </div>
@@ -222,7 +222,7 @@ const ElectricianPage = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[120%] bg-gradient-to-tr from-blue-500/10 via-cyan-400/10 to-transparent blur-[120px] -z-10 rounded-full pointer-events-none"></div>
 
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-surface-dark tracking-tight">Our Recent Work</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">Our Recent Work</h2>
             <p className="text-lg text-text-muted font-medium max-w-2xl mx-auto leading-relaxed">
               Safe, certified, and cleanly finished electrical projects for your peace of mind.
             </p>

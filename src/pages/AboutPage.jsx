@@ -82,7 +82,7 @@ const AboutPage = () => {
           variants={fadeIn}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-8">Who We Are</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight mb-8">Who We Are</h2>
           <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-light max-w-3xl mx-auto text-left md:text-center">
             <p>
               I am excited to present CareMS to you, the industry-leading maintenance and repair solution provider in Delhi-NCR. With exclusive service packages offered to both residential and corporate sectors, our branches are strategically distributed throughout the region to ensure clients receive prompt and personalized care.
@@ -113,7 +113,7 @@ const AboutPage = () => {
             className="space-y-8"
           >
             <div className="flex flex-col items-center gap-3">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Our Vision</h2>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">Our Vision</h2>
               <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
             </div>
 
@@ -141,7 +141,7 @@ const AboutPage = () => {
             className="space-y-8"
           >
             <div className="flex flex-col items-center gap-3">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Our Mission</h2>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">Our Mission</h2>
               <div className="w-24 h-1 bg-blue-600 rounded-full"></div>
             </div>
 
@@ -181,7 +181,7 @@ const AboutPage = () => {
             variants={fadeIn}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">Why Choose Us</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight mb-4">Why Choose Us</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
               As the only dedicated maintenance partner, we are:
@@ -203,7 +203,7 @@ const AboutPage = () => {
                 className="bg-white rounded-xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 border border-gray-50"
               >
                 <div className="mb-6">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-red-600 mb-3">{feature.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
@@ -224,7 +224,7 @@ const AboutPage = () => {
             variants={fadeIn}
             className="text-center space-y-4"
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Meet Our Leadership Team</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">Meet Our Leadership Team</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </motion.div>
 
@@ -347,7 +347,7 @@ const AboutPage = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">{leader.name}</h3>
+                <h3 className="text-2xl font-bold text-red-600 mb-1 group-hover:text-blue-600 transition-colors">{leader.name}</h3>
                 <p className="text-blue-600 font-medium mb-4 uppercase tracking-wider text-sm">{leader.role}</p>
                 <p className="text-gray-600 leading-relaxed font-light">{leader.desc}</p>
               </motion.div>

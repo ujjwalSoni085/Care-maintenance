@@ -113,7 +113,7 @@ const SatisfactionGuaranteePage = () => {
               <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-6 shadow-sm border border-slate-100">
                 {item.icon}
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 font-outfit mb-4">{item.title}</h3>
+              <h3 className="text-2xl font-bold text-red-600 font-outfit mb-4">{item.title}</h3>
               <p className="text-slate-600 leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
@@ -167,7 +167,7 @@ const SatisfactionGuaranteePage = () => {
         {/* Testimonials Section */}
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 font-outfit mb-4">Trusted by Thousands</h2>
+            <h2 className="text-3xl font-bold text-red-600 font-outfit mb-4">Trusted by Thousands</h2>
             <p className="text-slate-600">Don't just take our word for it. Hear from our satisfied customers.</p>
           </div>
           
@@ -188,7 +188,7 @@ const SatisfactionGuaranteePage = () => {
                 </div>
                 <p className="text-slate-700 italic mb-6">"{review.content}"</p>
                 <div>
-                  <h4 className="font-bold text-slate-900 font-outfit">{review.name}</h4>
+                  <h4 className="font-bold text-red-600 font-outfit">{review.name}</h4>
                   <p className="text-sm text-slate-500">{review.role}</p>
                 </div>
               </motion.div>

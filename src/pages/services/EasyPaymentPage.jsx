@@ -97,7 +97,7 @@ const EasyPaymentPage = () => {
             className="lg:col-span-8 space-y-6"
           >
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-slate-900 font-outfit mb-6">Select Payment Method</h2>
+              <h2 className="text-2xl font-bold text-red-600 font-outfit mb-6">Select Payment Method</h2>
               
               <div className="grid sm:grid-cols-2 gap-4">
                 {paymentMethods.map((method) => (
@@ -114,7 +114,7 @@ const EasyPaymentPage = () => {
                       {method.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-slate-900">{method.title}</h3>
+                      <h3 className="font-semibold text-red-600">{method.title}</h3>
                       <p className="text-sm text-slate-500 mt-1">{method.description}</p>
                     </div>
                   </button>
@@ -161,7 +161,7 @@ const EasyPaymentPage = () => {
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
                       <CheckCircle2 className="w-8 h-8 text-green-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Payment Successful!</h3>
+                    <h3 className="text-2xl font-bold text-red-600 mb-2">Payment Successful!</h3>
                     <p className="text-slate-600 mb-6">Your transaction has been securely processed.</p>
                     <button
                       onClick={() => {
@@ -188,7 +188,7 @@ const EasyPaymentPage = () => {
           >
             {/* Transparent Pricing Card */}
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
-              <h3 className="text-lg font-bold text-slate-900 font-outfit mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-bold text-red-600 font-outfit mb-4 flex items-center gap-2">
                 <Receipt className="w-5 h-5 text-blue-600" />
                 Transparent Pricing
               </h3>

@@ -170,11 +170,11 @@ const ServicePriceBox = () => {
             <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-accent/10 to-orange-500/10 text-accent px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase mb-4 border border-accent/20 shadow-sm">
               <Sparkles className="w-3.5 h-3.5" /> Comprehensive Care
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary font-heading mb-3 tracking-tight leading-tight">
-              Complete Home Care <br className="hidden sm:block" /> Annual Plan
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-red-600 font-heading mb-3 tracking-tight leading-tight">
+              Complete Property Maintenance Services <br className="hidden" /> Annual Plan
             </h2>
             <p className="text-base sm:text-lg text-gray-600 font-medium max-w-2xl mx-auto">
-              Protect your entire home with our comprehensive combo packages combining all essential services.
+              Protect and maintain every space with our comprehensive service packages covering all essential solutions
             </p>
           </div>
 
@@ -209,7 +209,7 @@ const ServicePriceBox = () => {
                     )}
                     
                     <div className="text-center mb-5">
-                      <h3 className={`text-lg sm:text-xl font-bold font-heading mb-1.5 transition-colors duration-300 ${selectedPackageId === pkg.id ? 'text-accent' : 'text-primary'}`}>
+                      <h3 className={`text-lg sm:text-xl font-bold font-heading mb-1.5 transition-colors duration-300 ${selectedPackageId === pkg.id ? 'text-accent' : 'text-red-600'}`}>
                         {pkg.name}
                       </h3>
                       <div className={`mt-3 pt-3 border-t transition-colors duration-300 ${selectedPackageId === pkg.id ? 'border-accent/20' : 'border-gray-100'}`}>

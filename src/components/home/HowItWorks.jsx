@@ -115,7 +115,7 @@ const HowItWorks = () => {
 
                 {/* Content */}
                 <div className="flex flex-col gap-y-1 items-center">
-                  <h3 className="text-xl font-bold text-surface-dark font-heading group-hover:text-blue-600 transition-colors duration-500 tracking-tight">
+                  <h3 className="text-xl font-bold text-red-600 font-heading group-hover:text-blue-600 transition-colors duration-500 tracking-tight">
                     {step.title}
                   </h3>
                   <p className="text-text-muted text-sm md:text-base leading-relaxed font-medium z-10">

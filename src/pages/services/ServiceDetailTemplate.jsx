@@ -14,7 +14,7 @@ const ServiceDetailTemplate = ({ service }) => {
               <span className="material-symbols-outlined text-[16px]">home_repair_service</span>
               {service.badge || service.title}
             </div>
-            <h1 className="font-display-md-mobile md:font-display-md text-surface-dark">
+            <h1 className="font-display-md-mobile md:font-display-md text-red-600">
               {service.headline}
             </h1>
             <p className="font-body-lg text-text-muted">
@@ -41,7 +41,7 @@ const ServiceDetailTemplate = ({ service }) => {
             <div className="w-14 h-14 rounded-lg bg-primary-container flex items-center justify-center mb-6 text-secondary-container">
               <span className="material-symbols-outlined text-[28px]" style={{ fontVariationSettings: "'FILL' 1" }}>list_alt</span>
             </div>
-            <h2 className="font-headline-md text-surface-dark mb-4">What We Offer</h2>
+            <h2 className="font-headline-md text-red-600 mb-4">What We Offer</h2>
           </div>
           <div className="w-full md:w-2/3">
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -58,7 +58,7 @@ const ServiceDetailTemplate = ({ service }) => {
         {/* === SECTION 3: Why Choose Us === */}
         <section className="space-y-8 pt-8">
           <div className="text-center">
-            <h2 className="font-display-sm text-surface-dark">Why Choose Us</h2>
+            <h2 className="font-display-sm text-red-600">Why Choose Us</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {(service.whyChooseUs || service.benefits || []).map((benefit, index) => (
@@ -66,7 +66,7 @@ const ServiceDetailTemplate = ({ service }) => {
                 <div className="w-12 h-12 mx-auto rounded-full bg-secondary/10 text-secondary flex items-center justify-center mb-4">
                   <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>{benefit.icon || 'verified'}</span>
                 </div>
-                <h4 className="font-label-bold text-surface-dark mb-2">{benefit.title}</h4>
+                <h4 className="font-label-bold text-red-600 mb-2">{benefit.title}</h4>
                 <p className="font-body-sm text-text-muted">{benefit.description}</p>
               </div>
             ))}
@@ -76,7 +76,7 @@ const ServiceDetailTemplate = ({ service }) => {
         {/* === SECTION 4: Photo Gallery === */}
         <section className="space-y-8 pt-8">
           <div className="text-center">
-            <h2 className="font-display-sm text-surface-dark mb-2">Our Work</h2>
+            <h2 className="font-display-sm text-red-600 mb-2">Our Work</h2>
             <p className="font-body-md text-text-muted">See our professionals in action.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

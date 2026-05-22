@@ -135,7 +135,7 @@ const TechnicianOnboardingPage = () => {
                         <div className={`w-12 h-12 rounded-2xl ${step.color} flex items-center justify-center mb-4 shadow-sm`}>
                           {step.icon}
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 font-outfit mb-2">{step.title}</h3>
+                        <h3 className="text-xl font-bold text-red-600 font-outfit mb-2">{step.title}</h3>
                         <p className="text-sm text-slate-600 leading-relaxed">{step.description}</p>
                       </div>
                     </div>

@@ -89,7 +89,7 @@ const ReviewsSection = () => {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-bold text-surface-dark group-hover:text-blue-600 transition-colors duration-300 tracking-tight text-base leading-snug">
+                        <h4 className="font-bold text-red-600 group-hover:text-blue-600 transition-colors duration-300 tracking-tight text-base leading-snug">
                           {review.name}
                         </h4>
                         <p className="text-sm font-medium text-text-muted">
