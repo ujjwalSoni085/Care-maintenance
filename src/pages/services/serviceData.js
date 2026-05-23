@@ -25,7 +25,7 @@ export const serviceData = {
       { title: 'Guaranteed Work', description: '100% satisfaction guarantee on all electrical repairs.', icon: 'verified' }
     ],
     gallery: [
-      '/images/services/electrician-1.png',
+      '/images/services/driling image.webp',
       '/images/services/electrician-2.png',
       '/images/services/electrician-3.png',
       '/images/services/electrician-4.png',

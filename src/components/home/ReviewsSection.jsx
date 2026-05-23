@@ -84,8 +84,12 @@ const ReviewsSection = () => {
                       <div className="relative mr-4">
                         {/* Premium active avatar glow */}
                         <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-full blur-sm opacity-20 group-hover:opacity-50 transition-opacity duration-500" />
-                        <div className="relative w-12 h-12 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white flex items-center justify-center font-bold text-base shadow-md border-2 border-white">
-                          {review.initials}
+                        <div className="relative w-12 h-12 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white flex items-center justify-center font-bold text-base shadow-md border-2 border-white overflow-hidden">
+                          {review.image ? (
+                            <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
+                          ) : (
+                            review.initials
+                          )}
                         </div>
                       </div>
                       <div>

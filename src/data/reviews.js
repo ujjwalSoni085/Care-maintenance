@@ -1,58 +1,58 @@
 export const reviews = [
   {
     id: 1,
-    name: 'Priya Sharma',
-    location: 'Saket',
+    name: 'Mr. & Mrs. Chaudhary ',
+    location: 'H-67C Saket Delhi ',
     rating: 5,
-    text: 'Absolutely incredible service. The team was prompt, professional, and went above and beyond to make sure my HVAC system was running perfectly.',
-    initials: 'PS'
+    text: 'Mr. & Mrs. Chaudhary appreciated CareMS India for their professional service, timely support, reliable maintenance solutions, and smooth overall experience with complete customer satisfaction.',
+    image: '/images/mr mis chuadry review.webp'
   },
   {
     id: 2,
-    name: 'Rahul Patel',
-    location: 'Rajiv Chauk',
+    name: 'Mr.& Mrs. Wadhwa',
+    location: 'X-1 Green Park New Delhi',
     rating: 5,
-    text: 'We have been using them for our commercial property maintenance for over a year. Their transparency and quick response times are unmatched.',
-    initials: 'RP'
+    text: 'Mr. & Mrs. Wadhwa praised CareMS India for dependable service, professional staff, timely maintenance support, and a smooth, trustworthy experience for their property care needs',
+    image: '/images/mr mis wadwa care review.webp'
   },
   {
     id: 3,
-    name: 'Ananya Desai',
-    location: 'Gurugram',
-    rating: 5,
-    text: 'The pricing is fair and they never try to upsell you on things you don\'t need. I highly recommend their annual maintenance plan.',
-    initials: 'AD'
+    name: 'MK Jain',
+    location: 'Shivalik New Delhi',
+    rating: 4,
+    text: 'Mr Jain appreciated CareMS India for their prompt service, efficient problem-solving, professional conduct, and reliable support for his property maintenance requirements',
+    image: '/images/MK jain revew care.webp'
   },
   {
     id: 4,
-    name: 'Vikram Singh',
-    location: 'Noida Sector 62',
+    name: 'salim valiya',
+    location: 'Shivalik New Delhi',
     rating: 5,
-    text: 'Managing multiple properties is stressful, but having a reliable team for repairs and maintenance makes it so much easier. Fantastic work!',
-    initials: 'VS'
+    text: 'Managing multiple properties becomes stress-free with a reliable maintenance team handling repairs, upkeep, and support efficiently, ensuring everything stays smooth and well-maintained.',
+    image: '/images/salim valiya review care.webp'
   },
   {
     id: 5,
-    name: 'Sneha Reddy',
-    location: 'Noida Sector 63',
+    name: 'Amolok Singh',
+    location: 'Sainik Farm Delhi',
     rating: 5,
-    text: 'They fixed our plumbing issue the same day I called. The technician was friendly, clean, and explained everything clearly before starting the work.',
-    initials: 'SR'
+    text: 'Reliable technicians, quality workmanship, and fast maintenance support helped us manage multiple properties smoothly without worrying about repairs, cleaning, or regular upkeep issues.',
+    image: '/images/Amolok singh revews.webp'
   },
   {
     id: 6,
-    name: 'Aditya Kumar',
+    name: 'Mr. Ganguly',
     location: 'Noida Sector 52',
-    rating: 5,
-    text: 'It is rare to find a service company that actually shows up exactly when they say they will. Their punctuality and quality of work are a breath of fresh air.',
-    initials: 'AK'
+    rating: 4,
+    text: 'Mr. Ganguly appreciated CareMS India for their prompt service, efficient problem-solving, professional conduct, and reliable support for his property maintenance requirements',
+    image: '/images/ganguli review.webp'
   },
   {
     id: 7,
-    name: 'Kavita Joshi',
-    location: 'Gurugram',
+    name: 'Mrs. Rekha Soni ',
+    location: 'Saket J Block New Delhi ',
     rating: 5,
-    text: 'From the initial phone call to the completion of the job, the experience was seamless. Very professional and highly skilled technicians.',
-    initials: 'KJ'
+    text: 'Mrs. Rekha Soni appreciated CareMS India for reliable maintenance support, professional technicians, timely service, and delivering a smooth, trustworthy property care experience.',
+    image: '/images/Rekha soni review care.webp'
   }
 ];

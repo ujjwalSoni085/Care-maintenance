@@ -246,25 +246,19 @@ const AboutPage = () => {
                 name: "Vashudev Kumar",
                 role: "Founder & Chairman",
                 desc: "Leading the company with vision, trust, and long-term growth.",
-                image: "/images/chairman  of caremaintance.webp"
+                image: "/images/Vasudev Kumar Mahto.webp"
               },
               {
-                name: "Rahul Verma",
-                role: "Human Resources Director",
-                desc: "Managing people, culture, and employee excellence.",
-                image: "/images/Hr head of caremaintance.webp"
-              },
-              {
-                name: "Vishal Kumar",
-                role: "Sales & Client Relations",
-                desc: "Building strong client relationships and business growth.",
-                image: "/images/vishal_kumar.webp"
-              },
-              {
-                name: "Sweta",
+                name: "Shweta saras mahto",
                 role: "Managing Director",
                 desc: "Driving overall business operations and strategic direction.",
                 image: "/images/care-maintance-mam-image.webp"
+              },
+              {
+                name: "VK Mahto",
+                role: "MD",
+                desc: "Guiding the company with expert leadership and strategic vision.",
+                image: "/images/VK Mahto MD.webp"
               },
               {
                 name: "Sanjeev Kumar Singh",
@@ -279,31 +273,103 @@ const AboutPage = () => {
                 image: "/images/shudhansu Shekhar CMA.webp"
               },
               {
-                name: "Amit",
+                name: "Amit Tripathi",
                 role: "Software Partner",
                 desc: "Providing technological solutions and software partnership.",
                 image: "/images/amit Software Partner(LOOPINTechies Services (India) Pvt. Ltd.).webp"
               },
               {
-                name: "Shukh",
+                name: "Sukhvinder Singh",
                 role: "HR Relationship Manager",
                 desc: "Fostering employee relations and talent management.",
                 image: "/images/shukh hr relstionship manger.webp"
               },
-              {
-                name: "Pankaj",
-                role: "Sales Team Leader",
-                desc: "Leading sales initiatives and driving revenue growth.",
-                image: "/images/pankaj sales team leader.webp"
+               {
+                name: "Rahul Verma",
+                role: "Human Resources Director",
+                desc: "Managing people, culture, and employee excellence.",
+                image: "/images/Hr head of caremaintance.webp"
               },
               {
-                name: "Shyamu",
+                name: "Vishal Kumar",
+                role: "Sales & Client Relations",
+                desc: "Building strong client relationships and business growth.",
+                image: "/images/vishal_kumar.webp"
+              },
+              {
+                name: "Pankaj Kumar",
+                role: "Sales Team Leader",
+                desc: "Leading sales initiatives and driving revenue growth.",
+                image: "/images/Pankaj Kumar Marketing.webp"
+              },
+              {
+                name: "Digambar Saw",
+                role: "Marketing",
+                desc: "Driving marketing strategies and brand awareness.",
+                image: "/images/Digambar Saw marketing.webp"
+              },
+              {
+                name: "Dushant Pandey",
+                role: "Marketing Manager",
+                desc: "Leading the marketing team and managing campaigns.",
+                image: "/images/Dushant Pandey marketing manager.webp"
+              },
+              {
+                name: "Hargovind Singh",
+                role: "Marketing Manager",
+                desc: "Overseeing marketing operations and driving growth.",
+                image: "/images/Hargovind Singh marketing manager.webp"
+              },
+              {
+                name: "Harshita Rajput",
+                role: "Marketing",
+                desc: "Executing marketing plans and promotional activities.",
+                image: "/images/Harshita rajput marketing.webp"
+              },
+              {
+                name: "Johnny Batra",
+                role: "Marketing",
+                desc: "Developing marketing collateral and engaging customers.",
+                image: "/images/Johnny Batra marketing.webp"
+              },
+              {
+                name: "Manshi",
+                role: "Marketing",
+                desc: "Assisting in marketing initiatives and social media management.",
+                image: "/images/Manshi marketing.webp"
+              },
+              {
+                name: "Ujjwal Soni",
+                role: "Software Developer",
+                desc: "Building and maintaining technological solutions.",
+                image: "/images/ujjwal soni software deveoper pic.webp"
+              },
+              {
+                name: "Lokesh Kumar",
+                role: "Digital Marketing Specialist",
+                desc: "Driving digital growth, branding, and online marketing initiatives.",
+                image: "/images/Lokesh digital marketing.webp"
+              },
+              {
+                name: "Sandhya Pandey",
+                role: "Business Growth Team",
+                desc: "Fostering client acquisition, sales coordination, and growth.",
+                image: "/images/sandhya pandey 2nd image.webp"
+              },
+              {
+                name: "Nikita Singh",
+                role: "Sales Representative",
+                desc: "Connecting clients with customized facility management solutions.",
+                image: "/images/nikita sales person.webp"
+              },
+              {
+                name: "Shyamu Raj",
                 role: "Zonal Technician Head",
                 desc: "Overseeing technical operations and ensuring service quality.",
                 image: "/images/shyamu zonal technician head.webp"
               },
               {
-                name: "Guddu",
+                name: "Guddu Sharma",
                 role: "Zonal Tech Head (NCR & Noida)",
                 desc: "Managing technical services across NCR and Noida regions.",
                 image: "/images/guddu Zonal technician head (NCF & Noida).webp"
@@ -314,24 +380,7 @@ const AboutPage = () => {
                 desc: "Providing expert AC and electrical maintenance and repair services.",
                 image: "/images/firoz-khan-ac & electrical technician.webp"
               },
-              {
-                name: "Lokesh",
-                role: "Digital Marketing Specialist",
-                desc: "Driving digital growth, branding, and online marketing initiatives.",
-                image: "/images/Lokesh digital marketing.webp"
-              },
-              {
-                name: "Sandhya",
-                role: "Sales Department",
-                desc: "Fostering client acquisition, sales coordination, and growth.",
-                image: "/images/Sandhya sales department.webp"
-              },
-              {
-                name: "Nikita",
-                role: "Sales Representative",
-                desc: "Connecting clients with customized facility management solutions.",
-                image: "/images/nikita sales person.webp"
-              }
+              
             ].map((leader, index) => (
               <motion.div
                 key={index}
