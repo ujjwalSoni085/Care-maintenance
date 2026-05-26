@@ -244,9 +244,9 @@ const AboutPage = () => {
               },
               {
                 name: "Vashudev Kumar",
-                role: "Founder & Chairman",
+                role: "Branch manager",
                 desc: "Leading the company with vision, trust, and long-term growth.",
-                image: "/images/Vasudev Kumar Mahto.webp"
+                image: "/images/vashudev sir pic for managing wale me.webp"
               },
               {
                 name: "Shweta saras mahto",

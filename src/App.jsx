@@ -1,9 +1,11 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Lenis from 'lenis';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import ScrollToTop from './components/layout/ScrollToTop';
+import SplashIntro from './components/common/SplashIntro';
 import './App.css';
 
 const LocationPage = React.lazy(() => import('./pages/LocationPage'));
@@ -23,8 +25,35 @@ const PestControlPage = React.lazy(() => import('./pages/services/PestControlPag
 const ApplianceMaintenancePage = React.lazy(() => import('./pages/services/ApplianceMaintenancePage'));
 const WaterTankCleaningPage = React.lazy(() => import('./pages/services/WaterTankCleaningPage'));
 function App() {
+  const [showSplash, setShowSplash] = useState(false);
+
+  useEffect(() => {
+    // Check if we need to show splash (only once per session)
+    if (!sessionStorage.getItem('care_maintenance_intro')) {
+      setShowSplash(true);
+    }
+
+    // Initialize Lenis Smooth Scroll
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <BrowserRouter>
+      {showSplash && <SplashIntro onComplete={() => setShowSplash(false)} />}
       <ScrollToTop />
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <Header />

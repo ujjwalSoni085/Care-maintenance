@@ -1,4 +1,5 @@
 import React from 'react';
+import BeforeAfterSlider from '../../components/common/BeforeAfterSlider';
 import { serviceData } from './serviceData';
 import { Link } from 'react-router-dom';
 
@@ -186,6 +187,9 @@ const ACServicesPage = () => {
             </div>
           </div>
         </section>
+
+        {/* === BEFORE & AFTER SLIDER === */}
+        <BeforeAfterSlider />
 
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">

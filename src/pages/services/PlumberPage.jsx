@@ -1,4 +1,5 @@
 import React from 'react';
+import BeforeAfterSlider from '../../components/common/BeforeAfterSlider';
 import { serviceData } from './serviceData';
 import { Link } from 'react-router-dom';
 
@@ -22,7 +23,7 @@ const PlumberPage = () => {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-variant/30 border border-outline-variant/30 text-surface-dark text-xs font-bold tracking-widest uppercase shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
               Available for Service
             </div>
@@ -186,6 +187,9 @@ const PlumberPage = () => {
             </div>
           </div>
         </section>
+
+        {/* === BEFORE & AFTER SLIDER === */}
+        <BeforeAfterSlider />
 
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">

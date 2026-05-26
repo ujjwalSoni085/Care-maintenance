@@ -1,4 +1,5 @@
 import React from 'react';
+import BeforeAfterSlider from '../../components/common/BeforeAfterSlider';
 import { serviceData } from './serviceData';
 
 const CarpenterPage = () => {
@@ -183,6 +184,9 @@ const CarpenterPage = () => {
             </div>
           </div>
         </section>
+
+        {/* === BEFORE & AFTER SLIDER === */}
+        <BeforeAfterSlider />
 
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">

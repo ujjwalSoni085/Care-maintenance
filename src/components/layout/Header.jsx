@@ -55,11 +55,11 @@ const Header = () => {
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center justify-center gap-8 xl:gap-10">
-              <Link to="/" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white/90'}`}>Home</Link>
+              <Link to="/" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Home</Link>
               
               {/* Residential Dropdown */}
               <div className="relative group flex items-center">
-                <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-all duration-300 py-2 ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white/90'}`}>
+                <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-all duration-300 py-2 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>
                   Residential <FiChevronDown className="transition-transform group-hover:rotate-180" />
                 </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-2 flex flex-col overflow-hidden">
@@ -84,7 +84,7 @@ const Header = () => {
 
               {/* Commercial Dropdown */}
               <div className="relative group flex items-center">
-                <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-all duration-300 py-2 ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white/90'}`}>
+                <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-all duration-300 py-2 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>
                   Commercial <FiChevronDown className="transition-transform group-hover:rotate-180" />
                 </button>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-2 flex flex-col overflow-hidden">
@@ -107,8 +107,8 @@ const Header = () => {
                 </div>
               </div>
 
-              <a href="/#reviews" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white/90'}`}>Happy Customers</a>
-              <Link to="/about" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800 md:text-white/90'}`}>About</Link>
+              <a href="/#reviews" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Happy Customers</a>
+              <Link to="/about" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>About</Link>
             </nav>
 
             {/* Actions */}

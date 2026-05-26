@@ -83,7 +83,7 @@ const SatisfactionGuaranteePage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-slate-900 font-outfit mb-6 leading-tight"
+            className="text-4xl md:text-5xl font-bold text-red-600 font-outfit mb-6 leading-tight"
           >
             We don't just promise. <br />
             <span className="text-blue-600">We guarantee it.</span>
