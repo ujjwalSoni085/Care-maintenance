@@ -24,6 +24,7 @@ const ACServicesPage = React.lazy(() => import('./pages/services/ACServicesPage'
 const PestControlPage = React.lazy(() => import('./pages/services/PestControlPage'));
 const ApplianceMaintenancePage = React.lazy(() => import('./pages/services/ApplianceMaintenancePage'));
 const WaterTankCleaningPage = React.lazy(() => import('./pages/services/WaterTankCleaningPage'));
+const CommercialPlumberPage = React.lazy(() => import('./pages/services/CommercialPlumberPage'));
 function App() {
   const [showSplash, setShowSplash] = useState(false);
 
@@ -85,6 +86,8 @@ function App() {
               <Route path="/residential/pest-control" element={<PestControlPage />} />
               <Route path="/residential/appliance-maintenance" element={<ApplianceMaintenancePage />} />
               <Route path="/residential/water-tank-cleaning" element={<WaterTankCleaningPage />} />
+              
+              <Route path="/commercial/plumber" element={<CommercialPlumberPage />} />
               
             </Routes>
           </Suspense>

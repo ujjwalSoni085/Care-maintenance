@@ -285,7 +285,7 @@ const AboutPage = () => {
                 image: "/images/shukh hr relstionship manger.webp"
               },
                {
-                name: "Rahul Verma",
+                name: "Bhoori singh",
                 role: "Human Resources Director",
                 desc: "Managing people, culture, and employee excellence.",
                 image: "/images/Hr head of caremaintance.webp"
@@ -304,7 +304,7 @@ const AboutPage = () => {
               },
               {
                 name: "Digambar Saw",
-                role: "Marketing",
+                role: "Marketing Manager",
                 desc: "Driving marketing strategies and brand awareness.",
                 image: "/images/Digambar Saw marketing.webp"
               },
@@ -327,13 +327,13 @@ const AboutPage = () => {
                 image: "/images/Harshita rajput marketing.webp"
               },
               {
-                name: "Johnny Batra",
+                name: "J.K Batra",
                 role: "Marketing",
                 desc: "Developing marketing collateral and engaging customers.",
                 image: "/images/Johnny Batra marketing.webp"
               },
               {
-                name: "Manshi",
+                name: "Mansi Verma",
                 role: "Marketing",
                 desc: "Assisting in marketing initiatives and social media management.",
                 image: "/images/Manshi marketing.webp"
@@ -357,7 +357,7 @@ const AboutPage = () => {
                 image: "/images/sandhya pandey 2nd image.webp"
               },
               {
-                name: "Nikita Singh",
+                name: "Nikita",
                 role: "Sales Representative",
                 desc: "Connecting clients with customized facility management solutions.",
                 image: "/images/nikita sales person.webp"

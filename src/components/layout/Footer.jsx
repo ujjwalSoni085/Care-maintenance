@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaYoutube, FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
+import { FaYoutube, FaInstagram, FaFacebook, FaWhatsapp, FaReddit, FaPinterest } from 'react-icons/fa';
 import { Wrench, MapPin, Clock, Phone } from 'lucide-react';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
@@ -22,19 +23,51 @@ const Footer = () => {
             <p className="text-sm text-slate-400 leading-relaxed mb-8 pr-4">
               Trusted maintenance services designed to keep homes, commercial properties, offices, and facilities in perfect condition year-round.
             </p>
-            <div className="flex space-x-5">
-              <a href="#" className="text-slate-400 hover:text-red-500 hover:scale-125 transition-all duration-300">
+            <div className="flex space-x-5 mb-8">
+              <a href="https://www.youtube.com/@caremsindia" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-red-500 hover:scale-125 transition-all duration-300">
                 <FaYoutube className="w-6 h-6" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-pink-500 hover:scale-125 transition-all duration-300">
+              <a href="https://www.instagram.com/caremsindia/" className="text-slate-400 hover:text-pink-500 hover:scale-125 transition-all duration-300">
                 <FaInstagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-blue-500 hover:scale-125 transition-all duration-300">
+              <a href="https://www.facebook.com/caremsindia/" className="text-slate-400 hover:text-blue-500 hover:scale-125 transition-all duration-300">
                 <FaFacebook className="w-6 h-6" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-green-500 hover:scale-125 transition-all duration-300">
-                <FaWhatsapp className="w-6 h-6" />
+              <a href="https://x.com/caremsindia/" className="text-slate-400 hover:text-black hover:scale-125 transition-all duration-300">
+                <FaXTwitter className="w-6 h-6" />
               </a>
+              <a href="https://www.reddit.com/user/caremsindia/" className="text-slate-400 hover:text-orange-500 hover:scale-125 transition-all duration-300">
+                <FaReddit className="w-6 h-6" />
+              </a>
+              <a href="https://in.pinterest.com/caremsindia/" className="text-slate-400 hover:text-red-600 hover:scale-125 transition-all duration-300">
+                <FaPinterest className="w-6 h-6" />
+              </a>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-primary-500 flex-shrink-0" />
+                <div>
+                  <span className="block text-slate-300 text-sm">Working Hours:</span>
+                  <span className="block text-slate-400 text-sm font-medium">9:00 AM – 8:00 PM</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-primary-500 flex-shrink-0" />
+                <div>
+                  <span className="block text-slate-300 text-sm">Contact Hours:</span>
+                  <span className="block text-slate-400 text-sm font-medium">9:00 AM – 9:00 PM</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <FaWhatsapp className="w-5 h-5 text-primary-500 flex-shrink-0" />
+                <div>
+                  <span className="block text-slate-300 text-sm">WhatsApp Support</span>
+                  <span className="block text-slate-400 text-sm font-medium">24/7</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -62,46 +95,97 @@ const Footer = () => {
           {/* Column 4 - Contact Info */}
           <div className="lg:col-span-4">
             <h3 className="text-lg font-semibold text-white font-outfit mb-6">Our Locations & Contact</h3>
-            
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5 mb-6">
-              <a href="https://maps.google.com/?q=F-321,+Old+MB+Road+Lado+Sarai,+New+Delhi+-+110030" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 group">
+              
+              <a
+                href="https://maps.google.com/?q=F-321,+Old+MB+Road+Lado+Sarai,+New+Delhi+-+110030"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 group"
+              >
                 <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
-                <span className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">F-321, Old MB Road Lado Sarai,<br />New Delhi - 110030</span>
+                <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
+                <p>F-321, Old MB Road Lado Sarai,</p>
+                <p>New Delhi - 110030</p>
+
+                {/* Number */}
+                <a href="tel:+919876543210" className="mt-2 block text-primary-400">
+                 +91 9876543210
+                </a>
+                </div>
               </a>
-              <a href="https://maps.google.com/?q=2/30B,+Opp.Surya+Hotel+Sarai+Jullena,+New+Delhi+-+110025" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 group">
+
+              <a
+                href="https://maps.google.com/?q=2/30B,+Opp.Surya+Hotel+Sarai+Jullena,+New+Delhi+-+110025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 group"
+              >
                 <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
-                <span className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">2/30B, Opp.Surya Hotel Sarai Jullena,<br />New Delhi - 110025</span>
+                <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
+                  <p>2/30B, Opp.Surya Hotel Sarai Jullena,</p>
+                  <p>New Delhi - 110025</p>
+
+                  {/* Number */}
+                  <a href="tel:+919876543210" className="mt-2 block text-primary-400">
+                   +91 9876543210
+                  </a>
+                </div>
               </a>
-              <a href="https://maps.google.com/?q=A-55/8,+DLF-1+Gurugram,+Haryana+-+122002" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 group">
+              <a
+                href="https://maps.google.com/?q=A-55/8,+DLF-1+Gurugram,+Haryana+-+122002"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 group"
+              >
                 <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
-                <span className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">A-55/8, DLF-1 Gurugram,<br />Haryana - 122002</span>
+                <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
+                  <p>A-55/8, DLF-1 Gurugram,</p>
+                  <p>Haryana - 122002</p>
+
+                  {/* Number */}
+                  <a href="tel:+919876543210" className="mt-2 block text-primary-400">
+                   +91 9876543210
+                  </a>
+                </div>
               </a>
-              <a href="https://maps.google.com/?q=G-36,+1st+Floor,+(One+Internet),+Connaught+Place,+New+Delhi+-+110001" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 group">
+              <a
+                href="https://maps.google.com/?q=G-36,+1st+Floor,+(One+Internet),+Connaught+Place,+New+Delhi+-+110001"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 group"
+              >
                 <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
-                <span className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">G-36, 1st Floor, (One Internet),<br />Connaught Place, New Delhi - 110001</span>
+                <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
+                  <p>G-36, 1st Floor, (One Internet),</p>
+                  <p>Connaught Place, New Delhi - 110001</p>
+
+                  {/* Number */}
+                  <a href="tel:+919876543210" className="mt-2 block text-primary-400">
+                   +91 9876543210
+                  </a>
+                </div>
               </a>
-              <a href="https://maps.google.com/?q=E+24+1st+floor,+Noida+sector+3" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 sm:col-span-2 group">
+              <a
+                href="https://maps.google.com/?q=E+24+1st+floor,+Noida+sector+3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 sm:col-span-2 group"
+              >
                 <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
-                <span className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">E 24 1st floor, Noida sector 3</span>
+                <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
+                  <p>E 24 1st floor,</p>
+                  <p>Noida sector 3</p>
+
+                  {/* Number */}
+                  <a href="tel:+919876543210" className="mt-2 block text-primary-400">
+                   +91 9876543210
+                  </a>
+                </div>
               </a>
             </div>
 
-            <div className="pt-6 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-primary-500 flex-shrink-0" />
-                <div>
-                  <span className="block text-slate-300 text-sm">Working Hours:</span>
-                  <span className="block text-slate-400 text-sm font-medium">6:00 AM – 12:00 PM</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary-500 flex-shrink-0" />
-                <div>
-                  <span className="block text-slate-300 text-sm">Contact Hours:</span>
-                  <span className="block text-slate-400 text-sm font-medium">10:00 AM – 6:00 PM</span>
-                </div>
-              </div>
-            </div>
+
           </div>
 
         </div>

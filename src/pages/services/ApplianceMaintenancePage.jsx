@@ -187,9 +187,9 @@ const ApplianceMaintenancePage = () => {
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">The Care Maintenance Difference</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {(service.benefits || []).map((benefit, index) => (
-              <div key={index} className="group relative bg-white/70 backdrop-blur-xl p-8 rounded-3xl border border-outline-variant/50 hover:border-blue-300 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-blue-500/10 overflow-hidden">
+              <div key={index} className="group relative bg-white/70 backdrop-blur-xl p-5 md:p-6 rounded-3xl border border-outline-variant/50 hover:border-blue-300 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-blue-500/10 overflow-hidden">
                 {/* Subtle gradient glow background on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] via-transparent to-cyan-400/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                 
@@ -198,13 +198,13 @@ const ApplianceMaintenancePage = () => {
                 
                 <div className="relative z-10">
                   {/* Icon Container with hover scale and gradient transition */}
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-500 ease-out group-hover:from-blue-500 group-hover:to-cyan-400 group-hover:text-white group-hover:border-blue-400">
-                    <span className="material-symbols-outlined text-2xl group-hover:rotate-3 transition-transform duration-500" style={{ fontVariationSettings: "'FILL' 1" }}>{benefit.icon || 'verified'}</span>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-500 ease-out group-hover:from-blue-500 group-hover:to-cyan-400 group-hover:text-white group-hover:border-blue-400">
+                    <span className="material-symbols-outlined text-xl group-hover:rotate-3 transition-transform duration-500" style={{ fontVariationSettings: "'FILL' 1" }}>{benefit.icon || 'verified'}</span>
                   </div>
                   
                   {/* Improved Typography */}
-                  <h4 className="text-xl font-bold text-red-600 mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-500">{benefit.title}</h4>
-                  <p className="text-text-muted leading-relaxed font-medium">{benefit.description}</p>
+                  <h4 className="text-lg font-bold text-red-600 mb-2 tracking-tight group-hover:text-blue-600 transition-colors duration-500">{benefit.title}</h4>
+                  <p className="text-sm text-text-muted leading-relaxed font-medium">{benefit.description}</p>
                 </div>
               </div>
             ))}

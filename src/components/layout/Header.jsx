@@ -6,6 +6,7 @@ import { FaCoffee } from 'react-icons/fa';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import MobileMenu from './MobileMenu';
 import Container from '../common/Container';
+import { FaHeadset } from "react-icons/fa";
 
 const residentialServices = [
   { name: 'Electrician', icon: <FaBolt className="text-yellow-500" />, path: '/residential/electrician' },
@@ -20,11 +21,11 @@ const residentialServices = [
 const commercialServices = [
   { name: 'HVAC Maintenance', icon: <FaFan className="text-blue-500" />, path: '/commercial/hvac-maintenance' },
   { name: 'Electrical Systems', icon: <FaBolt className="text-yellow-500" />, path: '/commercial/electrical-systems' },
-  { name: 'Fire Safety', icon: <FaFireExtinguisher className="text-red-500" />, path: '/commercial/fire-safety' },
-  { name: 'Elevator & Escalator Upkeep', icon: <FaBuilding className="text-gray-600" />, path: '/commercial/elevator-escalator' },
+  { name: 'Plumber', icon: <FaWrench className="text-blue-400" />, path: '/commercial/plumber' },
+  { name: 'Carpenter', icon: <FaHammer className="text-orange-500" />, path: '/commercial/carpenter' },
   { name: 'Pest Control', icon: <FaBug className="text-green-600" />, path: '/commercial/pest-control' },
-  { name: 'Pantry & Cafeteria Services', icon: <FaCoffee className="text-orange-500" />, path: '/commercial/pantry-cafeteria' },
-  { name: 'Landscaping & Gardening', icon: <FaLeaf className="text-green-500" />, path: '/commercial/landscaping-gardening' },
+  { name: 'All Electronic Appliance Maintenance', icon: <FaPlug className="text-gray-500" />, path: '/commercial/appliance-maintenance' },
+  { name: 'Corporate Complaint & Query Management',icon: <FaHeadset className="text-gray-500" />,path: '/commercial/corporate-helpdesk'},
 ];
 
 const Header = () => {
