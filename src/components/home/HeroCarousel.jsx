@@ -48,7 +48,7 @@ const HeroCarousel = () => {
           {/* Parallax Background */}
           <div 
             className="absolute inset-0 w-[120%] h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${slides[0].image})` }} // Fallback base
+            style={{ backgroundImage: `url('${slides[0].image}')` }} // Fallback base
             data-swiper-parallax="-20%"
           />
 
@@ -64,7 +64,7 @@ const HeroCarousel = () => {
                   {/* Background Image with slight scale animation using motion or swiper parallax */}
                   <motion.div 
                     className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${loadedImages[slide.id] ? 'opacity-100' : 'opacity-0'}`}
-                    style={{ backgroundImage: `url(${slide.image})` }}
+                    style={{ backgroundImage: `url('${slide.image}')` }}
                     initial={{ scale: 1 }}
                     animate={{ scale: isActive ? 1.06 : 1 }}
                     transition={{ duration: 7, ease: [0.25, 1, 0.5, 1] }}

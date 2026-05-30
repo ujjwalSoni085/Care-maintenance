@@ -1,7 +1,7 @@
 export const slides = [
   {
     id: 1,
-    image: '/images/home_services_bg.webp',
+    image: '/images/Group photo.webp',
     title: 'Expert Home Services at Your Doorstep',
     description: 'From plumbing to pest control — trusted professionals for every home need.',
     cta: 'Book a Service',

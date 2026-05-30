@@ -188,6 +188,31 @@ const PestControlPage = () => {
           </div>
         </section>
 
+           {/* video section start from here  */}
+        <section className="py-16 bg-slate-900">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Watch Our Video
+              </h2>
+              <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
+                Learn more about our services and how we help our clients.
+              </p>
+            </div>
+
+            <div className="relative w-full overflow-hidden rounded-xl shadow-lg pt-[56.25%]">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/hLaqpyZiVNc"
+                title="YouTube Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
         {/* === BEFORE & AFTER SLIDER === */}
         <BeforeAfterSlider />
 

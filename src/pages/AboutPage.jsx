@@ -288,7 +288,7 @@ const AboutPage = () => {
                 name: "Bhoori singh",
                 role: "Human Resources Director",
                 desc: "Managing people, culture, and employee excellence.",
-                image: "/images/Hr head of caremaintance.webp"
+                image: "/images/Bhuri Sir.webp"
               },
               {
                 name: "Vishal Kumar",
@@ -312,13 +312,13 @@ const AboutPage = () => {
                 name: "Dushant Pandey",
                 role: "Marketing Manager",
                 desc: "Leading the marketing team and managing campaigns.",
-                image: "/images/Dushant Pandey marketing manager.webp"
+                image: "/images/dushant pandey sales manager.webp"
               },
               {
                 name: "Hargovind Singh",
                 role: "Marketing Manager",
                 desc: "Overseeing marketing operations and driving growth.",
-                image: "/images/Hargovind Singh marketing manager.webp"
+                image: "/images/Hargovind Singh.webp"
               },
               {
                 name: "Harshita Rajput",
@@ -330,25 +330,20 @@ const AboutPage = () => {
                 name: "J.K Batra",
                 role: "Marketing",
                 desc: "Developing marketing collateral and engaging customers.",
-                image: "/images/Johnny Batra marketing.webp"
+                image: "/images/jonny Batra 2.webp"
               },
-              {
-                name: "Mansi Verma",
-                role: "Marketing",
-                desc: "Assisting in marketing initiatives and social media management.",
-                image: "/images/Manshi marketing.webp"
-              },
+             
               {
                 name: "Ujjwal Soni",
                 role: "Software Developer",
                 desc: "Building and maintaining technological solutions.",
-                image: "/images/ujjwal soni software deveoper pic.webp"
+                image: "/images/ujjwal soni image.webp"
               },
               {
                 name: "Lokesh Kumar",
                 role: "Digital Marketing Specialist",
                 desc: "Driving digital growth, branding, and online marketing initiatives.",
-                image: "/images/Lokesh digital marketing.webp"
+                image: "/images/Lokesh Kumar Digital marketing.webp"
               },
               {
                 name: "Sandhya Pandey",
@@ -362,6 +357,50 @@ const AboutPage = () => {
                 desc: "Connecting clients with customized facility management solutions.",
                 image: "/images/nikita sales person.webp"
               },
+               {
+                name: "Mansi Verma",
+                role: "Senior Sales Executive",
+                desc: "Generating leads and converting prospects into customers",
+                image: "/images/Manshi marketing.webp"
+              },
+              {
+                name: "Surjeet Singh",
+                role: "Sales Manager",
+                desc: "Leading sales initiatives and driving revenue growth.",
+                image: "/images/Surjeet Singh Sales manager.webp"
+              },
+              {
+                name: "Swarnali Banerjee",
+                role: "Admin",
+                desc: "Managing administrative operations and ensuring organizational efficiency.",
+                image: "/images/swarnali banerjee from Care mentenace Admin.webp"
+              },
+            
+              {
+                name: "Priya Mahor",
+                role: "Admin",
+                desc: "Supporting daily administrative tasks and office operations.",
+                image: "/images/Priya mahor Admin.webp"
+              },
+              {
+                name: "Neha Singh",
+                role: "Admin",
+                desc: "Facilitating internal communication and administrative workflows.",
+                image: "/images/Neha singh Admin.webp"
+              },
+              {
+                name: "Jyoti Singh",
+                role: "Account",
+                desc: "Managing financial records, billing, and accounting operations.",
+                image: "/images/Jyoti singh account (1).webp"
+              },
+              {
+                name: "Md Kamil Hussain",
+                role: "Head Electrician South Zone",
+                desc: "Overseeing electrical maintenance and operations in the South Zone.",
+                image: "/images/Md Kamil Hussain Head Electrician South zone.webp"
+              },
+              
               {
                 name: "Shyamu Raj",
                 role: "Zonal Technician Head",
@@ -379,8 +418,7 @@ const AboutPage = () => {
                 role: "AC & Electrical Technician",
                 desc: "Providing expert AC and electrical maintenance and repair services.",
                 image: "/images/firoz-khan-ac & electrical technician.webp"
-              },
-              
+              }
             ].map((leader, index) => (
               <motion.div
                 key={index}

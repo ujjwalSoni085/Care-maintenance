@@ -215,7 +215,7 @@ const CommercialPlumberPage = () => {
         </div>
       </section>
 
-      {/* 6. Featured Packages Section */}
+      {/* 6. Featured Packages Section
       <section className="py-24 bg-gray-900 text-white selection:bg-blue-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
@@ -253,7 +253,7 @@ const CommercialPlumberPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 7. Case Studies / Projects Showcase */}
       <section className="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12">
@@ -316,7 +316,7 @@ const CommercialPlumberPage = () => {
         </div>
       </section>
 
-      {/* 9. Testimonials Section */}
+      {/* 9. Testimonials Section
       <section className="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12 overflow-hidden">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight">Client success stories.</h2>
