@@ -25,6 +25,11 @@ const PestControlPage = React.lazy(() => import('./pages/services/PestControlPag
 const ApplianceMaintenancePage = React.lazy(() => import('./pages/services/ApplianceMaintenancePage'));
 const WaterTankCleaningPage = React.lazy(() => import('./pages/services/WaterTankCleaningPage'));
 const CommercialPlumberPage = React.lazy(() => import('./pages/services/CommercialPlumberPage'));
+const CommercialHVACMaintenance = React.lazy(() => import('./pages/services/CommercialHVACMaintenance'));
+const CommercialElectricalSystems = React.lazy(() => import('./pages/services/CommercialElectricalSystems'));
+const CommercialCarpenter = React.lazy(() => import('./pages/services/CommercialCarpenter'));
+const CommercialPestControl = React.lazy(() => import('./pages/services/CommercialPestControl'));
+const CorporateComplaintManagement = React.lazy(() => import('./pages/services/CorporateComplaintManagement'));
 function App() {
   const [showSplash, setShowSplash] = useState(false);
 
@@ -88,6 +93,12 @@ function App() {
               <Route path="/residential/water-tank-cleaning" element={<WaterTankCleaningPage />} />
               
               <Route path="/commercial/plumber" element={<CommercialPlumberPage />} />
+              <Route path="/commercial/hvac-maintenance" element={<CommercialHVACMaintenance />} />
+              <Route path="/commercial/electrical-systems" element={<CommercialElectricalSystems />} />
+              <Route path="/commercial/carpenter" element={<CommercialCarpenter />} />
+              <Route path="/commercial/pest-control" element={<CommercialPestControl />} />
+              <Route path="/commercial/appliance-maintenance" element={<ApplianceMaintenancePage />} />
+              <Route path="/commercial/corporate-helpdesk" element={<CorporateComplaintManagement />} />
               
             </Routes>
           </Suspense>

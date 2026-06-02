@@ -97,92 +97,101 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white font-outfit mb-6">Our Locations & Contact</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5 mb-6">
               
-              <a
-                href="https://maps.google.com/?q=F-321,+Old+MB+Road+Lado+Sarai,+New+Delhi+-+110030"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 group"
-              >
+              <div className="flex items-start gap-3 group">
                 <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
                 <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
-                <p>F-321, Old MB Road Lado Sarai,</p>
-                <p>New Delhi - 110030</p>
-
-                {/* Number */}
-                <a href="tel:+919876543210" className="mt-2 block text-primary-400">
-                 +91 9876543210
-                </a>
-                </div>
-              </a>
-
-              <a
-                href="https://maps.google.com/?q=2/30B,+Opp.Surya+Hotel+Sarai+Jullena,+New+Delhi+-+110025"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 group"
-              >
-                <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
-                <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
-                  <p>2/30B, Opp.Surya Hotel Sarai Jullena,</p>
-                  <p>New Delhi - 110025</p>
-
+                  <a
+                    href="https://maps.google.com/?q=F-321,+Old+MB+Road+Lado+Sarai,+New+Delhi+-+110030"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <p>F-321, Old MB Road Lado Sarai,</p>
+                    <p>New Delhi - 110030</p>
+                  </a>
                   {/* Number */}
                   <a href="tel:+919876543210" className="mt-2 block text-primary-400">
                    +91 9876543210
                   </a>
                 </div>
-              </a>
-              <a
-                href="https://maps.google.com/?q=A-55/8,+DLF-1+Gurugram,+Haryana+-+122002"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 group"
-              >
+              </div>
+
+              <div className="flex items-start gap-3 group">
                 <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
                 <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
-                  <p>A-55/8, DLF-1 Gurugram,</p>
-                  <p>Haryana - 122002</p>
-
+                  <a
+                    href="https://maps.google.com/?q=2/30B,+Opp.Surya+Hotel+Sarai+Jullena,+New+Delhi+-+110025"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <p>2/30B, Opp.Surya Hotel Sarai Jullena,</p>
+                    <p>New Delhi - 110025</p>
+                  </a>
                   {/* Number */}
                   <a href="tel:+919876543210" className="mt-2 block text-primary-400">
                    +91 9876543210
                   </a>
                 </div>
-              </a>
-              <a
-                href="https://maps.google.com/?q=G-36,+1st+Floor,+(One+Internet),+Connaught+Place,+New+Delhi+-+110001"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 group"
-              >
+              </div>
+
+              <div className="flex items-start gap-3 group">
                 <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
                 <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
-                  <p>G-36, 1st Floor, (One Internet),</p>
-                  <p>Connaught Place, New Delhi - 110001</p>
-
+                  <a
+                    href="https://maps.google.com/?q=A-55/8,+DLF-1+Gurugram,+Haryana+-+122002"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <p>A-55/8, DLF-1 Gurugram,</p>
+                    <p>Haryana - 122002</p>
+                  </a>
                   {/* Number */}
                   <a href="tel:+919876543210" className="mt-2 block text-primary-400">
                    +91 9876543210
                   </a>
                 </div>
-              </a>
-              <a
-                href="https://maps.google.com/?q=E+24+1st+floor,+Noida+sector+3"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 sm:col-span-2 group"
-              >
+              </div>
+
+              <div className="flex items-start gap-3 group">
                 <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
                 <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
-                  <p>E 24 1st floor,</p>
-                  <p>Noida sector 3</p>
-
+                  <a
+                    href="https://maps.google.com/?q=G-36,+1st+Floor,+(One+Internet),+Connaught+Place,+New+Delhi+-+110001"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <p>G-36, 1st Floor, (One Internet),</p>
+                    <p>Connaught Place, New Delhi - 110001</p>
+                  </a>
                   {/* Number */}
                   <a href="tel:+919876543210" className="mt-2 block text-primary-400">
                    +91 9876543210
                   </a>
                 </div>
-              </a>
+              </div>
+
+              <div className="flex items-start gap-3 sm:col-span-2 group">
+                <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5 group-hover:text-primary-400 transition-colors" />
+                <div className="text-sm text-slate-400 leading-snug group-hover:text-primary-400 transition-colors">
+                  <a
+                    href="https://maps.google.com/?q=E+24+1st+floor,+Noida+sector+3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <p>E 24 1st floor,</p>
+                    <p>Noida sector 3</p>
+                  </a>
+                  {/* Number */}
+                  <a href="tel:+919876543210" className="mt-2 block text-primary-400">
+                   +91 9876543210
+                  </a>
+                </div>
+              </div>
+
             </div>
 
 

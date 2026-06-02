@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  ArrowRight, CheckCircle2, Shield, Clock, 
-  TrendingUp, ChevronDown, Phone, Mail, Award, 
-  Wrench, RotateCw, Tv, Flame, Droplet, Zap
+  ArrowRight, CheckCircle2, Shield, Bug, Clock, 
+  TrendingUp, ChevronDown, Phone, Mail, Award, Leaf, Trash2
 } from 'lucide-react';
 
 const fadeInUp = {
@@ -28,7 +27,7 @@ const TRUSTED_COMPANIES = [
   { name: 'Anmol Biscuits', logo: '/images/services/anmol biscuits.webp' },
 ];
 
-const ApplianceMaintenancePage = () => {
+const CommercialPestControl = () => {
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
@@ -47,13 +46,13 @@ const ApplianceMaintenancePage = () => {
           >
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm mb-6 text-sm font-medium">
               <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
-              Premium Appliance Repair & Care
+              Premium Commercial Pest Control
             </motion.div>
             <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-8 text-red-600">
-              Appliance Maintenance, <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Simplified</span>
+              Commercial Pest Control, <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Simplified</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl">
-              Keep your home running smoothly with quick, certified, and dependable repairs for washing machines, refrigerators, TVs, microwaves, geysers, and water purifiers.
+              Protect your facility's health, safety, and brand reputation with proactive pest management, rapid emergency response, and eco-friendly solutions tailored for businesses.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
               <button className="px-8 py-4 bg-red-600 text-white rounded-xl font-medium hover:bg-red-700 transition-all flex items-center justify-center gap-2 group shadow-lg shadow-red-600/20">
@@ -85,7 +84,7 @@ const ApplianceMaintenancePage = () => {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gray-900">100% Safe</p>
-                  <p className="text-sm text-gray-600 font-medium">Genuine Parts & Certified</p>
+                  <p className="text-sm text-gray-600 font-medium">Eco-Friendly & Certified</p>
                 </div>
               </div>
             </motion.div>
@@ -107,10 +106,10 @@ const ApplianceMaintenancePage = () => {
             className="text-center mb-16 max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-red-600 mb-6 leading-[1.05]">
-              Trusted by Delhi NCR Households
+              Trusted by Leading Brands Delhi NCR
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl text-gray-500 leading-relaxed">
-              Providing fast, reliable, and manufacturer-approved repair solutions for all major household electronics.
+              Building long-term partnerships through uncompromising reliability, premium service, and enterprise-grade trust.
             </motion.p>
           </motion.div>
 
@@ -120,9 +119,9 @@ const ApplianceMaintenancePage = () => {
             className="flex flex-wrap justify-center gap-6 lg:gap-10 mb-16 py-5 px-10 bg-white/80 backdrop-blur-xl rounded-full border border-[#f1f5f9] shadow-[0_8px_30px_rgb(0,0,0,0.04)] "
           >
             {[
-              { value: '10000+', label: 'Repairs Completed' },
-              { value: '98%', label: 'Satisfaction Rate' },
-              { value: '50+', label: 'Certified Experts' },
+              { value: '5000+', label: 'Projects Completed' },
+              { value: '98%', label: 'Client Satisfaction' },
+              { value: '500+', label: 'Enterprise Clients' },
             ].map((metric, i) => (
               <div key={i} className="flex items-center gap-6">
                 <div className="flex flex-col items-center sm:items-start">
@@ -166,18 +165,18 @@ const ApplianceMaintenancePage = () => {
           variants={fadeInUp}
           className="text-center mb-20"
         >
-          <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-6 text-red-600">Comprehensive Electronic Appliance Care</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">Providing prompt, reliable, and professional repair services for your home and commercial appliances of all makes and models</p>
+          <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-6 text-red-600">Comprehensive Commercial Pest Management</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">Providing efficient and dependable pest control services for properties of all types and sizes, with a commitment to health, safety, and long-term prevention</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { icon: Wrench, title: 'Refrigerator Repair & Servicing', desc: 'Expert fix for cooling loss, compressor breakdowns, sensor faults, and gas refilling for single/double door units.' },
-            { icon: RotateCw, title: 'Washing Machine & Dryer Fixes', desc: 'Resolving drum noise, drainage clogs, motor failures, and PCB board repair for front and top loaders.' },
-            { icon: Flame, title: 'Microwave & Oven Repair', desc: 'Addressing heating failures, magnetron issues, touch panel bugs, and electrical wiring safety faults.' },
-            { icon: Tv, title: 'LED / Smart TV Repair', desc: 'Fixes for black screens, sound issues, display panel replacements, motherboard service, and HDMI ports.' },
-            { icon: Droplet, title: 'Water Purifier (RO) Servicing', desc: 'Regular filter cleaning, membrane replacements, TDS calibration, pump repairs, and water leakage control.' },
-            { icon: Zap, title: 'Geyser & Water Heater Repair', desc: 'Heating element replacements, thermostat checks, pressure valve adjustments, and safety wiring inspections.' }
+            { icon: Shield, title: 'Termite Prevention & Control', desc: 'Advanced wood-destroying organism inspections, localized treatments, and preventative chemical barriers.' },
+            { icon: TrendingUp, title: 'Preventative Maintenance & Monitoring', desc: 'Scheduled audits and bait station monitoring to ensure your business remains proactively protected.' },
+            { icon: Bug, title: 'Rodent Exclusion & Removal', desc: 'Sealing entrance points, trapping, and tracking rodents to ensure a hygienic commercial space.' },
+            { icon: Trash2, title: 'Cockroach & Insect Eradication', desc: 'Targeted micro-injection gels and safe residual sprays to completely eliminate crawling pests.' },
+            { icon: Leaf, title: 'Eco-Friendly Fumigation', desc: 'Environmentally safe gas or fogging treatments designed to eradicate storage pests and bedbugs.' },
+            { icon: Clock, title: 'Emergency Service Response', desc: 'Priority rapid dispatch for commercial accounts to resolve unexpected infestations discreetly and quickly.' }
           ].map((service, i) => (
             <motion.div 
               key={i}
@@ -206,7 +205,7 @@ const ApplianceMaintenancePage = () => {
         </div>
       </section>
 
-      {/* 4. Details / Value Proposition Section */}
+      {/* 4. Comprehensive Commercial Pest Control Services  */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div 
@@ -218,8 +217,8 @@ const ApplianceMaintenancePage = () => {
             </div>
             <div className="absolute -right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl hidden md:block max-w-xs transition-all duration-500 group-hover:-translate-y-[55%] group-hover:shadow-blue-500/20">
               <Award className="w-10 h-10 text-blue-600 mb-4" />
-              <h4 className="font-bold text-xl mb-2">100% Genuine Parts</h4>
-              <p className="text-sm text-gray-600">All repairs are carried out using authentic OEM components with warranty coverage.</p>
+              <h4 className="font-bold text-xl mb-2">Licensed & Certified</h4>
+              <p className="text-sm text-gray-600">Fully compliant with USDA, HACCP, and government health safety standards.</p>
             </div>
           </motion.div>
 
@@ -227,16 +226,16 @@ const ApplianceMaintenancePage = () => {
             initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="space-y-8"
           >
-            <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight text-red-600">The trusted partner for hassle-free home comfort.</h2>
+            <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight text-red-600">The trusted partner for hygienic facilities.</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              We understand that a broken appliance disrupts your daily routine. That's why our expert engineers are trained to provide fast diagnostics, prompt repairs, and completely transparent billing.
+              We understand that commercial pest control isn't just about spraying—it's about protecting your brand, ensuring food safety compliance, and keeping your facility safe for employees and clients.
             </p>
             
             <div className="space-y-6 pt-4">
               {[
-                { title: 'Minimal Operational Disruption', desc: 'Flexible in-home service scheduling that works around your busy day.' },
-                { title: 'Transparent Upfront Pricing', desc: 'Clear itemized estimates before we begin any repair work, with no hidden fees.' },
-                { title: 'Certified Brand Experts', desc: 'Our technicians undergo thorough training to repair all major appliance makes and models.' }
+                { title: 'Minimal Operational Disruption', desc: 'Discreet off-hours scheduling to protect your customer experience.' },
+                { title: 'Transparent Upfront Pricing', desc: 'Custom proposals based on facility size and infestation severity, with no hidden fees.' },
+                { title: 'Detailed Regulatory Documentation', desc: 'Digital service logs, chemical sheets, and audit reports for health inspectors.' }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="mt-1 bg-green-50 text-green-600 rounded-full p-1 h-fit">
@@ -256,17 +255,17 @@ const ApplianceMaintenancePage = () => {
       {/* 5. Process / Workflow Section */}
       <section className="py-12 lg:py-18 max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-20">
-          <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-6 text-red-600">Our seamless repair process.</h2>
-          <p className="text-gray-600 text-lg font-medium">Book your repair in seconds and let our certified team take care of the rest.</p>
+          <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-6 text-red-600">Our seamless workflow.</h2>
+          <p className="text-gray-600 text-lg font-medium">From inspection to regular monitoring, we guarantee a pest-free environment.</p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 relative">
           <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gray-200 -z-10" />
           {[
-            { num: '01', title: 'Schedule Visit', desc: 'Book your service online or via phone in under a minute.' },
-            { num: '02', title: 'Inspection', desc: 'Doorstep inspection and root cause diagnostic by experts.' },
-            { num: '03', title: 'Quality Fix', desc: 'Precision repair using 100% genuine manufacturer parts.' },
-            { num: '04', title: 'Warranty', desc: 'Rigorous post-service checks and a dedicated work warranty.' }
+            { num: '01', title: 'Inspection', desc: 'Thorough site assessment to find risk areas.' },
+            { num: '02', title: 'Custom Plan', desc: 'Tailored Integrated Pest Management program.' },
+            { num: '03', title: 'Execution', desc: 'Targeted application with certified safe products.' },
+            { num: '04', title: 'Monitoring', desc: 'Regular follow-ups and prevention reporting.' }
           ].map((step, i) => (
             <motion.div 
               key={i}
@@ -296,7 +295,7 @@ const ApplianceMaintenancePage = () => {
           variants={fadeInUp}
           className="text-6xl lg:text-10xl font-semibold tracking-tight mb-16 text-red-600"
         >
-          Recent Appliance Projects
+          Recent Commercial Projects
         </motion.h2>
         
         <div className="grid md:grid-cols-2 gap-8">
@@ -306,9 +305,9 @@ const ApplianceMaintenancePage = () => {
           >
             <span className="text-2xl font-bold text-gray-500 absolute z-0">Coming soon</span>
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent flex flex-col justify-end p-10 z-10">
-              <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-4">Double-Door Refrigerator</div>
-              <h3 className="text-3xl font-bold text-white mb-2">Smart Inverter Compressor Restoration</h3>
-              <p className="text-gray-200 line-clamp-2">Successfully replaced inverter controller unit and refilled eco-friendly refrigerant, restoring optimal cooling.</p>
+              <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-4">Food Processing Unit</div>
+              <h3 className="text-3xl font-bold text-white mb-2">HACCP Compliant Pest Barrier</h3>
+              <p className="text-gray-200 line-clamp-2">Secured a major production facility with complete exclusion barriers and smart bait stations with zero downtime.</p>
             </div>
           </motion.div>
 
@@ -319,8 +318,8 @@ const ApplianceMaintenancePage = () => {
             >
               <span className="text-2xl font-bold text-gray-500 absolute z-0">Coming soon</span>
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8 z-10">
-                <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Washing Machine</div>
-                <h3 className="text-xl font-bold text-white">Front-Load Washer Drum Repair & Align</h3>
+                <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Restaurant</div>
+                <h3 className="text-xl font-bold text-white">Commercial Kitchen Disinfestation</h3>
               </div>
             </motion.div>
             <motion.div 
@@ -329,8 +328,8 @@ const ApplianceMaintenancePage = () => {
             >
               <span className="text-2xl font-bold text-gray-500 absolute z-0">Coming soon</span>
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8 z-10">
-                <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Kitchen Chimney</div>
-                <h3 className="text-xl font-bold text-white">Commercial Deep-Clean & Motor Repair</h3>
+                <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Warehouse Facility</div>
+                <h3 className="text-xl font-bold text-white">Rodent Exclusion & Eradication</h3>
               </div>
             </motion.div>
           </div>
@@ -342,10 +341,10 @@ const ApplianceMaintenancePage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-200 text-center">
             {[
-              { num: '10000+', label: 'Appliances Serviced' },
+              { num: '500+', label: 'Commercial Clients' },
               { num: '15+', label: 'Years Experience' },
-              { num: '2-Hour', label: 'Response Time' },
-              { num: '100%', label: 'Genuine Spare Parts' }
+              { num: '24/7', label: 'Support Available' },
+              { num: '100%', label: 'FDA/HACCP Compliant' }
             ].map((stat, i) => (
               <div key={i}>
                 <div className="text-4xl lg:text-5xl font-bold text-blue-500 mb-2">{stat.num}</div>
@@ -361,7 +360,7 @@ const ApplianceMaintenancePage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
             
-            {/* Image Section */}
+            {/* Image Section (Shows above FAQ on mobile, right on desktop) */}
             <div className="w-full lg:w-[40%] order-1 lg:order-2">
               <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.08)] bg-gray-200 flex items-center justify-center min-h-[350px]">
                 <span className="text-2xl font-bold text-gray-500 absolute z-0">Coming soon</span>
@@ -369,7 +368,7 @@ const ApplianceMaintenancePage = () => {
               </div>
             </div>
 
-            {/* FAQ Accordion */}
+            {/* FAQ Section */}
             <div className="w-full lg:w-[60%] order-2 lg:order-1">
               <div className="mb-10 lg:mb-12">
                 <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight text-red-600">Frequently asked questions.</h2>
@@ -377,10 +376,10 @@ const ApplianceMaintenancePage = () => {
 
               <div className="space-y-4">
                 {[
-                  { q: 'Do you use original manufacturer spare parts?', a: 'Yes, we source and install only genuine, manufacturer-approved OEM spare parts to guarantee performance, longevity, and safety.' },
-                  { q: 'Is there a warranty on your repair services?', a: 'Yes, we provide a service warranty on all completed repairs and parts replaced, ensuring you are fully covered in case of any issues.' },
-                  { q: 'What is the standard turnaround time for a repair?', a: 'Most repairs (like washing machine, refrigerator, TV, and RO fixes) are diagnosed and resolved on the very same day. For complex motherboard issues, it may take 24-48 hours.' },
-                  { q: 'Do you service all brands of household electronics?', a: 'Absolutely. Our certified experts are fully trained to service all leading brands including LG, Samsung, Whirlpool, Bosch, IFB, Haier, Godrej, Panasonic, and more.' }
+                  { q: 'Do you offer emergency services for commercial buildings?', a: 'Yes, we provide priority emergency dispatch to tackle sudden pest outbreaks or rodents in commercial environments swiftly and discreetly.' },
+                  { q: 'Can you work outside of our regular business hours?', a: 'Absolutely. We schedule treatments during nights, early mornings, or weekends to prevent any disruption to your regular business operations.' },
+                  { q: 'Are your treatments safe and compliant?', a: 'Yes, all of our integrated pest management solutions use EPA-approved, eco-friendly materials that comply with national health, safety, and food standards.' },
+                  { q: 'Do you provide detailed reporting for health inspector audits?', a: 'Yes, we supply complete digital reports containing treatment dates, areas inspected, chemicals applied, and device maps for compliance records.' }
                 ].map((faq, i) => (
                   <div key={i} className="border border-gray-200 rounded-2xl overflow-hidden bg-white">
                     <button 
@@ -414,9 +413,9 @@ const ApplianceMaintenancePage = () => {
         <div className="max-w-6xl mx-auto bg-gradient-to-br from-gray-900 to-blue-900 rounded-[3rem] p-12 lg:p-20 text-center relative overflow-hidden shadow-2xl">
           
           <div className="relative z-10">
-            <h2 className="text-4xl lg:text-6xl font-semibold text-white tracking-tight mb-6">Ready to restore your appliance?</h2>
+            <h2 className="text-4xl lg:text-6xl font-semibold text-white tracking-tight mb-6">Ready to secure your facility?</h2>
             <p className="text-blue-100 text-lg lg:text-xl max-w-2xl mx-auto mb-10">
-              Get in touch with our expert repair specialists today to schedule your service or receive a fast estimate.
+              Get in touch with our commercial specialists today to discuss your pest control needs and receive a customized proposal.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
@@ -452,4 +451,4 @@ const ApplianceMaintenancePage = () => {
   );
 };
 
-export default ApplianceMaintenancePage;
+export default CommercialPestControl;

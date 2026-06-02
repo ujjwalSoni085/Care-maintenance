@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { splitTextToSpans } from '../../utils/gsapUtils';
 
 const SplashIntro = ({ onComplete }) => {
   const containerRef = useRef(null);
@@ -47,16 +46,15 @@ const SplashIntro = ({ onComplete }) => {
 
     // Entrance Timeline
     tl.set(containerRef.current, { visibility: 'visible' })
-      // Stagger chars of main text
-      .fromTo('.split-char', 
-        { y: 100, opacity: 0, rotateX: -90 },
+      // Animate Logo
+      .fromTo('.splash-logo', 
+        { scale: 0.5, opacity: 0, y: 50 },
         { 
-          y: 0, 
+          scale: 1, 
           opacity: 1, 
-          rotateX: 0,
-          duration: 1.2,
-          stagger: 0.04,
-          ease: 'power4.out'
+          y: 0,
+          duration: 0.8,
+          ease: 'back.out(1.7)'
         }
       )
       // Stagger tagline items
@@ -65,34 +63,33 @@ const SplashIntro = ({ onComplete }) => {
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          stagger: 0.2,
+          duration: 0.5,
+          stagger: 0.1,
           ease: 'power2.out'
         },
-        "-=0.6" // start slightly before text finishes
+        "-=0.4" // start slightly before logo finishes
       )
       // Hold for a moment to let user read
-      .to({}, { duration: 1.5 })
+      .to({}, { duration: 1.0 })
       // Exit Animation
       .to('.tagline-item', {
         y: -30,
         opacity: 0,
-        duration: 0.5,
-        stagger: 0.1,
+        duration: 0.3,
+        stagger: 0.05,
         ease: 'power2.in'
       })
-      .to('.split-char', {
-        y: -100,
+      .to('.splash-logo', {
+        scale: 0.5,
         opacity: 0,
-        rotateX: 90,
-        duration: 0.8,
-        stagger: 0.02,
-        ease: 'power4.in'
-      }, "-=0.3")
+        y: -50,
+        duration: 0.4,
+        ease: 'power2.in'
+      }, "-=0.2")
       // Fade out whole container
       .to(containerRef.current, {
         opacity: 0,
-        duration: 0.8,
+        duration: 0.5,
         ease: 'power2.inOut'
       });
 
@@ -119,13 +116,14 @@ const SplashIntro = ({ onComplete }) => {
       />
       
       {/* Split Text Content */}
-      <div className="relative z-10 text-center px-4">
-        <h1 
-          ref={textRef} 
-          className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-gray-900 tracking-tight font-heading mb-8 perspective-[1000px]"
-        >
-          {splitTextToSpans("Care Maintenance")}
-        </h1>
+      <div className="relative z-10 text-center px-4 flex flex-col items-center">
+        <div ref={textRef} className="flex justify-center mb-8 perspective-[1000px]">
+          <img 
+            src="/images/care-maintenance-logo-removebg-preview.webp" 
+            alt="Care Maintenance Logo" 
+            className="splash-logo w-72 md:w-96 lg:w-[450px] drop-shadow-2xl object-contain"
+          />
+        </div>
         
         {/* Staggered Taglines */}
         <div ref={taglinesRef} className="flex flex-wrap justify-center gap-6 mt-8">
