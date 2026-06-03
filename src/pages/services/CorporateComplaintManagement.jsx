@@ -72,7 +72,7 @@ const CorporateComplaintManagement = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative lg:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 bg-gray-200 flex items-center justify-center min-h-[350px] bg-gradient-to-br from-gray-100 to-gray-50"
           >
-            <Headset className="w-32 h-32 text-gray-300" />
+            <img src="/images/services/customer care img 1.webp" alt="Corporate Complaint Management" className="absolute inset-0 w-full h-full object-cover" />
             {/* Floating Stats */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
@@ -206,7 +206,7 @@ const CorporateComplaintManagement = () => {
             className="relative group cursor-pointer"
           >
             <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-gray-200 flex items-center justify-center min-h-[350px] bg-gradient-to-br from-gray-100 to-gray-50">
-              <Users className="w-32 h-32 text-gray-300" />
+              <img src="/images/services/customercare images 2.webp" alt="Comprehensive Solutions" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl hidden md:block max-w-xs transition-all duration-500 group-hover:-translate-y-[55%] group-hover:shadow-blue-500/20">
               <Award className="w-10 h-10 text-blue-600 mb-4" />
@@ -253,25 +253,27 @@ const CorporateComplaintManagement = () => {
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 relative">
-          <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gray-200 -z-10" />
           {[
-            { num: '01', title: 'Raise Ticket', desc: 'Query logged via portal, email, or dedicated hotline.' },
-            { num: '02', title: 'Triage & Assign', desc: 'System categorizes and assigns to the right technician.' },
-            { num: '03', title: 'Resolution', desc: 'On-site or remote support provided within SLA.' },
-            { num: '04', title: 'Closure & QA', desc: 'Issue resolved, documented, and feedback collected.' }
+            { num: '01', title: 'Raise Ticket', desc: 'Query logged via portal, email, or dedicated hotline.', img: '/images/services/customer care image 4.webp' },
+            { num: '02', title: 'Triage & Assign', desc: 'System categorizes and assigns to the right technician.', img: '/images/services/customer caer iamge 5.webp' },
+            { num: '03', title: 'Resolution', desc: 'On-site or remote support provided within SLA.', img: '/images/services/customercare 6.webp' },
+            { num: '04', title: 'Closure & QA', desc: 'Issue resolved, documented, and feedback collected.', img: '/images/services/customer images 7.webp' }
           ].map((step, i) => (
             <motion.div 
               key={i}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
-              className="group relative bg-white/70 backdrop-blur-xl p-8 rounded-3xl border border-gray-100 shadow-sm hover:border-blue-300 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-blue-500/10 overflow-hidden"
+              className="group relative bg-white/70 backdrop-blur-xl p-8 rounded-3xl border border-gray-100 shadow-sm hover:border-blue-300 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-blue-500/10 overflow-hidden flex flex-col"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] via-transparent to-cyan-400/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
-              <div className="relative z-10">
-                <div className="text-4xl font-extralight text-gray-300 mb-6 group-hover:text-blue-300 transition-colors duration-500">{step.num}</div>
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-full h-32 rounded-2xl overflow-hidden mb-6">
+                   <img src={step.img} alt={step.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div className="text-4xl font-extralight text-gray-300 mb-4 group-hover:text-blue-300 transition-colors duration-500">{step.num}</div>
                 <h3 className="text-xl font-bold mb-3 text-red-600 group-hover:text-blue-600 transition-colors duration-500">{step.title}</h3>
-                <p className="text-gray-500 font-medium">{step.desc}</p>
+                <p className="text-gray-500 font-medium flex-grow">{step.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -304,7 +306,7 @@ const CorporateComplaintManagement = () => {
             
             <div className="w-full lg:w-[40%] order-1 lg:order-2">
               <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.08)] bg-gray-200 flex items-center justify-center min-h-[350px] bg-gradient-to-bl from-gray-100 to-gray-200">
-                <MessageSquare className="w-32 h-32 text-gray-300" />
+                <img src="/images/services/customercare images3-.webp" alt="FAQ Customer Care" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent z-10" />
               </div>
             </div>

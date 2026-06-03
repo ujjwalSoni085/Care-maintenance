@@ -214,7 +214,7 @@ const PlumberPage = () => {
         </section>
 
         {/* === BEFORE & AFTER SLIDER === */}
-        <BeforeAfterSlider />
+        <BeforeAfterSlider beforeImage="/images/services/plumber6.webp" afterImage="/images/services/plumber11.webp" />
 
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">

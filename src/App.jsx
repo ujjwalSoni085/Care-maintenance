@@ -23,6 +23,7 @@ const CarpenterPage = React.lazy(() => import('./pages/services/Carpainter'));
 const ACServicesPage = React.lazy(() => import('./pages/services/ACServicesPage'));
 const PestControlPage = React.lazy(() => import('./pages/services/PestControlPage'));
 const ApplianceMaintenancePage = React.lazy(() => import('./pages/services/ApplianceMaintenancePage'));
+const CommercialApplianceMaintenancePage = React.lazy(() => import('./pages/services/CommercialApplianceMaintenancePage'));
 const WaterTankCleaningPage = React.lazy(() => import('./pages/services/WaterTankCleaningPage'));
 const CommercialPlumberPage = React.lazy(() => import('./pages/services/CommercialPlumberPage'));
 const CommercialHVACMaintenance = React.lazy(() => import('./pages/services/CommercialHVACMaintenance'));
@@ -97,7 +98,7 @@ function App() {
               <Route path="/commercial/electrical-systems" element={<CommercialElectricalSystems />} />
               <Route path="/commercial/carpenter" element={<CommercialCarpenter />} />
               <Route path="/commercial/pest-control" element={<CommercialPestControl />} />
-              <Route path="/commercial/appliance-maintenance" element={<ApplianceMaintenancePage />} />
+              <Route path="/commercial/appliance-maintenance" element={<CommercialApplianceMaintenancePage />} />
               <Route path="/commercial/corporate-helpdesk" element={<CorporateComplaintManagement />} />
               
             </Routes>

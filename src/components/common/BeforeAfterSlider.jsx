@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const BeforeAfterSlider = () => {
+const BeforeAfterSlider = ({ beforeImage = "/images/services/elect2.webp", afterImage = "/images/services/elect3.webp" }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   
   return (
     <section className="pt-12 w-full">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 tracking-tight">Real Results, Real Difference</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-red-600 tracking-tight">Real Results, Real Difference</h2>
         <p className="text-text-muted mt-4 max-w-2xl mx-auto text-lg">Slide to see the incredible transformation</p>
       </div>
       
@@ -15,9 +15,15 @@ const BeforeAfterSlider = () => {
         
         {/* After Image / Content (Background) */}
         <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-blue-50">
-           <span className="material-symbols-outlined text-6xl text-blue-400 mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>imagesmode</span>
-           <span className="text-blue-800 font-extrabold text-2xl tracking-wide uppercase">Coming Soon</span>
-           <span className="text-blue-500/70 text-sm mt-1 font-medium">After Service</span>
+          {afterImage ? (
+            <img src={afterImage} alt="After Service" className="w-full h-full object-cover" />
+          ) : (
+            <>
+              <span className="material-symbols-outlined text-6xl text-blue-400 mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>imagesmode</span>
+              <span className="text-blue-800 font-extrabold text-2xl tracking-wide uppercase">Coming Soon</span>
+              <span className="text-blue-500/70 text-sm mt-1 font-medium">After Service</span>
+            </>
+          )}
         </div>
 
         {/* Before Image / Content (Foreground, clipped) */}
@@ -26,11 +32,15 @@ const BeforeAfterSlider = () => {
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
           {/* Using a pseudo element or absolute div centered to prevent content from shifting when clipping */}
-           <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center min-w-[300px]">
-             <span className="material-symbols-outlined text-6xl text-gray-400 mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>image_not_supported</span>
-             <span className="text-gray-600 font-extrabold text-2xl tracking-wide uppercase">Coming Soon</span>
-             <span className="text-gray-500/70 text-sm mt-1 font-medium">Before Service</span>
-           </div>
+          {beforeImage ? (
+            <img src={beforeImage} alt="Before Service" className="absolute inset-0 w-full h-full object-cover max-w-none" />
+          ) : (
+            <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center min-w-[300px]">
+              <span className="material-symbols-outlined text-6xl text-gray-400 mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>image_not_supported</span>
+              <span className="text-gray-600 font-extrabold text-2xl tracking-wide uppercase">Coming Soon</span>
+              <span className="text-gray-500/70 text-sm mt-1 font-medium">Before Service</span>
+            </div>
+          )}
         </div>
 
         {/* Slider Input overlay */}

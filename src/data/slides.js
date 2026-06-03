@@ -5,22 +5,19 @@ export const slides = [
     title: 'Expert Home Services at Your Doorstep',
     description: 'From plumbing to pest control — trusted professionals for every home need.',
     cta: 'Book a Service',
-    path: '/residential'
+    path: '/quote'
   },
   {
     id: 2,
-    image: '/images/commercial_maintenance_bg.webp',
+    image: '/images/services/wallpaper 2-converte.webp',
     title: 'Reliable Commercial Maintenance',
     description: 'Keep your business running smoothly with our comprehensive facility management.',
-    cta: 'Get a Quote',
+    cta: 'Book a Servic',
     path: '/quote'
   },
   {
     id: 3,
-    image: '/images/quality_trust_bg.webp',
-    title: 'Quality You Can Trust',
-    description: '8,000+ happy customers. Licensed, insured, and always on time.',
-    cta: 'See Our Work',
-    path: '/happy-customers'
+    image: '/images/services/wallpaper image 1-converted.webp',
+  
   }
 ];

@@ -73,7 +73,7 @@ const CommercialCarpenter = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative lg:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 bg-gray-200 flex items-center justify-center"
           >
-            <span className="text-2xl font-bold text-gray-500">Coming soon</span>
+            <img src="/images/services/carpenter1 (2).webp" alt="Commercial Carpentry" className="w-full h-full object-cover" />
             {/* Floating Stats */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
@@ -213,8 +213,8 @@ const CommercialCarpenter = () => {
             initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="relative group cursor-pointer"
           >
-            <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-gray-200 flex items-center justify-center">
-              <span className="text-2xl font-bold text-gray-500">Coming soon</span>
+            <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-gray-200 relative">
+              <img src="/images/services/carpenter3.webp" alt="Expert Carpentry" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl hidden md:block max-w-xs transition-all duration-500 group-hover:-translate-y-[55%] group-hover:shadow-blue-500/20">
               <Award className="w-10 h-10 text-blue-600 mb-4" />
@@ -302,9 +302,9 @@ const CommercialCarpenter = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="group cursor-pointer rounded-[2rem] overflow-hidden relative aspect-square md:aspect-auto md:h-[600px] bg-gray-200 flex items-center justify-center"
+            className="group cursor-pointer rounded-[2rem] overflow-hidden relative aspect-square md:aspect-auto md:h-[600px] bg-gray-200"
           >
-            <span className="text-2xl font-bold text-gray-500 absolute z-0">Coming soon</span>
+            <img src="/images/services/carpenter4.webp" alt="Recent Project" className="w-full h-full object-cover absolute inset-0 z-0" />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent flex flex-col justify-end p-10 z-10">
               <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-4">Residential</div>
               <h3 className="text-3xl font-bold text-white mb-2">Custom Walk-in Closet</h3>
@@ -315,9 +315,9 @@ const CommercialCarpenter = () => {
           <div className="flex flex-col gap-8">
             <motion.div 
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-              className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px] bg-gray-200 flex items-center justify-center"
+              className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px] bg-gray-200"
             >
-              <span className="text-2xl font-bold text-gray-500 absolute z-0">Coming soon</span>
+              <img src="/images/services/carpenter5.webp" alt="Recent Project" className="w-full h-full object-cover absolute inset-0 z-0" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8 z-10">
                 <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Commercial</div>
                 <h3 className="text-xl font-bold text-white">Office Reception Desk</h3>
@@ -325,9 +325,9 @@ const CommercialCarpenter = () => {
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
-              className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px] bg-gray-200 flex items-center justify-center"
+              className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px] bg-gray-200"
             >
-              <span className="text-2xl font-bold text-gray-500 absolute z-0">Coming soon</span>
+              <img src="/images/services/carpenter1.webp" alt="Recent Project" className="w-full h-full object-cover absolute inset-0 z-0" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8 z-10">
                 <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Outdoor</div>
                 <h3 className="text-xl font-bold text-white">Redwood Patio Deck</h3>
@@ -363,8 +363,8 @@ const CommercialCarpenter = () => {
             
             {/* Image Section (Shows above FAQ on mobile, right on desktop) */}
             <div className="w-full lg:w-[40%] order-1 lg:order-2">
-              <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.08)] bg-gray-200 flex items-center justify-center">
-                <span className="text-2xl font-bold text-gray-500 absolute z-0">Coming soon</span>
+              <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.08)] bg-gray-200">
+                <img src="/images/services/carpenter4.webp" alt="Carpentry Details" className="w-full h-full object-cover absolute inset-0 z-0" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent z-10" />
               </div>
             </div>

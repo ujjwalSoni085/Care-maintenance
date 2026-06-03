@@ -65,12 +65,14 @@ const WaterTankCleaningPage = () => {
             </div>
           </div>
           
-          {/* Image Section (Placeholder) */}
-          <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-inner group bg-gray-100 flex items-center justify-center border-2 border-dashed border-gray-300">
-            <div className="text-center">
-              <span className="material-symbols-outlined text-6xl text-gray-300 mb-2">image</span>
-              <p className="text-gray-400 font-bold text-xl tracking-widest uppercase">Coming Soon</p>
-            </div>
+          {/* Image Section */}
+          <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-inner group">
+            <img 
+              src="/images/services/cleaning4.webp" 
+              alt="Water Tank Cleaning Service" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
           </div>
         </section>
 
@@ -249,12 +251,17 @@ const WaterTankCleaningPage = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto px-2">
-            {[1, 2, 3, 4, 5, 6].map((_, index) => (
-              <div key={index} className="group relative aspect-video md:aspect-square bg-gray-100 rounded-3xl overflow-hidden border-2 border-dashed border-gray-300 shadow-sm hover:shadow-md transition-all duration-500 ease-out flex items-center justify-center cursor-pointer hover:border-blue-300 hover:bg-blue-50/50">
-                <div className="text-center transition-transform duration-500 group-hover:scale-105">
-                  <span className="material-symbols-outlined text-4xl text-gray-400 mb-2 group-hover:text-blue-400 transition-colors">image</span>
-                  <p className="text-gray-400 font-bold text-sm md:text-lg tracking-widest uppercase group-hover:text-blue-400 transition-colors">Coming Soon</p>
-                </div>
+            {[
+              '/images/services/cleaning4.webp',
+              '/images/services/cleaning3.webp',
+              '/images/services/clarning2.webp',
+              '/images/services/cleaning3.webp',
+              '/images/services/plumber1-.webp',
+              '/images/services/plumber6.webp'
+            ].map((src, index) => (
+              <div key={index} className="group relative aspect-video md:aspect-square bg-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 ease-out flex items-center justify-center cursor-pointer border border-outline-variant/20">
+                <img src={src} alt={`Water Tank Cleaning Work ${index + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/10 transition-colors duration-500 pointer-events-none"></div>
               </div>
             ))}
           </div>

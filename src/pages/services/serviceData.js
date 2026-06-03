@@ -25,12 +25,12 @@ export const serviceData = {
       { title: 'Guaranteed Work', description: '100% satisfaction guarantee on all electrical repairs.', icon: 'verified' }
     ],
     gallery: [
-      '/images/services/driling image.webp',
-      '/images/services/electrician-2.png',
-      '/images/services/electrician-3.png',
-      '/images/services/electrician-4.png',
-      '/images/services/electrician-5.png',
-      '/images/services/electrician-6.png'
+      '/images/services/elect1.webp',
+      '/images/services/elect2.webp',
+      '/images/services/elect3.webp',
+      '/images/services/elect4.webp',
+      '/images/services/elect5.webp',
+      '/images/services/elect6.webp'
     ]
   },
   'plumber': {
@@ -59,12 +59,12 @@ export const serviceData = {
       { title: 'Fully Insured', description: 'Complete peace of mind with our insured services.', icon: 'security' }
     ],
     gallery: [
-      '/images/services/plumber-1.png',
-      '/images/services/plumber-2.png',
-      '/images/services/plumber-3.png',
-      '/images/services/plumber-4.png',
-      '/images/services/plumber-5.png',
-      '/images/services/plumber-6.png'
+      '/images/services/plumber1-.webp',
+      '/images/services/plumber2.webp',
+      '/images/services/plumber3.webp',
+      '/images/services/plumber4.webp',
+      '/images/services/plumber6.webp',
+      '/images/services/plumber7-.webp'
     ]
   },
   'carpenter': {
@@ -93,12 +93,12 @@ export const serviceData = {
       { title: 'Space Optimization', description: 'Smart designs that maximize your home space.', icon: 'zoom_out_map' }
     ],
     gallery: [
-      '/images/services/carpenter-1.png',
-      '/images/services/carpenter-2.png',
-      '/images/services/carpenter-3.png',
-      '/images/services/carpenter-4.png',
-      '/images/services/carpenter-5.png',
-      '/images/services/carpenter-6.png'
+      '/images/services/carpenter1 (2).webp',
+      '/images/services/carpenter1.webp',
+      '/images/services/carpenter3.webp',
+      '/images/services/carpenter4.webp',
+      '/images/services/carpenter5.webp',
+      '/images/services/carpenter3.webp'
     ]
   },
   'ac-services': {
@@ -127,12 +127,12 @@ export const serviceData = {
       { title: 'Longer Lifespan', description: 'Extend the life of your cooling units.', icon: 'update' }
     ],
     gallery: [
-      '/images/services/ac-1.png',
-      '/images/services/ac-2.png',
-      '/images/services/ac-3.png',
-      '/images/services/ac-4.png',
-      '/images/services/ac-5.png',
-      '/images/services/ac-6.png'
+      '/images/services/ac9.webp',
+      '/images/services/ac1.webp',
+      '/images/services/ac2.webp',
+      '/images/services/ac3.webp',
+      '/images/services/ac4.webp',
+      '/images/services/ac5.webp'
     ]
   },
   'pest-control': {
@@ -161,12 +161,12 @@ export const serviceData = {
       { title: 'Health Protection', description: 'Prevent diseases carried by common household pests.', icon: 'medical_services' }
     ],
     gallery: [
-      '/images/services/pest-1.png',
-      '/images/services/pest-2.png',
-      '/images/services/pest-3.png',
-      '/images/services/pest-4.png',
-      '/images/services/pest-5.png',
-      '/images/services/pest-6.png'
+      '/images/services/pest1.webp',
+      '/images/services/pest2.webp',
+      '/images/services/pest3.webp',
+      '/images/services/pest4.webp',
+      '/images/services/pest5.webp',
+      '/images/services/pest6.webp'
     ]
   },
   'appliance-maintenance': {

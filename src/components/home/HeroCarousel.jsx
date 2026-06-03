@@ -89,12 +89,22 @@ const HeroCarousel = () => {
                         {slide.description}
                       </p>
                       <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-                        <Button variant="primary" size="lg" href={slide.path} className="w-full sm:w-auto text-center justify-center">
+                        <Button 
+                          variant="primary" 
+                          size="lg" 
+                          onClick={() => {
+                            const element = document.getElementById('service-price-box');
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth' });
+                            } else {
+                              window.location.href = '/#service-price-box';
+                            }
+                          }}
+                          className="w-full sm:w-auto text-center justify-center"
+                        >
                           {slide.cta}
                         </Button>
-                        <Button variant="outline" size="lg" href="/services" className="w-full sm:w-auto text-center justify-center">
-                          Our Services
-                        </Button>
+                       
                       </div>
                     </motion.div>
                   </div>

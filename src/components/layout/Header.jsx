@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import { FaBolt, FaWrench, FaHammer, FaSnowflake, FaBug, FaPlug, FaWater, FaFan, FaFireExtinguisher, FaBuilding, FaLeaf } from 'react-icons/fa6';
 import { FaCoffee } from 'react-icons/fa';
@@ -31,6 +31,14 @@ const commercialServices = [
 const Header = () => {
   const scrollPosition = useScrollPosition();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const handleHomeClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   const isScrolled = scrollPosition > 50;
 
@@ -44,7 +52,7 @@ const Header = () => {
         <Container>
           <div className="flex items-center gap-12 justify-between w-full">
             {/* Logo */}
-            <Link to="/">
+            <Link to="/" onClick={handleHomeClick}>
             <div className="flex items-center flex-1 pr-4">
                 <img
                   src="/images/care-maintenance-logo-removebg-preview.webp"
@@ -56,7 +64,7 @@ const Header = () => {
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center justify-center gap-8 xl:gap-10">
-              <Link to="/" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Home</Link>
+              <Link to="/" onClick={handleHomeClick} className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Home</Link>
               
               {/* Residential Dropdown */}
               <div className="relative group flex items-center">
