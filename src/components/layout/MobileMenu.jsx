@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FiX, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }) => {
   const [openSection, setOpenSection] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     if (isOpen) {
@@ -66,12 +67,15 @@ const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }
               </button>
               {openSection === 'residential' && (
                 <div className="px-3 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
-                  {residentialServices.map((service, idx) => (
-                    <Link key={idx} to={service.path} className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md" onClick={onClose}>
-                      {service.icon}
-                      {service.name}
-                    </Link>
-                  ))}
+                  {residentialServices.map((service, idx) => {
+                    const isActive = location.pathname === service.path;
+                    return (
+                      <Link key={idx} to={service.path} className={`flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md ${isActive ? 'text-blue-700 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'}`} onClick={onClose}>
+                        {service.icon}
+                        {service.name}
+                      </Link>
+                    );
+                  })}
                   <Link to="/residential" className="block px-3 py-2 text-sm font-medium text-blue-600 mt-2" onClick={onClose}>
                     View all residential &rarr;
                   </Link>
@@ -90,12 +94,15 @@ const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }
               </button>
               {openSection === 'commercial' && (
                 <div className="px-3 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
-                  {commercialServices.map((service, idx) => (
-                    <Link key={idx} to={service.path} className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md" onClick={onClose}>
-                      {service.icon}
-                      {service.name}
-                    </Link>
-                  ))}
+                  {commercialServices.map((service, idx) => {
+                    const isActive = location.pathname === service.path;
+                    return (
+                      <Link key={idx} to={service.path} className={`flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md ${isActive ? 'text-blue-700 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'}`} onClick={onClose}>
+                        {service.icon}
+                        {service.name}
+                      </Link>
+                    );
+                  })}
                   <Link to="/commercial" className="block px-3 py-2 text-sm font-medium text-blue-600 mt-2" onClick={onClose}>
                     View all commercial &rarr;
                   </Link>

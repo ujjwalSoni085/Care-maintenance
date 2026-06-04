@@ -31,6 +31,7 @@ const commercialServices = [
 const Header = () => {
   const scrollPosition = useScrollPosition();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredDropdown, setHoveredDropdown] = useState(null);
   const location = useLocation();
 
   const handleHomeClick = (e) => {
@@ -67,51 +68,65 @@ const Header = () => {
               <Link to="/" onClick={handleHomeClick} className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Home</Link>
               
               {/* Residential Dropdown */}
-              <div className="relative group flex items-center">
+              <div 
+                className="relative flex items-center"
+                onMouseEnter={() => setHoveredDropdown('residential')}
+                onMouseLeave={() => setHoveredDropdown(null)}
+              >
                 <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-all duration-300 py-2 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>
-                  Residential <FiChevronDown className="transition-transform group-hover:rotate-180" />
+                  Residential <FiChevronDown className={`transition-transform ${hoveredDropdown === 'residential' ? 'rotate-180' : ''}`} />
                 </button>
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-2 flex flex-col overflow-hidden">
+                <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-xl shadow-xl border border-gray-100 transition-all duration-200 transform origin-top flex flex-col overflow-hidden ${hoveredDropdown === 'residential' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
                   <div className="p-6 grid grid-cols-2 gap-x-6 gap-y-4">
-                    {residentialServices.map((service, idx) => (
-                      <Link key={idx} to={service.path} className="flex items-start gap-3 p-2 hover:bg-gray-50 rounded-lg transition-colors group/item">
-                        <div className="p-2 bg-blue-50 rounded-lg group-hover/item:bg-white shadow-sm transition-colors">
-                          {service.icon}
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900 text-sm">{service.name}</p>
-                          <p className="text-xs text-gray-500 mt-0.5">Professional residential service</p>
-                        </div>
-                      </Link>
-                    ))}
+                    {residentialServices.map((service, idx) => {
+                      const isActive = location.pathname === service.path;
+                      return (
+                        <Link key={idx} to={service.path} onClick={() => setHoveredDropdown(null)} className={`flex items-start gap-3 p-2 rounded-lg transition-colors group/item ${isActive ? 'bg-blue-50 ring-1 ring-blue-100' : 'hover:bg-gray-50'}`}>
+                          <div className={`p-2 rounded-lg shadow-sm transition-colors ${isActive ? 'bg-white' : 'bg-blue-50 group-hover/item:bg-white'}`}>
+                            {service.icon}
+                          </div>
+                          <div>
+                            <p className={`font-semibold text-sm ${isActive ? 'text-blue-700' : 'text-gray-900'}`}>{service.name}</p>
+                            <p className={`text-xs mt-0.5 ${isActive ? 'text-blue-600' : 'text-gray-500'}`}>Professional residential service</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
                   <div className="bg-gray-50 p-4 text-center border-t border-gray-100">
-                    <Link to="/residential" className="text-sm font-medium text-blue-600 hover:text-blue-700">View all residential services &rarr;</Link>
+                    <Link to="/residential" onClick={() => setHoveredDropdown(null)} className="text-sm font-medium text-blue-600 hover:text-blue-700">View all residential services &rarr;</Link>
                   </div>
                 </div>
               </div>
 
               {/* Commercial Dropdown */}
-              <div className="relative group flex items-center">
+              <div 
+                className="relative flex items-center"
+                onMouseEnter={() => setHoveredDropdown('commercial')}
+                onMouseLeave={() => setHoveredDropdown(null)}
+              >
                 <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-all duration-300 py-2 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>
-                  Commercial <FiChevronDown className="transition-transform group-hover:rotate-180" />
+                  Commercial <FiChevronDown className={`transition-transform ${hoveredDropdown === 'commercial' ? 'rotate-180' : ''}`} />
                 </button>
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top group-hover:translate-y-0 translate-y-2 flex flex-col overflow-hidden">
+                <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-xl shadow-xl border border-gray-100 transition-all duration-200 transform origin-top flex flex-col overflow-hidden ${hoveredDropdown === 'commercial' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
                   <div className="p-6 grid grid-cols-2 gap-x-6 gap-y-4">
-                    {commercialServices.map((service, idx) => (
-                      <Link key={idx} to={service.path} className="flex items-start gap-3 p-2 hover:bg-gray-50 rounded-lg transition-colors group/item">
-                        <div className="p-2 bg-blue-50 rounded-lg group-hover/item:bg-white shadow-sm transition-colors">
-                          {service.icon}
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900 text-sm">{service.name}</p>
-                          <p className="text-xs text-gray-500 mt-0.5">Expert commercial solutions</p>
-                        </div>
-                      </Link>
-                    ))}
+                    {commercialServices.map((service, idx) => {
+                      const isActive = location.pathname === service.path;
+                      return (
+                        <Link key={idx} to={service.path} onClick={() => setHoveredDropdown(null)} className={`flex items-start gap-3 p-2 rounded-lg transition-colors group/item ${isActive ? 'bg-blue-50 ring-1 ring-blue-100' : 'hover:bg-gray-50'}`}>
+                          <div className={`p-2 rounded-lg shadow-sm transition-colors ${isActive ? 'bg-white' : 'bg-blue-50 group-hover/item:bg-white'}`}>
+                            {service.icon}
+                          </div>
+                          <div>
+                            <p className={`font-semibold text-sm ${isActive ? 'text-blue-700' : 'text-gray-900'}`}>{service.name}</p>
+                            <p className={`text-xs mt-0.5 ${isActive ? 'text-blue-600' : 'text-gray-500'}`}>Expert commercial solutions</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
                   <div className="bg-gray-50 p-4 text-center border-t border-gray-100">
-                    <Link to="/commercial" className="text-sm font-medium text-blue-600 hover:text-blue-700">View all commercial services &rarr;</Link>
+                    <Link to="/commercial" onClick={() => setHoveredDropdown(null)} className="text-sm font-medium text-blue-600 hover:text-blue-700">View all commercial services &rarr;</Link>
                   </div>
                 </div>
               </div>
