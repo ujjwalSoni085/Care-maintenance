@@ -1,0 +1,44 @@
+const User = require('../../models/User');
+
+class AuthRepository {
+    /**
+     * Create a new user in the database
+     * @param {Object} userData 
+     * @returns {Promise<Object>} The saved user document
+     */
+    async createUser(userData) {
+        const user = new User(userData);
+        return await user.save();
+    }
+
+    /**
+     * Find a user by their email address
+     * @param {String} email 
+     * @returns {Promise<Object|null>} The user document including password
+     */
+    async findUserByEmail(email) {
+        // Select password explicitly since it's excluded by default in the User model
+        return await User.findOne({ email }).select('+password');
+    }
+
+    /**
+     * Find a user by their ID
+     * @param {String} userId 
+     * @returns {Promise<Object|null>} The user document
+     */
+    async findUserById(userId) {
+        return await User.findById(userId);
+    }
+
+    /**
+     * Check if a user with the given email exists
+     * @param {String} email 
+     * @returns {Promise<Boolean>}
+     */
+    async checkEmailExists(email) {
+        const count = await User.countDocuments({ email });
+        return count > 0;
+    }
+}
+
+module.exports = new AuthRepository();
