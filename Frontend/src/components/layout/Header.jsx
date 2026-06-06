@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronDown, FiUser, FiLogOut } from 'react-icons/fi';
 import { FaBolt, FaWrench, FaHammer, FaSnowflake, FaBug, FaPlug, FaWater, FaFan, FaFireExtinguisher, FaBuilding, FaLeaf } from 'react-icons/fa6';
 import { FaCoffee } from 'react-icons/fa';
 import useScrollPosition from '../../hooks/useScrollPosition';
+import { useAuth } from '../../context/AuthContext';
 import MobileMenu from './MobileMenu';
 import Container from '../common/Container';
 import { FaHeadset } from "react-icons/fa";
@@ -33,6 +34,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredDropdown, setHoveredDropdown] = useState(null);
   const location = useLocation();
+  const { user, isAuthenticated, logout } = useAuth();
 
   const handleHomeClick = (e) => {
     if (location.pathname === '/') {
@@ -137,6 +139,33 @@ const Header = () => {
 
             {/* Actions */}
             <div className="flex-1 flex justify-end items-center gap-4 ml-8 xl:ml-12">
+              {isAuthenticated ? (
+                <div className="hidden md:flex items-center gap-4">
+                  <div className="flex items-center gap-2 text-sm font-medium text-slate-800">
+                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                      <FiUser />
+                    </div>
+                    <span className="hidden lg:block truncate max-w-[120px]">{user?.name}</span>
+                  </div>
+                  <button 
+                    onClick={logout}
+                    className="text-sm font-medium text-slate-600 hover:text-red-600 transition-colors flex items-center gap-1"
+                    title="Logout"
+                  >
+                    <FiLogOut /> <span className="hidden lg:block">Logout</span>
+                  </button>
+                </div>
+              ) : (
+                <div className="hidden md:flex items-center gap-3">
+                  <Link to="/login" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-slate-800 hover:text-blue-600' : 'text-slate-800 hover:text-blue-600'}`}>
+                    Log in
+                  </Link>
+                  <Link to="/register" className="text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 px-5 py-2.5 rounded-full shadow-sm transition-all hover:-translate-y-0.5">
+                    Sign up
+                  </Link>
+                </div>
+              )}
+              
               <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-7 py-2.5 text-sm font-medium text-white bg-slate-900 hover:bg-blue-600 rounded-full shadow-md shadow-slate-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap">
                 Contact Us
               </Link>

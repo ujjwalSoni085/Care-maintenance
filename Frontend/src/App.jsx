@@ -6,11 +6,15 @@ import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import ScrollToTop from './components/layout/ScrollToTop';
 import SplashIntro from './components/common/SplashIntro';
+import { Toaster } from 'react-hot-toast';
+import { AuthProvider } from './context/AuthContext';
 import './App.css';
 
 const LocationPage = React.lazy(() => import('./pages/LocationPage'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const AboutPage = React.lazy(() => import('./pages/AboutPage'));
+const LoginPage = React.lazy(() => import('./pages/auth/LoginPage'));
+const RegisterPage = React.lazy(() => import('./pages/auth/RegisterPage'));
 const EasyPaymentPage = React.lazy(() => import('./pages/services/EasyPaymentPage'));
 const SatisfactionGuaranteePage = React.lazy(() => import('./pages/services/SatisfactionGuaranteePage'));
 const TechnicianOnboardingPage = React.lazy(() => import('./pages/services/TechnicianOnboardingPage'));
@@ -59,9 +63,11 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      {showSplash && <SplashIntro onComplete={() => setShowSplash(false)} />}
-      <ScrollToTop />
+    <AuthProvider>
+      <BrowserRouter>
+        <Toaster position="top-right" />
+        {showSplash && <SplashIntro onComplete={() => setShowSplash(false)} />}
+        <ScrollToTop />
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <Header />
         <main className="flex-grow pt-[72px]">
@@ -71,6 +77,8 @@ function App() {
               <Route path="/location" element={<LocationPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
               <Route path="/easy-payment" element={<EasyPaymentPage />} />
               <Route path="/satisfaction-guarantee" element={<SatisfactionGuaranteePage />} />
               <Route path="/technician-onboarding" element={<TechnicianOnboardingPage />} />
@@ -106,7 +114,8 @@ function App() {
         </main>
         <Footer />
       </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

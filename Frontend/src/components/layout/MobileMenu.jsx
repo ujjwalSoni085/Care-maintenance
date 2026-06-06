@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FiX, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { FiX, FiChevronDown, FiChevronUp, FiUser, FiLogOut } from 'react-icons/fi';
+import { useAuth } from '../../context/AuthContext';
 
 const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }) => {
   const [openSection, setOpenSection] = useState(null);
   const location = useLocation();
+  const { user, isAuthenticated, logout } = useAuth();
 
   useEffect(() => {
     if (isOpen) {
@@ -122,9 +124,34 @@ const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }
           </nav>
         </div>
 
-        <div className="p-5 border-t border-gray-100">
-          <Link to="/quote" className="flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md transition-colors" onClick={onClose}>
-            Get a Quote
+        <div className="p-5 border-t border-gray-100 flex flex-col gap-3">
+          {isAuthenticated ? (
+            <>
+              <div className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-800 bg-slate-50 rounded-xl">
+                <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                  <FiUser />
+                </div>
+                <span className="truncate">{user?.name}</span>
+              </div>
+              <button 
+                onClick={() => { logout(); onClose(); }}
+                className="flex items-center justify-center w-full px-6 py-3 text-base font-medium text-red-600 bg-red-50 hover:bg-red-100 rounded-xl transition-colors gap-2"
+              >
+                <FiLogOut /> Logout
+              </button>
+            </>
+          ) : (
+            <div className="flex flex-col gap-3">
+              <Link to="/login" className="flex items-center justify-center w-full px-6 py-3 text-base font-medium text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors" onClick={onClose}>
+                Log in
+              </Link>
+              <Link to="/register" className="flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md transition-colors" onClick={onClose}>
+                Sign up
+              </Link>
+            </div>
+          )}
+          <Link to="/contact" className="flex items-center justify-center w-full px-6 py-3 text-base font-medium text-slate-800 border border-slate-200 hover:bg-slate-50 rounded-xl transition-colors mt-2" onClick={onClose}>
+            Contact Us
           </Link>
         </div>
       </div>

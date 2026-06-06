@@ -9,7 +9,7 @@ export const slides = [
   },
   {
     id: 2,
-    image: '/images/services/wallpaper 2-converte.webp',
+    image: '/images/Group photo.webp',
     title: 'Reliable Commercial Maintenance',
     description: 'Keep your business running smoothly with our comprehensive facility management.',
     cta: 'Book a Servic',
@@ -17,7 +17,10 @@ export const slides = [
   },
   {
     id: 3,
-    image: '/images/services/wallpaper image 1-converted.webp',
-  
+    image: '/images/Group photo.webp',
+    title: 'Reliable Commercial Maintenance',
+    description: 'Keep your business running smoothly with our comprehensive facility management.',
+    cta: 'Book a Servic',
+    path: '/quote'
   }
 ];
