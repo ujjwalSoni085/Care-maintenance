@@ -36,14 +36,6 @@ const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }
       {/* Drawer */}
       <div className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl flex flex-col transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex items-center justify-between p-5 border-b border-gray-100">
-          <Link to="/" className="flex items-center gap-2" onClick={onClose}>
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
-              C
-            </div>
-            <span className="font-bold text-lg tracking-tight text-gray-900">
-              Care<span className="text-blue-600">Maintenance</span>
-            </span>
-          </Link>
           <button 
             onClick={onClose}
             className="p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"

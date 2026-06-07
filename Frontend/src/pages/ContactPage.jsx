@@ -1,9 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import Container from '../components/common/Container';
+import axios from '../api/axios'; // Make sure this path exists or use simple axios
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [status, setStatus] = useState({ loading: false, success: false, error: null });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: false, error: null });
+
+    const payload = {
+      name: `${formData.firstName} ${formData.lastName}`.trim(),
+      email: formData.email,
+      subject: formData.subject,
+      message: `Phone: ${formData.phone}\n\n${formData.message}`
+    };
+
+    try {
+      // The axios instance already has '/api' in its baseURL
+      await axios.post('/contact', payload);
+      setStatus({ loading: false, success: true, error: null });
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting form', error);
+      setStatus({ 
+        loading: false, 
+        success: false, 
+        error: error.response?.data?.message || 'Failed to send message. Please try again.'
+      });
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen py-16">
       <Container>
@@ -80,13 +121,27 @@ const ContactPage = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="md:col-span-2 bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
             >
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                {status.success && (
+                  <div className="p-4 bg-green-100 text-green-700 rounded-lg">
+                    Message sent successfully! We'll get back to you soon.
+                  </div>
+                )}
+                {status.error && (
+                  <div className="p-4 bg-red-100 text-red-700 rounded-lg">
+                    {status.error}
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
                     <input 
                       type="text" 
                       id="firstName" 
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
                       placeholder="Ram"
                     />
@@ -96,6 +151,9 @@ const ContactPage = () => {
                     <input 
                       type="text" 
                       id="lastName" 
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
                       placeholder="kumar"
                     />
@@ -108,6 +166,9 @@ const ContactPage = () => {
                     <input 
                       type="email" 
                       id="email" 
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
                       placeholder="Ram@example.com"
                     />
@@ -117,6 +178,8 @@ const ContactPage = () => {
                     <input 
                       type="tel" 
                       id="phone" 
+                      value={formData.phone}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
                       placeholder="+91 1234567890"
                     />
@@ -128,6 +191,8 @@ const ContactPage = () => {
                   <input 
                     type="text" 
                     id="subject" 
+                    value={formData.subject}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
                     placeholder="How can we help?"
                   />
@@ -138,6 +203,9 @@ const ContactPage = () => {
                   <textarea 
                     id="message" 
                     rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all resize-none"
                     placeholder="Write your message here..."
                   ></textarea>
@@ -145,9 +213,10 @@ const ContactPage = () => {
 
                 <button 
                   type="submit" 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-xl shadow-lg shadow-blue-600/30 transition-all hover:-translate-y-1"
+                  disabled={status.loading}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-xl shadow-lg shadow-blue-600/30 transition-all hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {status.loading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </motion.div>
@@ -159,3 +228,4 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+

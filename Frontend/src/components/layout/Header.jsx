@@ -139,14 +139,18 @@ const Header = () => {
 
             {/* Actions */}
             <div className="flex-1 flex justify-end items-center gap-4 ml-8 xl:ml-12">
+              <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-slate-700 bg-white border-2 border-slate-200 hover:border-blue-600 hover:text-blue-600 rounded-full transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap shadow-sm">
+                Contact Us
+              </Link>
+
               {isAuthenticated ? (
                 <div className="hidden md:flex items-center gap-4">
-                  <div className="flex items-center gap-2 text-sm font-medium text-slate-800">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                  <Link to="/profile" className="flex items-center gap-2 text-sm font-medium text-slate-800 hover:text-blue-600 transition-colors">
+                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors">
                       <FiUser />
                     </div>
                     <span className="hidden lg:block truncate max-w-[120px]">{user?.name}</span>
-                  </div>
+                  </Link>
                   <button 
                     onClick={logout}
                     className="text-sm font-medium text-slate-600 hover:text-red-600 transition-colors flex items-center gap-1"
@@ -157,18 +161,14 @@ const Header = () => {
                 </div>
               ) : (
                 <div className="hidden md:flex items-center gap-3">
-                  <Link to="/login" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-slate-800 hover:text-blue-600' : 'text-slate-800 hover:text-blue-600'}`}>
+                  <Link to="/login" className={`text-sm font-semibold transition-colors px-2 ${isScrolled ? 'text-slate-700 hover:text-blue-600' : 'text-slate-700 hover:text-blue-600'}`}>
                     Log in
                   </Link>
-                  <Link to="/register" className="text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 px-5 py-2.5 rounded-full shadow-sm transition-all hover:-translate-y-0.5">
+                  <Link to="/register" className="text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
                     Sign up
                   </Link>
                 </div>
               )}
-              
-              <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-7 py-2.5 text-sm font-medium text-white bg-slate-900 hover:bg-blue-600 rounded-full shadow-md shadow-slate-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap">
-                Contact Us
-              </Link>
               
               <button 
                 onClick={() => setIsMobileMenuOpen(true)}

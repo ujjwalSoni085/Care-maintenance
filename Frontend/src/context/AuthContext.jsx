@@ -22,7 +22,8 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const response = await api.get('/auth/me');
-      setUser(response.data.data);
+      const userData = response.data?.data?.user || response.data?.data;
+      setUser(userData);
       setIsAuthenticated(true);
     } catch (error) {
       console.error('Failed to load user:', error);

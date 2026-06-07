@@ -97,7 +97,7 @@ const RegisterPage = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="appearance-none block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors"
-                  placeholder="John Doe"
+                  placeholder="Name"
                 />
               </div>
             </div>
@@ -128,7 +128,7 @@ const RegisterPage = () => {
             {/* Phone */}
             <div>
               <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                Phone Number <span className="text-gray-400 font-normal">(Optional)</span>
+                Phone Number
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -141,7 +141,7 @@ const RegisterPage = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="appearance-none block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+91 1234567890"
                 />
               </div>
             </div>
