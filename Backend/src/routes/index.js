@@ -5,10 +5,12 @@ const router = express.Router();
 const authRoutes = require('../modules/auth/auth.routes');
 const userRoutes = require('../modules/user/user.routes');
 const contactRoutes = require('./contact.routes');
+const feedbackRoutes = require('./feedback.routes');
 
 // Mount routes
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
 router.use('/contact', contactRoutes);
+router.use('/feedback', feedbackRoutes);
 
 module.exports = router;

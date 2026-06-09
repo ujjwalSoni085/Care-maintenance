@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FiMenu, FiX, FiChevronDown, FiUser, FiLogOut } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronDown, FiUser, FiLogOut, FiMessageSquare } from 'react-icons/fi';
 import { FaBolt, FaWrench, FaHammer, FaSnowflake, FaBug, FaPlug, FaWater, FaFan, FaFireExtinguisher, FaBuilding, FaLeaf } from 'react-icons/fa6';
 import { FaCoffee } from 'react-icons/fa';
 import useScrollPosition from '../../hooks/useScrollPosition';
@@ -144,20 +144,61 @@ const Header = () => {
               </Link>
 
               {isAuthenticated ? (
-                <div className="hidden md:flex items-center gap-4">
-                  <Link to="/profile" className="flex items-center gap-2 text-sm font-medium text-slate-800 hover:text-blue-600 transition-colors">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors">
-                      <FiUser />
+                <div 
+                  className="relative hidden md:flex items-center"
+                  onMouseEnter={() => setHoveredDropdown('profile')}
+                  onMouseLeave={() => setHoveredDropdown(null)}
+                >
+                  <button className="flex items-center gap-2 text-sm font-medium text-slate-800 hover:text-blue-600 transition-colors py-2 focus:outline-none">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-100 to-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shadow-sm transition-transform hover:scale-105">
+                      {user?.name ? <span className="font-bold text-sm">{user.name.charAt(0).toUpperCase()}</span> : <FiUser className="text-lg" />}
                     </div>
-                    <span className="hidden lg:block truncate max-w-[120px]">{user?.name}</span>
-                  </Link>
-                  <button 
-                    onClick={logout}
-                    className="text-sm font-medium text-slate-600 hover:text-red-600 transition-colors flex items-center gap-1"
-                    title="Logout"
-                  >
-                    <FiLogOut /> <span className="hidden lg:block">Logout</span>
+                    <span className="hidden lg:block truncate max-w-[120px] font-semibold">{user?.name || 'User'}</span>
+                    <FiChevronDown className={`transition-transform duration-300 text-slate-400 ${hoveredDropdown === 'profile' ? 'rotate-180 text-blue-600' : ''}`} />
                   </button>
+                  
+                  <div className={`absolute top-full right-0 mt-2 w-56 bg-white rounded-xl shadow-lg shadow-blue-900/5 border border-slate-100 transition-all duration-200 transform origin-top-right flex flex-col overflow-hidden z-50 ${hoveredDropdown === 'profile' ? 'opacity-100 visible translate-y-0 scale-100' : 'opacity-0 invisible translate-y-2 scale-95'}`}>
+                    {user?.email && (
+                      <div className="px-4 py-3 border-b border-slate-100 bg-slate-50/50">
+                        <p className="text-sm font-semibold text-slate-800 truncate">{user?.name || 'User'}</p>
+                        <p className="text-xs text-slate-500 truncate mt-0.5">{user.email}</p>
+                      </div>
+                    )}
+                    <div className="p-2">
+                      <Link 
+                        to="/profile" 
+                        onClick={() => setHoveredDropdown(null)}
+                        className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-700 rounded-lg hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 group"
+                      >
+                        <div className="p-1.5 rounded-md bg-slate-100 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                          <FiUser />
+                        </div>
+                        Profile
+                      </Link>
+                      <Link 
+                        to="/feedback" 
+                        onClick={() => setHoveredDropdown(null)}
+                        className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-700 rounded-lg hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 group mt-1"
+                      >
+                        <div className="p-1.5 rounded-md bg-slate-100 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                          <FiMessageSquare />
+                        </div>
+                        Feedback & Reviews
+                      </Link>
+                      <button 
+                        onClick={() => {
+                          setHoveredDropdown(null);
+                          logout();
+                        }}
+                        className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-700 rounded-lg hover:bg-red-50 hover:text-red-600 transition-all duration-200 mt-1 group"
+                      >
+                        <div className="p-1.5 rounded-md bg-slate-100 text-slate-500 group-hover:bg-red-100 group-hover:text-red-600 transition-colors">
+                          <FiLogOut />
+                        </div>
+                        Logout
+                      </button>
+                    </div>
+                  </div>
                 </div>
               ) : (
                 <div className="hidden md:flex items-center gap-3">
