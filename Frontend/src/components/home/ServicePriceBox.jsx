@@ -151,6 +151,69 @@ const ServicePriceBox = () => {
   const activePackageData = comboPackages.find(p => p.id === selectedPackageId) || comboPackages[1];
   const activePrice = selectedPackageId ? activePackageData.price : 0;
 
+  const handlePayment = async () => {
+    try {
+      // 1. Fetch order ID from our Node.js backend
+      const response = await fetch('http://localhost:5000/api/payment/create-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: activePrice * 100, // Amount in paise
+          currency: 'INR'
+        }),
+      });
+      
+      const data = await response.json();
+      
+      if (!data.success) {
+        alert("Failed to initialize payment: " + data.message);
+        return;
+      }
+
+      // 2. Open Razorpay Checkout with the generated order_id
+      const initializeRazorpay = () => {
+        const options = {
+          key: "rzp_live_IfQ5H1BWEB3cHP",
+          amount: data.amount,
+          currency: data.currency,
+          name: "Care Maintenance",
+          description: activePackageData?.name || "Comprehensive Care Plan",
+          order_id: data.orderId, // <-- MANDATORY FOR LIVE KEYS
+          handler: function (response) {
+            alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
+            // TODO: Add backend verification here if needed
+          },
+          theme: {
+            color: "#f97316"
+          }
+        };
+        const rzp = new window.Razorpay(options);
+        rzp.on('payment.failed', function (response) {
+          alert(`Error: ${response.error.code} - ${response.error.description}`);
+          console.error("Razorpay Error:", response.error);
+        });
+        rzp.open();
+      };
+
+      if (window.Razorpay) {
+        initializeRazorpay();
+      } else {
+        const script = document.createElement('script');
+        script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+        script.onload = initializeRazorpay;
+        script.onerror = () => {
+          alert("Failed to load Razorpay SDK. Please check your internet connection.");
+        };
+        document.body.appendChild(script);
+      }
+    } catch (error) {
+      console.error("Payment initiation error:", error);
+      alert("Something went wrong while connecting to the server.");
+    }
+  };
+
   return (
     <section id="service-price-box" className="py-14 md:py-16 bg-surface relative overflow-hidden" ref={ref}>
       {/* Background Decorative Gradients */}
@@ -270,6 +333,7 @@ const ServicePriceBox = () => {
                   <motion.button 
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
+                    onClick={handlePayment}
                     className="w-full md:w-auto px-8 sm:px-12 py-6 bg-primary hover:bg-primary-light text-white rounded-xl font-bold tracking-[-0.01em] text-xl sm:text-2xl transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 flex items-center justify-center gap-4 relative overflow-hidden group border border-white/10"
                   >
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />

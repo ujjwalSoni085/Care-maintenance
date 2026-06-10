@@ -1,9 +1,10 @@
 const jwt = require('jsonwebtoken');
+const User = require('../models/User');
 
 /**
  * Middleware to authenticate requests using JWT
  */
-const authenticate = (req, res, next) => {
+const authenticate = async (req, res, next) => {
     try {
         let token;
         
@@ -21,11 +22,18 @@ const authenticate = (req, res, next) => {
         }
 
         // Verify token using JWT_SECRET from environment variables
-        const secret = process.env.JWT_SECRET || 'secret';
+        const secret = process.env.JWT_SECRET || 'secret_key';
         const decoded = jwt.verify(token, secret);
 
         // Attach user info to request object
-        req.user = decoded;
+        const user = await User.findById(decoded.id);
+        if (!user) {
+            return res.status(401).json({
+                success: false,
+                message: 'Not authorized, user not found'
+            });
+        }
+        req.user = user;
         
         next();
     } catch (error) {

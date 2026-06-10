@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FiX, FiChevronDown, FiChevronUp, FiUser, FiLogOut } from 'react-icons/fi';
 import { useAuth } from '../../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }) => {
   const [openSection, setOpenSection] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
+
+  const handleLogout = () => {
+    onClose();
+    toast.success('Logged out successfully');
+    navigate('/');
+    setTimeout(() => {
+      logout();
+    }, 100);
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -126,7 +137,7 @@ const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }
                 <span className="truncate">{user?.name}</span>
               </div>
               <button 
-                onClick={() => { logout(); onClose(); }}
+                onClick={handleLogout}
                 className="flex items-center justify-center w-full px-6 py-3 text-base font-medium text-red-600 bg-red-50 hover:bg-red-100 rounded-xl transition-colors gap-2"
               >
                 <FiLogOut /> Logout

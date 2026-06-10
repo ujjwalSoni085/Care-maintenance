@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FiMenu, FiX, FiChevronDown, FiUser, FiLogOut, FiMessageSquare } from 'react-icons/fi';
 import { FaBolt, FaWrench, FaHammer, FaSnowflake, FaBug, FaPlug, FaWater, FaFan, FaFireExtinguisher, FaBuilding, FaLeaf } from 'react-icons/fa6';
 import { FaCoffee } from 'react-icons/fa';
@@ -8,6 +8,7 @@ import { useAuth } from '../../context/AuthContext';
 import MobileMenu from './MobileMenu';
 import Container from '../common/Container';
 import { FaHeadset } from "react-icons/fa";
+import toast from 'react-hot-toast';
 
 const residentialServices = [
   { name: 'Electrician', icon: <FaBolt className="text-yellow-500" />, path: '/residential/electrician' },
@@ -34,7 +35,17 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredDropdown, setHoveredDropdown] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
+
+  const handleLogout = () => {
+    setHoveredDropdown(null);
+    toast.success('Logged out successfully');
+    navigate('/');
+    setTimeout(() => {
+      logout();
+    }, 100);
+  };
 
   const handleHomeClick = (e) => {
     if (location.pathname === '/') {
@@ -133,7 +144,7 @@ const Header = () => {
                 </div>
               </div>
 
-              <a href="/#reviews" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Happy Customers</a>
+              <Link to="/feedback" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Happy Customers</Link>
               <Link to="/about" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>About</Link>
             </nav>
 
@@ -186,10 +197,7 @@ const Header = () => {
                         Feedback & Reviews
                       </Link>
                       <button 
-                        onClick={() => {
-                          setHoveredDropdown(null);
-                          logout();
-                        }}
+                        onClick={handleLogout}
                         className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-700 rounded-lg hover:bg-red-50 hover:text-red-600 transition-all duration-200 mt-1 group"
                       >
                         <div className="p-1.5 rounded-md bg-slate-100 text-slate-500 group-hover:bg-red-100 group-hover:text-red-600 transition-colors">
