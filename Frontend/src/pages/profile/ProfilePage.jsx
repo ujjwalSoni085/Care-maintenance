@@ -105,9 +105,11 @@ const ProfilePage = () => {
                   {profileData.name ? profileData.name.charAt(0).toUpperCase() : <FiUser />}
                 </div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-1">{profileData.name || 'User'}</h2>
-                <span className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full uppercase tracking-wider mb-6">
-                  {profileData.role || 'Customer'}
-                </span>
+                {profileData.role && profileData.role.toLowerCase() !== 'customer' && profileData.role.toLowerCase() !== 'user' && (
+                  <span className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full uppercase tracking-wider mb-6">
+                    {profileData.role}
+                  </span>
+                )}
                 
                 <p className="text-sm text-slate-500 mt-auto pt-6 border-t border-gray-100 w-full">
                   Member since {formatDate(profileData.createdAt)}
@@ -158,15 +160,17 @@ const ProfilePage = () => {
                     </div>
 
                     {/* Account Role */}
-                    <div className="group">
-                      <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block group-hover:text-blue-600 transition-colors">
-                        Account Type
-                      </label>
-                      <div className="flex items-center gap-3 text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-100 group-hover:border-blue-100 group-hover:bg-blue-50/50 transition-all">
-                        <FiShield className="text-slate-400 group-hover:text-blue-500" />
-                        <span className="font-medium capitalize">{profileData.role || 'Customer'}</span>
+                    {profileData.role && profileData.role.toLowerCase() !== 'customer' && profileData.role.toLowerCase() !== 'user' && (
+                      <div className="group">
+                        <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block group-hover:text-blue-600 transition-colors">
+                          Account Type
+                        </label>
+                        <div className="flex items-center gap-3 text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-100 group-hover:border-blue-100 group-hover:bg-blue-50/50 transition-all">
+                          <FiShield className="text-slate-400 group-hover:text-blue-500" />
+                          <span className="font-medium capitalize">{profileData.role}</span>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
                 

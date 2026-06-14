@@ -13,6 +13,7 @@ import './App.css';
 const LocationPage = React.lazy(() => import('./pages/LocationPage'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const AboutPage = React.lazy(() => import('./pages/AboutPage'));
+const TeamPage = React.lazy(() => import('./pages/TeamPage'));
 const LoginPage = React.lazy(() => import('./pages/auth/LoginPage'));
 const RegisterPage = React.lazy(() => import('./pages/auth/RegisterPage'));
 const ProfilePage = React.lazy(() => import('./pages/profile/ProfilePage'));
@@ -78,6 +79,7 @@ function App() {
               <Route path="/location" element={<LocationPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/team" element={<TeamPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/profile" element={<ProfilePage />} />

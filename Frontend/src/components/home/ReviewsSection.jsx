@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
-import { FaStar, FaQuoteLeft } from 'react-icons/fa';
+import { Pagination, Autoplay, Navigation } from 'swiper/modules';
+import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Container from '../common/Container';
 import SectionHeading from '../common/SectionHeading';
 import { reviews } from '../../data/reviews';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const ReviewsSection = () => {
   return (
@@ -29,13 +30,17 @@ const ReviewsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mt-2"
+          className="mt-2 relative"
         >
           <Swiper
-            modules={[Pagination, Autoplay]}
+            modules={[Pagination, Autoplay, Navigation]}
             spaceBetween={30}
             slidesPerView={1}
             pagination={{ clickable: true, dynamicBullets: true }}
+            navigation={{
+              prevEl: '.review-swiper-button-prev',
+              nextEl: '.review-swiper-button-next',
+            }}
             autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
             breakpoints={{
               640: {
@@ -106,6 +111,18 @@ const ReviewsSection = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+          
+          {/* Custom Navigation Buttons */}
+          <div className="absolute top-[40%] -translate-y-1/2 left-0 z-10 -ml-4 lg:-ml-6 hidden md:flex">
+            <button className="review-swiper-button-prev w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] border border-gray-100 text-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 hover:text-white hover:border-transparent hover:scale-110 transition-all duration-300 [&.swiper-button-disabled]:opacity-0 [&.swiper-button-disabled]:pointer-events-none">
+              <FaChevronLeft className="w-4 h-4 ml-[-2px]" />
+            </button>
+          </div>
+          <div className="absolute top-[40%] -translate-y-1/2 right-0 z-10 -mr-4 lg:-mr-6 hidden md:flex">
+            <button className="review-swiper-button-next w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] border border-gray-100 text-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 hover:text-white hover:border-transparent hover:scale-110 transition-all duration-300 [&.swiper-button-disabled]:opacity-0 [&.swiper-button-disabled]:pointer-events-none">
+              <FaChevronRight className="w-4 h-4 mr-[-2px]" />
+            </button>
+          </div>
         </motion.div>
       </Container>
     </section>

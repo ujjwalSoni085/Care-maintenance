@@ -144,8 +144,9 @@ const Header = () => {
                 </div>
               </div>
 
-              <Link to="/feedback" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Happy Customers</Link>
+              <Link to="/feedback" className={`font-medium hover:text-blue-600 transition-all duration-300 whitespace-nowrap ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Happy Customers</Link>
               <Link to="/about" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>About</Link>
+              <Link to="/team" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Team</Link>
             </nav>
 
             {/* Actions */}
@@ -209,11 +210,11 @@ const Header = () => {
                   </div>
                 </div>
               ) : (
-                <div className="hidden md:flex items-center gap-3">
-                  <Link to="/login" className={`text-sm font-semibold transition-colors px-2 ${isScrolled ? 'text-slate-700 hover:text-blue-600' : 'text-slate-700 hover:text-blue-600'}`}>
+                <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+                  <Link to="/login" className={`text-sm font-semibold transition-colors px-2 whitespace-nowrap ${isScrolled ? 'text-slate-700 hover:text-blue-600' : 'text-slate-700 hover:text-blue-600'}`}>
                     Log in
                   </Link>
-                  <Link to="/register" className="text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+                  <Link to="/register" className="text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap">
                     Sign up
                   </Link>
                 </div>
