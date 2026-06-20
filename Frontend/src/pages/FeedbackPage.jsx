@@ -7,6 +7,7 @@ import FeedbackForm from '../components/feedback/FeedbackForm';
 import RatingStars from '../components/feedback/RatingStars';
 import toast from 'react-hot-toast';
 import { FiEdit2, FiTrash2 } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const FeedbackPage = () => {
   const { isAuthenticated, user } = useAuth();
@@ -148,9 +149,9 @@ const FeedbackPage = () => {
                 </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-2">Have something to say?</h3>
                 <p className="text-slate-600 mb-6">Log in to leave your feedback and help us improve our services.</p>
-                <a href="/login" className="inline-block w-full px-6 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-all duration-300">
+                <Link to="/login" className="inline-block w-full px-6 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-all duration-300">
                   Log In to Review
-                </a>
+                </Link>
               </div>
             ) : myFeedback && !isEditing ? (
               <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">

@@ -153,8 +153,11 @@ const ServicePriceBox = () => {
 
   const handlePayment = async () => {
     try {
+      // Get base URL from environment or fallback to production URL
+      const baseURL = import.meta.env.VITE_API_URL || 'https://care-maintenance-1.onrender.com/api';
+
       // 1. Fetch order ID from our Node.js backend
-      const response = await fetch('http://localhost:5000/api/payment/create-order', {
+      const response = await fetch(`${baseURL}/payment/create-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -175,7 +178,7 @@ const ServicePriceBox = () => {
       // 2. Open Razorpay Checkout with the generated order_id
       const initializeRazorpay = () => {
         const options = {
-          key: "rzp_live_IfQ5H1BWEB3cHP",
+          key: "rzp_live_Szrl4wNQhe7POg",
           amount: data.amount,
           currency: data.currency,
           name: "Care Maintenance",

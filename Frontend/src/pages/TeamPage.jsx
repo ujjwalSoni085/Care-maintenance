@@ -123,9 +123,9 @@ const TeamPage = () => {
               },
               {
                 name: "Vishal Kumar",
-                role: "Sales & Client Relations",
+                role: "Marketing Manager(Central)",
                 desc: "Building strong client relationships and business growth.",
-                image: "/images/vishal_kumar.webp"
+                image: "/images/vishal kumar 2.webp"
               },
               {
                 name: "Pankaj Kumar",
