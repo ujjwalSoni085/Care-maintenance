@@ -1,5 +1,6 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Lenis from 'lenis';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -8,6 +9,7 @@ import ScrollToTop from './components/layout/ScrollToTop';
 import SplashIntro from './components/common/SplashIntro';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/common/ProtectedRoute';
 import './App.css';
 
 const LocationPage = React.lazy(() => import('./pages/LocationPage'));
@@ -21,6 +23,15 @@ const EasyPaymentPage = React.lazy(() => import('./pages/services/EasyPaymentPag
 const SatisfactionGuaranteePage = React.lazy(() => import('./pages/services/SatisfactionGuaranteePage'));
 const TechnicianOnboardingPage = React.lazy(() => import('./pages/services/TechnicianOnboardingPage'));
 const FeedbackPage = React.lazy(() => import('./pages/FeedbackPage'));
+
+// Blog Pages
+const BlogListPage = React.lazy(() => import('./pages/blog/BlogListPage'));
+const BlogPostPage = React.lazy(() => import('./pages/blog/BlogPostPage'));
+
+// Admin Pages
+const AdminLayout = React.lazy(() => import('./pages/admin/AdminLayout'));
+const AdminBlogList = React.lazy(() => import('./pages/admin/AdminBlogList'));
+const AdminBlogCreateEdit = React.lazy(() => import('./pages/admin/AdminBlogCreateEdit'));
 
 // Service Detail Pages
 const ElectricianPage = React.lazy(() => import('./pages/services/ElectricianPage'));
@@ -65,6 +76,7 @@ function App() {
   }, []);
 
   return (
+    <HelmetProvider>
     <AuthProvider>
       <BrowserRouter>
         <Toaster position="top-right" />
@@ -114,6 +126,18 @@ function App() {
               <Route path="/commercial/appliance-maintenance" element={<CommercialApplianceMaintenancePage />} />
               <Route path="/commercial/corporate-helpdesk" element={<CorporateComplaintManagement />} />
               
+              {/* Blog Routes */}
+              <Route path="/blog" element={<BlogListPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
+
+              {/* Admin Dashboard */}
+              <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
+                <Route index element={<div className="text-2xl font-bold">Welcome to Admin Dashboard</div>} />
+                <Route path="blogs" element={<AdminBlogList />} />
+                <Route path="blogs/create" element={<AdminBlogCreateEdit />} />
+                <Route path="blogs/edit/:id" element={<AdminBlogCreateEdit />} />
+              </Route>
+              
             </Routes>
           </Suspense>
         </main>
@@ -121,6 +145,7 @@ function App() {
       </div>
       </BrowserRouter>
     </AuthProvider>
+    </HelmetProvider>
   );
 }
 

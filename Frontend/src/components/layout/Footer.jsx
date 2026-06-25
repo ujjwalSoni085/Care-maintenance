@@ -75,12 +75,13 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-white font-outfit mb-6">Quick Links</h3>
             <ul className="space-y-4">
-              <li><Link to="/" className="hover:text-primary-400 transition-colors duration-200">Home</Link></li>
-              <li><Link to="/about" className="hover:text-primary-400 transition-colors duration-200">About</Link></li>
-              <li><Link to="/easy-payment" className="hover:text-primary-400 transition-colors duration-200">Easy Payment</Link></li>
-              <li><Link to="/satisfaction-guarantee" className="hover:text-primary-400 transition-colors duration-200">Satisfaction Guarantee</Link></li>
-              <li><Link to="/technician-onboarding" className="hover:text-primary-400 transition-colors duration-200">Technician Onboarding</Link></li>
-              <li><Link to="/feedback" className="hover:text-primary-400 transition-colors duration-200">Feedback & Reviews</Link></li>
+              <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Home</Link></li>
+              <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">About</Link></li>
+              <li><Link to="/blog" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Blog</Link></li>
+              <li><Link to="/easy-payment" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Easy Payment</Link></li>
+              <li><Link to="/satisfaction-guarantee" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Satisfaction Guarantee</Link></li>
+              <li><Link to="/technician-onboarding" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Technician Onboarding</Link></li>
+              <li><Link to="/feedback" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Feedback & Reviews</Link></li>
             </ul>
           </div>
 
@@ -88,8 +89,8 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-white font-outfit mb-6">Services</h3>
             <ul className="space-y-4">
-              <li><Link to="/services/residential" className="hover:text-primary-400 transition-colors duration-200">Residential</Link></li>
-              <li><Link to="/services/commercial" className="hover:text-primary-400 transition-colors duration-200">Commercial</Link></li>
+              <li><Link to="/services/residential" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Residential</Link></li>
+              <li><Link to="/services/commercial" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Commercial</Link></li>
             </ul>
           </div>
 

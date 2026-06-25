@@ -25,12 +25,12 @@ export const serviceData = {
       { title: 'Guaranteed Work', description: '100% satisfaction guarantee on all electrical repairs.', icon: 'verified' }
     ],
     gallery: [
-      '/images/services/elect1.webp',
-      '/images/services/elect2.webp',
-      '/images/services/elect3.webp',
-      '/images/services/elect4.webp',
-      '/images/services/elect5.webp',
-      '/images/services/elect6.webp'
+      '/images/services/elect 1.webp',
+      '/images/services/elect 2.webp',
+      '/images/services/elect 3.webp',
+      '/images/services/elect 4.webp',
+      '/images/services/elect 5.webp',
+      '/images/services/elect 6.webp'
     ]
   },
   'plumber': {
@@ -93,12 +93,12 @@ export const serviceData = {
       { title: 'Space Optimization', description: 'Smart designs that maximize your home space.', icon: 'zoom_out_map' }
     ],
     gallery: [
-      '/images/services/carpenter1 (2).webp',
-      '/images/services/carpenter1.webp',
-      '/images/services/carpenter3.webp',
-      '/images/services/carpenter4.webp',
-      '/images/services/carpenter5.webp',
-      '/images/services/carpenter3.webp'
+      '/images/services/carpenter image 13.webp',
+      '/images/services/carpenter 15.webp',
+      '/images/services/carpenter 12.webp',
+      '/images/services/carpenter 11.webp',
+      '/images/services/carepenter 13.webp',
+      '/images/services/carpenter 11.webp'
     ]
   },
   'ac-services': {

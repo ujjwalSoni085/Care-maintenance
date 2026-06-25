@@ -15,8 +15,8 @@ const ElectricianPage = () => {
         {/* === HERO SECTION === */}
         <section className="bg-surface-container-lowest rounded-[2rem] p-8 md:p-12 border border-outline-variant/20 shadow-lg flex flex-col md:flex-row items-center gap-10 md:gap-14 relative overflow-hidden">
           {/* Subtle Ambient Backgrounds */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/15 rounded-full blur-[100px] -z-10 translate-x-1/4 -translate-y-1/4"></div>
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-400/15 rounded-full blur-[100px] -z-10 -translate-x-1/4 translate-y-1/4"></div>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/15 rounded-full blur-3xl -z-10 translate-x-1/4 -translate-y-1/4 transform-gpu"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-400/15 rounded-full blur-3xl -z-10 -translate-x-1/4 translate-y-1/4 transform-gpu"></div>
           
           <div className="flex-1 space-y-7 z-10 w-full">
             {/* Professional Badge */}
@@ -68,7 +68,7 @@ const ElectricianPage = () => {
           {/* Image Section */}
           <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-2xl group">
             {service.gallery && service.gallery.length > 0 && (
-              <img src="/images/services/elect1.webp" alt="Electrical Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
+              <img src="/images/services/elect 1.webp" alt="Electrical Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 pointer-events-none">
               <div className="text-white flex items-center gap-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -86,7 +86,7 @@ const ElectricianPage = () => {
         {/* === ABOUT OUR ELECTRICAL SERVICES === */}
         <section className="py-12 relative overflow-hidden">
           {/* Subtle Ambient Background */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-[80px] pointer-events-none -z-10" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10 transform-gpu" />
           
           <div className="max-w-6xl mx-auto text-center space-y-8 px-4 sm:px-6">
             <div className="flex flex-col items-center gap-4">
@@ -106,8 +106,8 @@ const ElectricianPage = () => {
               <div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-400" />
               
               {/* Decorative subtle electrical waves/glow in background */}
-              <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-400/10 rounded-full blur-[100px] pointer-events-none group-hover:scale-110 transition-transform duration-1000" />
-              <div className="absolute -left-20 -top-20 w-60 h-60 bg-blue-400/5 rounded-full blur-[80px] pointer-events-none" />
+              <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl pointer-events-none group-hover:scale-110 transition-transform duration-1000 transform-gpu" />
+              <div className="absolute -left-20 -top-20 w-60 h-60 bg-blue-400/5 rounded-full blur-3xl pointer-events-none transform-gpu" />
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
                 {/* Left Side: Elegant Paragraph with Quotes */}
@@ -249,7 +249,7 @@ const ElectricianPage = () => {
         {/* === GALLERY === */}
         <section className="space-y-12 pt-16 relative">
           {/* Subtle Ambient Background for Section */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[120%] bg-gradient-to-tr from-blue-500/10 via-cyan-400/10 to-transparent blur-[120px] -z-10 rounded-full pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[120%] bg-gradient-to-tr from-blue-500/10 via-cyan-400/10 to-transparent blur-3xl -z-10 rounded-full pointer-events-none transform-gpu"></div>
 
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">Our Recent Work</h2>
@@ -269,7 +269,7 @@ const ElectricianPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 {/* Animated Shine/Light Sweep Effect */}
-                <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[45deg] group-hover:left-[200%] transition-all duration-1000 ease-in-out pointer-events-none"></div>
+                <div className="absolute top-0 left-0 -translate-x-[200%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[45deg] group-hover:translate-x-[400%] transition-transform duration-1000 ease-in-out pointer-events-none"></div>
 
                 {/* Hover Content */}
                 <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end items-start opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">

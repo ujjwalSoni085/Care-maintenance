@@ -8,11 +8,16 @@ const contactRoutes = require('./contact.routes');
 const feedbackRoutes = require('./feedback.routes');
 const paymentRoutes = require('../modules/payment/payment.routes');
 
+const blogRoutes = require('./blog.routes');
+const uploadRoutes = require('./upload.routes');
+
 // Mount routes
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
 router.use('/contact', contactRoutes);
 router.use('/feedback', feedbackRoutes);
 router.use('/payment', paymentRoutes);
+router.use('/blogs', blogRoutes);
+router.use('/upload', uploadRoutes);
 
 module.exports = router;

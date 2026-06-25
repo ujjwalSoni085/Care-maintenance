@@ -64,93 +64,115 @@ const Header = () => {
         }`}
       >
         <Container>
-          <div className="flex items-center gap-12 justify-between w-full">
+          <div className="flex items-center justify-between w-full gap-4">
             {/* Logo */}
-            <Link to="/" onClick={handleHomeClick}>
-            <div className="flex items-center flex-1 pr-4">
+            <div className="flex-1 flex items-center">
+              <Link to="/" onClick={handleHomeClick} className="z-50">
                 <img
                   src="/images/care-maintenance-logo-removebg-preview.webp"
                   alt="Care Maintenance Logo"
-                  className="h-11 md:h-15 w-auto object-contain"
+                  className="h-12 md:h-16 w-auto object-contain"
                 />
+              </Link>
             </div>
-            </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center justify-center gap-8 xl:gap-10">
+            <nav className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 flex-none">
               <Link to="/" onClick={handleHomeClick} className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Home</Link>
               
-              {/* Residential Dropdown */}
+              {/* Services Dropdown */}
               <div 
                 className="relative flex items-center"
-                onMouseEnter={() => setHoveredDropdown('residential')}
+                onMouseEnter={() => setHoveredDropdown('services')}
                 onMouseLeave={() => setHoveredDropdown(null)}
               >
                 <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-all duration-300 py-2 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>
-                  Residential <FiChevronDown className={`transition-transform ${hoveredDropdown === 'residential' ? 'rotate-180' : ''}`} />
+                  Services <FiChevronDown className={`transition-transform ${hoveredDropdown === 'services' ? 'rotate-180' : ''}`} />
                 </button>
-                <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-xl shadow-xl border border-gray-100 transition-all duration-200 transform origin-top flex flex-col overflow-hidden ${hoveredDropdown === 'residential' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
-                  <div className="p-6 grid grid-cols-2 gap-x-6 gap-y-4">
-                    {residentialServices.map((service, idx) => {
-                      const isActive = location.pathname === service.path;
-                      return (
-                        <Link key={idx} to={service.path} onClick={() => setHoveredDropdown(null)} className={`flex items-start gap-3 p-2 rounded-lg transition-colors group/item ${isActive ? 'bg-blue-50 ring-1 ring-blue-100' : 'hover:bg-gray-50'}`}>
-                          <div className={`p-2 rounded-lg shadow-sm transition-colors ${isActive ? 'bg-white' : 'bg-blue-50 group-hover/item:bg-white'}`}>
-                            {service.icon}
-                          </div>
-                          <div>
-                            <p className={`font-semibold text-sm ${isActive ? 'text-blue-700' : 'text-gray-900'}`}>{service.name}</p>
-                            <p className={`text-xs mt-0.5 ${isActive ? 'text-blue-600' : 'text-gray-500'}`}>Professional residential service</p>
-                          </div>
-                        </Link>
-                      );
-                    })}
+                <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[240px] bg-white rounded-xl shadow-xl border border-gray-100 transition-all duration-200 transform origin-top flex flex-col overflow-visible ${hoveredDropdown === 'services' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
+                  
+                  {/* Residential */}
+                  <div className="relative group/residential">
+                    <Link 
+                      to="/residential" 
+                      onClick={() => setHoveredDropdown(null)}
+                      className="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors border-b border-gray-50"
+                    >
+                      Residential
+                      <FiChevronDown className="-rotate-90" />
+                    </Link>
+                    <div className="absolute top-0 left-full w-[400px] hidden group-hover/residential:flex flex-col bg-white rounded-xl shadow-xl border border-gray-100 ml-1">
+                      <div className="p-5 grid grid-cols-1 gap-y-3">
+                        {residentialServices.map((service, idx) => {
+                          const isActive = location.pathname === service.path;
+                          return (
+                            <Link key={idx} to={service.path} onClick={() => setHoveredDropdown(null)} className={`flex items-start gap-3 p-2 rounded-lg transition-colors group/item ${isActive ? 'bg-blue-50 ring-1 ring-blue-100' : 'hover:bg-gray-50'}`}>
+                              <div className={`p-2 rounded-lg shadow-sm transition-colors ${isActive ? 'bg-white' : 'bg-blue-50 group-hover/item:bg-white'}`}>
+                                {service.icon}
+                              </div>
+                              <div>
+                                <p className={`font-semibold text-sm ${isActive ? 'text-blue-700' : 'text-gray-900'}`}>{service.name}</p>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </div>
-                  <div className="bg-gray-50 p-4 text-center border-t border-gray-100">
-                    <Link to="/residential" onClick={() => setHoveredDropdown(null)} className="text-sm font-medium text-blue-600 hover:text-blue-700">View all residential services &rarr;</Link>
-                  </div>
-                </div>
-              </div>
 
-              {/* Commercial Dropdown */}
-              <div 
-                className="relative flex items-center"
-                onMouseEnter={() => setHoveredDropdown('commercial')}
-                onMouseLeave={() => setHoveredDropdown(null)}
-              >
-                <button className={`flex items-center gap-1 font-medium hover:text-blue-600 transition-all duration-300 py-2 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>
-                  Commercial <FiChevronDown className={`transition-transform ${hoveredDropdown === 'commercial' ? 'rotate-180' : ''}`} />
-                </button>
-                <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-xl shadow-xl border border-gray-100 transition-all duration-200 transform origin-top flex flex-col overflow-hidden ${hoveredDropdown === 'commercial' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
-                  <div className="p-6 grid grid-cols-2 gap-x-6 gap-y-4">
-                    {commercialServices.map((service, idx) => {
-                      const isActive = location.pathname === service.path;
-                      return (
-                        <Link key={idx} to={service.path} onClick={() => setHoveredDropdown(null)} className={`flex items-start gap-3 p-2 rounded-lg transition-colors group/item ${isActive ? 'bg-blue-50 ring-1 ring-blue-100' : 'hover:bg-gray-50'}`}>
-                          <div className={`p-2 rounded-lg shadow-sm transition-colors ${isActive ? 'bg-white' : 'bg-blue-50 group-hover/item:bg-white'}`}>
-                            {service.icon}
-                          </div>
-                          <div>
-                            <p className={`font-semibold text-sm ${isActive ? 'text-blue-700' : 'text-gray-900'}`}>{service.name}</p>
-                            <p className={`text-xs mt-0.5 ${isActive ? 'text-blue-600' : 'text-gray-500'}`}>Expert commercial solutions</p>
-                          </div>
-                        </Link>
-                      );
-                    })}
+                  {/* Commercial */}
+                  <div className="relative group/commercial">
+                    <Link 
+                      to="/commercial" 
+                      onClick={() => setHoveredDropdown(null)}
+                      className="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors border-b border-gray-50"
+                    >
+                      Commercial
+                      <FiChevronDown className="-rotate-90" />
+                    </Link>
+                    <div className="absolute top-0 left-full w-[400px] hidden group-hover/commercial:flex flex-col bg-white rounded-xl shadow-xl border border-gray-100 ml-1">
+                      <div className="p-5 grid grid-cols-1 gap-y-3">
+                        {commercialServices.map((service, idx) => {
+                          const isActive = location.pathname === service.path;
+                          return (
+                            <Link key={idx} to={service.path} onClick={() => setHoveredDropdown(null)} className={`flex items-start gap-3 p-2 rounded-lg transition-colors group/item ${isActive ? 'bg-blue-50 ring-1 ring-blue-100' : 'hover:bg-gray-50'}`}>
+                              <div className={`p-2 rounded-lg shadow-sm transition-colors ${isActive ? 'bg-white' : 'bg-blue-50 group-hover/item:bg-white'}`}>
+                                {service.icon}
+                              </div>
+                              <div>
+                                <p className={`font-semibold text-sm ${isActive ? 'text-blue-700' : 'text-gray-900'}`}>{service.name}</p>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </div>
-                  <div className="bg-gray-50 p-4 text-center border-t border-gray-100">
-                    <Link to="/commercial" onClick={() => setHoveredDropdown(null)} className="text-sm font-medium text-blue-600 hover:text-blue-700">View all commercial services &rarr;</Link>
+
+                  {/* Government */}
+                  <div className="relative group/government">
+                    <div className="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors cursor-pointer rounded-b-xl">
+                      Government
+                      <FiChevronDown className="-rotate-90" />
+                    </div>
+                    <div className="absolute top-0 left-full w-[200px] hidden group-hover/government:flex flex-col bg-white rounded-xl shadow-xl border border-gray-100 ml-1">
+                      <div className="p-5 flex items-center justify-center">
+                        <p className="text-gray-500 font-medium italic text-sm">Coming soon</p>
+                      </div>
+                    </div>
                   </div>
+
                 </div>
               </div>
 
               <Link to="/feedback" className={`font-medium hover:text-blue-600 transition-all duration-300 whitespace-nowrap ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Happy Customers</Link>
+              <Link to="/blog" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Blog</Link>
               <Link to="/about" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>About</Link>
               <Link to="/team" className={`font-medium hover:text-blue-600 transition-all duration-300 ${isScrolled ? 'text-slate-800' : 'text-slate-800'}`}>Team</Link>
             </nav>
 
             {/* Actions */}
-            <div className="flex-1 flex justify-end items-center gap-4 ml-8 xl:ml-12">
+            <div className="flex-1 flex justify-end items-center gap-4">
               <Link to="/contact" className="hidden md:inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-slate-700 bg-white border-2 border-slate-200 hover:border-blue-600 hover:text-blue-600 rounded-full transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap shadow-sm">
                 Contact Us
               </Link>

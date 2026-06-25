@@ -72,7 +72,7 @@ const CorporateComplaintManagement = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative lg:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 bg-gray-200 flex items-center justify-center min-h-[350px] bg-gradient-to-br from-gray-100 to-gray-50"
           >
-            <img src="/images/services/customer care img 1.webp" alt="Corporate Complaint Management" className="absolute inset-0 w-full h-full object-cover" />
+            <img src="/images/services/admin image 1.webp" alt="Corporate Complaint Management" className="absolute inset-0 w-full h-full object-cover" />
             {/* Floating Stats */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
@@ -206,7 +206,7 @@ const CorporateComplaintManagement = () => {
             className="relative group cursor-pointer"
           >
             <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-gray-200 flex items-center justify-center min-h-[350px] bg-gradient-to-br from-gray-100 to-gray-50">
-              <img src="/images/services/customercare images 2.webp" alt="Comprehensive Solutions" className="w-full h-full object-cover" />
+              <img src="/images/services/admin image 2.webp" alt="Comprehensive Solutions" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl hidden md:block max-w-xs transition-all duration-500 group-hover:-translate-y-[55%] group-hover:shadow-blue-500/20">
               <Award className="w-10 h-10 text-blue-600 mb-4" />
@@ -254,10 +254,10 @@ const CorporateComplaintManagement = () => {
 
         <div className="grid md:grid-cols-4 gap-8 relative">
           {[
-            { num: '01', title: 'Raise Ticket', desc: 'Query logged via portal, email, or dedicated hotline.', img: '/images/services/customer care image 4.webp' },
-            { num: '02', title: 'Triage & Assign', desc: 'System categorizes and assigns to the right technician.', img: '/images/services/customer caer iamge 5.webp' },
-            { num: '03', title: 'Resolution', desc: 'On-site or remote support provided within SLA.', img: '/images/services/customercare 6.webp' },
-            { num: '04', title: 'Closure & QA', desc: 'Issue resolved, documented, and feedback collected.', img: '/images/services/customer images 7.webp' }
+            { num: '01', title: 'Raise Ticket', desc: 'Query logged via portal, email, or dedicated hotline.', img: '/images/services/admin image 4.webp' },
+            { num: '02', title: 'Triage & Assign', desc: 'System categorizes and assigns to the right technician.', img: '/images/services/admin image 5.webp' },
+            { num: '03', title: 'Resolution', desc: 'On-site or remote support provided within SLA.', img: '/images/services/admin image 6.webp' },
+            { num: '04', title: 'Closure & QA', desc: 'Issue resolved, documented, and feedback collected.', img: '/images/services/admin image 7.webp' }
           ].map((step, i) => (
             <motion.div 
               key={i}
@@ -306,7 +306,7 @@ const CorporateComplaintManagement = () => {
             
             <div className="w-full lg:w-[40%] order-1 lg:order-2">
               <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.08)] bg-gray-200 flex items-center justify-center min-h-[350px] bg-gradient-to-bl from-gray-100 to-gray-200">
-                <img src="/images/services/customercare images3-.webp" alt="FAQ Customer Care" className="absolute inset-0 w-full h-full object-cover" />
+                <img src="/images/services/admin image 3.webp" alt="FAQ Customer Care" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent z-10" />
               </div>
             </div>

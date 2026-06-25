@@ -5,7 +5,7 @@ import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
 
 const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }) => {
-  const [openSection, setOpenSection] = useState(null);
+  const [openSections, setOpenSections] = useState({});
   const location = useLocation();
   const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
@@ -31,7 +31,10 @@ const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }
   }, [isOpen]);
 
   const toggleSection = (section) => {
-    setOpenSection(openSection === section ? null : section);
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
   };
 
   if (!isOpen) return null;
@@ -61,56 +64,88 @@ const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }
               Home
             </Link>
 
-            {/* Residential Mobile */}
+            {/* Services Mobile */}
             <div>
               <button 
-                onClick={() => toggleSection('residential')}
+                onClick={() => toggleSection('services')}
                 className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-lg"
               >
-                Residential
-                {openSection === 'residential' ? <FiChevronUp /> : <FiChevronDown />}
+                Services
+                {openSections['services'] ? <FiChevronUp /> : <FiChevronDown />}
               </button>
-              {openSection === 'residential' && (
-                <div className="px-3 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
-                  {residentialServices.map((service, idx) => {
-                    const isActive = location.pathname === service.path;
-                    return (
-                      <Link key={idx} to={service.path} className={`flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md ${isActive ? 'text-blue-700 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'}`} onClick={onClose}>
-                        {service.icon}
-                        {service.name}
-                      </Link>
-                    );
-                  })}
-                  <Link to="/residential" className="block px-3 py-2 text-sm font-medium text-blue-600 mt-2" onClick={onClose}>
-                    View all residential &rarr;
-                  </Link>
-                </div>
-              )}
-            </div>
+              {openSections['services'] && (
+                <div className="px-2 py-2 space-y-2 bg-gray-50 rounded-lg mt-1">
+                  
+                  {/* Residential Mobile */}
+                  <div>
+                    <button 
+                      onClick={() => toggleSection('residential')}
+                      className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 rounded-lg"
+                    >
+                      Residential
+                      {openSections['residential'] ? <FiChevronUp /> : <FiChevronDown />}
+                    </button>
+                    {openSections['residential'] && (
+                      <div className="px-3 py-2 space-y-1 bg-white rounded-lg mt-1 ml-2 border border-gray-100">
+                        {residentialServices.map((service, idx) => {
+                          const isActive = location.pathname === service.path;
+                          return (
+                            <Link key={idx} to={service.path} className={`flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md ${isActive ? 'text-blue-700 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'}`} onClick={onClose}>
+                              {service.icon}
+                              {service.name}
+                            </Link>
+                          );
+                        })}
+                        <Link to="/residential" className="block px-3 py-2 text-sm font-medium text-blue-600 mt-2" onClick={onClose}>
+                          View all residential &rarr;
+                        </Link>
+                      </div>
+                    )}
+                  </div>
 
-            {/* Commercial Mobile */}
-            <div>
-              <button 
-                onClick={() => toggleSection('commercial')}
-                className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-lg"
-              >
-                Commercial
-                {openSection === 'commercial' ? <FiChevronUp /> : <FiChevronDown />}
-              </button>
-              {openSection === 'commercial' && (
-                <div className="px-3 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
-                  {commercialServices.map((service, idx) => {
-                    const isActive = location.pathname === service.path;
-                    return (
-                      <Link key={idx} to={service.path} className={`flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md ${isActive ? 'text-blue-700 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'}`} onClick={onClose}>
-                        {service.icon}
-                        {service.name}
-                      </Link>
-                    );
-                  })}
-                  <Link to="/commercial" className="block px-3 py-2 text-sm font-medium text-blue-600 mt-2" onClick={onClose}>
-                    View all commercial &rarr;
-                  </Link>
+                  {/* Commercial Mobile */}
+                  <div>
+                    <button 
+                      onClick={() => toggleSection('commercial')}
+                      className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 rounded-lg"
+                    >
+                      Commercial
+                      {openSections['commercial'] ? <FiChevronUp /> : <FiChevronDown />}
+                    </button>
+                    {openSections['commercial'] && (
+                      <div className="px-3 py-2 space-y-1 bg-white rounded-lg mt-1 ml-2 border border-gray-100">
+                        {commercialServices.map((service, idx) => {
+                          const isActive = location.pathname === service.path;
+                          return (
+                            <Link key={idx} to={service.path} className={`flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md ${isActive ? 'text-blue-700 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'}`} onClick={onClose}>
+                              {service.icon}
+                              {service.name}
+                            </Link>
+                          );
+                        })}
+                        <Link to="/commercial" className="block px-3 py-2 text-sm font-medium text-blue-600 mt-2" onClick={onClose}>
+                          View all commercial &rarr;
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Government Mobile */}
+                  <div>
+                    <button 
+                      onClick={() => toggleSection('government')}
+                      className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 rounded-lg"
+                    >
+                      Government
+                      {openSections['government'] ? <FiChevronUp /> : <FiChevronDown />}
+                    </button>
+                    {openSections['government'] && (
+                      <div className="px-3 py-2 space-y-1 bg-white rounded-lg mt-1 ml-2 border border-gray-100 flex justify-center">
+                        <span className="text-gray-500 italic text-sm py-2">Coming soon</span>
+                      </div>
+                    )}
+                  </div>
+
                 </div>
               )}
             </div>

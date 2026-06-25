@@ -1,18 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade, Parallax } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation, Parallax } from 'swiper/modules';
 import { motion } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-import Button from '../common/Button';
-import { slides } from '../../data/slides';
+import 'swiper/css/navigation';
+
+const carouselSlides = [
+  {
+    id: 1,
+    image: '/images/Group photo.webp',
+    year: '2025',
+  },
+  {
+    id: 2,
+    image: '/images/services/poster iamge 4.webp',
+    year: '2022',
+  },
+  {
+    id: 3,
+    image: '/images/services/party photo crausel 3.webp',
+    year: '2024',
+  },
+  {
+    id: 4,
+    image: '/images/services/poster image 9.webp',
+    year: '2024',
+  },
+  {
+    id: 5,
+    image: '/images/services/poster image 10.webp',
+    year: '2024',
+  },
+  {
+    id: 6,
+    image: '/images/services/poster image 12.webp',
+    year: '2025',
+  }
+];
 
 const HeroCarousel = () => {
   const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
-    slides.forEach(slide => {
+    carouselSlides.forEach(slide => {
       const img = new Image();
       img.src = slide.image;
       img.onload = () => {
@@ -30,10 +61,10 @@ const HeroCarousel = () => {
         <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-black/45 via-black/15 to-transparent pointer-events-none z-20" />
 
         <Swiper
-          modules={[Autoplay, Pagination, EffectFade, Parallax]}
-          effect="fade"
+          modules={[Autoplay, Pagination, Navigation, Parallax]}
           speed={1500}
           parallax={true}
+          navigation={true}
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
@@ -45,14 +76,14 @@ const HeroCarousel = () => {
           }}
           className="w-full h-full"
         >
-          {/* Parallax Background */}
+          {/* Parallax Background Base */}
           <div 
             className="absolute inset-0 w-[120%] h-full bg-cover bg-center"
-            style={{ backgroundImage: `url('${slides[0].image}')` }} // Fallback base
+            style={{ backgroundImage: `url('${carouselSlides[0].image}')` }}
             data-swiper-parallax="-20%"
           />
 
-          {slides.map((slide) => (
+          {carouselSlides.map((slide) => (
             <SwiperSlide key={slide.id} className="relative w-full h-full overflow-hidden">
               {({ isActive }) => (
                 <>
@@ -61,7 +92,7 @@ const HeroCarousel = () => {
                     <div className="absolute inset-0 bg-gray-800 animate-pulse z-0" />
                   )}
 
-                  {/* Background Image with slight scale animation using motion or swiper parallax */}
+                  {/* Background Image with slight scale animation using motion */}
                   <motion.div 
                     className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${loadedImages[slide.id] ? 'opacity-100' : 'opacity-0'}`}
                     style={{ backgroundImage: `url('${slide.image}')` }}
@@ -70,42 +101,25 @@ const HeroCarousel = () => {
                     transition={{ duration: 7, ease: [0.25, 1, 0.5, 1] }}
                   />
                   
-                  {/* Dark Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-dark/95 via-dark/70 md:via-dark/50 to-transparent" />
-                  <div className="absolute inset-0 bg-black/40 md:bg-black/20" />
+                  {/* Bottom Gradient Overlay for Text */}
+                  <div className="absolute inset-x-0 bottom-0 pb-20 pt-48 bg-gradient-to-t from-black/95 via-black/60 to-transparent z-10 flex flex-col justify-end items-center px-6 text-center" />
 
-                  {/* Content */}
-                  <div className="relative h-full flex flex-col justify-center px-6 md:px-12 lg:px-24 max-w-7xl mx-auto z-10">
+                  {/* Content Overlay */}
+                  <div className="absolute inset-x-0 bottom-0 z-20 flex justify-center pb-12 sm:pb-16 md:pb-20 px-4 md:px-12 pointer-events-none text-center">
                     <motion.div 
-                      className="max-w-2xl text-white"
+                      className="max-w-4xl"
                       initial={{ opacity: 0, y: 30 }}
                       animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                       transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                     >
-                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold font-heading leading-tight mb-4 md:mb-6 tracking-tight drop-shadow-md">
-                        {slide.title}
-                      </h1>
-                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 md:mb-10 max-w-xl font-light drop-shadow">
-                        {slide.description}
-                      </p>
-                      <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-                        <Button 
-                          variant="primary" 
-                          size="lg" 
-                          onClick={() => {
-                            const element = document.getElementById('service-price-box');
-                            if (element) {
-                              element.scrollIntoView({ behavior: 'smooth' });
-                            } else {
-                              window.location.href = '/#service-price-box';
-                            }
-                          }}
-                          className="w-full sm:w-auto text-center justify-center"
-                        >
-                          {slide.cta}
-                        </Button>
-                       
-                      </div>
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-light text-white tracking-wide drop-shadow-xl text-balance">
+                        Reliable Commercial & Residential Maintenance
+                        {slide.year && (
+                          <span className="ml-3 sm:ml-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-accent font-serif italic tracking-widest drop-shadow-lg inline-block align-baseline">
+                            {slide.year}
+                          </span>
+                        )}
+                      </h2>
                     </motion.div>
                   </div>
                 </>
@@ -115,11 +129,11 @@ const HeroCarousel = () => {
         </Swiper>
       </div>
       
-      {/* Global override for swiper pagination position */}
+      {/* Global overrides for swiper pagination and navigation */}
       <style>{`
         .hero-swiper .swiper-pagination {
           bottom: 1.5rem !important;
-          z-index: 20 !important;
+          z-index: 30 !important;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -127,6 +141,32 @@ const HeroCarousel = () => {
         @media (min-width: 768px) {
           .hero-swiper .swiper-pagination {
             bottom: 2rem !important;
+          }
+        }
+        .hero-swiper .swiper-button-next,
+        .hero-swiper .swiper-button-prev {
+          color: white !important;
+          background: rgba(0, 0, 0, 0.2);
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(4px);
+        }
+        .hero-swiper .swiper-button-next:hover,
+        .hero-swiper .swiper-button-prev:hover {
+          background: rgba(0, 0, 0, 0.5);
+          transform: scale(1.1);
+        }
+        .hero-swiper .swiper-button-next::after,
+        .hero-swiper .swiper-button-prev::after {
+          font-size: 18px;
+          font-weight: bold;
+        }
+        @media (max-width: 640px) {
+          .hero-swiper .swiper-button-next,
+          .hero-swiper .swiper-button-prev {
+            display: none; /* Hide arrows on very small screens to save space */
           }
         }
       `}</style>

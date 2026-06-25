@@ -12,6 +12,13 @@ app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
+const path = require('path');
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+
+const sitemapRoutes = require('./routes/sitemap.routes');
+app.use('/', sitemapRoutes);
+
+
 // Routes
 const routes = require('./routes');
 app.use('/api', routes);

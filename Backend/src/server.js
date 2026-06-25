@@ -7,6 +7,10 @@ dotenv.config({ path: path.join(__dirname, '..', '.env') });
 const connectDB = require('./config/db');
 const app = require('./app');
 
+// Mount Sitemap Route
+const sitemapRoute = require('./routes/sitemap');
+app.use('/sitemap.xml', sitemapRoute);
+
 // Connect to database
 connectDB();
 
