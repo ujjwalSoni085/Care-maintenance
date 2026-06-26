@@ -30,8 +30,8 @@ const WaterTankCleaningPage = () => {
             
             {/* Typography Refinements */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.1] tracking-tight">
-                {service.headline}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.15] tracking-tight max-w-2xl text-balance">
+                Deep Water Tank <br />Cleaning Solutions
               </h1>
               <p className="text-lg md:text-xl text-text-muted leading-relaxed max-w-lg font-medium">
                 {service.description}
@@ -68,7 +68,7 @@ const WaterTankCleaningPage = () => {
           {/* Image Section */}
           <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-inner group">
             <img 
-              src="/images/services/cleaning4.webp" 
+              src="/images/services/cleaning 4.webp" 
               alt="Water Tank Cleaning Service" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -207,7 +207,10 @@ const WaterTankCleaningPage = () => {
         </section>
 
         {/* === BEFORE & AFTER SLIDER === */}
-        <BeforeAfterSlider />
+        <BeforeAfterSlider 
+          beforeImage="/images/services/water tank cleaning before.webp" 
+          afterImage="/images/services/water tank cleaning after image.webp" 
+        />
 
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">

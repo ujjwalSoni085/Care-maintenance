@@ -49,8 +49,8 @@ const CommercialApplianceMaintenancePage = () => {
               <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
               Premium Appliance Repair & Care
             </motion.div>
-            <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-8 text-red-600">
-              Commercial Appliance Maintenance, <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Expert Solutions</span>
+            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.15] tracking-tight mb-6 min-h-[140px] md:min-h-[180px] lg:min-h-[220px] max-w-2xl text-balance">
+              Commercial Appliances, <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Maintained & Simplified</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl">
               Keep your business running smoothly with quick, certified, and dependable repairs for commercial washing machines, refrigerators, TVs, microwaves, geysers, and water purifiers.

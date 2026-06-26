@@ -48,8 +48,8 @@ const CorporateComplaintManagement = () => {
               <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
               Expert Commercial Solutions
             </motion.div>
-            <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-8 text-red-600">
-              Corporate Complaint & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Query Management</span>
+            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.15] tracking-tight mb-6 min-h-[140px] md:min-h-[180px] lg:min-h-[220px] max-w-2xl text-balance">
+              Corporate Complaints, <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Resolved & Simplified</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl">
               Streamline your business operations with our dedicated enterprise helpdesk. We handle queries, complaints, and service requests with speed, precision, and guaranteed SLAs.

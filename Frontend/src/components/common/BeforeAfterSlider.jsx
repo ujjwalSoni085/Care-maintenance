@@ -14,9 +14,9 @@ const BeforeAfterSlider = ({ beforeImage = "/images/services/elect2.webp", after
       <div className="max-w-5xl mx-auto w-full relative overflow-hidden rounded-3xl shadow-2xl border border-white/50 aspect-[4/3] md:aspect-[16/9] bg-gradient-to-br from-gray-100 to-gray-200 group">
         
         {/* After Image / Content (Background) */}
-        <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-blue-50">
+        <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-blue-50/50">
           {afterImage ? (
-            <img src={afterImage} alt="After Service" className="w-full h-full object-cover" />
+            <img src={afterImage} alt="After Service" className="w-full h-full object-cover object-center filter contrast-[1.15] saturate-[1.2] brightness-[1.05] transition-all duration-700 group-hover:scale-105" />
           ) : (
             <>
               <span className="material-symbols-outlined text-6xl text-blue-400 mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>imagesmode</span>
@@ -28,12 +28,12 @@ const BeforeAfterSlider = ({ beforeImage = "/images/services/elect2.webp", after
 
         {/* Before Image / Content (Foreground, clipped) */}
         <div 
-          className="absolute inset-0 h-full flex flex-col items-center justify-center bg-gray-200 shadow-[inset_-10px_0_20px_-10px_rgba(0,0,0,0.1)]"
+          className="absolute inset-0 h-full flex flex-col items-center justify-center bg-gray-200/50 shadow-[inset_-10px_0_20px_-10px_rgba(0,0,0,0.1)]"
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
           {/* Using a pseudo element or absolute div centered to prevent content from shifting when clipping */}
           {beforeImage ? (
-            <img src={beforeImage} alt="Before Service" className="absolute inset-0 w-full h-full object-cover max-w-none" />
+            <img src={beforeImage} alt="Before Service" className="absolute inset-0 w-full h-full object-cover object-center max-w-none filter grayscale-[0.5] contrast-[0.8] brightness-[0.9] sepia-[0.2] transition-all duration-700 group-hover:scale-105" />
           ) : (
             <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center min-w-[300px]">
               <span className="material-symbols-outlined text-6xl text-gray-400 mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>image_not_supported</span>

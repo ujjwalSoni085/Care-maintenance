@@ -29,8 +29,8 @@ const CarpenterPage = () => {
             
             {/* Typography Refinements */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.1] tracking-tight">
-                {service.headline}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.15] tracking-tight max-w-2xl text-balance">
+                Premium Carpentry <br />& Woodwork
               </h1>
               <p className="text-lg md:text-xl text-text-muted leading-relaxed max-w-lg font-medium">
                 {service.description}
@@ -66,7 +66,7 @@ const CarpenterPage = () => {
           
           {/* Image Section */}
           <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-2xl group">
-            <img src="/images/services/carpenter image 13.webp" alt="Carpentry Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
+            <img src="/images/services/worker 1.webp" alt="Carpentry Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 pointer-events-none">
               <div className="text-white flex items-center gap-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
@@ -211,7 +211,10 @@ const CarpenterPage = () => {
         </section>
 
         {/* === BEFORE & AFTER SLIDER === */}
-        <BeforeAfterSlider />
+        <BeforeAfterSlider 
+          beforeImage="/images/services/carpenter image before.webp" 
+          afterImage="/images/services/carpenter after image.webp" 
+        />
 
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">

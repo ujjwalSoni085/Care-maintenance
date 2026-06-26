@@ -8,6 +8,7 @@ import RatingStars from '../components/feedback/RatingStars';
 import toast from 'react-hot-toast';
 import { FiEdit2, FiTrash2 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import VideoTestimonials from '../components/feedback/VideoTestimonials';
 
 const FeedbackPage = () => {
   const { isAuthenticated, user } = useAuth();
@@ -111,87 +112,89 @@ const FeedbackPage = () => {
         </Container>
       </section>
 
-      <Container className="mt-12">
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
-          
-          {/* Main Content - Reviews List */}
-          <div className="lg:col-span-8 order-2 lg:order-1">
-            <h2 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
-              Recent Reviews
-              <span className="bg-blue-100 text-blue-700 text-sm py-1 px-3 rounded-full font-semibold">
-                {feedbacks.length}
-              </span>
-            </h2>
-            
-            {feedbacks.length === 0 ? (
-              <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center shadow-sm">
-                <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-4xl text-slate-300">★</span>
-                </div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2">No reviews yet</h3>
-                <p className="text-slate-500">Be the first to share your experience with us!</p>
-              </div>
-            ) : (
-              <div className="grid md:grid-cols-2 gap-6">
-                {feedbacks.map((review) => (
-                  <ReviewCard key={review._id} review={review} />
-                ))}
-              </div>
-            )}
-          </div>
+      {/* Video Testimonials Section */}
+      <VideoTestimonials />
 
-          {/* Sidebar - Submission Form / User's Own Feedback */}
-          <div className="lg:col-span-4 order-1 lg:order-2 sticky top-28">
-            {!isAuthenticated ? (
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center">
-                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FiEdit2 className="text-2xl text-blue-500" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2">Have something to say?</h3>
-                <p className="text-slate-600 mb-6">Log in to leave your feedback and help us improve our services.</p>
-                <Link to="/login" className="inline-block w-full px-6 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-all duration-300">
-                  Log In to Review
-                </Link>
+      <Container className="mt-16">
+        {/* Main Content - Reviews List */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-center justify-center md:justify-start gap-3">
+            Recent Reviews
+            <span className="bg-blue-100 text-blue-700 text-sm py-1 px-3 rounded-full font-semibold">
+              {feedbacks.length}
+            </span>
+          </h2>
+          
+          {feedbacks.length === 0 ? (
+            <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center shadow-sm max-w-2xl mx-auto">
+              <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-4xl text-slate-300">★</span>
               </div>
-            ) : myFeedback && !isEditing ? (
-              <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
-                <h3 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                  Your Review
-                </h3>
-                <div className="bg-slate-50 rounded-xl p-5 mb-6 border border-slate-100">
-                  <div className="flex items-center gap-2 mb-3">
-                    <RatingStars rating={myFeedback.rating} readOnly size="text-lg" />
-                  </div>
-                  <p className="text-slate-700 leading-relaxed italic">"{myFeedback.message}"</p>
-                  <p className="text-xs text-slate-500 mt-4 font-medium">
-                    Posted on {new Date(myFeedback.createdAt).toLocaleDateString()}
-                  </p>
-                </div>
-                
-                <div className="flex gap-3">
-                  <button 
-                    onClick={() => setIsEditing(true)}
-                    className="flex-1 flex justify-center items-center gap-2 px-4 py-2.5 bg-slate-100 text-slate-700 font-medium rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
-                  >
-                    <FiEdit2 /> Edit
-                  </button>
-                  <button 
-                    onClick={handleDelete}
-                    className="flex-1 flex justify-center items-center gap-2 px-4 py-2.5 bg-slate-100 text-slate-700 font-medium rounded-xl hover:bg-red-50 hover:text-red-600 transition-all duration-300"
-                  >
-                    <FiTrash2 /> Delete
-                  </button>
-                </div>
+              <h3 className="text-lg font-bold text-slate-800 mb-2">No reviews yet</h3>
+              <p className="text-slate-500">Be the first to share your experience with us!</p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {feedbacks.map((review) => (
+                <ReviewCard key={review._id} review={review} />
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Submission Form / User's Own Feedback */}
+        <div className="max-w-3xl mx-auto border-t border-slate-200 pt-16">
+          <h2 className="text-3xl font-bold text-slate-800 mb-10 text-center">
+            {myFeedback && !isEditing ? "Your Review" : "Share Your Experience"}
+          </h2>
+          {!isAuthenticated ? (
+            <div className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 text-center">
+              <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <FiEdit2 className="text-3xl text-blue-500" />
               </div>
-            ) : (
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Have something to say?</h3>
+              <p className="text-slate-600 mb-8 text-lg">Log in to leave your feedback and help us improve our services.</p>
+              <Link to="/login" className="inline-block px-8 py-4 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-all duration-300 text-lg shadow-md hover:shadow-lg">
+                Log In to Review
+              </Link>
+            </div>
+          ) : myFeedback && !isEditing ? (
+            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100">
+              <div className="bg-slate-50 rounded-xl p-8 mb-8 border border-slate-100 relative">
+                <div className="absolute top-8 right-8 text-6xl text-slate-200 font-serif opacity-50">"</div>
+                <div className="flex items-center gap-2 mb-6">
+                  <RatingStars rating={myFeedback.rating} readOnly size="text-xl" />
+                </div>
+                <p className="text-slate-700 leading-relaxed italic text-lg relative z-10">"{myFeedback.message}"</p>
+                <p className="text-sm text-slate-500 mt-6 font-medium">
+                  Posted on {new Date(myFeedback.createdAt).toLocaleDateString()}
+                </p>
+              </div>
+              
+              <div className="flex gap-4">
+                <button 
+                  onClick={() => setIsEditing(true)}
+                  className="flex-1 flex justify-center items-center gap-2 px-6 py-4 bg-slate-100 text-slate-700 font-medium rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 text-lg"
+                >
+                  <FiEdit2 /> Edit Review
+                </button>
+                <button 
+                  onClick={handleDelete}
+                  className="flex-1 flex justify-center items-center gap-2 px-6 py-4 bg-slate-100 text-slate-700 font-medium rounded-xl hover:bg-red-50 hover:text-red-600 transition-all duration-300 text-lg"
+                >
+                  <FiTrash2 /> Delete Review
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100">
               <FeedbackForm 
                 existingFeedback={myFeedback} 
                 onSuccess={handleSuccess}
                 onCancel={myFeedback ? () => setIsEditing(false) : undefined}
               />
-            )}
-          </div>
-          
+            </div>
+          )}
         </div>
       </Container>
     </div>

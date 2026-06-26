@@ -30,8 +30,8 @@ const ACServicesPage = () => {
             
             {/* Typography Refinements */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.1] tracking-tight">
-                Professional AC Care & Cooling Solutions
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.15] tracking-tight max-w-2xl text-balance">
+                Expert AC Care & <br />Cooling Solutions
               </h1>
               <p className="text-lg md:text-xl text-text-muted leading-relaxed max-w-lg font-medium">
                 Complete AC installation, repair, and maintenance services for efficient cooling and year-round comfort.
@@ -68,7 +68,7 @@ const ACServicesPage = () => {
           {/* Image Section */}
           <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-2xl group">
             {service.gallery && service.gallery.length > 0 && (
-              <img src="/images/services/ac8.webp" alt="AC Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
+              <img src="/images/services/driling image.webp" alt="AC Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 pointer-events-none">
               <div className="text-white flex items-center gap-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -214,7 +214,10 @@ const ACServicesPage = () => {
         </section>
 
         {/* === BEFORE & AFTER SLIDER === */}
-        <BeforeAfterSlider />
+        <BeforeAfterSlider 
+          beforeImage="/images/services/ac before.webp" 
+          afterImage="/images/services/ac after image.webp" 
+        />
 
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">

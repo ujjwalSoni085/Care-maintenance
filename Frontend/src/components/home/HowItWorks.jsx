@@ -10,7 +10,7 @@ const steps = [
     id: 1,
     title: "Choose Your Service",
     description: "Select from our wide range of home or commercial services.",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
+    image: "/images/services/admin image 2.webp"
   },
   {
     id: 2,
@@ -22,13 +22,13 @@ const steps = [
     id: 3,
     title: "We Send an Expert",
     description: "A verified, experienced professional arrives at your door.",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"
+    image: "/images/services/carepenter 13.webp"
   },
   {
     id: 4,
     title: "Job Done, Guaranteed",
     description: "Sit back and relax. Satisfaction guaranteed or we fix it free.",
-    image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80"
+    image: "/images/services/carpenter 15.webp"
   }
 ];
 

@@ -7,32 +7,32 @@ import Card from '../common/Card';
 
 const features = [
   {
-    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80',
+    image: '/images/services/party photo crausel 2.webp',
     title: 'Licensed & Insured',
     description: 'Fully Professional experts you can trust. We carry comprehensive insurance to protect your property and ensure peace of mind.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
+    image: '/images/services/admin image 6.webp',
     title: 'Fast Response',
     description: 'Same-day service available, 7 days a week. Our rapid response team is always ready to tackle your urgent maintenance needs promptly.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80',
+    image: '/images/services/carpenter 1.webp',
     title: 'Trusted Professionals',
     description: 'Skilled and verified experts for every service. Every technician undergoes rigorous background checks and continuous training.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80',
+    image: '/images/services/carpainter hader image.webp',
     title: 'Experienced Team',
     description: '10+ years of industry expertise. Our seasoned professionals have handled thousands of successful projects with unmatched knowledge.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80',
+    image: '/images/services/cleaning 7.webp',
     title: 'Quality Guaranteed',
     description: 'We stand behind every job we do. If you aren\'t completely satisfied, we will make it right at no additional cost to you.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
+    image: '/images/services/admin image 7.webp',
     title: '24/7 Support',
     description: 'Round-the-clock customer assistance. Our dedicated support team is available day and night to answer your questions and schedule appointments.'
   }

@@ -12,12 +12,12 @@ const Footer = () => {
           
           {/* Column 1 - Brand */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-20 h-20 flex-shrink-0 flex items-center justify-center">
-                <img src="/images/care-maintenance-logo-removebg-preview.webp" alt="CareMaintenance Logo" className="w-full h-full object-contain" />
+            <div className="flex flex-col items-start mb-4">
+              <div className="w-28 sm:w-32 flex-shrink-0">
+                <img src="/images/care-maintenance-logo-removebg-preview.webp" alt="CareMaintenance Logo" className="w-full h-auto object-contain object-left" />
               </div>
-              <span className="text-lg font-bold text-white font-outfit">
-                CareMaintenance services Pvt Ltd.
+              <span className="-mt-3 text-lg sm:text-xl font-bold text-white font-outfit whitespace-nowrap">
+                Care Maintenance Services Pvt Ltd.
               </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-8 pr-4">
@@ -89,8 +89,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-white font-outfit mb-6">Services</h3>
             <ul className="space-y-4">
-              <li><Link to="/services/residential" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Residential</Link></li>
-              <li><Link to="/services/commercial" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Commercial</Link></li>
+              <li className="hover:text-primary-400 transition-colors duration-200 cursor-default">Residential</li>
+              <li className="hover:text-primary-400 transition-colors duration-200 cursor-default">Commercial</li>
+              <li className="hover:text-primary-400 transition-colors duration-200 cursor-default">Government</li>
             </ul>
           </div>
 

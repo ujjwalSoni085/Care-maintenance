@@ -30,8 +30,8 @@ const PestControlPage = () => {
             
             {/* Typography Refinements */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.1] tracking-tight">
-                {service.headline}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.15] tracking-tight max-w-2xl text-balance">
+                Complete Pest <br />Control & Removal
               </h1>
               <p className="text-lg md:text-xl text-text-muted leading-relaxed max-w-lg font-medium">
                 {service.description}

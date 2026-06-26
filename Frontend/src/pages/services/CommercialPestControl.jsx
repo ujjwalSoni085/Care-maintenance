@@ -48,8 +48,8 @@ const CommercialPestControl = () => {
               <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
               Premium Commercial Pest Control
             </motion.div>
-            <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-8 text-red-600">
-              Commercial Pest Control, <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Simplified</span>
+            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-red-600 leading-[1.15] tracking-tight mb-6 min-h-[140px] md:min-h-[180px] lg:min-h-[220px] max-w-2xl text-balance">
+              Commercial Pest Control, <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Clean & Simplified</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl">
               Protect your facility's health, safety, and brand reputation with proactive pest management, rapid emergency response, and eco-friendly solutions tailored for businesses.
