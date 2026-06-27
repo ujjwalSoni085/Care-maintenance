@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, CheckCircle2, Shield, Headset, Clock, 
@@ -29,6 +30,7 @@ const TRUSTED_COMPANIES = [
 
 const CorporateComplaintManagement = () => {
   const [openFaq, setOpenFaq] = useState(0);
+  const navigate = useNavigate();
 
   return (
     <div className="bg-[#fafafa] min-h-screen text-gray-900 font-sans selection:bg-blue-200">
@@ -360,11 +362,11 @@ const CorporateComplaintManagement = () => {
               Partner with us to provide seamless, professional, and rapid support for all your facility management needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
+              <button onClick={() => window.location.href = 'tel:9990959502'} className="px-8 py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
                 Call 9990959502
               </button>
-              <button className="px-8 py-4 bg-blue-600 border border-blue-500 text-white rounded-xl font-bold hover:bg-blue-500 transition-all flex items-center justify-center gap-2">
+              <button onClick={() => navigate('/contact')} className="px-8 py-4 bg-blue-600 border border-blue-500 text-white rounded-xl font-bold hover:bg-blue-500 transition-all flex items-center justify-center gap-2">
                 <Mail className="w-5 h-5" />
                 Request Demo
               </button>

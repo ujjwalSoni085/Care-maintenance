@@ -2,17 +2,26 @@ const authService = require('./auth.service');
 
 class AuthController {
     /**
-     * @desc    Register a new user
-     * @route   POST /api/auth/register
+     * @desc    Authenticate with Firebase Token
+     * @route   POST /api/auth/firebase-auth
      * @access  Public
      */
-    async register(req, res, next) {
+    async firebaseAuth(req, res, next) {
         try {
-            const { user, token } = await authService.registerUser(req.body);
+            const { idToken } = req.body;
             
-            res.status(201).json({
+            if (!idToken) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'Please provide Firebase idToken'
+                });
+            }
+
+            const { user, token } = await authService.verifyFirebaseAuth(idToken);
+            
+            res.status(200).json({
                 success: true,
-                message: 'User registered successfully',
+                message: 'Authentication successful',
                 data: {
                     user,
                     token
@@ -20,43 +29,9 @@ class AuthController {
             });
         } catch (error) {
             // Forward the error to the error handling middleware
-            res.status(error.statusCode || 500).json({
+            res.status(error.statusCode || 401).json({
                 success: false,
-                message: error.message || 'Server Error'
-            });
-        }
-    }
-
-    /**
-     * @desc    Login user
-     * @route   POST /api/auth/login
-     * @access  Public
-     */
-    async login(req, res, next) {
-        try {
-            const { email, password } = req.body;
-            
-            if (!email || !password) {
-                return res.status(400).json({
-                    success: false,
-                    message: 'Please provide email and password'
-                });
-            }
-
-            const { user, token } = await authService.loginUser(email, password);
-            
-            res.status(200).json({
-                success: true,
-                message: 'Login successful',
-                data: {
-                    user,
-                    token
-                }
-            });
-        } catch (error) {
-            res.status(error.statusCode || 500).json({
-                success: false,
-                message: error.message || 'Server Error'
+                message: error.message || 'Authentication Failed'
             });
         }
     }
@@ -93,49 +68,12 @@ class AuthController {
     }
 
     /**
-     * @desc    Refresh user token
-     * @route   POST /api/auth/refresh-token
-     * @access  Public
-     */
-    async refreshToken(req, res, next) {
-        try {
-            const { token } = req.body;
-            if (!token) {
-                return res.status(400).json({
-                    success: false,
-                    message: 'Token is required'
-                });
-            }
-
-            const jwt = require('jsonwebtoken');
-            const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret_key', { ignoreExpiration: true });
-            
-            const newToken = authService.generateToken(decoded.id);
-            
-            res.status(200).json({
-                success: true,
-                message: 'Token refreshed successfully',
-                data: {
-                    token: newToken
-                }
-            });
-        } catch (error) {
-            res.status(401).json({
-                success: false,
-                message: 'Invalid token'
-            });
-        }
-    }
-
-    /**
      * @desc    Logout user
      * @route   POST /api/auth/logout
      * @access  Public
      */
     async logout(req, res, next) {
         try {
-            // Since we are using stateless JWT, logout is primarily handled client-side.
-            // We just return a success message here.
             res.status(200).json({
                 success: true,
                 message: 'Logged out successfully'

@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 
 const ReviewsSection = () => {
   return (
-    <section className="pt-6 pb-14 md:pt-8 md:pb-16 bg-white overflow-hidden">
+    <section id="happy-customers" className="pt-6 pb-14 md:pt-8 md:pb-16 bg-white overflow-hidden">
       <Container>
         <SectionHeading 
           title="What Our Customers Say" 

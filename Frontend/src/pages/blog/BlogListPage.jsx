@@ -30,7 +30,7 @@ const BlogListPage = () => {
       />
       
       {/* Hero Section */}
-      <div className="bg-blue-900 text-white py-20">
+      <div className="bg-blue-600 text-white py-10 px-2 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
             Our Blog

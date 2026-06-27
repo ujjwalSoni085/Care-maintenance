@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, CheckCircle2, Shield, Zap, Clock, 
@@ -30,6 +32,7 @@ const TRUSTED_COMPANIES = [
 
 const CommercialElectricalSystems = () => {
   const [openFaq, setOpenFaq] = useState(0);
+  const navigate = useNavigate();
 
   return (
     <div className="bg-[#fafafa] min-h-screen text-gray-900 font-sans selection:bg-blue-200">
@@ -56,14 +59,14 @@ const CommercialElectricalSystems = () => {
               Elevate your facility's infrastructure with proactive maintenance, emergency response, and modern electrical solutions tailored for businesses.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-             <button className="px-8 py-4 bg-red-600 text-white rounded-xl font-medium hover:bg-red-700 transition-all flex items-center justify-center gap-2 group shadow-lg shadow-red-600/20">
+             <Link to="/#service-price-box" className="px-8 py-4 bg-red-600 text-white rounded-xl font-medium hover:bg-red-700 transition-all flex items-center justify-center gap-2 group shadow-lg shadow-red-600/20">
                 Get A Free Estimate
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
 
-            <button className="px-8 py-4 bg-white border border-gray-200 text-gray-900 rounded-xl font-medium hover:bg-gray-50 transition-all shadow-sm">
+            <Link to="/feedback" className="px-8 py-4 bg-white border border-gray-200 text-gray-900 rounded-xl font-medium hover:bg-gray-50 transition-all shadow-sm">
                 See What We Do
-            </button>
+            </Link>
             </motion.div>
           </motion.div>
 
@@ -420,11 +423,11 @@ const CommercialElectricalSystems = () => {
               Get in touch with our commercial specialists today to discuss your electrical needs and receive a customized proposal.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
+              <button onClick={() => window.location.href = 'tel:9990959502'} className="px-8 py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
                 Call 9990959502
               </button>
-              <button className="px-8 py-4 bg-blue-600 border border-blue-500 text-white rounded-xl font-bold hover:bg-blue-500 transition-all flex items-center justify-center gap-2">
+              <button onClick={() => navigate('/contact')} className="px-8 py-4 bg-blue-600 border border-blue-500 text-white rounded-xl font-bold hover:bg-blue-500 transition-all flex items-center justify-center gap-2">
                 <Mail className="w-5 h-5" />
                 Request a Quote
               </button>

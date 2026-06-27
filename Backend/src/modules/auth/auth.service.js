@@ -1,72 +1,36 @@
 const authRepository = require('./auth.repository');
-const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const admin = require('../../config/firebase-admin');
 
 class AuthService {
     /**
-     * Register a new user
-     * @param {Object} userData 
+     * Verify Firebase Token and Login/Register User
+     * @param {String} idToken 
      * @returns {Promise<Object>} Object containing user and token
      */
-    async registerUser(userData) {
-        // Check if email exists
-        const emailExists = await authRepository.checkEmailExists(userData.email);
-        if (emailExists) {
-            const error = new Error('Email is already registered');
-            error.statusCode = 400;
-            throw error;
-        }
+    async verifyFirebaseAuth(idToken) {
+        // Verify Firebase token
+        const decodedToken = await admin.auth().verifyIdToken(idToken);
+        const { email, name, uid } = decodedToken;
 
-        // Hash password
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(userData.password, salt);
+        // Check if user exists
+        let user = await authRepository.findUserByEmail(email);
 
-        // Create user
-        const newUserData = {
-            ...userData,
-            password: hashedPassword
-        };
-        const user = await authRepository.createUser(newUserData);
-
-        // Generate token
-        const token = this.generateToken(user._id);
-
-        // Remove password from response
-        const userResponse = user.toObject();
-        delete userResponse.password;
-
-        return { user: userResponse, token };
-    }
-
-    /**
-     * Login user
-     * @param {String} email 
-     * @param {String} password 
-     * @returns {Promise<Object>} Object containing user and token
-     */
-    async loginUser(email, password) {
-        // Find user by email
-        const user = await authRepository.findUserByEmail(email);
         if (!user) {
-            const error = new Error('Invalid email or password');
-            error.statusCode = 401;
-            throw error;
+            // Create a new user with Firebase details
+            user = await authRepository.createUser({
+                email,
+                name: name || email.split('@')[0],
+                authProvider: 'firebase'
+            });
         }
 
-        // Check password
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            const error = new Error('Invalid email or password');
-            error.statusCode = 401;
-            throw error;
-        }
-
-        // Generate token
+        // Generate local token
         const token = this.generateToken(user._id);
 
-        // Remove password from response
+        // Return user info and token
         const userResponse = user.toObject();
-        delete userResponse.password;
+        if (userResponse.password) delete userResponse.password;
 
         return { user: userResponse, token };
     }

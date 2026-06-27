@@ -56,12 +56,12 @@ const PlumberPage = () => {
 
             {/* Elevated Call-to-Actions */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="flex items-center justify-center gap-2 bg-primary text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-md hover:shadow-xl hover:-translate-y-1 hover:bg-primary/90 transition-all duration-300">
+              <Link to="/contact" className="flex items-center justify-center gap-2 bg-primary text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-md hover:shadow-xl hover:-translate-y-1 hover:bg-primary/90 transition-all duration-300">
                 Schedule Service
-              </button>
-              <button className="flex items-center justify-center gap-2 bg-surface-dark text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-md hover:shadow-xl hover:-translate-y-1 hover:bg-surface-dark/90 transition-all duration-300">
+              </Link>
+              <Link to="/#service-price-box" className="flex items-center justify-center gap-2 bg-surface-dark text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-md hover:shadow-xl hover:-translate-y-1 hover:bg-surface-dark/90 transition-all duration-300">
                 View Pricing
-              </button>
+              </Link>
             </div>
           </div>
           

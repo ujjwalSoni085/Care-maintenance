@@ -150,11 +150,17 @@ const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }
               )}
             </div>
 
-            <Link to="/happy-customers" className="px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-lg" onClick={onClose}>
+            <Link to="/feedback" className="px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-lg" onClick={onClose}>
               Happy Customers
+            </Link>
+            <Link to="/blog" className="px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-lg" onClick={onClose}>
+              Blog
             </Link>
             <Link to="/about" className="px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-lg" onClick={onClose}>
               About
+            </Link>
+            <Link to="/team" className="px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-lg" onClick={onClose}>
+              Team
             </Link>
             <Link to="/reliable-management" className="px-3 py-3 text-base font-medium text-blue-600 hover:bg-blue-50 rounded-lg" onClick={onClose}>
               Reliable Management

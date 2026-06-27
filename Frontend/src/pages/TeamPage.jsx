@@ -20,7 +20,7 @@ const TeamPage = () => {
   return (
     <div className="w-full bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-blue-600 text-white py-20 px-4 relative overflow-hidden">
+      <section className="bg-blue-600 text-white py-10 px-2 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <motion.h1
