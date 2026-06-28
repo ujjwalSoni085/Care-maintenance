@@ -117,7 +117,7 @@ const TeamPage = () => {
               },
                {
                 name: "Bhoori singh",
-                role: "Human Resources Director",
+                role: "Human Resources",
                 desc: "Managing people, culture, and employee excellence.",
                 image: "/images/Bhuri Sir.webp"
               },
@@ -131,7 +131,7 @@ const TeamPage = () => {
                 name: "Pankaj Kumar",
                 role: "Sales Team Leader",
                 desc: "Leading sales initiatives and driving revenue growth.",
-                image: "/images/Pankaj Kumar Marketing.webp"
+                image: "/images/pankaj sir new image.webp"
               },
               {
                 name: "Digambar Saw",

@@ -4,7 +4,7 @@ import { FiX, FiChevronDown, FiChevronUp, FiUser, FiLogOut } from 'react-icons/f
 import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
 
-const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }) => {
+const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices, governmentServices }) => {
   const [openSections, setOpenSections] = useState({});
   const location = useLocation();
   const navigate = useNavigate();
@@ -140,8 +140,16 @@ const MobileMenu = ({ isOpen, onClose, residentialServices, commercialServices }
                       {openSections['government'] ? <FiChevronUp /> : <FiChevronDown />}
                     </button>
                     {openSections['government'] && (
-                      <div className="px-3 py-2 space-y-1 bg-white rounded-lg mt-1 ml-2 border border-gray-100 flex justify-center">
-                        <span className="text-gray-500 italic text-sm py-2">Coming soon</span>
+                      <div className="px-3 py-2 space-y-1 bg-white rounded-lg mt-1 ml-2 border border-gray-100">
+                        {governmentServices.map((service, idx) => {
+                          const isActive = location.pathname === service.path;
+                          return (
+                            <Link key={idx} to={service.path} className={`flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md ${isActive ? 'text-blue-700 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'}`} onClick={onClose}>
+                              {service.icon}
+                              {service.name}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

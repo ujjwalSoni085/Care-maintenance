@@ -48,6 +48,9 @@ const CommercialElectricalSystems = React.lazy(() => import('./pages/services/Co
 const CommercialCarpenter = React.lazy(() => import('./pages/services/CommercialCarpenter'));
 const CommercialPestControl = React.lazy(() => import('./pages/services/CommercialPestControl'));
 const CorporateComplaintManagement = React.lazy(() => import('./pages/services/CorporateComplaintManagement'));
+const GovernmentAMCPage = React.lazy(() => import('./pages/services/GovernmentAMCPage'));
+const GovernmentTenderPage = React.lazy(() => import('./pages/services/GovernmentTenderPage'));
+const OnCallServicesPage = React.lazy(() => import('./pages/services/OnCallServicesPage'));
 function App() {
   const [showSplash, setShowSplash] = useState(false);
 
@@ -125,6 +128,10 @@ function App() {
               <Route path="/commercial/pest-control" element={<CommercialPestControl />} />
               <Route path="/commercial/appliance-maintenance" element={<CommercialApplianceMaintenancePage />} />
               <Route path="/commercial/corporate-helpdesk" element={<CorporateComplaintManagement />} />
+              
+              <Route path="/services/government-amc" element={<GovernmentAMCPage />} />
+              <Route path="/services/government-tender" element={<GovernmentTenderPage />} />
+              <Route path="/services/on-call" element={<OnCallServicesPage />} />
               
               {/* Blog Routes */}
               <Route path="/blog" element={<BlogListPage />} />

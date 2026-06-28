@@ -30,6 +30,12 @@ const commercialServices = [
   { name: 'Corporate Complaint & Query Management',icon: <FaHeadset className="text-gray-500" />,path: '/commercial/corporate-helpdesk'},
 ];
 
+const governmentServices = [
+  { name: 'Government AMC', icon: <FaBuilding className="text-blue-600" />, path: '/services/government-amc' },
+  { name: 'Government Tenders', icon: <FaBuilding className="text-gray-500" />, path: '/services/government-tender' },
+  { name: 'On-Call Services', icon: <FaHeadset className="text-green-500" />, path: '/services/on-call' },
+];
+
 const Header = () => {
   const scrollPosition = useScrollPosition();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -155,9 +161,21 @@ const Header = () => {
                       Government
                       <FiChevronDown className="-rotate-90" />
                     </div>
-                    <div className="absolute top-0 left-full w-[200px] hidden group-hover/government:flex flex-col bg-white rounded-xl shadow-xl border border-gray-100 ml-1">
-                      <div className="p-5 flex items-center justify-center">
-                        <p className="text-gray-500 font-medium italic text-sm">Coming soon</p>
+                    <div className="absolute top-0 left-full w-[400px] hidden group-hover/government:flex flex-col bg-white rounded-xl shadow-xl border border-gray-100 ml-1">
+                      <div className="p-5 grid grid-cols-1 gap-y-3">
+                        {governmentServices.map((service, idx) => {
+                          const isActive = location.pathname === service.path;
+                          return (
+                            <Link key={idx} to={service.path} onClick={() => setHoveredDropdown(null)} className={`flex items-start gap-3 p-2 rounded-lg transition-colors group/item ${isActive ? 'bg-blue-50 ring-1 ring-blue-100' : 'hover:bg-gray-50'}`}>
+                              <div className={`p-2 rounded-lg shadow-sm transition-colors ${isActive ? 'bg-white' : 'bg-blue-50 group-hover/item:bg-white'}`}>
+                                {service.icon}
+                              </div>
+                              <div>
+                                <p className={`font-semibold text-sm ${isActive ? 'text-blue-700' : 'text-gray-900'}`}>{service.name}</p>
+                              </div>
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
@@ -259,6 +277,7 @@ const Header = () => {
         onClose={() => setIsMobileMenuOpen(false)} 
         residentialServices={residentialServices}
         commercialServices={commercialServices}
+        governmentServices={governmentServices}
       />
     </>
   );
