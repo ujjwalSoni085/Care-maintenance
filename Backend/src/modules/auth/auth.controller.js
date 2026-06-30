@@ -28,6 +28,7 @@ class AuthController {
                 }
             });
         } catch (error) {
+            console.error('Firebase Auth Error:', error);
             // Forward the error to the error handling middleware
             res.status(error.statusCode || 401).json({
                 success: false,

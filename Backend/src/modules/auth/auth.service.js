@@ -1,6 +1,7 @@
 const authRepository = require('./auth.repository');
 const jwt = require('jsonwebtoken');
-const admin = require('../../config/firebase-admin');
+const { getAuth } = require('firebase-admin/auth');
+const app = require('../../config/firebase-admin');
 
 class AuthService {
     /**
@@ -10,7 +11,7 @@ class AuthService {
      */
     async verifyFirebaseAuth(idToken) {
         // Verify Firebase token
-        const decodedToken = await admin.auth().verifyIdToken(idToken);
+        const decodedToken = await getAuth(app).verifyIdToken(idToken);
         const { email, name, uid } = decodedToken;
 
         // Check if user exists
