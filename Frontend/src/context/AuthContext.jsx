@@ -2,8 +2,6 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import api from '../api/axios';
 import { auth, googleProvider } from '../config/firebase';
 import { 
-  createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword, 
   signInWithPopup, 
   onAuthStateChanged,
   signOut
