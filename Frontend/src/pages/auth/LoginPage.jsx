@@ -9,7 +9,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   
-  const { login, loginWithGoogle } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -37,18 +37,6 @@ const LoginPage = () => {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    setIsLoading(true);
-    const result = await loginWithGoogle();
-    setIsLoading(false);
-    
-    if (result.success) {
-      toast.success('Successfully logged in with Google!');
-      navigate(from, { replace: true });
-    } else {
-      toast.error(result.message || 'Failed to login with Google');
-    }
-  };
 
   return (
     <div className="min-h-[calc(100vh-72px)] bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -164,30 +152,7 @@ const LoginPage = () => {
             </div>
           </form>
 
-          <div className="mt-6">
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Or continue with</span>
-              </div>
-            </div>
 
-            <div className="mt-6 flex justify-center">
-              <button
-                type="button"
-                onClick={handleGoogleSignIn}
-                disabled={isLoading}
-                className={`w-full flex items-center justify-center gap-3 py-2.5 px-4 border border-gray-300 rounded-xl bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors ${
-                  isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                }`}
-              >
-                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo" className="w-5 h-5" />
-                Sign in with Google
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>
