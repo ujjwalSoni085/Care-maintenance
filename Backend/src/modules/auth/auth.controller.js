@@ -1,7 +1,7 @@
 const authService = require('./auth.service');
 
 class AuthController {
-
+    /**
      * @desc    Register a new user
      * @route   POST /api/auth/register
      * @access  Public
