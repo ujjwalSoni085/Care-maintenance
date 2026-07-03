@@ -24,10 +24,10 @@ const staggerContainer = {
 };
 
 const TRUSTED_COMPANIES = [
-  { name: 'Rajdhani Besan Mills', logo: '/images/services/rajchani besan.webp' },
-  { name: 'The Rugs', logo: '/images/services/the rugs.webp' },
-  { name: 'Affinity Salon', logo: '/images/services/affinity salon.webp' },
-  { name: 'Anmol Biscuits', logo: '/images/services/anmol biscuits.webp' },
+  { name: 'Rajdhani Besan Mills', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059067/care_maintenance/frontend_assets/services/rajchani_besan.webp' },
+  { name: 'The Rugs', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059071/care_maintenance/frontend_assets/services/the_rugs.webp' },
+  { name: 'Affinity Salon', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058971/care_maintenance/frontend_assets/services/affinity_salon.webp' },
+  { name: 'Anmol Biscuits', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058972/care_maintenance/frontend_assets/services/anmol_biscuits.webp' },
 ];
 
 const CommercialPlumberPage = () => {
@@ -77,7 +77,7 @@ const CommercialPlumberPage = () => {
             className="relative lg:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100"
           >
             <img 
-              src="/images/services/plumber9-.webp" 
+              src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059060/care_maintenance/frontend_assets/services/plumber9-.webp" 
               alt="Commercial Plumbing Professional" 
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -221,7 +221,7 @@ const CommercialPlumberPage = () => {
             className="relative group cursor-pointer"
           >
             <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden">
-              <img src="/images/services/plumber10-.webp" alt="Why Choose Us" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059053/care_maintenance/frontend_assets/services/plumber10-.webp" alt="Why Choose Us" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             </div>
             <div className="absolute -right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl hidden md:block max-w-xs transition-all duration-500 group-hover:-translate-y-[55%] group-hover:shadow-blue-500/20">
               <Award className="w-10 h-10 text-blue-600 mb-4" />
@@ -351,7 +351,7 @@ const CommercialPlumberPage = () => {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="group cursor-pointer rounded-[2rem] overflow-hidden relative aspect-square md:aspect-auto md:h-[600px]"
           >
-            <img src="/images/services/plumber11.webp" alt="Office Building" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059054/care_maintenance/frontend_assets/services/plumber11.webp" alt="Office Building" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent flex flex-col justify-end p-10">
               <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-4">Corporate Office</div>
               <h3 className="text-3xl font-bold text-white mb-2">Complete Repiping</h3>
@@ -364,7 +364,7 @@ const CommercialPlumberPage = () => {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
               className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px]"
             >
-              <img src="/images/services/plumber1-.webp" alt="Restaurant" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059052/care_maintenance/frontend_assets/services/plumber1-.webp" alt="Restaurant" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8">
                 <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Restaurant</div>
                 <h3 className="text-xl font-bold text-white">Commercial Kitchen Fit-out</h3>
@@ -374,7 +374,7 @@ const CommercialPlumberPage = () => {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
               className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px]"
             >
-              <img src="/images/services/plumber2.webp" alt="Industrial" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059055/care_maintenance/frontend_assets/services/plumber2.webp" alt="Industrial" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8">
                 <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Industrial Facility</div>
                 <h3 className="text-xl font-bold text-white">Boiler System Installation</h3>
@@ -442,7 +442,7 @@ const CommercialPlumberPage = () => {
             <div className="w-full lg:w-[40%] order-1 lg:order-2">
               <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                 <img 
-                  src="/images/services/plumber3.webp" 
+                  src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059056/care_maintenance/frontend_assets/services/plumber3.webp" 
                   alt="Commercial Plumbing Maintenance" 
                   className="w-full h-full object-cover"
                 />

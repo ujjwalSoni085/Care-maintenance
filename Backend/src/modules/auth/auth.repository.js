@@ -39,6 +39,16 @@ class AuthRepository {
         const count = await User.countDocuments({ email });
         return count > 0;
     }
+
+    /**
+     * Check if a user with the given phone exists
+     * @param {String} phone 
+     * @returns {Promise<Boolean>}
+     */
+    async checkPhoneExists(phone) {
+        const count = await User.countDocuments({ phone });
+        return count > 0;
+    }
 }
 
 module.exports = new AuthRepository();

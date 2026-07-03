@@ -25,12 +25,12 @@ export const serviceData = {
       { title: 'Guaranteed Work', description: '100% satisfaction guarantee on all electrical repairs.', icon: 'verified' }
     ],
     gallery: [
-      '/images/services/elect 1.webp',
-      '/images/services/elect 2.webp',
-      '/images/services/elect 3.webp',
-      '/images/services/elect 4.webp',
-      '/images/services/elect 5.webp',
-      '/images/services/elect 6.webp'
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059016/care_maintenance/frontend_assets/services/elect_1.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059018/care_maintenance/frontend_assets/services/elect_2.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059019/care_maintenance/frontend_assets/services/elect_3.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059020/care_maintenance/frontend_assets/services/elect_4.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059021/care_maintenance/frontend_assets/services/elect_5.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059022/care_maintenance/frontend_assets/services/elect_6.webp'
     ]
   },
   'plumber': {
@@ -59,12 +59,12 @@ export const serviceData = {
       { title: 'Fully Insured', description: 'Complete peace of mind with our insured services.', icon: 'security' }
     ],
     gallery: [
-      '/images/services/plumber1-.webp',
-      '/images/services/plumber2.webp',
-      '/images/services/plumber3.webp',
-      '/images/services/plumber4.webp',
-      '/images/services/plumber6.webp',
-      '/images/services/plumber7-.webp'
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059052/care_maintenance/frontend_assets/services/plumber1-.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059055/care_maintenance/frontend_assets/services/plumber2.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059056/care_maintenance/frontend_assets/services/plumber3.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059057/care_maintenance/frontend_assets/services/plumber4.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059058/care_maintenance/frontend_assets/services/plumber6.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059060/care_maintenance/frontend_assets/services/plumber7-.webp'
     ]
   },
   'carpenter': {
@@ -93,12 +93,12 @@ export const serviceData = {
       { title: 'Space Optimization', description: 'Smart designs that maximize your home space.', icon: 'zoom_out_map' }
     ],
     gallery: [
-      '/images/services/carpenter image 13.webp',
-      '/images/services/carpenter 15.webp',
-      '/images/services/carpenter 12.webp',
-      '/images/services/carpenter 11.webp',
-      '/images/services/carepenter 13.webp',
-      '/images/services/carpenter 11.webp'
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058982/care_maintenance/frontend_assets/services/carpenter_image_13.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058980/care_maintenance/frontend_assets/services/carpenter_15.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058979/care_maintenance/frontend_assets/services/carpenter_12.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058976/care_maintenance/frontend_assets/services/carpenter_11.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058973/care_maintenance/frontend_assets/services/carepenter_13.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058976/care_maintenance/frontend_assets/services/carpenter_11.webp'
     ]
   },
   'ac-services': {
@@ -127,12 +127,12 @@ export const serviceData = {
       { title: 'Longer Lifespan', description: 'Extend the life of your cooling units.', icon: 'update' }
     ],
     gallery: [
-      '/images/services/ac9.webp',
-      '/images/services/ac1.webp',
-      '/images/services/ac2.webp',
-      '/images/services/ac3.webp',
-      '/images/services/ac4.webp',
-      '/images/services/ac5.webp'
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058958/care_maintenance/frontend_assets/services/ac9.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058950/care_maintenance/frontend_assets/services/ac1.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058951/care_maintenance/frontend_assets/services/ac2.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058952/care_maintenance/frontend_assets/services/ac3.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058953/care_maintenance/frontend_assets/services/ac4.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783058954/care_maintenance/frontend_assets/services/ac5.webp'
     ]
   },
   'pest-control': {
@@ -161,12 +161,12 @@ export const serviceData = {
       { title: 'Health Protection', description: 'Prevent diseases carried by common household pests.', icon: 'medical_services' }
     ],
     gallery: [
-      '/images/services/pest1.webp',
-      '/images/services/pest2.webp',
-      '/images/services/pest3.webp',
-      '/images/services/pest4.webp',
-      '/images/services/pest5.webp',
-      '/images/services/pest6.webp'
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059043/care_maintenance/frontend_assets/services/pest1.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059044/care_maintenance/frontend_assets/services/pest2.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059045/care_maintenance/frontend_assets/services/pest3.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059046/care_maintenance/frontend_assets/services/pest4.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059047/care_maintenance/frontend_assets/services/pest5.webp',
+      'https://res.cloudinary.com/reuof8q6/image/upload/v1783059048/care_maintenance/frontend_assets/services/pest6.webp'
     ]
   },
   'appliance-maintenance': {

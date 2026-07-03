@@ -21,13 +21,13 @@ const blogSchema = new mongoose.Schema(
     excerpt: {
       type: String,
     },
-    coverImage: {
+    featuredImage: {
       type: String, // URL or path to the uploaded image
     },
-    metaTitle: {
+    imageAlt: {
       type: String,
     },
-    metaDescription: {
+    category: {
       type: String,
     },
     tags: [{
@@ -37,13 +37,49 @@ const blogSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     },
-    status: {
-      type: String,
-      enum: ['draft', 'published'],
-      default: 'draft'
+    isPublished: {
+      type: Boolean,
+      default: false
     },
     publishedAt: {
       type: Date
+    },
+    // SEO Fields
+    metaTitle: {
+      type: String,
+    },
+    metaDescription: {
+      type: String,
+    },
+    metaKeywords: {
+      type: String,
+    },
+    canonicalUrl: {
+      type: String,
+    },
+    robots: {
+      type: String,
+      default: 'index, follow'
+    },
+    // Open Graph
+    ogTitle: {
+      type: String,
+    },
+    ogDescription: {
+      type: String,
+    },
+    ogImage: {
+      type: String,
+    },
+    // Twitter Cards
+    twitterTitle: {
+      type: String,
+    },
+    twitterDescription: {
+      type: String,
+    },
+    twitterImage: {
+      type: String,
     }
   },
   { timestamps: true }

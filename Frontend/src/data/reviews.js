@@ -5,7 +5,7 @@ export const reviews = [
     location: 'H-67C Saket Delhi ',
     rating: 5,
     text: 'Mr. & Mrs. Chaudhary appreciated CareMS India for their professional service, timely support, reliable maintenance solutions, and smooth overall experience with complete customer satisfaction.',
-    image: '/images/mr mis chuadry review.webp'
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058437/care_maintenance/frontend_assets/mr_mis_chuadry_review.webp'
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const reviews = [
     location: 'X-1 Green Park New Delhi',
     rating: 5,
     text: 'Mr. & Mrs. Wadhwa praised CareMS India for dependable service, professional staff, timely maintenance support, and a smooth, trustworthy experience for their property care needs',
-    image: '/images/mr mis wadwa care review.webp'
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058438/care_maintenance/frontend_assets/mr_mis_wadwa_care_review.webp'
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const reviews = [
     location: 'Shivalik New Delhi',
     rating: 4,
     text: 'Mr Jain appreciated CareMS India for their prompt service, efficient problem-solving, professional conduct, and reliable support for his property maintenance requirements',
-    image: '/images/MK jain revew care.webp'
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058436/care_maintenance/frontend_assets/MK_jain_revew_care.webp'
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const reviews = [
     location: 'Shivalik New Delhi',
     rating: 5,
     text: 'Managing multiple properties becomes stress-free with a reliable maintenance team handling repairs, upkeep, and support efficiently, ensuring everything stays smooth and well-maintained.',
-    image: '/images/salim valiya review care.webp'
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058456/care_maintenance/frontend_assets/salim_valiya_review_care.webp'
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ export const reviews = [
     location: 'Sainik Farm Delhi',
     rating: 5,
     text: 'Reliable technicians, quality workmanship, and fast maintenance support helped us manage multiple properties smoothly without worrying about repairs, cleaning, or regular upkeep issues.',
-    image: '/images/Amolok singh revews.webp'
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058408/care_maintenance/frontend_assets/Amolok_singh_revews.webp'
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ export const reviews = [
     location: 'Noida Sector 52',
     rating: 4,
     text: 'Mr. Ganguly appreciated CareMS India for their prompt service, efficient problem-solving, professional conduct, and reliable support for his property maintenance requirements',
-    image: '/images/ganguli review.webp'
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058419/care_maintenance/frontend_assets/ganguli_review.webp'
   },
   {
     id: 7,
@@ -53,6 +53,6 @@ export const reviews = [
     location: 'Saket J Block New Delhi ',
     rating: 5,
     text: 'Mrs. Rekha Soni appreciated CareMS India for reliable maintenance support, professional technicians, timely service, and delivering a smooth, trustworthy property care experience.',
-    image: '/images/Rekha soni review care.webp'
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058455/care_maintenance/frontend_assets/Rekha_soni_review_care.webp'
   }
 ];

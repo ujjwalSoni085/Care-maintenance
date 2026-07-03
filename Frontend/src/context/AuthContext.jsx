@@ -71,28 +71,38 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  // Login with Email/Password
+  // Login with Email/Password (Local API)
   const login = async (email, password) => {
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      return await authenticateWithBackend(userCredential.user);
+      const response = await api.post('/auth/login', { email, password });
+      const { token, user: userData } = response.data.data;
+      
+      localStorage.setItem('care_maintenance_token', token);
+      setUser(userData);
+      setIsAuthenticated(true);
+      return { success: true };
     } catch (error) {
       return { 
         success: false, 
-        message: error.message || 'Login failed. Please check your credentials.' 
+        message: error.response?.data?.message || 'Login failed. Please check your credentials.' 
       };
     }
   };
 
-  // Register with Email/Password
+  // Register with Email/Password (Local API)
   const register = async (userData) => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, userData.email, userData.password);
-      return await authenticateWithBackend(userCredential.user);
+      const response = await api.post('/auth/register', userData);
+      const { token, user: newUserData } = response.data.data;
+      
+      // We don't automatically log them in per user request (redirect to Login instead).
+      // Wait, the user said "On successful signup, redirect the user to the Login page."
+      // So we don't set user state here. Just return success.
+      return { success: true };
     } catch (error) {
       return { 
         success: false, 
-        message: error.message || 'Registration failed. Please try again.' 
+        message: error.response?.data?.message || 'Registration failed. Please try again.' 
       };
     }
   };

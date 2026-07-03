@@ -67,7 +67,7 @@ const ApplianceMaintenancePage = () => {
           
           {/* Image Section */}
           <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-2xl group">
-            <img src="/images/vishal_kumar.webp" alt="Appliance Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
+            <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058477/care_maintenance/frontend_assets/vishal_kumar.webp" alt="Appliance Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 pointer-events-none">
               <div className="text-white flex items-center gap-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
@@ -213,8 +213,8 @@ const ApplianceMaintenancePage = () => {
 
         {/* === BEFORE & AFTER SLIDER === */}
         <BeforeAfterSlider 
-          beforeImage="/images/services/electrical item image before.webp" 
-          afterImage="/images/services/electrical item after.webp" 
+          beforeImage="https://res.cloudinary.com/reuof8q6/image/upload/v1783059036/care_maintenance/frontend_assets/services/electrical_item_image_before.webp" 
+          afterImage="https://res.cloudinary.com/reuof8q6/image/upload/v1783059035/care_maintenance/frontend_assets/services/electrical_item_after.webp" 
         />
 
         {/* === WHY CHOOSE US === */}
@@ -260,12 +260,12 @@ const ApplianceMaintenancePage = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto px-2">
             {[
-              '/images/services/elect1.webp',
-              '/images/services/elect2.webp',
-              '/images/services/elect3.webp',
-              '/images/services/elect4.webp',
-              '/images/services/elect5.webp',
-              '/images/services/elect6.webp'
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059027/care_maintenance/frontend_assets/services/elect1.webp',
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059028/care_maintenance/frontend_assets/services/elect2.webp',
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059029/care_maintenance/frontend_assets/services/elect3.webp',
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059030/care_maintenance/frontend_assets/services/elect4.webp',
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059031/care_maintenance/frontend_assets/services/elect5.webp',
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059034/care_maintenance/frontend_assets/services/elect6.webp'
             ].map((imgSrc, index) => (
               <div key={index} className="group relative aspect-video md:aspect-square bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/30 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 ease-out hover:-translate-y-2 cursor-pointer">
                 

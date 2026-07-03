@@ -1,10 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaYoutube, FaInstagram, FaFacebook, FaWhatsapp, FaReddit, FaPinterest } from 'react-icons/fa';
 import { Wrench, MapPin, Clock, Phone } from 'lucide-react';
 import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
+  const location = useLocation();
+  const hiddenRoutes = ['/login', '/register'];
+
+  if (hiddenRoutes.includes(location.pathname)) {
+    return null;
+  }
+
   return (
     <footer className="bg-slate-900 text-slate-300 pt-16 pb-6 font-inter">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,7 +21,7 @@ const Footer = () => {
           <div className="lg:col-span-4">
             <div className="flex flex-col items-start mb-4">
               <div className="w-28 sm:w-32 flex-shrink-0">
-                <img src="/images/care-maintenance-logo-removebg-preview.webp" alt="CareMaintenance Logo" className="w-full h-auto object-contain object-left" />
+                <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058411/care_maintenance/frontend_assets/care-maintenance-logo-removebg-preview.webp" alt="CareMaintenance Logo" className="w-full h-auto object-contain object-left" />
               </div>
               <span className="-mt-3 text-lg sm:text-xl font-bold text-white font-outfit whitespace-nowrap">
                 Care Maintenance Services Pvt Ltd.

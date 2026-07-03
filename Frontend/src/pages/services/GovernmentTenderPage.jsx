@@ -70,7 +70,7 @@ const GovernmentTenderPage = () => {
             className="relative lg:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100"
           >
             <img 
-              src="/images/services/cleaning 7.webp" 
+              src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058998/care_maintenance/frontend_assets/services/cleaning_7.webp" 
               alt="Government Tender Services" 
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -172,7 +172,7 @@ const GovernmentTenderPage = () => {
             className="relative group cursor-pointer"
           >
             <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden">
-              <img src="/images/services/pest8.webp" alt="Tender Execution" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059050/care_maintenance/frontend_assets/services/pest8.webp" alt="Tender Execution" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             </div>
             <div className="absolute -left-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl hidden md:block max-w-xs transition-all duration-500 group-hover:-translate-y-[55%] group-hover:shadow-blue-500/20">
               <Award className="w-10 h-10 text-blue-600 mb-4" />
@@ -198,7 +198,7 @@ const GovernmentTenderPage = () => {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="group cursor-pointer rounded-[2rem] overflow-hidden relative aspect-square md:aspect-auto md:h-[600px]"
           >
-            <img src="/images/services/carpenter 11.webp" alt="Modular Office Setup" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058976/care_maintenance/frontend_assets/services/carpenter_11.webp" alt="Modular Office Setup" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent flex flex-col justify-end p-10">
               <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-4">Carpentry</div>
               <h3 className="text-3xl font-bold text-white mb-2">Modular Office Setup</h3>
@@ -211,7 +211,7 @@ const GovernmentTenderPage = () => {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
               className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px]"
             >
-              <img src="/images/services/carpenter 15.webp" alt="Custom Furniture Fabrication" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058980/care_maintenance/frontend_assets/services/carpenter_15.webp" alt="Custom Furniture Fabrication" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8">
                 <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Woodwork</div>
                 <h3 className="text-xl font-bold text-white">Custom Furniture Fabrication</h3>
@@ -221,7 +221,7 @@ const GovernmentTenderPage = () => {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
               className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px]"
             >
-              <img src="/images/services/cleaning 8.webp" alt="Public Sector Cleaning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058999/care_maintenance/frontend_assets/services/cleaning_8.webp" alt="Public Sector Cleaning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8">
                 <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Cleaning Services</div>
                 <h3 className="text-xl font-bold text-white">Public Sector Cleaning</h3>

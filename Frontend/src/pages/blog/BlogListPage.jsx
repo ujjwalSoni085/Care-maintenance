@@ -7,12 +7,17 @@ import SEO from '../../components/seo/SEO';
 const BlogListPage = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pagination, setPagination] = useState({});
+  const limit = 9; // Show 9 blogs per page
 
   useEffect(() => {
     const fetchBlogs = async () => {
+      setLoading(true);
       try {
-        const res = await axios.get('http://localhost:5000/api/blogs');
+        const res = await axios.get(`http://localhost:5000/api/blogs?page=${currentPage}&limit=${limit}`);
         setBlogs(res.data.data || []);
+        setPagination(res.data.pagination || {});
       } catch (error) {
         console.error('Failed to fetch blogs', error);
       } finally {
@@ -20,7 +25,21 @@ const BlogListPage = () => {
       }
     };
     fetchBlogs();
-  }, []);
+  }, [currentPage]);
+
+  const handleNextPage = () => {
+    if (pagination.next) {
+      setCurrentPage(pagination.next.page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (pagination.prev) {
+      setCurrentPage(pagination.prev.page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -53,53 +72,84 @@ const BlogListPage = () => {
             <p className="text-gray-500 mt-2">Check back later for new articles.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {blogs.map((blog) => (
-              <article key={blog._id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
-                <Link to={`/blog/${blog.slug}`} className="block relative h-56 overflow-hidden">
-                  <img 
-                    src={blog.image || 'https://via.placeholder.com/600x400?text=Care+Maintenance'} 
-                    alt={blog.title} 
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                      {blog.category || 'Article'}
-                    </span>
-                  </div>
-                </Link>
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center text-sm text-gray-500 mb-4 space-x-4">
-                    <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {blogs.map((blog) => (
+                <article key={blog._id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
+                  <Link to={`/blog/${blog.slug}`} className="block relative h-56 overflow-hidden">
+                    <img 
+                      src={blog.featuredImage ? `http://localhost:5000${blog.featuredImage}` : 'https://placehold.co/600x400?text=Care+Maintenance'} 
+                      alt={blog.imageAlt || blog.title} 
+                      className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        {blog.category || 'Article'}
+                      </span>
                     </div>
-                    {blog.author && (
-                      <div className="flex items-center">
-                        <User className="w-4 h-4 mr-1" />
-                        {blog.author.name || 'Admin'}
-                      </div>
-                    )}
-                  </div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-3 leading-tight line-clamp-2">
-                    <Link to={`/blog/${blog.slug}`} className="hover:text-blue-600 transition-colors">
-                      {blog.title}
-                    </Link>
-                  </h2>
-                  <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
-                    {blog.excerpt || blog.content?.substring(0, 150) + '...'}
-                  </p>
-                  <Link 
-                    to={`/blog/${blog.slug}`} 
-                    className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors group"
-                  >
-                    Read More 
-                    <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex items-center text-sm text-gray-500 mb-4 space-x-4">
+                      <div className="flex items-center">
+                        <Calendar className="w-4 h-4 mr-1" />
+                        {new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                      </div>
+                      {blog.author && (
+                        <div className="flex items-center">
+                          <User className="w-4 h-4 mr-1" />
+                          {blog.author.name || 'Admin'}
+                        </div>
+                      )}
+                    </div>
+                    <h2 className="text-xl font-bold text-gray-900 mb-3 leading-tight line-clamp-2">
+                      <Link to={`/blog/${blog.slug}`} className="hover:text-blue-600 transition-colors">
+                        {blog.title}
+                      </Link>
+                    </h2>
+                    <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
+                      {blog.excerpt || blog.content?.substring(0, 150) + '...'}
+                    </p>
+                    <Link 
+                      to={`/blog/${blog.slug}`} 
+                      className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors group"
+                    >
+                      Read More 
+                      <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+            
+            {/* Pagination Controls */}
+            <div className="flex justify-center items-center space-x-4 mt-12">
+              <button
+                onClick={handlePrevPage}
+                disabled={!pagination.prev}
+                className={`px-4 py-2 rounded-md font-medium transition-colors ${
+                  pagination.prev 
+                    ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-md' 
+                    : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                }`}
+              >
+                Previous Page
+              </button>
+              <span className="text-gray-700 font-medium px-4 py-2 bg-white rounded-md shadow-sm border border-gray-100">
+                Page {currentPage}
+              </span>
+              <button
+                onClick={handleNextPage}
+                disabled={!pagination.next}
+                className={`px-4 py-2 rounded-md font-medium transition-colors ${
+                  pagination.next 
+                    ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-md' 
+                    : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                }`}
+              >
+                Next Page
+              </button>
+            </div>
+          </>
         )}
       </div>
     </div>

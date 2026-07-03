@@ -68,7 +68,7 @@ const ACServicesPage = () => {
           {/* Image Section */}
           <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-2xl group">
             {service.gallery && service.gallery.length > 0 && (
-              <img src="/images/services/driling image.webp" alt="AC Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059015/care_maintenance/frontend_assets/services/driling_image.webp" alt="AC Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 pointer-events-none">
               <div className="text-white flex items-center gap-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -215,8 +215,8 @@ const ACServicesPage = () => {
 
         {/* === BEFORE & AFTER SLIDER === */}
         <BeforeAfterSlider 
-          beforeImage="/images/services/ac before.webp" 
-          afterImage="/images/services/ac after image.webp" 
+          beforeImage="https://res.cloudinary.com/reuof8q6/image/upload/v1783058949/care_maintenance/frontend_assets/services/ac_before.webp" 
+          afterImage="https://res.cloudinary.com/reuof8q6/image/upload/v1783058947/care_maintenance/frontend_assets/services/ac_after_image.webp" 
         />
 
         {/* === WHY CHOOSE US === */}

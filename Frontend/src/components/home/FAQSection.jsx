@@ -81,7 +81,7 @@ const FAQSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <img 
-                src="/images/faq_illustration.png" 
+                src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058416/care_maintenance/frontend_assets/faq_illustration.jpg" 
                 alt="FAQ Illustration" 
                 className="w-full max-w-md lg:max-w-full drop-shadow-2xl rounded-2xl object-contain hover:scale-[1.02] transition-transform duration-500"
               />

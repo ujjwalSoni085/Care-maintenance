@@ -9,32 +9,32 @@ import 'swiper/css/navigation';
 const carouselSlides = [
   {
     id: 1,
-    image: '/images/Group photo.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058420/care_maintenance/frontend_assets/Group_photo.webp',
     year: '2025',
   },
   {
     id: 2,
-    image: '/images/services/poster iamge 4.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059061/care_maintenance/frontend_assets/services/poster_iamge_4.webp',
     year: '2022',
   },
   {
     id: 3,
-    image: '/images/services/party photo crausel 3.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059041/care_maintenance/frontend_assets/services/party_photo_crausel_3.webp',
     year: '2024',
   },
   {
     id: 4,
-    image: '/images/services/poster image 9.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059066/care_maintenance/frontend_assets/services/poster_image_9.webp',
     year: '2024',
   },
   {
     id: 5,
-    image: '/images/services/poster image 10.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059063/care_maintenance/frontend_assets/services/poster_image_10.webp',
     year: '2024',
   },
   {
     id: 6,
-    image: '/images/services/poster image 12.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059064/care_maintenance/frontend_assets/services/poster_image_12.webp',
     year: '2025',
   }
 ];

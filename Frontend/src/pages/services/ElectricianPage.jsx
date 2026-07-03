@@ -68,7 +68,7 @@ const ElectricianPage = () => {
           {/* Image Section */}
           <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-2xl group">
             {service.gallery && service.gallery.length > 0 && (
-              <img src="/images/services/elect 1.webp" alt="Electrical Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059016/care_maintenance/frontend_assets/services/elect_1.webp" alt="Electrical Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 pointer-events-none">
               <div className="text-white flex items-center gap-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -216,8 +216,8 @@ const ElectricianPage = () => {
 
         {/* === BEFORE & AFTER SLIDER === */}
         <BeforeAfterSlider 
-          beforeImage="/images/services/electrican image before.webp" 
-          afterImage="/images/services/electrician image after.webp" 
+          beforeImage="https://res.cloudinary.com/reuof8q6/image/upload/v1783059037/care_maintenance/frontend_assets/services/electrican_image_before.webp" 
+          afterImage="https://res.cloudinary.com/reuof8q6/image/upload/v1783059039/care_maintenance/frontend_assets/services/electrician_image_after.webp" 
         />
 
         {/* === WHY CHOOSE US === */}

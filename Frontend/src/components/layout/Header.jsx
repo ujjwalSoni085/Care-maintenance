@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiChevronDown, FiUser, FiLogOut, FiMessageSquare } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronDown, FiUser, FiLogOut, FiMessageSquare, FiSettings } from 'react-icons/fi';
 import { FaBolt, FaWrench, FaHammer, FaSnowflake, FaBug, FaPlug, FaWater, FaFan, FaFireExtinguisher, FaBuilding, FaLeaf } from 'react-icons/fa6';
 import { FaCoffee } from 'react-icons/fa';
 import useScrollPosition from '../../hooks/useScrollPosition';
@@ -75,7 +75,7 @@ const Header = () => {
             <div className="flex-1 flex items-center">
               <Link to="/" onClick={handleHomeClick} className="z-50">
                 <img
-                  src="/images/care-maintenance-logo-removebg-preview.webp"
+                  src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058411/care_maintenance/frontend_assets/care-maintenance-logo-removebg-preview.webp"
                   alt="Care Maintenance Logo"
                   className="h-12 md:h-16 w-auto object-contain"
                 />
@@ -217,6 +217,18 @@ const Header = () => {
                       </div>
                     )}
                     <div className="p-2">
+                      {user?.role === 'admin' && (
+                        <Link 
+                          to="/admin/blogs" 
+                          onClick={() => setHoveredDropdown(null)}
+                          className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-700 rounded-lg hover:bg-purple-50 hover:text-purple-700 transition-all duration-200 group mb-1"
+                        >
+                          <div className="p-1.5 rounded-md bg-slate-100 text-slate-500 group-hover:bg-purple-100 group-hover:text-purple-600 transition-colors">
+                            <FiSettings />
+                          </div>
+                          Admin Dashboard
+                        </Link>
+                      )}
                       <Link 
                         to="/profile" 
                         onClick={() => setHoveredDropdown(null)}

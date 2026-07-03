@@ -214,7 +214,7 @@ const PestControlPage = () => {
         </section>
 
         {/* === BEFORE & AFTER SLIDER === */}
-        <BeforeAfterSlider beforeImage="/images/services/pest7.webp" afterImage="/images/services/pest8.webp" />
+        <BeforeAfterSlider beforeImage="https://res.cloudinary.com/reuof8q6/image/upload/v1783059049/care_maintenance/frontend_assets/services/pest7.webp" afterImage="https://res.cloudinary.com/reuof8q6/image/upload/v1783059050/care_maintenance/frontend_assets/services/pest8.webp" />
 
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">

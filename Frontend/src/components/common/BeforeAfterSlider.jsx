@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const BeforeAfterSlider = ({ beforeImage = "/images/services/elect2.webp", afterImage = "/images/services/elect3.webp" }) => {
+const BeforeAfterSlider = ({ beforeImage = "https://res.cloudinary.com/reuof8q6/image/upload/v1783059028/care_maintenance/frontend_assets/services/elect2.webp", afterImage = "https://res.cloudinary.com/reuof8q6/image/upload/v1783059029/care_maintenance/frontend_assets/services/elect3.webp" }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   
   return (

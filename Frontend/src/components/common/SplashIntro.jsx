@@ -119,7 +119,7 @@ const SplashIntro = ({ onComplete }) => {
       <div className="relative z-10 text-center px-4 flex flex-col items-center">
         <div ref={textRef} className="flex justify-center mb-8 perspective-[1000px]">
           <img 
-            src="/images/care-maintenance-logo-removebg-preview.webp" 
+            src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058411/care_maintenance/frontend_assets/care-maintenance-logo-removebg-preview.webp" 
             alt="Care Maintenance Logo" 
             className="splash-logo w-72 md:w-96 lg:w-[450px] drop-shadow-2xl object-contain"
           />

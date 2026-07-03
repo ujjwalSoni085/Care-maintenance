@@ -48,6 +48,10 @@ exports.createBlog = async (req, res) => {
     // Add user to req.body
     req.body.author = req.user.id;
     
+    if (req.body.isPublished && !req.body.publishedAt) {
+      req.body.publishedAt = new Date();
+    }
+    
     const blog = await Blog.create(req.body);
     res.status(201).json({ success: true, data: blog });
   } catch (error) {
@@ -71,6 +75,14 @@ exports.getBlogById = async (req, res) => {
 // Admin: Update blog
 exports.updateBlog = async (req, res) => {
   try {
+    // If being published and no publishedAt date exists, set it
+    if (req.body.isPublished) {
+      const existingBlog = await Blog.findById(req.params.id);
+      if (existingBlog && !existingBlog.publishedAt) {
+        req.body.publishedAt = new Date();
+      }
+    }
+
     const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true

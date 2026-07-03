@@ -7,32 +7,32 @@ import Card from '../common/Card';
 
 const features = [
   {
-    image: '/images/services/party photo crausel 2.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059040/care_maintenance/frontend_assets/services/party_photo_crausel_2.webp',
     title: 'Licensed & Insured',
     description: 'Fully Professional experts you can trust. We carry comprehensive insurance to protect your property and ensure peace of mind.'
   },
   {
-    image: '/images/services/admin image 6.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058968/care_maintenance/frontend_assets/services/admin_image_6.webp',
     title: 'Fast Response',
     description: 'Same-day service available, 7 days a week. Our rapid response team is always ready to tackle your urgent maintenance needs promptly.'
   },
   {
-    image: '/images/services/carpenter 1.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058975/care_maintenance/frontend_assets/services/carpenter_1.webp',
     title: 'Trusted Professionals',
     description: 'Skilled and verified experts for every service. Every technician undergoes rigorous background checks and continuous training.'
   },
   {
-    image: '/images/services/carpainter hader image.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058974/care_maintenance/frontend_assets/services/carpainter_hader_image.webp',
     title: 'Experienced Team',
     description: '10+ years of industry expertise. Our seasoned professionals have handled thousands of successful projects with unmatched knowledge.'
   },
   {
-    image: '/images/services/cleaning 7.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058998/care_maintenance/frontend_assets/services/cleaning_7.webp',
     title: 'Quality Guaranteed',
     description: 'We stand behind every job we do. If you aren\'t completely satisfied, we will make it right at no additional cost to you.'
   },
   {
-    image: '/images/services/admin image 7.webp',
+    image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058970/care_maintenance/frontend_assets/services/admin_image_7.webp',
     title: '24/7 Support',
     description: 'Round-the-clock customer assistance. Our dedicated support team is available day and night to answer your questions and schedule appointments.'
   }

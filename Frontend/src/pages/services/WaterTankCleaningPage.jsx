@@ -68,7 +68,7 @@ const WaterTankCleaningPage = () => {
           {/* Image Section */}
           <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-inner group">
             <img 
-              src="/images/services/cleaning 4.webp" 
+              src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058994/care_maintenance/frontend_assets/services/cleaning_4.webp" 
               alt="Water Tank Cleaning Service" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -208,8 +208,8 @@ const WaterTankCleaningPage = () => {
 
         {/* === BEFORE & AFTER SLIDER === */}
         <BeforeAfterSlider 
-          beforeImage="/images/services/water tank cleaning before.webp" 
-          afterImage="/images/services/water tank cleaning after image.webp" 
+          beforeImage="https://res.cloudinary.com/reuof8q6/image/upload/v1783059073/care_maintenance/frontend_assets/services/water_tank_cleaning_before.webp" 
+          afterImage="https://res.cloudinary.com/reuof8q6/image/upload/v1783059072/care_maintenance/frontend_assets/services/water_tank_cleaning_after_image.webp" 
         />
 
         {/* === WHY CHOOSE US === */}
@@ -255,12 +255,12 @@ const WaterTankCleaningPage = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto px-2">
             {[
-              '/images/services/cleaning4.webp',
-              '/images/services/cleaning3.webp',
-              '/images/services/clarning2.webp',
-              '/images/services/cleaning3.webp',
-              '/images/services/plumber1-.webp',
-              '/images/services/plumber6.webp'
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059004/care_maintenance/frontend_assets/services/cleaning4.webp',
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059003/care_maintenance/frontend_assets/services/cleaning3.webp',
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783058989/care_maintenance/frontend_assets/services/clarning2.webp',
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059003/care_maintenance/frontend_assets/services/cleaning3.webp',
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059052/care_maintenance/frontend_assets/services/plumber1-.webp',
+              'https://res.cloudinary.com/reuof8q6/image/upload/v1783059058/care_maintenance/frontend_assets/services/plumber6.webp'
             ].map((src, index) => (
               <div key={index} className="group relative aspect-video md:aspect-square bg-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 ease-out flex items-center justify-center cursor-pointer border border-outline-variant/20">
                 <img src={src} alt={`Water Tank Cleaning Work ${index + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />

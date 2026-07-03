@@ -12,10 +12,32 @@ const RegisterPage = () => {
     password: '',
     confirmPassword: ''
   });
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   
   const { register, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
+
+  // Validate form data
+  React.useEffect(() => {
+    const newErrors = {};
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (touched.email && formData.email && !emailRegex.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address.';
+    }
+
+    if (touched.password && formData.password && formData.password.length < 4) {
+      newErrors.password = 'Password must be at least 4 characters long.';
+    }
+
+    if (touched.confirmPassword && formData.confirmPassword && formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = 'Passwords do not match.';
+    }
+
+    setErrors(newErrors);
+  }, [formData, touched]);
 
   const handleChange = (e) => {
     setFormData({
@@ -24,13 +46,24 @@ const RegisterPage = () => {
     });
   };
 
+  const handleBlur = (e) => {
+    setTouched({
+      ...touched,
+      [e.target.name]: true
+    });
+  };
+
+  const isFormValid = 
+    formData.name && 
+    formData.email && 
+    formData.password && 
+    formData.confirmPassword && 
+    Object.keys(errors).length === 0;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (formData.password !== formData.confirmPassword) {
-      toast.error('Passwords do not match');
-      return;
-    }
+    if (!isFormValid) return;
 
     setIsLoading(true);
     
@@ -48,8 +81,8 @@ const RegisterPage = () => {
     setIsLoading(false);
     
     if (result.success) {
-      toast.success('Successfully registered!');
-      navigate('/');
+      toast.success('Successfully registered! Please log in.');
+      navigate('/login');
     } else {
       toast.error(result.message || 'Failed to register');
     }
@@ -73,7 +106,7 @@ const RegisterPage = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
           <img
-            src="/images/care-maintenance-logo-removebg-preview.webp"
+            src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058411/care_maintenance/frontend_assets/care-maintenance-logo-removebg-preview.webp"
             alt="Care Maintenance Logo"
             className="h-16 w-auto object-contain"
           />
@@ -109,6 +142,7 @@ const RegisterPage = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   className="appearance-none block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors"
                   placeholder="Name"
                 />
@@ -132,10 +166,14 @@ const RegisterPage = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="appearance-none block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors"
+                  onBlur={handleBlur}
+                  className={`appearance-none block w-full pl-10 pr-3 py-2.5 border ${errors.email ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} rounded-xl focus:outline-none focus:ring-2 sm:text-sm transition-colors`}
                   placeholder="you@example.com"
                 />
               </div>
+              {errors.email && (
+                <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+              )}
             </div>
 
             {/* Phone */}
@@ -153,6 +191,7 @@ const RegisterPage = () => {
                   type="tel"
                   value={formData.phone}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   className="appearance-none block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors"
                   placeholder="+91 1234567890"
                 />
@@ -175,10 +214,14 @@ const RegisterPage = () => {
                   required
                   value={formData.password}
                   onChange={handleChange}
-                  className="appearance-none block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors"
+                  onBlur={handleBlur}
+                  className={`appearance-none block w-full pl-10 pr-3 py-2.5 border ${errors.password ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} rounded-xl focus:outline-none focus:ring-2 sm:text-sm transition-colors`}
                   placeholder="••••••••"
                 />
               </div>
+              {errors.password && (
+                <p className="mt-1 text-sm text-red-600">{errors.password}</p>
+              )}
             </div>
 
             {/* Confirm Password */}
@@ -197,18 +240,22 @@ const RegisterPage = () => {
                   required
                   value={formData.confirmPassword}
                   onChange={handleChange}
-                  className="appearance-none block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors"
+                  onBlur={handleBlur}
+                  className={`appearance-none block w-full pl-10 pr-3 py-2.5 border ${errors.confirmPassword ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-blue-500 focus:border-blue-500'} rounded-xl focus:outline-none focus:ring-2 sm:text-sm transition-colors`}
                   placeholder="••••••••"
                 />
               </div>
+              {errors.confirmPassword && (
+                <p className="mt-1 text-sm text-red-600">{errors.confirmPassword}</p>
+              )}
             </div>
 
             <div>
               <button
                 type="submit"
-                disabled={isLoading}
+                disabled={isLoading || !isFormValid}
                 className={`group mt-4 relative w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-medium rounded-xl text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all ${
-                  isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                  (isLoading || !isFormValid) ? 'opacity-70 cursor-not-allowed' : ''
                 }`}
               >
                 {isLoading ? (

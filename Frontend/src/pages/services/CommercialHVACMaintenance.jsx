@@ -24,10 +24,10 @@ const staggerContainer = {
 };
 
 const TRUSTED_COMPANIES = [
-  { name: 'Rajdhani Besan Mills', logo: '/images/services/rajchani besan.webp' },
-  { name: 'The Rugs', logo: '/images/services/the rugs.webp' },
-  { name: 'Affinity Salon', logo: '/images/services/affinity salon.webp' },
-  { name: 'Anmol Biscuits', logo: '/images/services/anmol biscuits.webp' },
+  { name: 'Rajdhani Besan Mills', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059067/care_maintenance/frontend_assets/services/rajchani_besan.webp' },
+  { name: 'The Rugs', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059071/care_maintenance/frontend_assets/services/the_rugs.webp' },
+  { name: 'Affinity Salon', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058971/care_maintenance/frontend_assets/services/affinity_salon.webp' },
+  { name: 'Anmol Biscuits', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058972/care_maintenance/frontend_assets/services/anmol_biscuits.webp' },
 ];
 
 const CommercialHVACMaintenance = () => {
@@ -77,7 +77,7 @@ const CommercialHVACMaintenance = () => {
             className="relative lg:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100"
           >
             <img 
-              src="/images/services/ac1.webp" 
+              src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058950/care_maintenance/frontend_assets/services/ac1.webp" 
               alt="Commercial HVAC Professional" 
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -221,7 +221,7 @@ const CommercialHVACMaintenance = () => {
             className="relative group cursor-pointer"
           >
             <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden">
-              <img src="/images/services/ac2.webp" alt="Why Choose Us" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058951/care_maintenance/frontend_assets/services/ac2.webp" alt="Why Choose Us" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             </div>
             <div className="absolute -right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl hidden md:block max-w-xs transition-all duration-500 group-hover:-translate-y-[55%] group-hover:shadow-blue-500/20">
               <Award className="w-10 h-10 text-blue-600 mb-4" />
@@ -311,7 +311,7 @@ const CommercialHVACMaintenance = () => {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="group cursor-pointer rounded-[2rem] overflow-hidden relative aspect-square md:aspect-auto md:h-[600px]"
           >
-            <img src="/images/services/ac3.webp" alt="Office Building" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058952/care_maintenance/frontend_assets/services/ac3.webp" alt="Office Building" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent flex flex-col justify-end p-10">
               <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-4">Corporate Office</div>
               <h3 className="text-3xl font-bold text-white mb-2">Central Air System Replacement</h3>
@@ -324,7 +324,7 @@ const CommercialHVACMaintenance = () => {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
               className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px]"
             >
-              <img src="/images/services/ac4.webp" alt="Restaurant" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058953/care_maintenance/frontend_assets/services/ac4.webp" alt="Restaurant" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8">
                 <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Restaurant</div>
                 <h3 className="text-xl font-bold text-white">Commercial Exhaust & Make-up Air</h3>
@@ -334,7 +334,7 @@ const CommercialHVACMaintenance = () => {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
               className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px]"
             >
-              <img src="/images/services/ac5.webp" alt="Industrial" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058954/care_maintenance/frontend_assets/services/ac5.webp" alt="Industrial" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8">
                 <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Industrial Facility</div>
                 <h3 className="text-xl font-bold text-white">Heavy-Duty Chiller Installation</h3>
@@ -372,7 +372,7 @@ const CommercialHVACMaintenance = () => {
             <div className="w-full lg:w-[40%] order-1 lg:order-2">
               <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                 <img 
-                  src="/images/services/ac6.webp" 
+                  src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058955/care_maintenance/frontend_assets/services/ac6.webp" 
                   alt="Commercial HVAC Maintenance" 
                   className="w-full h-full object-cover"
                 />
@@ -423,7 +423,7 @@ const CommercialHVACMaintenance = () => {
       {/* 11. Final CTA Banner */}
       <section className="py-24 px-6 lg:px-12">
         <div className="max-w-6xl mx-auto bg-gradient-to-br from-gray-900 to-blue-900 rounded-[3rem] p-12 lg:p-20 text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/services/ac7.webp')] opacity-10 bg-cover bg-center mix-blend-overlay pointer-events-none" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://res.cloudinary.com/reuof8q6/image/upload/v1783058956/care_maintenance/frontend_assets/services/ac7.webp')] opacity-10 bg-cover bg-center mix-blend-overlay pointer-events-none" />
           
           <div className="relative z-10">
             <h2 className="text-4xl lg:text-6xl font-semibold text-white tracking-tight mb-6">Ready to upgrade your facility?</h2>

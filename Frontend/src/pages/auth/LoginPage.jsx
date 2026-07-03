@@ -55,7 +55,7 @@ const LoginPage = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
           <img
-            src="/images/care-maintenance-logo-removebg-preview.webp"
+            src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058411/care_maintenance/frontend_assets/care-maintenance-logo-removebg-preview.webp"
             alt="Care Maintenance Logo"
             className="h-16 w-auto object-contain"
           />

@@ -18,10 +18,21 @@ const AdminBlogCreateEdit = () => {
     excerpt: '',
     metaTitle: '',
     metaDescription: '',
+    metaKeywords: '',
+    canonicalUrl: '',
+    robots: 'index, follow',
+    ogTitle: '',
+    ogDescription: '',
+    ogImage: '',
+    twitterTitle: '',
+    twitterDescription: '',
+    twitterImage: '',
+    category: '',
+    imageAlt: '',
     isPublished: false,
   });
   const [content, setContent] = useState('');
-  const [coverImage, setCoverImage] = useState('');
+  const [featuredImage, setFeaturedImage] = useState('');
   const [loading, setLoading] = useState(isEditMode);
 
   useEffect(() => {
@@ -39,10 +50,21 @@ const AdminBlogCreateEdit = () => {
             excerpt: blog.excerpt || '',
             metaTitle: blog.metaTitle || '',
             metaDescription: blog.metaDescription || '',
+            metaKeywords: blog.metaKeywords || '',
+            canonicalUrl: blog.canonicalUrl || '',
+            robots: blog.robots || 'index, follow',
+            ogTitle: blog.ogTitle || '',
+            ogDescription: blog.ogDescription || '',
+            ogImage: blog.ogImage || '',
+            twitterTitle: blog.twitterTitle || '',
+            twitterDescription: blog.twitterDescription || '',
+            twitterImage: blog.twitterImage || '',
+            category: blog.category || '',
+            imageAlt: blog.imageAlt || '',
             isPublished: blog.isPublished,
           });
           setContent(blog.content);
-          setCoverImage(blog.coverImage || '');
+          setFeaturedImage(blog.featuredImage || '');
         } catch (error) {
           toast.error('Failed to load blog data');
           navigate('/admin/blogs');
@@ -77,7 +99,7 @@ const AdminBlogCreateEdit = () => {
           Authorization: `Bearer ${token}`
         }
       });
-      setCoverImage(res.data.url);
+      setFeaturedImage(res.data.url);
       toast.success('Image uploaded successfully');
     } catch (error) {
       toast.error('Failed to upload image');
@@ -94,7 +116,7 @@ const AdminBlogCreateEdit = () => {
     const payload = {
       ...formData,
       content,
-      coverImage
+      featuredImage
     };
 
     try {
@@ -219,26 +241,54 @@ const AdminBlogCreateEdit = () => {
           />
         </div>
 
-        {/* Cover Image Upload */}
+        {/* Category */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Cover Image</label>
-          <div className="flex items-center space-x-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+          <input
+            type="text"
+            name="category"
+            value={formData.category}
+            onChange={handleInputChange}
+            className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+            placeholder="e.g. Technology, Health"
+          />
+        </div>
+
+        {/* Featured Image Upload */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Featured Image</label>
+            <div className="flex items-center space-x-4">
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+              />
+              {featuredImage && (
+                <img src={`http://localhost:5000${featuredImage}`} alt="Cover" className="h-16 w-16 object-cover rounded" />
+              )}
+            </div>
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Image Alt Text</label>
             <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-              className="file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+              type="text"
+              name="imageAlt"
+              value={formData.imageAlt}
+              onChange={handleInputChange}
+              className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Describe the image for SEO"
             />
-            {coverImage && (
-              <img src={`http://localhost:5000${coverImage}`} alt="Cover" className="h-16 w-16 object-cover rounded" />
-            )}
           </div>
         </div>
 
         {/* SEO Meta Data */}
-        <div className="bg-gray-50 p-4 rounded-md border">
-          <h3 className="font-semibold text-gray-800 mb-4">SEO Settings</h3>
-          <div className="space-y-4">
+        <div className="bg-gray-50 p-4 rounded-md border space-y-6">
+          <h3 className="font-semibold text-gray-800 text-lg border-b pb-2">Primary SEO Settings</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Meta Title</label>
               <input
@@ -250,15 +300,123 @@ const AdminBlogCreateEdit = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
-              <textarea
-                name="metaDescription"
-                value={formData.metaDescription}
+              <label className="block text-sm font-medium text-gray-700 mb-1">Meta Keywords</label>
+              <input
+                type="text"
+                name="metaKeywords"
+                value={formData.metaKeywords}
                 onChange={handleInputChange}
-                rows="2"
+                className="w-full px-4 py-2 border rounded-md"
+                placeholder="Comma separated"
+              />
+            </div>
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
+            <textarea
+              name="metaDescription"
+              value={formData.metaDescription}
+              onChange={handleInputChange}
+              rows="2"
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Canonical URL</label>
+              <input
+                type="text"
+                name="canonicalUrl"
+                value={formData.canonicalUrl}
+                onChange={handleInputChange}
                 className="w-full px-4 py-2 border rounded-md"
               />
             </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Robots</label>
+              <input
+                type="text"
+                name="robots"
+                value={formData.robots}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border rounded-md"
+                placeholder="index, follow"
+              />
+            </div>
+          </div>
+
+          <h3 className="font-semibold text-gray-800 text-lg border-b pb-2 pt-4">Social Media Settings (Open Graph)</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">OG Title</label>
+              <input
+                type="text"
+                name="ogTitle"
+                value={formData.ogTitle}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border rounded-md"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">OG Image URL</label>
+              <input
+                type="text"
+                name="ogImage"
+                value={formData.ogImage}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border rounded-md"
+              />
+            </div>
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">OG Description</label>
+            <textarea
+              name="ogDescription"
+              value={formData.ogDescription}
+              onChange={handleInputChange}
+              rows="2"
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
+
+          <h3 className="font-semibold text-gray-800 text-lg border-b pb-2 pt-4">Twitter Card Settings</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Twitter Title</label>
+              <input
+                type="text"
+                name="twitterTitle"
+                value={formData.twitterTitle}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border rounded-md"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Twitter Image URL</label>
+              <input
+                type="text"
+                name="twitterImage"
+                value={formData.twitterImage}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border rounded-md"
+              />
+            </div>
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Twitter Description</label>
+            <textarea
+              name="twitterDescription"
+              value={formData.twitterDescription}
+              onChange={handleInputChange}
+              rows="2"
+              className="w-full px-4 py-2 border rounded-md"
+            />
           </div>
         </div>
 

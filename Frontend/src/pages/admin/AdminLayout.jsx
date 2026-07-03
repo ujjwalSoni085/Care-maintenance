@@ -12,9 +12,9 @@ const AdminLayout = () => {
   ];
 
   return (
-    <div className="flex h-screen bg-gray-100 mt-[72px]">
+    <div className="flex min-h-[calc(100vh-72px)] bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md hidden md:block">
+      <aside className="w-64 bg-white shadow-md hidden md:block border-r">
         <div className="p-6 border-b">
           <h2 className="text-2xl font-bold text-gray-800">Admin Panel</h2>
           <p className="text-sm text-gray-500 mt-1">Welcome, {user?.name || 'Admin'}</p>
@@ -43,7 +43,7 @@ const AdminLayout = () => {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 overflow-y-auto p-8">
+      <main className="flex-1 p-8">
         <Outlet />
       </main>
     </div>

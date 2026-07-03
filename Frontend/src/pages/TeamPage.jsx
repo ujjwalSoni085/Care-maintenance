@@ -71,184 +71,184 @@ const TeamPage = () => {
                 name: "Pawan Gaur",
                 role: "Head of Finance",
                 desc: "Managing financial strategies, risk assessment, and fiscal growth.",
-                image: "/images/pawan fincer head.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058450/care_maintenance/frontend_assets/pawan_fincer_head.webp"
               },
               {
                 name: "Vasudev Kumar Mahto",
                 role: "Branch manager",
                 desc: "Leading the company with vision, trust, and long-term growth.",
-                image: "/images/vashudev sir pic for managing wale me.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058473/care_maintenance/frontend_assets/vashudev_sir_pic_for_managing_wale_me.webp"
               },
               {
                 name: "Shweta saras mahto",
                 role: "Managing Director",
                 desc: "Driving overall business operations and strategic direction.",
-                image: "/images/care-maintance-mam-image.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058410/care_maintenance/frontend_assets/care-maintance-mam-image.webp"
               },
               {
                 name: "V K Mahto",
                 role: "MD",
                 desc: "Guiding the company with expert leadership and strategic vision.",
-                image: "/images/VK Mahto MD.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058478/care_maintenance/frontend_assets/VK_Mahto_MD.webp"
               },
               {
                 name: "Sanjeev Kumar Singh",
                 role: "Deputy Finance Manager",
                 desc: "Assisting in financial planning, reporting, and asset management.",
-                image: "/images/sanjeev kumar singh deputy finace manager.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058461/care_maintenance/frontend_assets/sanjeev_kumar_singh_deputy_finace_manager.webp"
               },
               {
                 name: "Shudhansu Shekhar",
                 role: "CMA",
                 desc: "Ensuring financial efficiency and management accounting excellence.",
-                image: "/images/shudhansu Shekhar CMA.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058462/care_maintenance/frontend_assets/shudhansu_Shekhar_CMA.webp"
               },
               {
                 name: "Amit Tripathi",
                 role: "Software Partner",
                 desc: "Providing technological solutions and software partnership.",
-                image: "/images/amit Software Partner(LOOPINTechies Services (India) Pvt. Ltd.).webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058407/care_maintenance/frontend_assets/amit_Software_Partner_LOOPINTechies_Services_India_Pvt._Ltd..webp"
               },
               {
                 name: "Sukhvinder Singh",
                 role: "HR Relationship Manager",
                 desc: "Fostering employee relations and talent management.",
-                image: "/images/shukh hr relstionship manger.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058463/care_maintenance/frontend_assets/shukh_hr_relstionship_manger.webp"
               },
                {
                 name: "Bhoori singh",
                 role: "Human Resources",
                 desc: "Managing people, culture, and employee excellence.",
-                image: "/images/Bhuri Sir.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058409/care_maintenance/frontend_assets/Bhuri_Sir.webp"
               },
               {
                 name: "Vishal Kumar",
                 role: "Marketing Manager(Central)",
                 desc: "Building strong client relationships and business growth.",
-                image: "/images/vishal kumar 2.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058475/care_maintenance/frontend_assets/vishal_kumar_2.webp"
               },
               {
                 name: "Pankaj Kumar",
                 role: "Sales Team Leader",
                 desc: "Leading sales initiatives and driving revenue growth.",
-                image: "/images/pankaj sir new image.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058449/care_maintenance/frontend_assets/pankaj_sir_new_image.webp"
               },
               {
                 name: "Digambar Saw",
                 role: "Marketing Manager",
                 desc: "Driving marketing strategies and brand awareness.",
-                image: "/images/Digambar Saw marketing.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058413/care_maintenance/frontend_assets/Digambar_Saw_marketing.webp"
               },
               {
                 name: "Dushant Pandey",
                 role: "Marketing Manager",
                 desc: "Leading the marketing team and managing campaigns.",
-                image: "/images/dushant pandey sales manager.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058414/care_maintenance/frontend_assets/dushant_pandey_sales_manager.webp"
               },
               {
                 name: "Hargovind Singh",
                 role: "Marketing Manager",
                 desc: "Overseeing marketing operations and driving growth.",
-                image: "/images/Hargovind Singh.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058423/care_maintenance/frontend_assets/Hargovind_Singh.webp"
               },
               {
                 name: "Harshita Rajput",
                 role: "Marketing",
                 desc: "Executing marketing plans and promotional activities.",
-                image: "/images/Harshita rajput marketing.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058425/care_maintenance/frontend_assets/Harshita_rajput_marketing.webp"
               },
               {
                 name: "J.K Batra",
                 role: "Marketing",
                 desc: "Developing marketing collateral and engaging customers.",
-                image: "/images/jonny Batra 2.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058428/care_maintenance/frontend_assets/jonny_Batra_2.webp"
               },
              
               {
                 name: "Ujjwal Soni",
                 role: "Software Developer",
                 desc: "Building and maintaining technological solutions.",
-                image: "/images/ujjwal soni image.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058471/care_maintenance/frontend_assets/ujjwal_soni_image.webp"
               },
               {
                 name: "Lokesh Kumar",
                 role: "Digital Marketing Specialist",
                 desc: "Driving digital growth, branding, and online marketing initiatives.",
-                image: "/images/Lokesh Kumar Digital marketing.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058432/care_maintenance/frontend_assets/Lokesh_Kumar_Digital_marketing.webp"
               },
               {
                 name: "Sandhya Pandey",
                 role: "Business Growth Team",
                 desc: "Fostering client acquisition, sales coordination, and growth.",
-                image: "/images/sandhya pandey 2nd image.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058458/care_maintenance/frontend_assets/sandhya_pandey_2nd_image.webp"
               },
               {
                 name: "Nikita",
                 role: "Sales Representative",
                 desc: "Connecting clients with customized facility management solutions.",
-                image: "/images/nikita sales person.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058444/care_maintenance/frontend_assets/nikita_sales_person.webp"
               },
                {
                 name: "Mansi Verma",
                 role: "Senior Sales Executive",
                 desc: "Generating leads and converting prospects into customers",
-                image: "/images/Manshi marketing.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058434/care_maintenance/frontend_assets/Manshi_marketing.webp"
               },
               {
                 name: "Surjeet Singh",
                 role: "Sales Manager",
                 desc: "Leading sales initiatives and driving revenue growth.",
-                image: "/images/Surjeet Singh Sales manager.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058467/care_maintenance/frontend_assets/Surjeet_Singh_Sales_manager.webp"
               },
               {
                 name: "Swarnali Banerjee",
                 role: "Admin",
                 desc: "Managing administrative operations and ensuring organizational efficiency.",
-                image: "/images/swarnali banerjee from Care mentenace Admin.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058468/care_maintenance/frontend_assets/swarnali_banerjee_from_Care_mentenace_Admin.webp"
               },
             
               {
                 name: "Priya Mahor",
                 role: "Admin",
                 desc: "Supporting daily administrative tasks and office operations.",
-                image: "/images/Priya mahor Admin.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058453/care_maintenance/frontend_assets/Priya_mahor_Admin.webp"
               },
               {
                 name: "Neha Singh",
                 role: "Admin",
                 desc: "Facilitating internal communication and administrative workflows.",
-                image: "/images/Neha singh Admin.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058441/care_maintenance/frontend_assets/Neha_singh_Admin.webp"
               },
               {
                 name: "Jyoti Singh",
                 role: "Account",
                 desc: "Managing financial records, billing, and accounting operations.",
-                image: "/images/Jyoti singh account (1).webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058429/care_maintenance/frontend_assets/Jyoti_singh_account_1.webp"
               },
               {
                 name: "Md Kamil Hussain",
                 role: "Head Electrician South Zone",
                 desc: "Overseeing electrical maintenance and operations in the South Zone.",
-                image: "/images/Md Kamil Hussain Head Electrician South zone.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058435/care_maintenance/frontend_assets/Md_Kamil_Hussain_Head_Electrician_South_zone.webp"
               },
               
               {
                 name: "Shyamu Raj",
                 role: "Zonal Technician Head",
                 desc: "Overseeing technical operations and ensuring service quality.",
-                image: "/images/shyamu zonal technician head.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058464/care_maintenance/frontend_assets/shyamu_zonal_technician_head.webp"
               },
               {
                 name: "Guddu Sharma",
                 role: "Zonal Tech Head (NCR & Noida)",
                 desc: "Managing technical services across NCR and Noida regions.",
-                image: "/images/guddu Zonal technician head (NCF & Noida).webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058421/care_maintenance/frontend_assets/guddu_Zonal_technician_head_NCF_Noida.webp"
               },
               {
                 name: "Firoz Khan",
                 role: "AC & Electrical Technician",
                 desc: "Providing expert AC and electrical maintenance and repair services.",
-                image: "/images/firoz-khan-ac & electrical technician.webp"
+                image: "https://res.cloudinary.com/reuof8q6/image/upload/v1783058418/care_maintenance/frontend_assets/firoz-khan-ac_electrical_technician.webp"
               }
             ].map((leader, index) => (
               <motion.div

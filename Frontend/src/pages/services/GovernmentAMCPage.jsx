@@ -24,10 +24,10 @@ const staggerContainer = {
 };
 
 const TRUSTED_COMPANIES = [
-  { name: 'Rajdhani Besan Mills', logo: '/images/services/rajchani besan.webp' },
-  { name: 'The Rugs', logo: '/images/services/the rugs.webp' },
-  { name: 'Affinity Salon', logo: '/images/services/affinity salon.webp' },
-  { name: 'Anmol Biscuits', logo: '/images/services/anmol biscuits.webp' },
+  { name: 'Rajdhani Besan Mills', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059067/care_maintenance/frontend_assets/services/rajchani_besan.webp' },
+  { name: 'The Rugs', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059071/care_maintenance/frontend_assets/services/the_rugs.webp' },
+  { name: 'Affinity Salon', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058971/care_maintenance/frontend_assets/services/affinity_salon.webp' },
+  { name: 'Anmol Biscuits', logo: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058972/care_maintenance/frontend_assets/services/anmol_biscuits.webp' },
 ];
 
 const GovernmentAMCPage = () => {
@@ -77,7 +77,7 @@ const GovernmentAMCPage = () => {
             className="relative lg:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100"
           >
             <img 
-              src="/images/services/cleaning 4.webp" 
+              src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058994/care_maintenance/frontend_assets/services/cleaning_4.webp" 
               alt="Government AMC Services" 
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -211,7 +211,7 @@ const GovernmentAMCPage = () => {
             className="relative group cursor-pointer"
           >
             <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden">
-              <img src="/images/services/carpainter hader image.webp" alt="Why Choose AMC" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058974/care_maintenance/frontend_assets/services/carpainter_hader_image.webp" alt="Why Choose AMC" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             </div>
             <div className="absolute -right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl hidden md:block max-w-xs transition-all duration-500 group-hover:-translate-y-[55%] group-hover:shadow-blue-500/20">
               <Shield className="w-10 h-10 text-blue-600 mb-4" />
@@ -298,7 +298,7 @@ const GovernmentAMCPage = () => {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="group cursor-pointer rounded-[2rem] overflow-hidden relative aspect-square md:aspect-auto md:h-[600px]"
           >
-            <img src="/images/services/ac after image.webp" alt="Central Air Conditioning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058947/care_maintenance/frontend_assets/services/ac_after_image.webp" alt="Central Air Conditioning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent flex flex-col justify-end p-10">
               <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-4">HVAC AMC</div>
               <h3 className="text-3xl font-bold text-white mb-2">Central Air Conditioning</h3>
@@ -311,7 +311,7 @@ const GovernmentAMCPage = () => {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
               className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px]"
             >
-              <img src="/images/services/cleaning 3.webp" alt="Deep Cleaning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058993/care_maintenance/frontend_assets/services/cleaning_3.webp" alt="Deep Cleaning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8">
                 <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Sanitization</div>
                 <h3 className="text-xl font-bold text-white">Facility Deep Cleaning</h3>
@@ -321,7 +321,7 @@ const GovernmentAMCPage = () => {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
               className="group cursor-pointer rounded-[2rem] overflow-hidden relative h-[284px]"
             >
-              <img src="/images/services/elect 7.webp" alt="Electrical Audit" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059024/care_maintenance/frontend_assets/services/elect_7.webp" alt="Electrical Audit" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-8">
                 <div className="bg-white/20 backdrop-blur-md w-fit px-4 py-1 rounded-full text-white text-sm mb-3">Electrical</div>
                 <h3 className="text-xl font-bold text-white">Electrical System Audit</h3>
