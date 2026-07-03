@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FiUser, FiMail, FiPhone, FiCalendar, FiShield, FiEdit2, FiLogOut } from 'react-icons/fi';
 import api from '../../api/axios';
 import { useAuth } from '../../context/AuthContext';
@@ -86,7 +86,16 @@ const ProfilePage = () => {
               <p className="text-slate-600">Manage your personal information and account settings.</p>
             </div>
             <div className="flex items-center gap-3">
-              
+              {profileData?.role === 'admin' && (
+                <Link 
+                  to="/admin" 
+                  className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-sm"
+                >
+                  <FiShield className="w-4 h-4" />
+                  <span className="hidden sm:inline">Admin Dashboard</span>
+                  <span className="sm:hidden">Admin</span>
+                </Link>
+              )}
               <button 
                 onClick={handleLogout}
                 className="flex items-center gap-2 px-5 py-2.5 bg-white text-red-600 font-semibold rounded-xl hover:bg-red-50 transition-colors border border-red-100 shadow-sm md:hidden"
