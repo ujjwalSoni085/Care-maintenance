@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../api/axios';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import SEO from '../../components/seo/SEO';
 
@@ -15,7 +15,7 @@ const BlogListPage = () => {
     const fetchBlogs = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:5000/api/blogs?page=${currentPage}&limit=${limit}`);
+        const res = await api.get(`/blogs?page=${currentPage}&limit=${limit}`);
         setBlogs(res.data.data || []);
         setPagination(res.data.pagination || {});
       } catch (error) {
@@ -78,7 +78,7 @@ const BlogListPage = () => {
                 <article key={blog._id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
                   <Link to={`/blog/${blog.slug}`} className="block relative h-56 overflow-hidden">
                     <img 
-                      src={blog.featuredImage ? `http://localhost:5000${blog.featuredImage}` : 'https://placehold.co/600x400?text=Care+Maintenance'} 
+                      src={blog.featuredImage ? `${api.defaults.baseURL.replace('/api', '')}${blog.featuredImage}` : 'https://placehold.co/600x400?text=Care+Maintenance'} 
                       alt={blog.imageAlt || blog.title} 
                       className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                     />

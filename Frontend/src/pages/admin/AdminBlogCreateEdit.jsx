@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
-import axios from 'axios';
+import api from '../../api/axios';
 import toast from 'react-hot-toast';
 
 const AdminBlogCreateEdit = () => {
@@ -39,10 +39,7 @@ const AdminBlogCreateEdit = () => {
     if (isEditMode) {
       const fetchBlog = async () => {
         try {
-          const token = localStorage.getItem('care_maintenance_token');
-          const res = await axios.get(`http://localhost:5000/api/blogs/admin/${id}`, {
-            headers: { Authorization: `Bearer ${token}` }
-          });
+          const res = await api.get(`/blogs/admin/${id}`);
           const blog = res.data.data;
           setFormData({
             title: blog.title,
@@ -92,11 +89,9 @@ const AdminBlogCreateEdit = () => {
     uploadData.append('image', file);
 
     try {
-      const token = localStorage.getItem('care_maintenance_token');
-      const res = await axios.post('http://localhost:5000/api/upload', uploadData, {
+      const res = await api.post('/upload', uploadData, {
         headers: { 
-          'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${token}`
+          'Content-Type': 'multipart/form-data'
         }
       });
       setFeaturedImage(res.data.url);
@@ -120,14 +115,11 @@ const AdminBlogCreateEdit = () => {
     };
 
     try {
-      const token = localStorage.getItem('care_maintenance_token');
-      const config = { headers: { Authorization: `Bearer ${token}` } };
-      
       if (isEditMode) {
-        await axios.put(`http://localhost:5000/api/blogs/admin/${id}`, payload, config);
+        await api.put(`/blogs/admin/${id}`, payload);
         toast.success('Blog updated successfully');
       } else {
-        await axios.post('http://localhost:5000/api/blogs/admin/create', payload, config);
+        await api.post('/blogs/admin/create', payload);
         toast.success('Blog created successfully');
       }
       navigate('/admin/blogs');
@@ -160,15 +152,14 @@ const AdminBlogCreateEdit = () => {
       uploadData.append('image', file);
 
       try {
-        const token = localStorage.getItem('care_maintenance_token');
-        const res = await axios.post('http://localhost:5000/api/upload', uploadData, {
+        const res = await api.post('/upload', uploadData, {
           headers: { 
-            'Content-Type': 'multipart/form-data',
-            Authorization: `Bearer ${token}`
+            'Content-Type': 'multipart/form-data'
           }
         });
         
-        const url = `http://localhost:5000${res.data.url}`;
+        const hostUrl = api.defaults.baseURL.replace('/api', '');
+        const url = `${hostUrl}${res.data.url}`;
         const quill = quillRef.current.getEditor();
         const range = quill.getSelection();
         quill.insertEmbed(range.index, 'image', url);
@@ -266,7 +257,7 @@ const AdminBlogCreateEdit = () => {
                 className="file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
               />
               {featuredImage && (
-                <img src={`http://localhost:5000${featuredImage}`} alt="Cover" className="h-16 w-16 object-cover rounded" />
+                <img src={`${api.defaults.baseURL.replace('/api', '')}${featuredImage}`} alt="Cover" className="h-16 w-16 object-cover rounded" />
               )}
             </div>
           </div>

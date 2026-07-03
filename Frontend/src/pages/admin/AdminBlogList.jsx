@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../api/axios';
 import toast from 'react-hot-toast';
 
 const AdminBlogList = () => {
@@ -9,12 +9,7 @@ const AdminBlogList = () => {
 
   const fetchBlogs = async () => {
     try {
-      // Assuming you have an axios interceptor that attaches the auth token,
-      // or you pass headers directly here.
-      const token = localStorage.getItem('care_maintenance_token'); 
-      const res = await axios.get('http://localhost:5000/api/blogs/admin/all', {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      const res = await api.get('/blogs/admin/all');
       setBlogs(res.data.data);
     } catch (error) {
       toast.error('Failed to fetch blogs');
@@ -30,10 +25,7 @@ const AdminBlogList = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this blog?')) {
       try {
-        const token = localStorage.getItem('care_maintenance_token');
-        await axios.delete(`http://localhost:5000/api/blogs/admin/${id}`, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        await api.delete(`/blogs/admin/${id}`);
         toast.success('Blog deleted successfully');
         fetchBlogs();
       } catch (error) {

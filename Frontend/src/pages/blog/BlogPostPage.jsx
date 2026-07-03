@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../api/axios';
 import { Calendar, User, ArrowLeft, Clock } from 'lucide-react';
 import SEO from '../../components/seo/SEO';
 
@@ -13,7 +13,7 @@ const BlogPostPage = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/blogs/${slug}`);
+        const res = await api.get(`/blogs/${slug}`);
         setBlog(res.data.data);
       } catch (err) {
         console.error('Failed to fetch blog post', err);
@@ -57,7 +57,7 @@ const BlogPostPage = () => {
       <SEO 
         title={blog.metaTitle || blog.title} 
         description={blog.metaDescription || blog.excerpt || blog.content?.substring(0, 160)} 
-        image={blog.featuredImage ? `http://localhost:5000${blog.featuredImage}` : undefined}
+        image={blog.featuredImage ? `${api.defaults.baseURL.replace('/api', '')}${blog.featuredImage}` : undefined}
         type="article"
       />
 
@@ -105,7 +105,7 @@ const BlogPostPage = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-10">
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <img 
-              src={`http://localhost:5000${blog.featuredImage}`} 
+              src={`${api.defaults.baseURL.replace('/api', '')}${blog.featuredImage}`} 
               alt={blog.imageAlt || blog.title} 
               className="w-full h-auto max-h-[600px] object-cover"
             />
