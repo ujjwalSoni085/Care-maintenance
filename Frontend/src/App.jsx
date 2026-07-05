@@ -10,6 +10,7 @@ import SplashIntro from './components/common/SplashIntro';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/common/ProtectedRoute';
+import FloatingContactWidget from './components/common/FloatingContactWidget';
 import './App.css';
 
 const LocationPage = React.lazy(() => import('./pages/LocationPage'));
@@ -148,6 +149,7 @@ function App() {
             </Routes>
           </Suspense>
         </main>
+        <FloatingContactWidget />
         <Footer />
       </div>
       </BrowserRouter>
