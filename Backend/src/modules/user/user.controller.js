@@ -1,4 +1,5 @@
 const User = require('../../models/User');
+const asyncHandler = require('express-async-handler');
 
 class UserController {
     /**
@@ -6,24 +7,17 @@ class UserController {
      * @route   GET /api/users
      * @access  Private/Admin
      */
-    async getAllUsers(req, res, next) {
-        try {
-            const users = await User.find({});
-            
-            res.status(200).json({
-                success: true,
-                count: users.length,
-                data: {
-                    users
-                }
-            });
-        } catch (error) {
-            res.status(500).json({
-                success: false,
-                message: error.message || 'Server Error'
-            });
-        }
-    }
+    getAllUsers = asyncHandler(async (req, res, next) => {
+        const users = await User.find({});
+        
+        res.status(200).json({
+            success: true,
+            count: users.length,
+            data: {
+                users
+            }
+        });
+    });
 }
 
 module.exports = new UserController();

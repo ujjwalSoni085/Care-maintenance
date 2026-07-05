@@ -1,16 +1,15 @@
 const sendEmail = require('../utils/sendEmail');
+const asyncHandler = require('express-async-handler');
 
-const submitContactForm = async (req, res) => {
+const submitContactForm = asyncHandler(async (req, res) => {
+  const { name, email, subject, message } = req.body;
+
+  if (!name || !email || !message) {
+    res.status(400);
+    throw new Error('Please provide name, email, and message');
+  }
+
   try {
-    const { name, email, subject, message } = req.body;
-
-    if (!name || !email || !message) {
-      return res.status(400).json({
-        success: false,
-        message: 'Please provide name, email, and message'
-      });
-    }
-
     await sendEmail({
       name,
       email,
@@ -24,12 +23,10 @@ const submitContactForm = async (req, res) => {
     });
   } catch (error) {
     console.error('Error sending email:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Failed to send email. Please try again later.'
-    });
+    res.status(500);
+    throw new Error('Failed to send email. Please try again later.');
   }
-};
+});
 
 module.exports = {
   submitContactForm

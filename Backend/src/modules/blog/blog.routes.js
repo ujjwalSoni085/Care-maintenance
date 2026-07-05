@@ -11,7 +11,7 @@ const {
 } = require('./blog.controller');
 
 const { protect, authorize } = require('../auth/auth.middleware');
-const upload = require('../../middlewares/upload');
+const upload = require('../../middleware/upload');
 
 // Public routes
 router.get('/', getBlogs);
