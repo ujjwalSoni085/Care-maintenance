@@ -90,6 +90,66 @@ class AuthController {
             message: 'Logged out successfully'
         });
     });
+
+    /**
+     * @desc    Forgot Password - Send OTP
+     * @route   POST /api/auth/forgot-password
+     * @access  Public
+     */
+    forgotPassword = asyncHandler(async (req, res, next) => {
+        const { email } = req.body;
+        if (!email) {
+            res.status(400);
+            throw new Error('Please provide an email');
+        }
+
+        await authService.forgotPassword(email);
+
+        res.status(200).json({
+            success: true,
+            message: 'OTP sent to email successfully'
+        });
+    });
+
+    /**
+     * @desc    Verify OTP
+     * @route   POST /api/auth/verify-otp
+     * @access  Public
+     */
+    verifyOTP = asyncHandler(async (req, res, next) => {
+        const { email, otp } = req.body;
+        if (!email || !otp) {
+            res.status(400);
+            throw new Error('Please provide email and OTP');
+        }
+
+        await authService.verifyOTP(email, otp);
+
+        res.status(200).json({
+            success: true,
+            message: 'OTP verified successfully'
+        });
+    });
+
+    /**
+     * @desc    Reset Password
+     * @route   POST /api/auth/reset-password
+     * @access  Public
+     */
+    resetPassword = asyncHandler(async (req, res, next) => {
+        const { email, otp, newPassword } = req.body;
+        if (!email || !otp || !newPassword) {
+            res.status(400);
+            throw new Error('Please provide email, OTP, and new password');
+        }
+
+        await authService.resetPassword(email, otp, newPassword);
+
+        res.status(200).json({
+            success: true,
+            message: 'Password reset successfully'
+        });
+    });
 }
 
 module.exports = new AuthController();

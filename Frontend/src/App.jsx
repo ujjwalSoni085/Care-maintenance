@@ -19,6 +19,9 @@ const AboutPage = React.lazy(() => import('./pages/AboutPage'));
 const TeamPage = React.lazy(() => import('./pages/TeamPage'));
 const LoginPage = React.lazy(() => import('./pages/auth/LoginPage'));
 const RegisterPage = React.lazy(() => import('./pages/auth/RegisterPage'));
+const ForgotPasswordPage = React.lazy(() => import('./pages/auth/ForgotPasswordPage'));
+const VerifyOTPPage = React.lazy(() => import('./pages/auth/VerifyOTPPage'));
+const ResetPasswordPage = React.lazy(() => import('./pages/auth/ResetPasswordPage'));
 const ProfilePage = React.lazy(() => import('./pages/profile/ProfilePage'));
 const EasyPaymentPage = React.lazy(() => import('./pages/services/EasyPaymentPage'));
 const SatisfactionGuaranteePage = React.lazy(() => import('./pages/services/SatisfactionGuaranteePage'));
@@ -98,6 +101,9 @@ function App() {
               <Route path="/team" element={<TeamPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
+              <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="/verify-otp" element={<VerifyOTPPage />} />
+              <Route path="/reset-password" element={<ResetPasswordPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/feedback" element={<FeedbackPage />} />
               <Route path="/easy-payment" element={<EasyPaymentPage />} />

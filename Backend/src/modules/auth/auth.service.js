@@ -1,5 +1,6 @@
 const authRepository = require('./auth.repository');
 const jwt = require('jsonwebtoken');
+const { sendEmail } = require('../../utils/email.utils');
 class AuthService {
     /**
      * Get user by ID
@@ -104,6 +105,92 @@ class AuthService {
         delete userResponse.password;
 
         return { user: userResponse, token };
+    }
+
+    /**
+     * Send OTP for password reset
+     * @param {String} email 
+     */
+    async forgotPassword(email) {
+        const user = await authRepository.findUserByEmail(email);
+        if (!user) {
+            const error = new Error('There is no user with that email address.');
+            error.statusCode = 404;
+            throw error;
+        }
+
+        // Generate 6-digit OTP
+        const otp = Math.floor(100000 + Math.random() * 900000).toString();
+
+        // Save OTP to DB
+        user.resetPasswordOTP = otp;
+        user.resetPasswordOTPExpires = Date.now() + 10 * 60 * 1000; // 10 minutes
+        await user.save();
+
+        // Send email
+        const message = `Your password reset OTP is <strong>${otp}</strong>. It is valid for 10 minutes.`;
+        try {
+            await sendEmail({
+                to: user.email,
+                subject: 'Password Reset OTP',
+                html: `<p>${message}</p>`
+            });
+        } catch (err) {
+            user.resetPasswordOTP = undefined;
+            user.resetPasswordOTPExpires = undefined;
+            await user.save();
+            const error = new Error('There was an error sending the email. Try again later!');
+            error.statusCode = 500;
+            throw error;
+        }
+    }
+
+    /**
+     * Verify OTP
+     * @param {String} email 
+     * @param {String} otp 
+     */
+    async verifyOTP(email, otp) {
+        const user = await authRepository.findUserByEmail(email);
+        if (!user) {
+            const error = new Error('Invalid credentials');
+            error.statusCode = 400;
+            throw error;
+        }
+
+        if (user.resetPasswordOTP !== otp || user.resetPasswordOTPExpires < Date.now()) {
+            const error = new Error('OTP is invalid or has expired');
+            error.statusCode = 400;
+            throw error;
+        }
+
+        return true;
+    }
+
+    /**
+     * Reset Password
+     * @param {String} email 
+     * @param {String} otp 
+     * @param {String} newPassword 
+     */
+    async resetPassword(email, otp, newPassword) {
+        const user = await authRepository.findUserByEmail(email);
+        if (!user) {
+            const error = new Error('Invalid credentials');
+            error.statusCode = 400;
+            throw error;
+        }
+
+        if (user.resetPasswordOTP !== otp || user.resetPasswordOTPExpires < Date.now()) {
+            const error = new Error('OTP is invalid or has expired');
+            error.statusCode = 400;
+            throw error;
+        }
+
+        user.password = newPassword;
+        user.resetPasswordOTP = undefined;
+        user.resetPasswordOTPExpires = undefined;
+        await user.save();
     }
 }
 

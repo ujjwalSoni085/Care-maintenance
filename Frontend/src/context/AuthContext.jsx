@@ -69,6 +69,45 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // Forgot Password
+  const forgotPassword = async (email) => {
+    try {
+      const response = await api.post('/auth/forgot-password', { email });
+      return { success: true, message: response.data.message };
+    } catch (error) {
+      return {
+        success: false,
+        message: error.response?.data?.message || 'Failed to send OTP. Please try again.'
+      };
+    }
+  };
+
+  // Verify OTP
+  const verifyOTP = async (email, otp) => {
+    try {
+      const response = await api.post('/auth/verify-otp', { email, otp });
+      return { success: true, message: response.data.message };
+    } catch (error) {
+      return {
+        success: false,
+        message: error.response?.data?.message || 'Invalid or expired OTP.'
+      };
+    }
+  };
+
+  // Reset Password
+  const resetPassword = async (email, otp, newPassword) => {
+    try {
+      const response = await api.post('/auth/reset-password', { email, otp, newPassword });
+      return { success: true, message: response.data.message };
+    } catch (error) {
+      return {
+        success: false,
+        message: error.response?.data?.message || 'Failed to reset password.'
+      };
+    }
+  };
+
   // Logout
   const logout = async () => {
     try {
@@ -87,6 +126,9 @@ export const AuthProvider = ({ children }) => {
     login,
     register,
     logout,
+    forgotPassword,
+    verifyOTP,
+    resetPassword,
   };
 
   return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;
