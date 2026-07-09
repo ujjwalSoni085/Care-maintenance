@@ -182,9 +182,11 @@ export const serviceData = {
       'TV Screen & Motherboard Repair',
       'Oven Thermostat Replacement',
       'Dryer Vent Cleaning & Repair',
-      'Water Purifier Servicing',
+      'Induction Cooktop Repair',
       'Geyser/Water Heater Repair',
-      'Smart Appliance Troubleshooting'
+      'Smart Appliance Troubleshooting',
+      'Chimney & Hob Servicing',
+      'Mixer Grinder Repair'
     ],
     benefits: [
       { title: 'Genuine Parts', description: 'We use authentic spare parts for all repairs.', icon: 'inventory_2' },

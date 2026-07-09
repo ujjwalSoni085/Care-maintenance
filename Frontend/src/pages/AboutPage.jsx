@@ -229,9 +229,9 @@ const AboutPage = () => {
                 <Phone className="w-6 h-6 text-blue-400 group-hover:text-white transition-colors" />
                 <span className="text-xl font-semibold tracking-wide">+91 7654553226</span>
               </a>
-              <a href="tel:+919990959502" className="flex items-center gap-3 bg-white/10 hover:bg-white/20 px-6 py-4 rounded-xl backdrop-blur-sm transition-colors w-full sm:w-auto justify-center group">
+              <a href="tel:+918287003241" className="flex items-center gap-3 bg-white/10 hover:bg-white/20 px-6 py-4 rounded-xl backdrop-blur-sm transition-colors w-full sm:w-auto justify-center group">
                 <Phone className="w-6 h-6 text-blue-400 group-hover:text-white transition-colors" />
-                <span className="text-xl font-semibold tracking-wide">+91 9990959502</span>
+                <span className="text-xl font-semibold tracking-wide">+91 8287003241</span>
               </a>
             </div>
 

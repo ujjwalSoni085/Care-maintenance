@@ -67,7 +67,7 @@ const ApplianceMaintenancePage = () => {
           
           {/* Image Section */}
           <div className="flex-1 w-full aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden relative shadow-2xl group">
-            <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783058477/care_maintenance/frontend_assets/vishal_kumar.webp" alt="Appliance Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
+            <img src="https://res.cloudinary.com/reuof8q6/image/upload/v1783059074/care_maintenance/frontend_assets/services/worker_1.webp" alt="Appliance Service" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 pointer-events-none">
               <div className="text-white flex items-center gap-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
@@ -161,8 +161,8 @@ const ApplianceMaintenancePage = () => {
 
         {/* === SERVICES GRID === */}
         <section className="bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-3xl p-8 md:p-12 border border-blue-100 shadow-soft">
-          <div className="flex flex-col md:flex-row gap-12">
-            <div className="w-full md:w-1/3 flex flex-col gap-4 border-r-0 md:border-r border-blue-200 pr-0 md:pr-8">
+          <div className="flex flex-col xl:flex-row gap-12">
+            <div className="w-full xl:w-1/3 flex flex-col gap-4 border-r-0 xl:border-r border-blue-200 pr-0 xl:pr-8">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center mb-6 text-white shadow-lg shadow-blue-500/30 overflow-hidden flex-shrink-0">
                 <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>kitchen</span>
               </div>
@@ -173,12 +173,12 @@ const ApplianceMaintenancePage = () => {
                 We handle everything from washing machines to kitchen appliances. No job is too big or too small for our <strong className="text-secondary font-bold">expert technicians</strong>.
               </p>
             </div>
-            <div className="w-full md:w-2/3">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="w-full xl:w-2/3 flex items-center">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
                 {(service.features || []).map((type, index) => (
-                  <li key={index} className="flex items-center gap-3 p-4 rounded-xl bg-surface-variant/30 text-surface-dark hover:bg-surface-container-high transition-colors shadow-sm">
-                    <span className="material-symbols-outlined text-primary">check_circle</span>
-                    <span className="font-label-bold text-sm">{type}</span>
+                  <li key={index} className="flex items-start gap-3 p-4 rounded-xl bg-surface-variant/30 text-surface-dark hover:bg-surface-container-high transition-colors shadow-sm">
+                    <span className="material-symbols-outlined text-primary flex-shrink-0">check_circle</span>
+                    <span className="font-label-bold text-sm leading-snug pt-0.5">{type}</span>
                   </li>
                 ))}
               </ul>
@@ -220,7 +220,7 @@ const ApplianceMaintenancePage = () => {
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">The Care Maintenance Difference</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">The CareMaintenance Services Pvt Ltd Difference</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {(service.benefits || []).map((benefit, index) => (

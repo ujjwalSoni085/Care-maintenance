@@ -3,11 +3,11 @@ import { Phone } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const FloatingContactWidget = ({ 
-  whatsappNumber = "+91 9990959502", 
-  phoneNumber = "+91 9990959502",
+  whatsappNumber = "+91 8287003241", 
+  phoneNumber = "+91 8287003241",
   whatsappMessage = "Hi Care Maintenance, I want to book a service" 
 }) => {
-  // Sanitize for WhatsApp (only numbers, e.g., '919990959502')
+  // Sanitize for WhatsApp (only numbers, e.g., '918287003241')
   const cleanWhatsapp = whatsappNumber.replace(/\D/g, '');
   // Sanitize for Phone (keep + and numbers)
   const cleanPhone = phoneNumber.replace(/[^\d+]/g, '');

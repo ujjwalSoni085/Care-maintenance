@@ -222,7 +222,7 @@ const PlumberPage = () => {
         {/* === WHY CHOOSE US === */}
         <section className="space-y-12 pt-12">
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">The Care Maintenance Difference</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight">The CareMaintenance Services Pvt Ltd Difference</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {(service.benefits || []).map((benefit, index) => (

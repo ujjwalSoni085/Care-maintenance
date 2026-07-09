@@ -361,9 +361,9 @@ const GovernmentAMCPage = () => {
               Get in touch to structure a customized AMC that fulfills all your facility maintenance protocols and requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={() => window.location.href = 'tel:9990959502'} className="px-8 py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
+              <button onClick={() => window.location.href = 'tel:8287003241'} className="px-8 py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
-                Call 9990959502
+                Call 8287003241
               </button>
               <button onClick={() => navigate('/contact')} className="px-8 py-4 bg-blue-600 border border-blue-500 text-white rounded-xl font-bold hover:bg-blue-500 transition-all flex items-center justify-center gap-2">
                 <Mail className="w-5 h-5" />

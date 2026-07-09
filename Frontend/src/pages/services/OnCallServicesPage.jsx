@@ -57,7 +57,7 @@ const OnCallServicesPage = () => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            <button onClick={() => window.location.href = 'tel:9990959502'} className="px-8 py-4 bg-white border border-gray-200 text-gray-900 rounded-xl font-medium hover:bg-gray-50 transition-all shadow-sm flex justify-center gap-2">
+            <button onClick={() => window.location.href = 'tel:8287003241'} className="px-8 py-4 bg-white border border-gray-200 text-gray-900 rounded-xl font-medium hover:bg-gray-50 transition-all shadow-sm flex justify-center gap-2">
                 <Phone className="w-5 h-5"/> Call Now
             </button>
             </motion.div>
@@ -281,9 +281,9 @@ const OnCallServicesPage = () => {
               Don't wait. Book your one-time service today and get your issues resolved quickly and professionally.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={() => window.location.href = 'tel:9990959502'} className="px-8 py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
+              <button onClick={() => window.location.href = 'tel:8287003241'} className="px-8 py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
-                Call 9990959502
+                Call 8287003241
               </button>
               <Link to="/#service-price-box" className="px-8 py-4 bg-blue-600 border border-blue-500 text-white rounded-xl font-bold hover:bg-blue-500 transition-all flex items-center justify-center gap-2">
                 Book Service Now

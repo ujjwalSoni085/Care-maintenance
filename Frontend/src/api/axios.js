@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// Get base URL from environment or fallback to localhost
-const baseURL = import.meta.env.VITE_API_URL || 'https://care-maintenance-1.onrender.com/api';
+const baseURL = 'https://care-maintenance-1.onrender.com/api';
 
 const api = axios.create({
   baseURL,

@@ -11,31 +11,37 @@ const carouselSlides = [
     id: 1,
     image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783058420/care_maintenance/frontend_assets/Group_photo.webp',
     year: '2025',
+    title: 'Reliable Commercial & Residential Maintenance'
   },
   {
     id: 2,
     image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059061/care_maintenance/frontend_assets/services/poster_iamge_4.webp',
     year: '2022',
+    title: 'Celebrating Freedom, Unity, Pride, and Dedicated Service Together'
   },
   {
     id: 3,
     image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059041/care_maintenance/frontend_assets/services/party_photo_crausel_3.webp',
     year: '2024',
+    title: 'Together We Celebrate Success and Achievement'
   },
   {
     id: 4,
     image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059066/care_maintenance/frontend_assets/services/poster_image_9.webp',
     year: '2024',
+    title: 'Recognizing Excellence, Inspiring Greater Success Together'
   },
   {
     id: 5,
     image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059063/care_maintenance/frontend_assets/services/poster_image_10.webp',
     year: '2024',
+    title: 'Honoring Dedication, Celebrating Team Success'
   },
   {
     id: 6,
     image: 'https://res.cloudinary.com/reuof8q6/image/upload/v1783059064/care_maintenance/frontend_assets/services/poster_image_12.webp',
     year: '2025',
+    title: 'Your Trusted Cleaning Partners'
   }
 ];
 
@@ -113,7 +119,7 @@ const HeroCarousel = () => {
                       transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                     >
                       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-light text-white tracking-wide drop-shadow-xl text-balance">
-                        Reliable Commercial & Residential Maintenance
+                        {slide.title}
                         {slide.year && (
                           <span className="ml-3 sm:ml-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-accent font-serif italic tracking-widest drop-shadow-lg inline-block align-baseline">
                             {slide.year}

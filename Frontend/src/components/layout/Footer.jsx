@@ -120,9 +120,11 @@ const Footer = () => {
                     <p>near PNB Bank, Lado Sarai, New Delhi - 110030</p>
                   </a>
                   {/* Number */}
-                  <a href="tel:+918285003241" className="mt-2 block text-primary-400">
-                   +91 8285003241
-                  </a>
+                  <div className="mt-2 text-primary-400">
+                    <a href="tel:01141085151" className="block hover:text-primary-300 transition-colors">01141085151</a>
+                    <a href="tel:01141085152" className="block hover:text-primary-300 transition-colors">01141085152</a>
+                    <a href="tel:+918285003241" className="block hover:text-primary-300 transition-colors">+91 8285003241</a>
+                  </div>
                 </div>
               </div>
 
@@ -139,9 +141,10 @@ const Footer = () => {
                     <p>New Friends Colony, New Delhi - 110025</p>
                   </a>
                   {/* Number */}
-                  <a href="tel:+919354794313" className="mt-2 block text-primary-400">
-                   +91 9354794313
-                  </a>
+                  <div className="mt-2 text-primary-400">
+                    <a href="tel:+919354794313" className="block hover:text-primary-300 transition-colors">+91 9354794313</a>
+                    <a href="tel:+911144754727" className="block hover:text-primary-300 transition-colors">+91 11 4475 4727</a>
+                  </div>
                 </div>
               </div>
 
@@ -157,9 +160,9 @@ const Footer = () => {
                     <p>A-55, 8, DLF Phase 1, Sector 26A, Gurugram, Haryana 122002</p>
                   </a>
                   {/* Number */}
-                  <a href="tel:+918285512203" className="mt-2 block text-primary-400">
-                   +91 8285512203
-                  </a>
+                  <div className="mt-2 text-primary-400">
+                    <a href="tel:+918285512203" className="block hover:text-primary-300 transition-colors">+91 8285512203</a>
+                  </div>
                 </div>
               </div>
 
@@ -176,9 +179,10 @@ const Footer = () => {
                     <p>Connaught Place, New Delhi - 110001</p>
                   </a>
                   {/* Number */}
-                  <a href="tel:+919508434900" className="mt-2 block text-primary-400">
-                   +91 9508434900
-                  </a>
+                  <div className="mt-2 text-primary-400">
+                    <a href="tel:01141085153" className="block hover:text-primary-300 transition-colors">01141085153</a>
+                    <a href="tel:+919508434900" className="block hover:text-primary-300 transition-colors">+91 9508434900</a>
+                  </div>
                 </div>
               </div>
 
@@ -195,9 +199,9 @@ const Footer = () => {
                     <p>Noida sector 3</p>
                   </a>
                   {/* Number */}
-                  <a href="tel:+917503712272" className="mt-2 block text-primary-400">
-                   +91 7503712272
-                  </a>
+                  <div className="mt-2 text-primary-400">
+                    <a href="tel:+917503712272" className="block hover:text-primary-300 transition-colors">+91 7503712272</a>
+                  </div>
                 </div>
               </div>
 
