@@ -27,6 +27,7 @@ const EasyPaymentPage = React.lazy(() => import('./pages/services/EasyPaymentPag
 const SatisfactionGuaranteePage = React.lazy(() => import('./pages/services/SatisfactionGuaranteePage'));
 const TechnicianOnboardingPage = React.lazy(() => import('./pages/services/TechnicianOnboardingPage'));
 const FeedbackPage = React.lazy(() => import('./pages/FeedbackPage'));
+const TermsAndConditionsPage = React.lazy(() => import('./pages/TermsAndConditionsPage'));
 
 // Blog Pages
 const BlogListPage = React.lazy(() => import('./pages/blog/BlogListPage'));
@@ -109,6 +110,7 @@ function App() {
               <Route path="/easy-payment" element={<EasyPaymentPage />} />
               <Route path="/satisfaction-guarantee" element={<SatisfactionGuaranteePage />} />
               <Route path="/technician-onboarding" element={<TechnicianOnboardingPage />} />
+              <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
               
               {/* Service Pages */}
               <Route path="/services/electrician" element={<ElectricianPage />} />

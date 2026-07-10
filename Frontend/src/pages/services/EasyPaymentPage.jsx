@@ -45,15 +45,75 @@ const EasyPaymentPage = () => {
   const [selectedMethod, setSelectedMethod] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [amount, setAmount] = useState(1000); // Default amount
 
-  const handlePayment = () => {
-    if (!selectedMethod) return;
+  const handlePayment = async () => {
+    if (!selectedMethod || amount <= 0) return;
     setIsProcessing(true);
-    // Simulate payment processing
-    setTimeout(() => {
+    
+    try {
+      const baseURL = import.meta.env.VITE_API_URL || 'https://care-maintenance-1.onrender.com/api';
+
+      const response = await fetch(`${baseURL}/payment/create-order`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: amount * 100, // Amount in paise
+          currency: 'INR'
+        }),
+      });
+      
+      const data = await response.json();
+      
+      if (!data.success) {
+        alert("Failed to initialize payment: " + data.message);
+        setIsProcessing(false);
+        return;
+      }
+
+      const initializeRazorpay = () => {
+        const options = {
+          key: "rzp_live_Szrl4wNQhe7POg",
+          amount: data.amount,
+          currency: data.currency,
+          name: "Care Maintenance",
+          description: "Service Payment",
+          order_id: data.orderId,
+          handler: function (response) {
+            setIsProcessing(false);
+            setIsSuccess(true);
+          },
+          theme: {
+            color: "#2563eb"
+          }
+        };
+        const rzp = new window.Razorpay(options);
+        rzp.on('payment.failed', function (response) {
+          alert(`Error: ${response.error.code} - ${response.error.description}`);
+          setIsProcessing(false);
+        });
+        rzp.open();
+      };
+
+      if (window.Razorpay) {
+        initializeRazorpay();
+      } else {
+        const script = document.createElement('script');
+        script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+        script.onload = initializeRazorpay;
+        script.onerror = () => {
+          alert("Failed to load Razorpay SDK.");
+          setIsProcessing(false);
+        };
+        document.body.appendChild(script);
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+      alert("Something went wrong while connecting to the server.");
       setIsProcessing(false);
-      setIsSuccess(true);
-    }, 2000);
+    }
   };
 
   return (
@@ -130,9 +190,22 @@ const EasyPaymentPage = () => {
                     exit={{ opacity: 0, height: 0 }}
                     className="mt-8 pt-8 border-t border-slate-100"
                   >
+                    <div className="mb-6">
+                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        Enter Amount (₹)
+                      </label>
+                      <input 
+                        type="number" 
+                        value={amount}
+                        onChange={(e) => setAmount(Number(e.target.value))}
+                        className="w-full p-4 border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-0 outline-none text-xl font-bold text-slate-800"
+                        placeholder="e.g. 500"
+                        min="1"
+                      />
+                    </div>
                     <button
                       onClick={handlePayment}
-                      disabled={isProcessing}
+                      disabled={isProcessing || amount <= 0}
                       className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-4 px-8 rounded-xl font-semibold text-lg transition-all duration-200 shadow-lg shadow-blue-600/30 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       {isProcessing ? (

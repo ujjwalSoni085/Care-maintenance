@@ -89,6 +89,7 @@ const Footer = () => {
               <li><Link to="/satisfaction-guarantee" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Satisfaction Guarantee</Link></li>
               <li><Link to="/technician-onboarding" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Technician Onboarding</Link></li>
               <li><Link to="/feedback" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Feedback & Reviews</Link></li>
+              <li><Link to="/terms-and-conditions" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Terms & Conditions</Link></li>
             </ul>
           </div>
 
