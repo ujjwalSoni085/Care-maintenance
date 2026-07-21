@@ -23,6 +23,7 @@ const ForgotPasswordPage = React.lazy(() => import('./pages/auth/ForgotPasswordP
 const VerifyOTPPage = React.lazy(() => import('./pages/auth/VerifyOTPPage'));
 const ResetPasswordPage = React.lazy(() => import('./pages/auth/ResetPasswordPage'));
 const ProfilePage = React.lazy(() => import('./pages/profile/ProfilePage'));
+const ServicesPage = React.lazy(() => import('./pages/services/ServicesPage'));
 const EasyPaymentPage = React.lazy(() => import('./pages/services/EasyPaymentPage'));
 const SatisfactionGuaranteePage = React.lazy(() => import('./pages/services/SatisfactionGuaranteePage'));
 const TechnicianOnboardingPage = React.lazy(() => import('./pages/services/TechnicianOnboardingPage'));
@@ -111,6 +112,7 @@ function App() {
               <Route path="/satisfaction-guarantee" element={<SatisfactionGuaranteePage />} />
               <Route path="/technician-onboarding" element={<TechnicianOnboardingPage />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+              <Route path="/services" element={<ServicesPage />} />
               
               {/* Service Pages */}
               <Route path="/services/electrician" element={<ElectricianPage />} />

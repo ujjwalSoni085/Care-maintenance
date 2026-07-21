@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Users, Building2, Briefcase, Phone, Award, ThumbsUp, ShieldCheck, HeartHandshake, Zap, Activity, Eye } from 'lucide-react';
+import { Calendar, Users, Building2, Briefcase, Phone, Award, ThumbsUp, ShieldCheck, HeartHandshake, Zap, Activity, Eye, Home } from 'lucide-react';
 
 const AboutPage = () => {
   const fadeIn = {
@@ -167,6 +167,80 @@ const AboutPage = () => {
                 ))}
               </ul>
             </div>
+          </motion.div>
+        </div>
+      </section>
+      {/* Service Sectors */}
+      <section className="py-20 px-4 bg-slate-50 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeIn}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight mb-4">Our Service Sectors</h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+              We provide tailored maintenance and repair solutions across diverse domains.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            {/* Residential */}
+            <motion.div variants={fadeIn} className="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 border border-gray-100 flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6">
+                <Home className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Residential</h3>
+              <div className="space-y-4">
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  We offer comprehensive home maintenance services to keep your living spaces comfortable, safe, and beautiful. From plumbing and electrical to AC services and pest control, we ensure your home runs smoothly.
+                </p>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Our dedicated residential teams understand the importance of your personal space. We provide quick response times, personalized care plans, and vetted professionals who treat your home with the utmost respect. Whether it's an emergency repair or scheduled upkeep, we take the stress out of home management so you can enjoy true peace of mind.
+                </p>
+              </div>
+            </motion.div>
+            
+            {/* Commercial */}
+            <motion.div variants={fadeIn} className="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 border border-gray-100 flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-red-50 text-red-600 rounded-full flex items-center justify-center mb-6">
+                <Briefcase className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Commercial</h3>
+              <div className="space-y-4">
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Our corporate packages are designed to enhance your office environment and extend the life of your assets. We provide reliable facility management, minimizing downtime and reducing operational expenses.
+                </p>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  We partner with businesses of all sizes to create productive, sanitized, and visually appealing workspaces. With tailored Annual Maintenance Contracts (AMCs), real-time reporting analytics, and a proactive approach to facility care, we help you project a professional image while optimizing your maintenance budget.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Government */}
+            <motion.div variants={fadeIn} className="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 border border-gray-100 flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mb-6">
+                <ShieldCheck className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Government</h3>
+              <div className="space-y-4">
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Trusted by government institutions, we handle specialized Annual Maintenance Contracts (AMCs) and tenders. We bring strict compliance, security, and top-tier service quality to public sector facilities.
+                </p>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Our operations are built on transparency and rigorous standards. We provide a highly scalable workforce capable of managing large infrastructure projects, ensuring that all public amenities are maintained efficiently, safely, and strictly within regulatory guidelines.
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

@@ -97,9 +97,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-white font-outfit mb-6">Services</h3>
             <ul className="space-y-4">
-              <li className="hover:text-primary-400 transition-colors duration-200 cursor-default">Residential</li>
-              <li className="hover:text-primary-400 transition-colors duration-200 cursor-default">Commercial</li>
-              <li className="hover:text-primary-400 transition-colors duration-200 cursor-default">Government</li>
+              <li><Link to="/services?category=residential" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Residential</Link></li>
+              <li><Link to="/services?category=commercial" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Commercial</Link></li>
+              <li><Link to="/services?category=government" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary-400 transition-colors duration-200">Government</Link></li>
             </ul>
           </div>
 

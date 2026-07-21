@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 import { FiEdit2, FiTrash2 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import VideoTestimonials from '../components/feedback/VideoTestimonials';
+import { staticReviews } from '../data/staticReviews';
 
 const FeedbackPage = () => {
   const { isAuthenticated, user } = useAuth();
@@ -21,10 +22,10 @@ const FeedbackPage = () => {
   const fetchFeedbacks = async () => {
     try {
       const data = await feedbackService.getAllFeedbacks();
-      setFeedbacks(data.data);
+      setFeedbacks([...data.data, ...staticReviews]);
       setStats({
         averageRating: data.averageRating,
-        totalReviews: data.totalReviews
+        totalReviews: data.totalReviews + staticReviews.length
       });
     } catch (error) {
       console.error('Error fetching feedbacks:', error);
