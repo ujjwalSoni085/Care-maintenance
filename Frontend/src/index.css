@@ -39,6 +39,16 @@
   @keyframes shimmer {
     0% { transform: translateX(100%); }
   }
+
+  --animate-marquee: marquee 500s linear infinite;
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+.pause-marquee:hover .animate-marquee {
+  animation-play-state: paused;
 }
 
 @utility text-display {

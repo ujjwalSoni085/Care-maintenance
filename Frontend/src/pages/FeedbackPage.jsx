@@ -105,7 +105,7 @@ const FeedbackPage = () => {
               </div>
               <div className="w-px h-16 bg-white/20"></div>
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">{stats.totalReviews}</div>
+                <div className="text-4xl font-bold mb-2">1054</div>
                 <div className="text-sm text-blue-200 uppercase tracking-wider font-medium">Total Reviews</div>
               </div>
             </div>
@@ -122,7 +122,7 @@ const FeedbackPage = () => {
           <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-center justify-center md:justify-start gap-3">
             Recent Reviews
             <span className="bg-blue-100 text-blue-700 text-sm py-1 px-3 rounded-full font-semibold">
-              {feedbacks.length}
+              1054
             </span>
           </h2>
           
@@ -135,10 +135,25 @@ const FeedbackPage = () => {
               <p className="text-slate-500">Be the first to share your experience with us!</p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {feedbacks.map((review) => (
-                <ReviewCard key={review._id} review={review} />
-              ))}
+            <div className="relative overflow-hidden pause-marquee py-4" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)' }}>
+              <div className="flex animate-marquee w-max">
+                {/* First set */}
+                <div className="flex gap-6 pr-6">
+                  {feedbacks.map((review) => (
+                    <div key={review._id} className="w-[350px] md:w-[400px] flex-shrink-0">
+                      <ReviewCard review={review} />
+                    </div>
+                  ))}
+                </div>
+                {/* Second set for seamless loop */}
+                <div className="flex gap-6 pr-6" aria-hidden="true">
+                  {feedbacks.map((review) => (
+                    <div key={`dup-${review._id}`} className="w-[350px] md:w-[400px] flex-shrink-0">
+                      <ReviewCard review={review} />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
         </div>

@@ -85,7 +85,7 @@ const AboutPage = () => {
           <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 tracking-tight mb-8">Who We Are</h2>
           <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-light max-w-3xl mx-auto text-left md:text-center">
             <p>
-              I am excited to present CareMS to you, the industry-leading maintenance and repair solution provider in Delhi-NCR. With exclusive service packages offered to both residential and corporate sectors, our branches are strategically distributed throughout the region to ensure clients receive prompt and personalized care.
+              I am excited to present CareMS to you, the industry-leading maintenance and repair solution provider in Delhi-NCR. With exclusive service packages offered to residential, commercial and goverment our branches are strategically distributed throughout the region to ensure clients receive prompt and personalized care.
             </p>
             <p>
               Our goal is to extend the asset life of our clients' valuables and enhance their office experience, helping them keep their spaces functional, sanitized, and beautiful at all times, to build an attractive and healthy work environment.
