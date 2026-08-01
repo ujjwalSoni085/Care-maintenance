@@ -1,0 +1,258 @@
+{
+  "info": {
+    "_postman_id": "c1f72e38-4e1a-4d43-85b9-48092a2a0134",
+    "name": "Care Maintenance API Verification",
+    "description": "Comprehensive Postman/Bruno collection to verify JWT authentication, role-based authorization, request transitions, OTP verification, and notifications.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api", "type": "string" },
+    { "key": "token", "value": "YOUR_JWT_TOKEN", "type": "string" },
+    { "key": "requestId", "value": "SAMPLE_REQUEST_ID", "type": "string" },
+    { "key": "technicianId", "value": "SAMPLE_TECHNICIAN_ID", "type": "string" },
+    { "key": "notificationId", "value": "SAMPLE_NOTIFICATION_ID", "type": "string" },
+    { "key": "otpCode", "value": "123456", "type": "string" }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      { "key": "token", "value": "{{token}}", "type": "string" }
+    ]
+  },
+  "item": [
+    {
+      "name": "1. Authentication",
+      "item": [
+        {
+          "name": "Register User / Tech / Admin",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"customer@test.com\",\n  \"password\": \"password123\",\n  \"role\": \"customer\",\n  \"phone\": \"9876543210\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/auth/register", "host": ["{{baseUrl}}"], "path": ["auth", "register"] }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"customer@test.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] }
+          }
+        },
+        {
+          "name": "Get Current User (Me)",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/auth/me", "host": ["{{baseUrl}}"], "path": ["auth", "me"] }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "url": { "raw": "{{baseUrl}}/auth/logout", "host": ["{{baseUrl}}"], "path": ["auth", "logout"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Users (Admin Restricted)",
+      "item": [
+        {
+          "name": "Get All Users (Admin Only)",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/users", "host": ["{{baseUrl}}"], "path": ["users"] },
+            "description": "Requires an Admin token. Returns 403 if accessed by customer or technician."
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Technicians",
+      "item": [
+        {
+          "name": "Get Assigned Jobs (Technician Only)",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/technicians/my-jobs", "host": ["{{baseUrl}}"], "path": ["technicians", "my-jobs"] }
+          }
+        },
+        {
+          "name": "Get Job History (Technician Only)",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/technicians/history", "host": ["{{baseUrl}}"], "path": ["technicians", "history"] }
+          }
+        },
+        {
+          "name": "Update Profile (Technician Only)",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"phone\": \"9876543211\",\n  \"skills\": [\"HVAC\", \"Electrical\"]\n}" },
+            "url": { "raw": "{{baseUrl}}/technicians/profile", "host": ["{{baseUrl}}"], "path": ["technicians", "profile"] }
+          }
+        },
+        {
+          "name": "Update Availability (Technician Only)",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"isAvailable\": true\n}" },
+            "url": { "raw": "{{baseUrl}}/technicians/availability", "host": ["{{baseUrl}}"], "path": ["technicians", "availability"] }
+          }
+        },
+        {
+          "name": "Get All Technicians (Admin Only)",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/technicians", "host": ["{{baseUrl}}"], "path": ["technicians"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Service Requests",
+      "item": [
+        {
+          "name": "Create Request (Admin Only)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"AC Cooling Repair\",\n  \"description\": \"Air conditioner is blowing lukewarm air.\",\n  \"serviceType\": \"AC Repair\",\n  \"location\": \"Sector 45, Noida\",\n  \"scheduledDate\": \"2026-08-05T10:00:00Z\"\n}" },
+            "url": { "raw": "{{baseUrl}}/requests", "host": ["{{baseUrl}}"], "path": ["requests"] }
+          }
+        },
+        {
+          "name": "Get All Requests (Admin Only)",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/requests", "host": ["{{baseUrl}}"], "path": ["requests"] }
+          }
+        },
+        {
+          "name": "Get Request By ID (Auth Role Check)",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/requests/{{requestId}}", "host": ["{{baseUrl}}"], "path": ["requests", "{{requestId}}"] },
+            "description": "Technician can only view if assigned. Customer can only view if creator. Admin can view all."
+          }
+        },
+        {
+          "name": "Assign Technician (Admin Only)",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"technicianId\": \"{{technicianId}}\"\n}" },
+            "url": { "raw": "{{baseUrl}}/requests/{{requestId}}/assign", "host": ["{{baseUrl}}"], "path": ["requests", "{{requestId}}", "assign"] },
+            "description": "Transitions status to 'Assigned' and generates a notification for the creator."
+          }
+        },
+        {
+          "name": "Update Status (Technician Only)",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"status\": \"On the Way\"\n}" },
+            "url": { "raw": "{{baseUrl}}/requests/{{requestId}}/status", "host": ["{{baseUrl}}"], "path": ["requests", "{{requestId}}", "status"] },
+            "description": "Valid steps: Pending -> Assigned -> On the Way -> Working -> Waiting for OTP -> Completed. Changing to 'Waiting for OTP' automatically triggers OTP generation and notification!"
+          }
+        },
+        {
+          "name": "Update Request",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"description\": \"Updated problem description with exact error codes.\"\n}" },
+            "url": { "raw": "{{baseUrl}}/requests/{{requestId}}", "host": ["{{baseUrl}}"], "path": ["requests", "{{requestId}}"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. OTP & Job Completion",
+      "item": [
+        {
+          "name": "Generate OTP",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"requestId\": \"{{requestId}}\"\n}" },
+            "url": { "raw": "{{baseUrl}}/otp/generate", "host": ["{{baseUrl}}"], "path": ["otp", "generate"] },
+            "description": "Generates a 6-digit OTP in DB and triggers an OTP Generated notification."
+          }
+        },
+        {
+          "name": "Verify OTP (Technician Only)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"requestId\": \"{{requestId}}\",\n  \"otp\": \"{{otpCode}}\"\n}" },
+            "url": { "raw": "{{baseUrl}}/otp/verify", "host": ["{{baseUrl}}"], "path": ["otp", "verify"] },
+            "description": "Requires technician role assigned to job. On success, transitions job status to 'Completed' and triggers completion notification."
+          }
+        },
+        {
+          "name": "Resend OTP",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"requestId\": \"{{requestId}}\"\n}" },
+            "url": { "raw": "{{baseUrl}}/otp/resend", "host": ["{{baseUrl}}"], "path": ["otp", "resend"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Notifications",
+      "item": [
+        {
+          "name": "Get User Notifications",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/notifications", "host": ["{{baseUrl}}"], "path": ["notifications"] }
+          }
+        },
+        {
+          "name": "Mark All as Read",
+          "request": {
+            "method": "PUT",
+            "url": { "raw": "{{baseUrl}}/notifications/read-all", "host": ["{{baseUrl}}"], "path": ["notifications", "read-all"] }
+          }
+        },
+        {
+          "name": "Mark Single as Read",
+          "request": {
+            "method": "PUT",
+            "url": { "raw": "{{baseUrl}}/notifications/{{notificationId}}/read", "host": ["{{baseUrl}}"], "path": ["notifications", "{{notificationId}}", "read"] }
+          }
+        },
+        {
+          "name": "Delete Read Notifications",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/notifications/read", "host": ["{{baseUrl}}"], "path": ["notifications", "read"] }
+          }
+        },
+        {
+          "name": "Delete Notification By ID",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/notifications/{{notificationId}}", "host": ["{{baseUrl}}"], "path": ["notifications", "{{notificationId}}"] }
+          }
+        }
+      ]
+    }
+  ]
+}

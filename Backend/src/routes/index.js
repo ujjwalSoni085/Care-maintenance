@@ -10,6 +10,10 @@ const paymentRoutes = require('../modules/payment/payment.routes');
 
 const blogRoutes = require('./blog.routes');
 const uploadRoutes = require('./upload.routes');
+const requestRoutes = require('../modules/request/request.routes');
+const otpRoutes = require('../modules/otp/otp.routes');
+const technicianRoutes = require('../modules/technician/technician.routes');
+const notificationRoutes = require('../modules/notification/notification.routes');
 
 // Mount routes
 router.use('/auth', authRoutes);
@@ -19,5 +23,9 @@ router.use('/feedback', feedbackRoutes);
 router.use('/payment', paymentRoutes);
 router.use('/blogs', blogRoutes);
 router.use('/upload', uploadRoutes);
+router.use('/requests', requestRoutes);
+router.use('/technicians', technicianRoutes);
+router.use('/otp', otpRoutes);
+router.use('/notifications', notificationRoutes);
 
 module.exports = router;

@@ -13,8 +13,12 @@ const authorize = (...roles) => {
             });
         }
 
+        // Convert allowed roles and user role to lowercase for a case-insensitive check
+        const userRole = (req.user.role || '').toLowerCase();
+        const allowedRoles = roles.map(r => r.toLowerCase());
+
         // Check if the user's role is included in the allowed roles
-        if (!roles.includes(req.user.role)) {
+        if (!allowedRoles.includes(userRole)) {
             return res.status(403).json({
                 success: false,
                 message: `User role '${req.user.role}' is not authorized to access this route`

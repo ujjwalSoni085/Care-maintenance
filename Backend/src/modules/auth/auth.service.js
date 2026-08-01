@@ -59,6 +59,7 @@ class AuthService {
             phone,
             name,
             password,
+            role: userData.role || 'customer',
             authProvider: 'local'
         });
 

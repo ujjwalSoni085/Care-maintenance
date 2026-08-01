@@ -1,0 +1,122 @@
+const technicianRepository = require('./technician.repository');
+
+class TechnicianService {
+    // Helper to throw errors
+    _throwError(message, statusCode = 400) {
+        const error = new Error(message);
+        error.statusCode = statusCode;
+        throw error;
+    }
+
+    async createTechnician(currentUser, data) {
+        data.role = 'technician';
+        return await technicianRepository.create(data);
+    }
+
+    async getTechnicians(currentUser, query) {
+        // Admin can view every technician.
+        if (currentUser.role !== 'admin') {
+            this._throwError('Not authorized to view all technicians', 403);
+        }
+        // Returns only users whose role is TECHNICIAN via repository
+        return await technicianRepository.findAll(query);
+    }
+
+    async getTechnicianById(currentUser, id) {
+        // Validate technician existence
+        const technician = await technicianRepository.findById(id);
+        if (!technician) {
+            this._throwError('Technician not found', 404);
+        }
+
+        // Only admin or the technician themselves can view their details
+        if (currentUser.role !== 'admin' && currentUser._id.toString() !== id.toString()) {
+            this._throwError('Not authorized to view this technician', 403);
+        }
+
+        return technician;
+    }
+
+    async getAssignedJobs(currentUser, id) {
+        // Validate technician existence
+        const technician = await technicianRepository.findById(id);
+        if (!technician) {
+            this._throwError('Technician not found', 404);
+        }
+
+        // Technician can only view their own jobs
+        if (currentUser.role !== 'admin' && currentUser._id.toString() !== id.toString()) {
+            this._throwError('Not authorized to view these jobs', 403);
+        }
+
+        return await technicianRepository.findAssignedJobs(id);
+    }
+
+    async getCompletedJobs(currentUser, id) {
+        // Validate technician existence
+        const technician = await technicianRepository.findById(id);
+        if (!technician) {
+            this._throwError('Technician not found', 404);
+        }
+
+        // Technician can only view their own jobs
+        if (currentUser.role !== 'admin' && currentUser._id.toString() !== id.toString()) {
+            this._throwError('Not authorized to view these jobs', 403);
+        }
+
+        return await technicianRepository.findCompletedJobs(id);
+    }
+
+    async updateAvailability(currentUser, id, availability) {
+        // Validate technician existence
+        const technician = await technicianRepository.findById(id);
+        if (!technician) {
+            this._throwError('Technician not found', 404);
+        }
+
+        // Only technicians can update their own availability
+        if (currentUser._id.toString() !== id.toString() || currentUser.role !== 'technician') {
+            this._throwError('Only technicians can update their own availability', 403);
+        }
+
+        return await technicianRepository.updateAvailability(id, availability);
+    }
+
+    async updateProfile(currentUser, id, updateData) {
+        // Validate technician existence
+        const technician = await technicianRepository.findById(id);
+        if (!technician) {
+            this._throwError('Technician not found', 404);
+        }
+
+        // Technician can update their own profile, admin can update anyone
+        if (currentUser.role !== 'admin' && currentUser._id.toString() !== id.toString()) {
+            this._throwError('Not authorized to update this profile', 403);
+        }
+
+        // Prevent invalid updates
+        const invalidFields = ['role', 'password', 'isVerified', '_id', 'email'];
+        const dataKeys = Object.keys(updateData);
+        dataKeys.forEach((key) => {
+            if (invalidFields.includes(key)) {
+                this._throwError(`Cannot update field: ${key}`, 400);
+            }
+        });
+
+        return await technicianRepository.updateProfile(id, updateData);
+    }
+
+    async deleteTechnician(currentUser, id) {
+        if (currentUser.role !== 'admin') {
+            this._throwError('Not authorized to delete a technician', 403);
+        }
+        
+        const deleted = await technicianRepository.delete(id);
+        if (!deleted) {
+            this._throwError('Technician not found', 404);
+        }
+        return deleted;
+    }
+}
+
+module.exports = new TechnicianService();

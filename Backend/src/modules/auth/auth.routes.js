@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('./auth.controller');
-const { protect } = require('./auth.middleware');
+const { protect: authenticate } = require('./auth.middleware');
 
 router.post('/register', authController.register);
 router.post('/login', authController.login);
@@ -12,6 +12,6 @@ router.post('/forgot-password', authController.forgotPassword);
 router.post('/verify-otp', authController.verifyOTP);
 router.post('/reset-password', authController.resetPassword);
 
-router.get('/me', protect, authController.getMe);
+router.get('/me', authenticate, authController.getCurrentUser);
 
 module.exports = router;

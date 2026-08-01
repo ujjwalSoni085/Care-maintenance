@@ -5,7 +5,7 @@ const registerValidation = {
         name: Joi.string().required().trim(),
         email: Joi.string().email().required().trim(),
         password: Joi.string().min(4).required(),
-        role: Joi.string().valid('customer', 'professional', 'admin').default('customer'),
+        role: Joi.string().valid('customer', 'technician', 'admin').default('customer'),
         phone: Joi.string().trim(),
         address: Joi.string()
     })

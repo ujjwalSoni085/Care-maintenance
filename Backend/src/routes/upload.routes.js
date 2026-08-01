@@ -1,6 +1,9 @@
 const express = require('express');
 const upload = require('../middleware/upload');
 const router = express.Router();
+const authenticate = require('../middleware/authenticate');
+
+router.use(authenticate);
 
 router.post('/', upload.single('image'), (req, res) => {
   try {

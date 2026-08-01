@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema(
         },
         role: {
             type: String,
-            enum: ['customer', 'professional', 'admin'],
+            enum: ['customer', 'technician', 'admin'],
             default: 'customer'
         },
         phone: {
@@ -43,6 +43,25 @@ const userSchema = new mongoose.Schema(
         },
         address: {
             type: String
+        },
+        specialization: {
+            type: String,
+            trim: true
+        },
+        availability: {
+            type: String,
+            enum: ['Available', 'Busy', 'Offline'],
+            default: 'Offline'
+        },
+        profileImage: {
+            type: String
+        },
+        experience: {
+            type: String
+        },
+        isVerified: {
+            type: Boolean,
+            default: false
         },
         resetPasswordOTP: {
             type: String
