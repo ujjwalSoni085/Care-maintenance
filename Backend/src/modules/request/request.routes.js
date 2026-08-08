@@ -17,6 +17,9 @@ const {
 router.use(authenticate);
 
 // Request endpoints
+router.route('/progress')
+    .get(authorize('admin'), requestController.getProgress);
+
 router.route('/')
     .get(authorize('admin'), requestController.getRequests)
     .post(authorize('admin'), validate(createRequestValidation), requestController.createRequest);

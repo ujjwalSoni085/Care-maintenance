@@ -13,9 +13,10 @@ const registerValidation = {
 
 const loginValidation = {
     body: Joi.object().keys({
-        email: Joi.string().email().required().trim(),
+        email: Joi.string().trim().optional(),
+        phone: Joi.string().trim().optional(),
         password: Joi.string().required()
-    })
+    }).or('email', 'phone')
 };
 
 module.exports = {

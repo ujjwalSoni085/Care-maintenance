@@ -49,7 +49,7 @@ class TechnicianRepository {
 
     // Update technician profile
     async updateProfile(id, updateData) {
-        
+
         return await User.findOneAndUpdate(
             { _id: id, role: 'technician' },
             updateData,

@@ -73,15 +73,38 @@ class AuthService {
 
     /**
      * Login user locally
-     * @param {String} email
+     * @param {String} [email]
+     * @param {String} [phone]
      * @param {String} password
      * @returns {Promise<Object>} Object containing user and token
      */
-    async loginLocal(email, password) {
-        const user = await authRepository.findUserByEmail(email);
-        
+    async loginLocal(email, phone, password) {
+        let user;
+        let loggedInWithEmail = false;
+
+        if (phone) {
+            user = await authRepository.findUserByPhone(phone);
+        } else if (email) {
+            // Check if email format is actually a phone number
+            const isEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+            if (!isEmail) {
+                user = await authRepository.findUserByPhone(email);
+            } else {
+                user = await authRepository.findUserByEmail(email);
+                loggedInWithEmail = true;
+            }
+        }
+
         if (!user) {
-            const error = new Error('Invalid email or password');
+            const error = new Error('Invalid credentials');
+            error.statusCode = 401;
+            throw error;
+        }
+
+        // Enforce role-based login restrictions:
+        // Technician must NOT login using email.
+        if (user.role === 'technician' && loggedInWithEmail) {
+            const error = new Error('Technicians are not allowed to log in using email');
             error.statusCode = 401;
             throw error;
         }
@@ -95,7 +118,7 @@ class AuthService {
 
         const isMatch = await user.comparePassword(password);
         if (!isMatch) {
-            const error = new Error('Invalid email or password');
+            const error = new Error('Invalid credentials');
             error.statusCode = 401;
             throw error;
         }

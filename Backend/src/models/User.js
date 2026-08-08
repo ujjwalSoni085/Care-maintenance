@@ -10,8 +10,11 @@ const userSchema = new mongoose.Schema(
         },
         email: {
             type: String,
-            required: [true, 'Please provide an email'],
+            required: function() {
+                return this.role !== 'technician';
+            },
             unique: true,
+            sparse: true,
             match: [
                 /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                 'Please provide a valid email'
@@ -59,6 +62,24 @@ const userSchema = new mongoose.Schema(
         experience: {
             type: String
         },
+        technicianId: {
+            type: Number,
+            unique: true,
+            sparse: true
+        },
+        cityState: {
+            type: String,
+            trim: true
+        },
+        aadhaarOrEmployeeId: {
+            type: String,
+            trim: true
+        },
+        status: {
+            type: String,
+            enum: ['Active', 'Inactive'],
+            default: 'Active'
+        },
         isVerified: {
             type: Boolean,
             default: false
@@ -74,6 +95,13 @@ const userSchema = new mongoose.Schema(
         timestamps: true
     }
 );
+
+userSchema.pre('validate', function(next) {
+    if (this.email === '' || this.email === null) {
+        this.email = undefined;
+    }
+    next();
+});
 
 userSchema.pre('save', async function() {
     if (!this.isModified('password') || !this.password) return;

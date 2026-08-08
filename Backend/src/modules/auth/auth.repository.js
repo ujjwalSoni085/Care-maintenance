@@ -49,6 +49,15 @@ class AuthRepository {
         const count = await User.countDocuments({ phone });
         return count > 0;
     }
+
+    /**
+     * Find a user by their phone number
+     * @param {String} phone 
+     * @returns {Promise<Object|null>} The user document including password
+     */
+    async findUserByPhone(phone) {
+        return await User.findOne({ phone }).select('+password');
+    }
 }
 
 module.exports = new AuthRepository();

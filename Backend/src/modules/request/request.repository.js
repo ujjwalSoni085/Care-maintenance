@@ -13,6 +13,12 @@ class RequestRepository {
         return await ServiceRequest.find(query);
     }
 
+    async findAllWithTechnician(filter = {}) {
+        return await ServiceRequest.find(filter)
+            .populate('assignedTo')
+            .sort({ updatedAt: -1 });
+    }
+
     async update(id, data) {
         return await ServiceRequest.findByIdAndUpdate(id, data, {
             new: true,

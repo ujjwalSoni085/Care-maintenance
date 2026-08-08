@@ -29,6 +29,24 @@ class RequestController {
     }
 
     /**
+     * @desc    Get all assigned requests (work progress)
+     * @route   GET /api/v1/requests/progress
+     * @access  Private (Admin)
+     */
+    async getProgress(req, res, next) {
+        try {
+            const progressRequests = await requestService.getProgress(req.query);
+            res.status(200).json({
+                success: true,
+                count: progressRequests.length,
+                data: progressRequests
+            });
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    /**
      * @desc    Get all service requests
      * @route   GET /api/v1/requests
      * @access  Private

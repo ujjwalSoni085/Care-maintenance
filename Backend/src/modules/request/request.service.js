@@ -19,6 +19,44 @@ class RequestService {
     }
 
     /**
+     * Get all assigned requests (work progress tracking)
+     * @param {Object} query
+     * @returns {Array} Array of requests
+     */
+    async getProgress(query = {}) {
+        const filter = {
+            assignedTo: { $exists: true, $ne: null }
+        };
+
+        const normalizeStatus = (statusStr) => {
+            if (!statusStr) return null;
+            const clean = statusStr.toUpperCase().replace(/[\s_-]/g, '');
+            const statusMap = {
+                'ASSIGNED': 'Assigned',
+                'ONTHEWAY': 'OnTheWay',
+                'WORKING': 'Working',
+                'WAITINGOTP': 'WaitingOTP',
+                'COMPLETED': 'Completed',
+                'CANCELLED': 'Cancelled'
+            };
+            return statusMap[clean] || statusStr;
+        };
+
+        if (query.status) {
+            const normalized = normalizeStatus(query.status);
+            if (normalized) {
+                filter.status = normalized;
+            } else {
+                filter.status = { $in: ['Assigned', 'OnTheWay', 'Working', 'WaitingOTP', 'Completed', 'Cancelled'] };
+            }
+        } else {
+            filter.status = { $in: ['Assigned', 'OnTheWay', 'Working', 'WaitingOTP', 'Completed', 'Cancelled'] };
+        }
+
+        return await requestRepository.findAllWithTechnician(filter);
+    }
+
+    /**
      * Get all service requests
      * @param {Object} query 
      * @returns {Array} Array of requests

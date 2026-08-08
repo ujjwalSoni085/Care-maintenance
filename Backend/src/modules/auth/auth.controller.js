@@ -31,14 +31,14 @@ class AuthController {
      */
     login = asyncHandler(async (req, res, next) => {
         try {
-            const { email, password } = req.body;
+            const { email, phone, password } = req.body;
             
-            if (!email || !password) {
+            if ((!email && !phone) || !password) {
                 res.status(400);
-                throw new Error('Please provide email and password');
+                throw new Error('Please provide email or phone and password');
             }
 
-            const { user, token } = await authService.loginLocal(email, password);
+            const { user, token } = await authService.loginLocal(email, phone, password);
             
             res.status(200).json({
                 success: true,
