@@ -96,11 +96,10 @@ const userSchema = new mongoose.Schema(
     }
 );
 
-userSchema.pre('validate', function(next) {
+userSchema.pre('validate', function() {
     if (this.email === '' || this.email === null) {
         this.email = undefined;
     }
-    next();
 });
 
 userSchema.pre('save', async function() {
