@@ -1,4 +1,5 @@
 const User = require('../../models/User');
+const { normalizePhone } = require('../../utils/phone.utils');
 
 class AuthRepository {
     /**
@@ -46,7 +47,8 @@ class AuthRepository {
      * @returns {Promise<Boolean>}
      */
     async checkPhoneExists(phone) {
-        const count = await User.countDocuments({ phone });
+        const normalized = normalizePhone(phone);
+        const count = await User.countDocuments({ phone: normalized });
         return count > 0;
     }
 
@@ -56,7 +58,8 @@ class AuthRepository {
      * @returns {Promise<Object|null>} The user document including password
      */
     async findUserByPhone(phone) {
-        return await User.findOne({ phone }).select('+password');
+        const normalized = normalizePhone(phone);
+        return await User.findOne({ phone: normalized }).select('+password');
     }
 }
 

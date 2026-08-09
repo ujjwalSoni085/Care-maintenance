@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const { normalizePhone } = require('../utils/phone.utils');
 
 const userSchema = new mongoose.Schema(
     {
@@ -99,6 +100,9 @@ const userSchema = new mongoose.Schema(
 userSchema.pre('validate', function() {
     if (this.email === '' || this.email === null) {
         this.email = undefined;
+    }
+    if (this.phone) {
+        this.phone = normalizePhone(this.phone);
     }
 });
 
