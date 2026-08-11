@@ -31,6 +31,24 @@ class OtpService {
         if (request && request.createdBy) {
             const notificationService = require('../notification/notification.service');
             await notificationService.triggerOtpGenerated(request.createdBy, requestId);
+
+            // Fetch user to get their phone number and send SMS
+            try {
+                const User = require('../../models/User');
+                const user = await User.findById(request.createdBy);
+                
+                if (user && user.phone) {
+                    const smsUtils = require('../../utils/sms.utils');
+                    await smsUtils.sendSMS(
+                        user.phone,
+                        `Your OTP for CareMS service request is: ${otpCode}. It is valid for 10 minutes.`
+                    );
+                } else {
+                    console.warn(`Could not send SMS: User ${request.createdBy} has no phone number.`);
+                }
+            } catch (error) {
+                console.error('Error while sending OTP SMS:', error);
+            }
         }
 
         // Return the saved OTP
